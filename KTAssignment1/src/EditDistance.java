@@ -17,44 +17,6 @@ import java.util.Dictionary;
 public class EditDistance {
   private Map<SimpleEntry<String, String>, Integer> solvedProblems = new HashMap<SimpleEntry<String,String>, Integer>();
   
-  /**
-   * Computes the edit distance between two strings.  The valid operations are:
-   *   1) Insert a character
-   *   2) Delete a character
-   *   3) Replace a character
-   *   4) Twiddle (Swap two characters to match the output).
-   *   
-   * @param s1 The source string
-   * @param s2 The destination string
-   * @return the number of edit operations to turn s1 into s2
-   */
-  public static int naiveEditDistance(String s1, String s2) {
-    int matchDist;   // Edit distance if first char. match or do a replace
-    int insertDist;  // Edit distance if insert first char of s1 in front of s2.
-    int deleteDist;  // Edit distance if delete first char of s2.
-    //int swapDist;    // edit distance for twiddle (first 2 char. must swap).
-    
-    if(s1.length() == 0)
-      return s2.length();   // Insert the remainder of s2
-    else  if (s2.length()== 0)
-      return s1.length();   // Delete the remainer of s1
-    else {
-      matchDist = naiveEditDistance(s1.substring(1), s2.substring(1));
-      if(s1.charAt(0) != s2.charAt(0))
-        matchDist++;  // If first 2 char. don't match must replace
-
-      insertDist = naiveEditDistance(s1.substring(1), s2) + 1;
-      deleteDist = naiveEditDistance(s1, s2.substring(1)) + 1;
-
-//      if(s1.length() > 1 && s2.length() > 1 && 
-//          s1.charAt(0) == s2.charAt(1) && s1.charAt(1) == s2.charAt(0)) 
-//        swapDist = naiveEditDistance(s1.substring(2), s2.substring(2)) + 1;
-//      else
-//        swapDist = Integer.MAX_VALUE;  // Can't swap if first 2 char. don't match
-
-      return Math.min(matchDist, Math.min(insertDist, deleteDist/*Math.min(deleteDist, swapDist)*/));
-    }
-  }
   
   /**
    * Computes the edit distance between two strings.  The valid operations are:
@@ -145,9 +107,6 @@ public class EditDistance {
     s2 = input.nextLine();
     
     while(s1.length() > 0) {
-      System.out.println("The edit distance between \"" + s1 + "\" and \"" + s2 +
-          "\" is " + naiveEditDistance(s1,s2));
-      System.out.println();
       
       System.out.println("The edit distance between \"" + s1 + "\" and \"" + s2 +
           "\" is " + calc.memoizedEditDist(s1,s2));
