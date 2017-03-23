@@ -14,7 +14,7 @@ import java.util.Dictionary;
  * 
  * @author Scot Drysdale
  */
-public class EditDistance {
+public class Project1 {
   private Map<SimpleEntry<String, String>, Integer> solvedProblems = new HashMap<SimpleEntry<String,String>, Integer>();
   
   
