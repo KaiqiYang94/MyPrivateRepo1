@@ -65,7 +65,7 @@ public class ImprovedGED {
 		}
 	}
 	
-	List<Character> vowelSet = Arrays.asList('a', 'e', 'i', 'o', 'u');
+	List<Character> vowelSet = Arrays.asList('a', 'e', 'i', 'o', 'u', 'y');
 	
 	public int insertString(String str) {
 		int dist = 0;
@@ -177,6 +177,11 @@ public class ImprovedGED {
 		// Using the vowelSet
 		// when the testSize = 100 the 35/100
 		// when the testSize = 200 the 60/200
+		
+
+		// Adding the y to the vowelSet
+		// when the testSize = 100 the 38/100
+		// when the testSize = 200 the 68/200
 		int testSize  = 200;
 		
 		int CorrectSize = 0;
