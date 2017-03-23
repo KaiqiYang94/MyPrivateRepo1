@@ -89,9 +89,16 @@ public class ImprovedGED {
 	}
 	
 	public int GetReplaceCost(char oldChar, char newChar) {
+		// vowels are kind of interchangeable
 		if(vowelSet.contains(oldChar) && vowelSet.contains(newChar))
 		{
 			return 1;
+		}
+		
+		// vowels replaced by non-vowels will be punished
+		if((vowelSet.contains(oldChar) && !vowelSet.contains(newChar)) ||(!vowelSet.contains(oldChar) && vowelSet.contains(newChar)))
+		{
+			return 3;
 		}
 		return 2;
 	}
@@ -178,11 +185,18 @@ public class ImprovedGED {
 		// when the testSize = 100 the 35/100
 		// when the testSize = 200 the 60/200
 		
-
 		// Adding the y to the vowelSet
 		// when the testSize = 100 the 38/100
 		// when the testSize = 200 the 68/200
-		int testSize  = 200;
+		// found that 
+		// The name          AACTAY	 should be         aechtie	 matched to          mackay	 Distance is 4	faild
+		
+		// Adding punishment when replacing vowels and non-vowels
+		// when the testSize = 100 the 42/100
+		// when the testSize = 200 the 73/200
+		// now 
+		// The name          AACTAY	 should be         aechtie	 matched to         aechtie	 Distance is 5	succeed
+		int testSize  = 100;
 		
 		int CorrectSize = 0;
 		int i = testSize;
