@@ -1,28 +1,12 @@
-
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.AbstractMap.SimpleEntry;
-
-import javax.print.attribute.TextSyntax;
-
-import com.sun.jndi.url.corbaname.corbanameURLContextFactory;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
-
-import apple.laf.JRSUIState.TitleBarHeightState;
-import sun.management.counter.Variability;
-
 import java.util.ArrayList;
-import java.util.Dictionary;
 
 /**
  * Computes the edit distance between pairs of words. Can be used for
@@ -38,11 +22,6 @@ public class BasicGED {
 	private Map<SimpleEntry<String, String>, Integer> solvedProblems = new HashMap<SimpleEntry<String, String>, Integer>();
 
 	private int GlobalEditDist(String s1, String s2) {
-		int i = 1;
-		int r = 1;
-		int d = 1;
-		int m = 0;
-
 		int matchDist; // Edit distance if first char. match or do a replace
 		int insertDist; // Edit distance if insert first char of s1 in front of
 						// s2.
@@ -61,13 +40,13 @@ public class BasicGED {
 			else {
 				matchDist = GlobalEditDist(s1.substring(1), s2.substring(1));
 				if (Character.toLowerCase( s1.charAt(0)) != Character.toLowerCase( s2.charAt(0))) {
-					matchDist = matchDist + r; // If first 2 char. don't match
+					matchDist = matchDist + GetReplaceCost(); // If first 2 char. don't match
 												// must replace
 				} else {
-					matchDist = matchDist + m;
+					matchDist = matchDist + GetMatchCost();
 				}
-				insertDist = GlobalEditDist(s1.substring(1), s2) + i;
-				deleteDist = GlobalEditDist(s1, s2.substring(1)) + d;
+				insertDist = GlobalEditDist(s1.substring(1), s2) + GetInsertCost();
+				deleteDist = GlobalEditDist(s1, s2.substring(1)) + GetDeleteCost();
 
 				int dist = Math.min(matchDist, Math.min(insertDist,deleteDist));
 
@@ -76,6 +55,23 @@ public class BasicGED {
 			}
 		}
 	}
+	
+	public int GetMatchCost() {
+		return 0;
+	}
+	
+	public int GetInsertCost() {
+		return 1;
+	}
+	
+	public int GetReplaceCost() {
+		return 1;
+	}
+	
+	public int GetDeleteCost() {
+		return 1;
+	}
+	
 	
 	public int GetDistance(String s1, String s2) {
 		this.solvedProblems = new HashMap<SimpleEntry<String, String>, Integer>();
@@ -133,7 +129,7 @@ public class BasicGED {
 			e.printStackTrace();
 		}
 
-		BasicGED calc = new BasicGED();
+		ImprovedGED calc = new ImprovedGED();
 		int testSize  = 1000;
 		int CorrectSize = 0;
 		int i = testSize;
