@@ -39,7 +39,7 @@ public class BasicGED {
 				return result; // If so, return the answer
 			else {
 				matchDist = GlobalEditDist(s1.substring(1), s2.substring(1));
-				if (Character.toLowerCase( s1.charAt(0)) != Character.toLowerCase( s2.charAt(0))) {
+				if (Character.toLowerCase(s1.charAt(0)) != Character.toLowerCase( s2.charAt(0))) {
 					matchDist = matchDist + GetReplaceCost(); // If first 2 char. don't match
 												// must replace
 				} else {
@@ -130,7 +130,7 @@ public class BasicGED {
 		}
 
 		ImprovedGED calc = new ImprovedGED();
-		int testSize  = 1000;
+		int testSize  = 100;
 		int CorrectSize = 0;
 		int i = testSize;
 		for (SimpleEntry<String, String> trainPair : trainData) {
