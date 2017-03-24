@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.AbstractMap.SimpleEntry;
 
 import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
+import com.sun.xml.internal.stream.Entity;
 
 import sun.org.mozilla.javascript.internal.ast.WhileLoop;
 
@@ -28,7 +29,14 @@ import java.util.Arrays;
  */
 public class ImprovedGED {
 	private Map<SimpleEntry<String, String>, Float> solvedProblems = new HashMap<SimpleEntry<String, String>, Float>();
-
+	
+	private List<Character> vowelSet = Arrays.asList('a', 'e', 'i', 'o', 'u', 'y');
+	
+	private List<Character> plosiveSet = Arrays.asList('b', 'd', 'g', 'p', 't', 'k');
+	
+	private Map<String, Float> CharMaps = new HashMap<String, Float>();
+	
+	
 	private float GlobalEditDist(String s1, String s2) {
 		float matchDist; // Edit distance if first char. match or do a replace
 		float insertDist; // Edit distance if insert first char of s1 in front of
@@ -65,7 +73,8 @@ public class ImprovedGED {
 		}
 	}
 	
-	List<Character> vowelSet = Arrays.asList('a', 'e', 'i', 'o', 'u', 'y');
+
+	
 	
 	public float insertString(String str) {
 		float dist = 0;
@@ -111,10 +120,11 @@ public class ImprovedGED {
 		return 2;
 	}	
 	public float GetDeleteCost(char removedChar) {
-//		if(!vowelSet.contains(removedChar))
-//		{
-//			return 3;
-//		}
+	//did not really work, means there are almost no plosive letters get removed
+	//if(plosiveSet.contains(removedChar))
+	//{
+	//	return 4;
+	//}
 		return 2;
 	}
 	
@@ -199,7 +209,7 @@ public class ImprovedGED {
 		// when the testSize = 200 the 73/200
 		// now 
 		// The name          AACTAY	 should be         aechtie	 matched to         aechtie	 Distance is 5	succeed
-		int testSize  = 100;
+		int testSize  = 200;
 		
 		int CorrectSize = 0;
 		int i = testSize;
