@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.AbstractMap.SimpleEntry;
 
 import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 import com.sun.xml.internal.stream.Entity;
 
 import sun.org.mozilla.javascript.internal.ast.WhileLoop;
@@ -37,10 +38,21 @@ public class ImprovedGEDStringReplace {
 	private Map<String, Float> CharMaps = new HashMap<String, Float>();
 
 	public ImprovedGEDStringReplace() {
+		// y i
 		CharMaps.put(GetMapKey('y', 'i'), (float) 0.0);
 		CharMaps.put(GetMapKey('i', 'y'), (float) 0.0);
+		// v o
 		CharMaps.put(GetMapKey('v', 'o'), (float) 0.0);
 		CharMaps.put(GetMapKey('o', 'v'), (float) 0.0);
+		// f ph
+		CharMaps.put(GetMapKey("f", "ph"), (float) 0.0);
+		//CharMaps.put(GetMapKey("ph", "f"), (float) 0.0);
+		// y ie
+		CharMaps.put(GetMapKey("y", "ie"), (float) 0.0);
+		//CharMaps.put(GetMapKey("ie", "y"), (float) 0.0);
+		// c ch
+		CharMaps.put(GetMapKey("c", "ch"), (float) 0.0);
+		//CharMaps.put(GetMapKey("ch", "c"), (float) 0.0);
 	}
 
 	public String GetMapKey(char c1, char c2) {
@@ -52,10 +64,10 @@ public class ImprovedGEDStringReplace {
 	}
 
 	private float GlobalEditDist(String s1, String s2) {
-		float matchDist; // Edit distance if first char. match or do a replace
-		float insertDist; // Edit distance if insert first char of s1 in front
-							// of
-							// s2.
+
+		float matchStrDist = Float.MAX_VALUE; // mapping on string 
+		float matchCharDist; // Edit distance if first char. match or do a replace
+		float insertDist; // Edit distance if insert first char of s1 in front of s2.
 		float deleteDist; // Edit distance if delete first char of s2.
 
 		if (s1.length() == 0)
@@ -69,17 +81,34 @@ public class ImprovedGEDStringReplace {
 			if (result != null) // Did we find the subproblem in the map?
 				return result; // If so, return the answer
 			else {
-				matchDist = GlobalEditDist(s1.substring(1), s2.substring(1));
+				
+				// try match on string 
+				String oldStr = s1.substring(0,1).toLowerCase();
+				String newStr = s2.length() > 2 ? s2.substring(0, 2).toLowerCase()
+						:s2.length() == 2 ?s2.toLowerCase(): "";
+				
+				String strMapKey = 	GetMapKey(oldStr, newStr);
+				
+				if(CharMaps.containsKey(strMapKey))
+				{
+					// map on string
+					matchStrDist = GlobalEditDist(s1.substring(1), s2.substring(2));
+					matchStrDist = matchStrDist	+ GetReplaceCost(oldStr, newStr);
+				}
+				
+				// match on char
+				matchCharDist = GlobalEditDist(s1.substring(1), s2.substring(1));
 				if (Character.toLowerCase(s1.charAt(0)) != Character.toLowerCase(s2.charAt(0))) {
-					matchDist = matchDist
+					matchCharDist = matchCharDist
 							+ GetReplaceCost(Character.toLowerCase(s1.charAt(0)), Character.toLowerCase(s2.charAt(0)));
-				} else {
-					matchDist = matchDist + GetMatchCost();
+				} 
+				else {
+					matchCharDist = matchCharDist + GetMatchCost();
 				}
 				insertDist = GlobalEditDist(s1.substring(1), s2) + GetInsertCost(s1.charAt(0));
 				deleteDist = GlobalEditDist(s1, s2.substring(1)) + GetDeleteCost(s2.charAt(0));
 
-				float dist = Math.min(matchDist, Math.min(insertDist, deleteDist));
+				float dist = Math.min(matchCharDist, Math.min(insertDist, Math.min(deleteDist, matchStrDist)));
 
 				// System.out.println("Selected dist " + dist + "m, i, d = "
 				// matchDist +","+ insertDist + ", "+ deleteDist);
@@ -109,23 +138,35 @@ public class ImprovedGEDStringReplace {
 	public float GetMatchCost() {
 		return 0;
 	}
+	
+	public float GetReplaceCost(Character oldChar, Character newChar){
+		return GetReplaceCost(Character.toString(oldChar), Character.toString(newChar));
+	}
 
-	public float GetReplaceCost(char oldChar, char newChar) {
+	public float GetReplaceCost(String oldStr, String newStr) {
 		// for the interchangeable letters
-		if (CharMaps.containsKey(GetMapKey(oldChar, newChar))) {
-			return CharMaps.get(GetMapKey(oldChar, newChar));
+		if (CharMaps.containsKey(GetMapKey(oldStr, newStr))) {
+			return CharMaps.get(GetMapKey(oldStr, newStr));
 		}
 		
-		// vowels are kind of interchangeable
-		if (vowelSet.contains(oldChar) && vowelSet.contains(newChar)) {
-			return 1;
+		if(oldStr.length() == 1 && newStr.length() == 1)
+		{
+			char oldc = oldStr.charAt(0);
+			char newc = newStr.charAt(0);
+			// vowels are kind of interchangeable
+			if (vowelSet.contains(oldc) && vowelSet.contains(newc)) {
+				return 1;
+			}
+			
+			// vowels replaced by non-vowels will be punished
+			if ((vowelSet.contains(oldc) && !vowelSet.contains(newc))
+					|| (!vowelSet.contains(oldc) && vowelSet.contains(newc))) {
+				return 3;
+			}
+			
+			return 2;
 		}
 		
-		// vowels replaced by non-vowels will be punished
-		if ((vowelSet.contains(oldChar) && !vowelSet.contains(newChar))
-				|| (!vowelSet.contains(oldChar) && vowelSet.contains(newChar))) {
-			return 3;
-		}
 		return 2;
 	}
 
@@ -234,7 +275,11 @@ public class ImprovedGEDStringReplace {
 		// Change the order of the conditions in the GetReplaceCost
 		// when the testSize = 100 the 46/100
 		// when the testSize = 200 the 86/200
-		int testSize = 100;
+		
+		// Adding String matching 
+		// when the testSize = 100 the 51/100
+		// when the testSize = 200 the 96/200
+		int testSize = 200;
 
 		int CorrectSize = 0;
 		int i = testSize;
