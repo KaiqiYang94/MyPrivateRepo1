@@ -27,13 +27,13 @@ import java.util.Arrays;
  * @author Scot Drysdale
  */
 public class ImprovedGED {
-	private Map<SimpleEntry<String, String>, Integer> solvedProblems = new HashMap<SimpleEntry<String, String>, Integer>();
+	private Map<SimpleEntry<String, String>, Float> solvedProblems = new HashMap<SimpleEntry<String, String>, Float>();
 
-	private int GlobalEditDist(String s1, String s2) {
-		int matchDist; // Edit distance if first char. match or do a replace
-		int insertDist; // Edit distance if insert first char of s1 in front of
+	private float GlobalEditDist(String s1, String s2) {
+		float matchDist; // Edit distance if first char. match or do a replace
+		float insertDist; // Edit distance if insert first char of s1 in front of
 						// s2.
-		int deleteDist; // Edit distance if delete first char of s2.
+		float deleteDist; // Edit distance if delete first char of s2.
 
 		if (s1.length() == 0)
 			return insertString(s2); // Insert the remainder of s2
@@ -41,7 +41,7 @@ public class ImprovedGED {
 			return removeString(s1); // Delete the remainder of s1
 		else {
 			SimpleEntry<String, String> pair = new SimpleEntry<String, String>(s1, s2);
-			Integer result = solvedProblems.containsKey(pair) ? solvedProblems.get(pair) : null;
+			Float result = solvedProblems.containsKey(pair) ? solvedProblems.get(pair) : null;
 
 			if (result != null) // Did we find the subproblem in the map?
 				return result; // If so, return the answer
@@ -55,7 +55,7 @@ public class ImprovedGED {
 				insertDist = GlobalEditDist(s1.substring(1), s2) + GetInsertCost(s1.charAt(0));
 				deleteDist = GlobalEditDist(s1, s2.substring(1)) + GetDeleteCost(s2.charAt(0));
 
-				int dist = Math.min(matchDist, Math.min(insertDist,deleteDist));
+				float dist = Math.min(matchDist, Math.min(insertDist,deleteDist));
 				
 				//System.out.println("Selected dist " + dist + "m, i, d = "  matchDist +","+ insertDist + ", "+ deleteDist);
 				
@@ -67,16 +67,16 @@ public class ImprovedGED {
 	
 	List<Character> vowelSet = Arrays.asList('a', 'e', 'i', 'o', 'u', 'y');
 	
-	public int insertString(String str) {
-		int dist = 0;
+	public float insertString(String str) {
+		float dist = 0;
 		for (Character character : str.toCharArray()) {
 			dist += GetInsertCost(character);
 		}
 		return dist;
 	}
 	
-	public int removeString(String str) {
-		int dist = 0;
+	public float removeString(String str) {
+		float dist = 0;
 		for (Character character : str.toCharArray()) {
 			dist += GetDeleteCost(character);
 		}
@@ -84,11 +84,11 @@ public class ImprovedGED {
 	}
 	
 	
-	public int GetMatchCost() {
+	public float GetMatchCost() {
 		return 0;
 	}
 	
-	public int GetReplaceCost(char oldChar, char newChar) {
+	public float GetReplaceCost(char oldChar, char newChar) {
 		// vowels are kind of interchangeable
 		if(vowelSet.contains(oldChar) && vowelSet.contains(newChar))
 		{
@@ -103,21 +103,24 @@ public class ImprovedGED {
 		return 2;
 	}
 	
-	public int GetInsertCost(char insertChar) {
+	public float GetInsertCost(char insertChar) {
 		if(vowelSet.contains(insertChar))
 		{
 			return 1;
 		}
 		return 2;
 	}	
-	public int GetDeleteCost(char removedChar) {
-
+	public float GetDeleteCost(char removedChar) {
+//		if(!vowelSet.contains(removedChar))
+//		{
+//			return 3;
+//		}
 		return 2;
 	}
 	
 	
-	public int GetDistance(String s1, String s2) {
-		this.solvedProblems = new HashMap<SimpleEntry<String, String>, Integer>();
+	public float GetDistance(String s1, String s2) {
+		this.solvedProblems = new HashMap<SimpleEntry<String, String>, Float>();
 		return GlobalEditDist(s1, s2);
 	}
 	
@@ -208,10 +211,10 @@ public class ImprovedGED {
 				break;
 			}
 			
-			int minDistance = Integer.MAX_VALUE;
+			float minDistance = Float.MAX_VALUE;
 			String matchedName = "";
 			for ( String name : nameDict) {
-				int editDistance = calc.GetDistance(trainPair.getKey() , name);
+				float editDistance = calc.GetDistance(trainPair.getKey() , name);
 				if(editDistance < minDistance)
 				{
 					matchedName = name;

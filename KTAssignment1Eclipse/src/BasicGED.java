@@ -129,7 +129,7 @@ public class BasicGED {
 			e.printStackTrace();
 		}
 
-		ImprovedGED calc = new ImprovedGED();
+		BasicGED calc = new BasicGED();
 		int testSize  = 100;
 		int CorrectSize = 0;
 		int i = testSize;
