@@ -111,16 +111,16 @@ public class ImprovedGEDStringReplace {
 	}
 
 	public float GetReplaceCost(char oldChar, char newChar) {
-		// vowels are kind of interchangeable
-		if (vowelSet.contains(oldChar) && vowelSet.contains(newChar)) {
-			return 1;
-		}
-
 		// for the interchangeable letters
 		if (CharMaps.containsKey(GetMapKey(oldChar, newChar))) {
 			return CharMaps.get(GetMapKey(oldChar, newChar));
 		}
-
+		
+		// vowels are kind of interchangeable
+		if (vowelSet.contains(oldChar) && vowelSet.contains(newChar)) {
+			return 1;
+		}
+		
 		// vowels replaced by non-vowels will be punished
 		if ((vowelSet.contains(oldChar) && !vowelSet.contains(newChar))
 				|| (!vowelSet.contains(oldChar) && vowelSet.contains(newChar))) {
@@ -230,7 +230,11 @@ public class ImprovedGEDStringReplace {
 		// Adding data for the interchangeable letters yi, vo
 		// when the testSize = 100 the 46/100
 		// when the testSize = 200 the 81/200
-		int testSize = 200;
+		
+		// Change the order of the conditions in the GetReplaceCost
+		// when the testSize = 100 the 46/100
+		// when the testSize = 200 the 86/200
+		int testSize = 100;
 
 		int CorrectSize = 0;
 		int i = testSize;
