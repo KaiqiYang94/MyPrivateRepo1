@@ -37,12 +37,19 @@ public class ImprovedGED {
 	private Map<String, Float> CharMaps = new HashMap<String, Float>();
 	
 	public ImprovedGED() {
-		CharMaps.put("yi", (float) 0.0);
-		CharMaps.put("iy", (float) 0.0);
-		CharMaps.put("vo", (float) 0.0);
-		CharMaps.put("ov", (float) 0.0);
+		CharMaps.put(GetMapKey('y','i'), (float) 0.0);
+		CharMaps.put(GetMapKey('i','y'), (float) 0.0);
+		CharMaps.put(GetMapKey('v','o'), (float) 0.0);
+		CharMaps.put(GetMapKey('o','v'), (float) 0.0);
 	}
 	
+	public String GetMapKey(char c1, char c2){
+		return  GetMapKey(Character.toString(c1) ,Character.toString(c2));
+	}
+	
+	public String GetMapKey(String c1, String c2){
+		return  c1 +"-" + c2;
+	}
 	
 	private float GlobalEditDist(String s1, String s2) {
 		float matchDist; // Edit distance if first char. match or do a replace
@@ -112,10 +119,9 @@ public class ImprovedGED {
 		}
 		
 		// for the interchangeable letters 
-		String mapString = Character.toString(oldChar) + Character.toString(newChar);
-		if(CharMaps.containsKey(mapString))
+		if(CharMaps.containsKey(GetMapKey(oldChar, newChar)))
 		{
-			return CharMaps.get(mapString);
+			return CharMaps.get(GetMapKey(oldChar, newChar));
 		}
 		
 		// vowels replaced by non-vowels will be punished
