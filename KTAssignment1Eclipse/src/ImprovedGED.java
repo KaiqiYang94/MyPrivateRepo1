@@ -36,6 +36,13 @@ public class ImprovedGED {
 	
 	private Map<String, Float> CharMaps = new HashMap<String, Float>();
 	
+	public ImprovedGED() {
+		CharMaps.put("yi", (float) 0.0);
+		CharMaps.put("iy", (float) 0.0);
+		CharMaps.put("vo", (float) 0.0);
+		CharMaps.put("ov", (float) 0.0);
+	}
+	
 	
 	private float GlobalEditDist(String s1, String s2) {
 		float matchDist; // Edit distance if first char. match or do a replace
@@ -102,6 +109,13 @@ public class ImprovedGED {
 		if(vowelSet.contains(oldChar) && vowelSet.contains(newChar))
 		{
 			return 1;
+		}
+		
+		// for the interchangeable letters 
+		String mapString = Character.toString(oldChar) + Character.toString(newChar);
+		if(CharMaps.containsKey(mapString))
+		{
+			return CharMaps.get(mapString);
 		}
 		
 		// vowels replaced by non-vowels will be punished
@@ -209,6 +223,10 @@ public class ImprovedGED {
 		// when the testSize = 200 the 73/200
 		// now 
 		// The name          AACTAY	 should be         aechtie	 matched to         aechtie	 Distance is 5	succeed
+		
+		// Adding data for the interchangeable letters yi, vo
+		// when the testSize = 100 the 46/100
+		// when the testSize = 200 the 81/200
 		int testSize  = 200;
 		
 		int CorrectSize = 0;
