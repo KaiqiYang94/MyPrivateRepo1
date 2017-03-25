@@ -46,6 +46,12 @@ public class ImprovedGEDStringReplace {
 		CharMaps.put(GetMapKey('o', 'v'), (float) 0.0);
 		// k x
 		CharMaps.put(GetMapKey('k', 'x'), (float) 0.0);
+		// k c
+		CharMaps.put(GetMapKey('k', 'c'), (float) 0.0);
+		// v w
+		CharMaps.put(GetMapKey('v', 'w'), (float) 0.0);
+		// v u
+		CharMaps.put(GetMapKey('v', 'u'), (float) 0.0);
 		
 		// f ph
 		CharMaps.put(GetMapKey("f", "ph"), (float) 0.0);
@@ -55,8 +61,11 @@ public class ImprovedGEDStringReplace {
 		//CharMaps.put(GetMapKey("ie", "y"), (float) 0.0);
 		// c ch
 		CharMaps.put(GetMapKey("c", "ch"), (float) 0.0);
-		//CharMaps.put(GetMapKey("ch", "c"), (float) 0.0);
-	}
+		// k ck
+		CharMaps.put(GetMapKey("c", "ck"), (float) 0.0);
+		// ks x	
+		CharMaps.put(GetMapKey("ks", "x"), (float) 0.0);
+		}
 
 	public String GetMapKey(char c1, char c2) {
 		return GetMapKey(Character.toString(c1), Character.toString(c2));
@@ -68,7 +77,8 @@ public class ImprovedGEDStringReplace {
 
 	private float GlobalEditDist(String s1, String s2) {
 
-		float matchStrDist = Float.MAX_VALUE; // mapping on string 
+		float matchCharStrDist = Float.MAX_VALUE; // mapping on string 
+		float matchStrCharDist = Float.MAX_VALUE; // mapping on string 
 		float matchCharDist; // Edit distance if first char. match or do a replace
 		float insertDist; // Edit distance if insert first char of s1 in front of s2.
 		float deleteDist; // Edit distance if delete first char of s2.
@@ -85,18 +95,31 @@ public class ImprovedGEDStringReplace {
 				return result; // If so, return the answer
 			else {
 				
-				// try match on string 
-				String oldStr = s1.substring(0,1).toLowerCase();
+				// try using char to string 
+				String oldChar = s1.substring(0,1).toLowerCase();
 				String newStr = s2.length() > 2 ? s2.substring(0, 2).toLowerCase()
 						:s2.length() == 2 ?s2.toLowerCase(): "";
 				
-				String strMapKey = 	GetMapKey(oldStr, newStr);
+				String strMapKey = 	GetMapKey(oldChar, newStr);
 				
 				if(CharMaps.containsKey(strMapKey))
 				{
 					// map on string
-					matchStrDist = GlobalEditDist(s1.substring(1), s2.substring(2));
-					matchStrDist = matchStrDist	+ GetReplaceCost(oldStr, newStr);
+					matchCharStrDist = GlobalEditDist(s1.substring(1), s2.substring(2)) + GetReplaceCost(oldChar, newStr);
+				}
+				
+				// try using string to char 
+				String oldStr = s1.length() > 2 ? s1.substring(0, 2).toLowerCase()
+						:s1.length() == 2 ?s1.toLowerCase(): ""; 
+						
+				String newChar = s2.substring(0,1).toLowerCase();
+				
+				String strCharMapKey = 	GetMapKey(oldStr, newChar);
+				
+				if(CharMaps.containsKey(strCharMapKey))
+				{
+					// map on string
+					matchStrCharDist = GlobalEditDist(s1.substring(2), s2.substring(1)) + GetReplaceCost(oldStr, newChar);
 				}
 				
 				// match on char
@@ -111,7 +134,7 @@ public class ImprovedGEDStringReplace {
 				insertDist = GlobalEditDist(s1.substring(1), s2) + GetInsertCost(s1.charAt(0));
 				deleteDist = GlobalEditDist(s1, s2.substring(1)) + GetDeleteCost(s2.charAt(0));
 
-				float dist = Math.min(matchCharDist, Math.min(insertDist, Math.min(deleteDist, matchStrDist)));
+				float dist = Math.min(matchCharDist, Math.min(insertDist, Math.min(deleteDist, Math.min(matchCharStrDist, matchStrCharDist))));
 
 				// System.out.println("Selected dist " + dist + "m, i, d = "
 				// matchDist +","+ insertDist + ", "+ deleteDist);
@@ -286,9 +309,21 @@ public class ImprovedGEDStringReplace {
 		
 		// Adding the k and x mapping 
 		// when the textSize = 300 the 134/300 44%
-		int upperB = 400;
-
-		int lowerB = 300;
+		
+		// Adding the v and w mapping (300 - 400)
+		// when the textSize = 100 the 38/100 (from 37)
+		
+		// Adding the v and u mapping (300 - 400)
+		// when the textSize = 100 the 41/100 
+		
+		// Adding the k and c mapping (400 - 500)
+		// when the textSize = 100 the 44/100 (from 42)
+		
+		// Adding the ks and x mapping (400 - 500) (from 44) 
+		// when the textSize = 100 the 47/100
+		
+		int lowerB = 400;
+		int upperB = 500;
 		
 		int CorrectSize = 0;
 		int i = 0;
@@ -327,7 +362,7 @@ public class ImprovedGEDStringReplace {
 		}
 
 		System.out.println("Test size = " + (upperB - lowerB) + " Corrcte ones are " + CorrectSize + "("
-				+ (((float) CorrectSize / (float) upperB) * 100) + "%)");
+				+ (((float) CorrectSize / (upperB - lowerB)) * 100) + "%)");
 
 	}
 }
