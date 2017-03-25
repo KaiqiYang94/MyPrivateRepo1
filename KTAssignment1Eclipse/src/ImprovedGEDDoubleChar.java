@@ -29,6 +29,19 @@ import java.util.Arrays;
  * @author Scot Drysdale
  */
 public class ImprovedGEDDoubleChar {
+	private float GeneralInsertDist = 2;
+	private float GeneralReplaceDist = 2;
+	private float GeneralDeleteDist = 2;
+	private float GeneralMatchDist = 0;
+	private float VowelsReplaceDist = (float) 0.5;
+	private float VowelsNonVowelsReplaceDist = 3;
+	private float DoubleLetterInsertDist = (float) 0.5;
+	private float VowelsInsertDist = 0;
+	private float PlosiveInsertDist = (float) 3.1;
+	private float PlosiveDeleteDist = 4;
+	//TODO: when as occur in the first two letters, replace s to s
+	// or when 'a' occur as the first letter, possibly gets removed 
+	
 	private Map<SimpleEntry<String, String>, Float> solvedProblems = new HashMap<SimpleEntry<String, String>, Float>();
 
 	private List<Character> vowelSet = Arrays.asList('a', 'e', 'i', 'o', 'u', 'y');
@@ -77,13 +90,11 @@ public class ImprovedGEDDoubleChar {
 
 	private float GlobalEditDist(String s1, String s2, Character preCharOfS1) {
 
-		float matchCharStrDist = Float.MAX_VALUE; // mapping on string
-		float matchStrCharDist = Float.MAX_VALUE; // mapping on string
-		float matchCharDist; // Edit distance if first char. match or do a
-								// replace
-		float insertDist; // Edit distance if insert first char of s1 in front
-							// of s2.
-		float deleteDist; // Edit distance if delete first char of s2.
+		float matchCharStrDist = Float.MAX_VALUE; 
+		float matchStrCharDist = Float.MAX_VALUE; 
+		float matchCharDist; 
+		float insertDist; 
+		float deleteDist; 
 
 		if (s1.length() == 0)
 			return insertString(s2); // Insert the remainder of s2
@@ -169,7 +180,7 @@ public class ImprovedGEDDoubleChar {
 	}
 
 	public float GetMatchCost() {
-		return 0;
+		return GeneralMatchDist;
 	}
 
 	public float GetReplaceCost(Character oldChar, Character newChar) {
@@ -187,44 +198,44 @@ public class ImprovedGEDDoubleChar {
 			char newc = newStr.charAt(0);
 			// vowels are kind of interchangeable
 			if (vowelSet.contains(oldc) && vowelSet.contains(newc)) {
-				return 1;
+				return VowelsReplaceDist;
 			}
 
 			// vowels replaced by non-vowels will be punished
 			if ((vowelSet.contains(oldc) && !vowelSet.contains(newc))
 					|| (!vowelSet.contains(oldc) && vowelSet.contains(newc))) {
-				return 3;
+				return VowelsNonVowelsReplaceDist;
 			}
 
-			return 2;
+			return GeneralReplaceDist;
 		}
 
-		return 2;
+		return GeneralReplaceDist;
 	}
 
 	public float GetInsertCost(char insertChar, Character preChar) {
 
 		if (preChar != null && preChar.charValue() == insertChar) {
-			return (float) 0.5;
+			return DoubleLetterInsertDist;
 		}
 
 		if (vowelSet.contains(insertChar)) {
-			return 1;
+			return VowelsInsertDist;
 		}
-		// if(plosiveSet.contains(insertChar)){
-		// return (float) 3.1;
-		// }
-		return 2;
+		 if(plosiveSet.contains(insertChar)){
+		 return PlosiveInsertDist;
+		 }
+		return GeneralInsertDist;
 	}
 
 	public float GetDeleteCost(char removedChar) {
 		// did not really work, means there are almost no plosive letters get
 		// removed
-		// if(plosiveSet.contains(removedChar))
-		// {
-		// return 4;
-		// }
-		return 2;
+		 if(plosiveSet.contains(removedChar))
+		 {
+			 return PlosiveDeleteDist;
+		 }
+		return GeneralDeleteDist;
 	}
 
 	public float GetDistance(String s1, String s2) {
@@ -336,8 +347,10 @@ public class ImprovedGEDDoubleChar {
 		// Adding the ks and x mapping (400 - 500) (from 44)
 		// when the textSize = 100 the 47/100
 
-		int lowerB = 400;
-		int upperB = 500;
+		// Adding the double letter check 
+		// when the textSize = 500 (0 -500) 241/500 (48%)
+		int lowerB = 1000;
+		int upperB = 1100;
 
 		int CorrectSize = 0;
 		int i = 0;
