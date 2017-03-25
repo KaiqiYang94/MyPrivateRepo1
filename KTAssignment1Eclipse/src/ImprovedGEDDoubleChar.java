@@ -368,8 +368,9 @@ public class ImprovedGEDDoubleChar {
 		// now 38/100
 		// now 65/100 (100 - 200)
 		// now 66/100 (100 - 200)
-		int lowerB = 100;
-		int upperB = 200;
+		// now 39/100 (1100-1200)
+		int lowerB = 1100;
+		int upperB = 1200;
 
 		int CorrectSize = 0;
 		int i = 0;
