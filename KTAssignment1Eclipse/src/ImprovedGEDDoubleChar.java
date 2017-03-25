@@ -9,6 +9,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.AbstractMap.SimpleEntry;
 
+import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
+import com.sun.xml.internal.stream.Entity;
+
+import sun.org.mozilla.javascript.internal.ast.WhileLoop;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -22,7 +28,7 @@ import java.util.Arrays;
  * 
  * @author Scot Drysdale
  */
-public class ImprovedGEDStringReplace {
+public class ImprovedGEDDoubleChar {
 	private Map<SimpleEntry<String, String>, Float> solvedProblems = new HashMap<SimpleEntry<String, String>, Float>();
 
 	private List<Character> vowelSet = Arrays.asList('a', 'e', 'i', 'o', 'u', 'y');
@@ -31,7 +37,7 @@ public class ImprovedGEDStringReplace {
 
 	private Map<String, Float> CharMaps = new HashMap<String, Float>();
 
-	public ImprovedGEDStringReplace() {
+	public ImprovedGEDDoubleChar() {
 		// y i
 		CharMaps.put(GetMapKey('y', 'i'), (float) 0.0);
 		CharMaps.put(GetMapKey('i', 'y'), (float) 0.0);
@@ -69,13 +75,15 @@ public class ImprovedGEDStringReplace {
 		return c1 + "-" + c2;
 	}
 
-	private float GlobalEditDist(String s1, String s2) {
+	private float GlobalEditDist(String s1, String s2, Character preCharOfS1) {
 
 		float matchCharStrDist = Float.MAX_VALUE; // mapping on string 
 		float matchStrCharDist = Float.MAX_VALUE; // mapping on string 
 		float matchCharDist; // Edit distance if first char. match or do a replace
 		float insertDist; // Edit distance if insert first char of s1 in front of s2.
 		float deleteDist; // Edit distance if delete first char of s2.
+		
+		
 
 		if (s1.length() == 0)
 			return insertString(s2); // Insert the remainder of s2
@@ -99,34 +107,34 @@ public class ImprovedGEDStringReplace {
 				if(CharMaps.containsKey(strMapKey))
 				{
 					// map on string
-					matchCharStrDist = GlobalEditDist(s1.substring(1), s2.substring(2)) + GetReplaceCost(oldChar, newStr);
+					matchCharStrDist = GlobalEditDist(s1.substring(1), s2.substring(2), s1.charAt(0)) + GetReplaceCost(oldChar, newStr);
 				}
 				
 				// try using string to char 
 				String oldStr = s1.length() > 2 ? s1.substring(0, 2).toLowerCase()
 						:s1.length() == 2 ?s1.toLowerCase(): ""; 
 						
-				String newChar = s2.substring(0,1).toLowerCase();
+				String newChar = s2.substring(0,1);
 				
 				String strCharMapKey = 	GetMapKey(oldStr, newChar);
 				
 				if(CharMaps.containsKey(strCharMapKey))
 				{
 					// map on string
-					matchStrCharDist = GlobalEditDist(s1.substring(2), s2.substring(1)) + GetReplaceCost(oldStr, newChar);
+					matchStrCharDist = GlobalEditDist(s1.substring(2), s2.substring(1), s1.charAt(1)) + GetReplaceCost(oldStr, newChar);
 				}
 				
 				// match on char
-				matchCharDist = GlobalEditDist(s1.substring(1), s2.substring(1));
+				matchCharDist = GlobalEditDist(s1.substring(1), s2.substring(1), s1.charAt(0));
 				if (Character.toLowerCase(s1.charAt(0)) != Character.toLowerCase(s2.charAt(0))) {
 					matchCharDist = matchCharDist
-							+ GetReplaceCost(Character.toLowerCase(s1.charAt(0)), Character.toLowerCase(s2.charAt(0)));
+							+ GetReplaceCost(Character.toLowerCase(s1.charAt(0)),Character.toLowerCase( s2.charAt(0)));
 				} 
 				else {
 					matchCharDist = matchCharDist + GetMatchCost();
 				}
-				insertDist = GlobalEditDist(s1.substring(1), s2) + GetInsertCost(s1.charAt(0));
-				deleteDist = GlobalEditDist(s1, s2.substring(1)) + GetDeleteCost(s2.charAt(0));
+				insertDist = GlobalEditDist(s1.substring(1), s2, s1.charAt(0)) + GetInsertCost(s1.charAt(0), preCharOfS1);
+				deleteDist = GlobalEditDist(s1, s2.substring(1), preCharOfS1) + GetDeleteCost(s2.charAt(0));
 
 				float dist = Math.min(matchCharDist, Math.min(insertDist, Math.min(deleteDist, Math.min(matchCharStrDist, matchStrCharDist))));
 
@@ -141,8 +149,13 @@ public class ImprovedGEDStringReplace {
 
 	public float insertString(String str) {
 		float dist = 0;
-		for (Character character : str.toCharArray()) {
-			dist += GetInsertCost(character);
+		if(str.length() >0)
+		{
+			Character preChar = str.charAt(0);
+			for (Character character : str.toCharArray()) {
+				dist += GetInsertCost(character, preChar);
+				preChar = character;
+			}
 		}
 		return dist;
 	}
@@ -190,7 +203,13 @@ public class ImprovedGEDStringReplace {
 		return 2;
 	}
 
-	public float GetInsertCost(char insertChar) {
+	public float GetInsertCost(char insertChar, Character preChar) {
+		
+		if(preChar != null &&  preChar.charValue() == insertChar )
+		{
+			return (float) 0.5;
+		}
+		
 		if (vowelSet.contains(insertChar)) {
 			return 1;
 		}
@@ -212,7 +231,7 @@ public class ImprovedGEDStringReplace {
 
 	public float GetDistance(String s1, String s2) {
 		this.solvedProblems = new HashMap<SimpleEntry<String, String>, Float>();
-		return GlobalEditDist(s1, s2);
+		return GlobalEditDist(s1, s2, null);
 	}
 
 	public static String fixedLength(String string) {
@@ -264,7 +283,7 @@ public class ImprovedGEDStringReplace {
 			e.printStackTrace();
 		}
 
-		ImprovedGEDStringReplace calc = new ImprovedGEDStringReplace();
+		ImprovedGEDDoubleChar calc = new ImprovedGEDDoubleChar();
 		// first
 		// when the testSize = 100 the 23/100
 		// when the testSize = 200 the 40/200
