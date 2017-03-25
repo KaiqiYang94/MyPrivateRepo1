@@ -39,7 +39,7 @@ public class ImprovedGEDDoubleChar {
 	private float VowelsInsertDist = 0;
 	private float PlosiveInsertDist = (float) 3.1;
 	private float PlosiveDeleteDist = 4;
-	//TODO: when as occur in the first two letters, replace s to s
+	//TODO: when as occur in the first two letters, replace with s
 	// or when 'a' occur as the first letter, possibly gets removed 
 	
 	private Map<SimpleEntry<String, String>, Float> solvedProblems = new HashMap<SimpleEntry<String, String>, Float>();
@@ -349,8 +349,8 @@ public class ImprovedGEDDoubleChar {
 
 		// Adding the double letter check 
 		// when the textSize = 500 (0 -500) 241/500 (48%)
-		int lowerB = 1000;
-		int upperB = 1100;
+		int lowerB = 10000;
+		int upperB = 10200;
 
 		int CorrectSize = 0;
 		int i = 0;
