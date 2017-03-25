@@ -147,8 +147,8 @@ public class ImprovedGEDDoubleChar {
 				} else {
 					matchCharDist = matchCharDist + GetMatchCost();
 				}
-				insertDist = GlobalEditDist(s1.substring(1), s2, s1.charAt(0), preCharOfS2) + GetInsertCost(s1.charAt(0), preCharOfS1);
-				deleteDist = GlobalEditDist(s1, s2.substring(1), preCharOfS1, s2.charAt(0)) + GetDeleteCost(s2.charAt(0), preCharOfS2);
+				deleteDist  = GlobalEditDist(s1.substring(1), s2, s1.charAt(0), preCharOfS2) + GetDeleteCost (s1.charAt(0), preCharOfS1);
+				insertDist = GlobalEditDist(s1, s2.substring(1), preCharOfS1, s2.charAt(0)) + GetInsertCost (s2.charAt(0), preCharOfS2);
 
 				float dist = Math.min(matchCharDist,
 						Math.min(insertDist, Math.min(deleteDist, Math.min(matchCharStrDist, matchStrCharDist))));
@@ -365,14 +365,17 @@ public class ImprovedGEDDoubleChar {
 		
 		// Adding lower distance for removing a in the first place 
 		// was 27/100 (1100 - 1200)
-		int lowerB = 1100;
-		int upperB = 1200;
+		// now 38/100
+		// now 65/100 (100 - 200)
+		// now 66/100 (100 - 200)
+		int lowerB = 100;
+		int upperB = 200;
 
 		int CorrectSize = 0;
 		int i = 0;
 		for (SimpleEntry<String, String> trainPair : trainData) {
 
-			if (i++ <= lowerB) {
+			if (i++ < lowerB) {
 				continue;
 			}
 
