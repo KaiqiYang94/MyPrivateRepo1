@@ -32,6 +32,7 @@ public class ImprovedGEDDoubleChar {
 	private float GeneralInsertDist = 2;
 	private float GeneralReplaceDist = 2;
 	private float GeneralDeleteDist = 2;
+	private float DeleteFromFirstDist = (float) 0.9;
 	private float GeneralMatchDist = 0;
 	private float VowelsReplaceDist = (float) 0.5;
 	private float VowelsNonVowelsReplaceDist = 3;
@@ -47,6 +48,8 @@ public class ImprovedGEDDoubleChar {
 	private List<Character> vowelSet = Arrays.asList('a', 'e', 'i', 'o', 'u', 'y');
 
 	private List<Character> plosiveSet = Arrays.asList('b', 'd', 'g', 'p', 't', 'k');
+	
+	private List<Character> removeFromFirstSet = Arrays.asList('a');
 
 	private Map<String, Float> CharMaps = new HashMap<String, Float>();
 
@@ -71,6 +74,7 @@ public class ImprovedGEDDoubleChar {
 		// CharMaps.put(GetMapKey("ph", "f"), (float) 0.0);
 		// y ie
 		CharMaps.put(GetMapKey("y", "ie"), (float) 0.0);
+		CharMaps.put(GetMapKey("y", "ee"), (float) 0.0);
 		// CharMaps.put(GetMapKey("ie", "y"), (float) 0.0);
 		// c ch
 		CharMaps.put(GetMapKey("c", "ch"), (float) 0.0);
@@ -88,7 +92,7 @@ public class ImprovedGEDDoubleChar {
 		return c1 + "-" + c2;
 	}
 
-	private float GlobalEditDist(String s1, String s2, Character preCharOfS1) {
+	private float GlobalEditDist(String s1, String s2, Character preCharOfS1, Character preCharOfS2) {
 
 		float matchCharStrDist = Float.MAX_VALUE; 
 		float matchStrCharDist = Float.MAX_VALUE; 
@@ -117,7 +121,7 @@ public class ImprovedGEDDoubleChar {
 
 				if (CharMaps.containsKey(strMapKey)) {
 					// map on string
-					matchCharStrDist = GlobalEditDist(s1.substring(1), s2.substring(2), s1.charAt(0))
+					matchCharStrDist = GlobalEditDist(s1.substring(1), s2.substring(2), s1.charAt(0), s2.charAt(1))
 							+ GetReplaceCost(oldChar, newStr);
 				}
 
@@ -131,21 +135,20 @@ public class ImprovedGEDDoubleChar {
 
 				if (CharMaps.containsKey(strCharMapKey)) {
 					// map on string
-					matchStrCharDist = GlobalEditDist(s1.substring(2), s2.substring(1), s1.charAt(1))
+					matchStrCharDist = GlobalEditDist(s1.substring(2), s2.substring(1), s1.charAt(1), s2.charAt(0))
 							+ GetReplaceCost(oldStr, newChar);
 				}
 
 				// match on char
-				matchCharDist = GlobalEditDist(s1.substring(1), s2.substring(1), s1.charAt(0));
+				matchCharDist = GlobalEditDist(s1.substring(1), s2.substring(1), s1.charAt(0), s2.charAt(0));
 				if (Character.toLowerCase(s1.charAt(0)) != Character.toLowerCase(s2.charAt(0))) {
 					matchCharDist = matchCharDist
 							+ GetReplaceCost(Character.toLowerCase(s1.charAt(0)), Character.toLowerCase(s2.charAt(0)));
 				} else {
 					matchCharDist = matchCharDist + GetMatchCost();
 				}
-				insertDist = GlobalEditDist(s1.substring(1), s2, s1.charAt(0))
-						+ GetInsertCost(s1.charAt(0), preCharOfS1);
-				deleteDist = GlobalEditDist(s1, s2.substring(1), preCharOfS1) + GetDeleteCost(s2.charAt(0));
+				insertDist = GlobalEditDist(s1.substring(1), s2, s1.charAt(0), preCharOfS2) + GetInsertCost(s1.charAt(0), preCharOfS1);
+				deleteDist = GlobalEditDist(s1, s2.substring(1), preCharOfS1, s2.charAt(0)) + GetDeleteCost(s2.charAt(0), preCharOfS2);
 
 				float dist = Math.min(matchCharDist,
 						Math.min(insertDist, Math.min(deleteDist, Math.min(matchCharStrDist, matchStrCharDist))));
@@ -173,8 +176,10 @@ public class ImprovedGEDDoubleChar {
 
 	public float removeString(String str) {
 		float dist = 0;
+		Character preChar = str.charAt(0);
 		for (Character character : str.toCharArray()) {
-			dist += GetDeleteCost(character);
+			dist += GetDeleteCost(character, preChar);
+			preChar = character;
 		}
 		return dist;
 	}
@@ -228,7 +233,16 @@ public class ImprovedGEDDoubleChar {
 		return GeneralInsertDist;
 	}
 
-	public float GetDeleteCost(char removedChar) {
+	public float GetDeleteCost(char removedChar, Character preChar) {
+		if(preChar == null)
+		{
+			if(removeFromFirstSet.contains(removedChar)) 
+			{
+				return DeleteFromFirstDist;
+			}
+		}
+		
+		
 		// did not really work, means there are almost no plosive letters get
 		// removed
 		 if(plosiveSet.contains(removedChar))
@@ -240,7 +254,7 @@ public class ImprovedGEDDoubleChar {
 
 	public float GetDistance(String s1, String s2) {
 		this.solvedProblems = new HashMap<SimpleEntry<String, String>, Float>();
-		return GlobalEditDist(s1, s2, null);
+		return GlobalEditDist(s1, s2, null, null);
 	}
 
 	public static String fixedLength(String string) {
@@ -288,7 +302,6 @@ public class ImprovedGEDDoubleChar {
 			// Close the input stream
 			br.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -349,8 +362,11 @@ public class ImprovedGEDDoubleChar {
 
 		// Adding the double letter check 
 		// when the textSize = 500 (0 -500) 241/500 (48%)
-		int lowerB = 10000;
-		int upperB = 10200;
+		
+		// Adding lower distance for removing a in the first place 
+		// was 27/100 (1100 - 1200)
+		int lowerB = 1100;
+		int upperB = 1200;
 
 		int CorrectSize = 0;
 		int i = 0;
