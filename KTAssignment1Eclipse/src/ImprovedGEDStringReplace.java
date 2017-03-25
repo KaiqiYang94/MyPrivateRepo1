@@ -44,6 +44,9 @@ public class ImprovedGEDStringReplace {
 		// v o
 		CharMaps.put(GetMapKey('v', 'o'), (float) 0.0);
 		CharMaps.put(GetMapKey('o', 'v'), (float) 0.0);
+		// k x
+		CharMaps.put(GetMapKey('k', 'x'), (float) 0.0);
+		
 		// f ph
 		CharMaps.put(GetMapKey("f", "ph"), (float) 0.0);
 		//CharMaps.put(GetMapKey("ph", "f"), (float) 0.0);
@@ -279,13 +282,24 @@ public class ImprovedGEDStringReplace {
 		// Adding String matching 
 		// when the testSize = 100 the 51/100
 		// when the testSize = 200 the 96/200
-		int testSize = 200;
+		// when the textSize = 300 the 131/300 43%
+		
+		// Adding the k and x mapping 
+		// when the textSize = 300 the 134/300 44%
+		int upperB = 400;
 
+		int lowerB = 300;
+		
 		int CorrectSize = 0;
-		int i = testSize;
+		int i = 0;
 		for (SimpleEntry<String, String> trainPair : trainData) {
 
-			if (i-- <= 0) {
+			if(i++ <= lowerB )
+			{
+				continue;
+			}
+			
+			if (i >= upperB) {
 				break;
 			}
 
@@ -312,8 +326,8 @@ public class ImprovedGEDStringReplace {
 					+ (matchedName.equalsIgnoreCase(trainPair.getValue()) ? "succeed" : "faild"));
 		}
 
-		System.out.println("Test size = " + testSize + " Corrcte ones are " + CorrectSize + "("
-				+ (((float) CorrectSize / (float) testSize) * 100) + "%)");
+		System.out.println("Test size = " + (upperB - lowerB) + " Corrcte ones are " + CorrectSize + "("
+				+ (((float) CorrectSize / (float) upperB) * 100) + "%)");
 
 	}
 }
