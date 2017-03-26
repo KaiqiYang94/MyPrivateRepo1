@@ -19,31 +19,37 @@ public class TwitterGeoProcessing {
 	public static void main(String[] args) {
 
 		try {
-			ArrayList<GeoGrid> geoGrids = new ArrayList<GeoGrid>(); 
-			
+			ArrayList<GeoGrid> geoGrids = new ArrayList<GeoGrid>();
+			ArrayList<Coordinate> allCoor = new ArrayList<Coordinate>();
+
+			// get all the grids
 			String allGrid = ReadFullFile("melbGrid.json");
 			JsonArray gridArray = new JsonParser().parse(allGrid).getAsJsonObject().getAsJsonArray("features");
 
-			for(JsonElement singleData : gridArray)
-			{
+			for (JsonElement singleData : gridArray) {
 				GeoGrid tempGrid = new GeoGrid(singleData);
-				System.out.println(tempGrid.id + " " );
+				geoGrids.add(tempGrid);
 			}
-			
 
+			// get all twitter data 
 			String allData = ReadFullFile("tinyTwitter.json");
-			
-			JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
 
-			for(JsonElement singleData : jsonArray)
-			{
-				JsonArray geo = singleData.getAsJsonObject().getAsJsonObject("json").getAsJsonObject("coordinates").getAsJsonArray("coordinates");
-				for(JsonElement geodata : geo)
-				{
-					System.out.print(geodata.getAsDouble() + " ");
-				}
-				System.out.println();
+			JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
+			for (JsonElement singleData : jsonArray) {
+				Coordinate tempCoor = new Coordinate();
+				JsonArray geo = singleData.getAsJsonObject()
+						.getAsJsonObject("json")
+						.getAsJsonObject("coordinates")
+						.getAsJsonArray("coordinates");
+
+				tempCoor.longitude = geo.get(0).getAsJsonPrimitive().getAsDouble();
+				tempCoor.latitude = geo.get(1).getAsJsonPrimitive().getAsDouble();
+				
+				allCoor.add(tempCoor);
 			}
+			
+			System.out.println();
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -4,10 +4,10 @@ import com.google.gson.JsonObject;
 
 public class GeoGrid {
 	public String id;
-	public double xmin;
-	public double xmax;
-	public double ymin;
-	public double ymax;
+	public double longtMin;
+	public double longtMax;
+	public double latMin;
+	public double latMax;
 	
 	public Coordinate topLeft;
 	public Coordinate topRight;
@@ -30,10 +30,10 @@ public class GeoGrid {
 		JsonObject grid = jele.getAsJsonObject();
 
 		this.id = grid.getAsJsonObject("properties").get("id").getAsString();
-		this.xmin = grid.getAsJsonObject("properties").get("xmin").getAsDouble();
-		this.xmax = grid.getAsJsonObject("properties").get("xmax").getAsDouble();
-		this.ymin = grid.getAsJsonObject("properties").get("ymin").getAsDouble();
-		this.ymax = grid.getAsJsonObject("properties").get("ymax").getAsDouble();
+		this.longtMin = grid.getAsJsonObject("properties").get("xmin").getAsDouble();
+		this.longtMax = grid.getAsJsonObject("properties").get("xmax").getAsDouble();
+		this.latMin = grid.getAsJsonObject("properties").get("ymin").getAsDouble();
+		this.latMax = grid.getAsJsonObject("properties").get("ymax").getAsDouble();
 		
 		JsonArray geoData = grid.getAsJsonObject("geometry").getAsJsonArray("coordinates").get(0).getAsJsonArray();
 		
