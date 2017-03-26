@@ -53,7 +53,7 @@ public class GeoGrid {
 		
 	}
 	
-	
+	// TODO The boundary values should be identified
 	public boolean isInGrid(Coordinate coord)
 	{
 		return 	coord.longitude >this.longtMin 
