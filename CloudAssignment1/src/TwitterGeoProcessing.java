@@ -1,43 +1,48 @@
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Map;
+import java.io.StringReader;
+//import javax.json.Json;
+//import javax.json.stream.*;
+//import javax.json.stream.JsonParser.Event;
+//import javax.json.stream.JsonParserFactory;
 
-import sun.org.mozilla.javascript.internal.json.JsonParser;
-
-import java.util.AbstractMap.SimpleEntry;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class TwitterGeoProcessing {
 
 	public static void main(String[] args) {
-		// All the names in the names.txt
-		ArrayList<String> nameDict = new ArrayList<String>();
-
-		// all the train data in the train.txt
-		ArrayList<SimpleEntry<String, String>> trainData = new ArrayList<SimpleEntry<String, String>>();
 
 		try {
 			// the names.txt
 			FileInputStream fstream = new FileInputStream("tinyTwitter.json");
 			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-			
-			
-			
+			String allData = "";
 			String strLine;
 			// Read File Line By Line
 			while ((strLine = br.readLine()) != null) {
-				// System.out.println(strLine);
-				nameDict.add(strLine);
+				allData += strLine;
 			}
-			System.out.println("the names.txt contains " + nameDict.size());
-
 			// Close the input stream
 			br.close();
+
+			
+			JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
+
+			for(JsonElement singleData : jsonArray)
+			{
+				JsonArray geo = singleData.getAsJsonObject().getAsJsonObject("json").getAsJsonObject("coordinates").getAsJsonArray("coordinates");
+				for(JsonElement geodata : geo)
+				{
+					System.out.print(geodata.getAsDouble() + " ");
+				}
+				System.out.println();
+			}
+
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
