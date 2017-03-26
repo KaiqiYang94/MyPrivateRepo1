@@ -31,25 +31,37 @@ public class TwitterGeoProcessing {
 				geoGrids.add(tempGrid);
 			}
 
-			// get all twitter data 
+			// get all twitter data
 			String allData = ReadFullFile("tinyTwitter.json");
 
 			JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
 			for (JsonElement singleData : jsonArray) {
 				Coordinate tempCoor = new Coordinate();
-				JsonArray geo = singleData.getAsJsonObject()
-						.getAsJsonObject("json")
-						.getAsJsonObject("coordinates")
+				JsonArray geo = singleData.getAsJsonObject().getAsJsonObject("json").getAsJsonObject("coordinates")
 						.getAsJsonArray("coordinates");
 
 				tempCoor.longitude = geo.get(0).getAsJsonPrimitive().getAsDouble();
 				tempCoor.latitude = geo.get(1).getAsJsonPrimitive().getAsDouble();
-				
+
 				allCoor.add(tempCoor);
 			}
-			
+
+			// process the data
+			for (Coordinate coordinate : allCoor) {
+				for (GeoGrid geoGrid : geoGrids) {
+					if (geoGrid.isInGrid(coordinate)) {
+						geoGrid.Counter++;
+						break;
+					}
+				}
+			}
+
+			// output the results 
+			for (GeoGrid geoGrid : geoGrids) {
+				System.out.println(geoGrid.id + ": " + geoGrid.Counter);
+			}
+
 			System.out.println();
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();

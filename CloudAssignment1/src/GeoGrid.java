@@ -14,6 +14,8 @@ public class GeoGrid {
 	public Coordinate bottomLeft;
 	public Coordinate bottomRight;
 	
+	public int Counter = 0; 
+	
 	public GeoGrid() {
 		topLeft = new Coordinate();
 		topRight = new Coordinate();
@@ -49,6 +51,15 @@ public class GeoGrid {
 		this.bottomLeft.longitude = geoData.get(3).getAsJsonArray().get(0).getAsJsonPrimitive().getAsDouble();
 		this.bottomLeft.latitude = geoData.get(3).getAsJsonArray().get(1).getAsJsonPrimitive().getAsDouble();
 		
+	}
+	
+	
+	public boolean isInGrid(Coordinate coord)
+	{
+		return 	coord.longitude >this.longtMin 
+				&& coord.longitude < this.longtMax 
+				&& coord.latitude > this.latMin 
+				&& coord.latitude < this.latMax;
 	}
 
 }
