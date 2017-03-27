@@ -5,17 +5,12 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.util.ArrayList;
 
-import javax.swing.SortingFocusTraversalPolicy;
-
-
 import com.google.gson.*;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import mpi.*;
-
-import sun.org.mozilla.javascript.internal.ast.NewExpression;
+//import mpi.*;
 
 
 public class TwitterGeoProcessing {
@@ -28,7 +23,7 @@ public class TwitterGeoProcessing {
 			ArrayList<Coordinate> allCoor = new ArrayList<Coordinate>();
 
 			// get all the grids
-			String allGrid = ReadFullFile("melbGrid.json");
+			String allGrid = ReadFullFile("./Data/melbGrid.json");
 			JsonArray gridArray = new JsonParser().parse(allGrid).getAsJsonObject().getAsJsonArray("features");
 
 			for (JsonElement singleData : gridArray) {
@@ -37,7 +32,7 @@ public class TwitterGeoProcessing {
 			}
 
 			// get all twitter data
-			String allData = ReadFullFile("tinyTwitter.json");
+			String allData = ReadFullFile("./Data/tinyTwitter.json");
 
 			JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
 			for (JsonElement singleData : jsonArray) {
