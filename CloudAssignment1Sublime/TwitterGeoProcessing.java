@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import com.google.gson.*;
@@ -16,6 +15,13 @@ import mpi.*;
 public class TwitterGeoProcessing {
 	private static int mainProcessRank = 0;
 	private static int tag = 10;
+
+	protected static final int GRIDDATASIZE = 5;
+
+	protected static final char GRIDDATACMD = 'G';
+	protected static final char SINGLETWITTERCMD = 'S';
+	protected static final char RESULTCMD = 'R';
+	protected static final char FINISHECMD = 'F';
 
 	public static void main(String[] args) {
 
@@ -62,22 +68,24 @@ public class TwitterGeoProcessing {
 						continue;
 					}
 				}
-			} 
-			else
-			{
-				ReceiveGridData(geoGrids);
-			} 
 
-			stopTime = System.currentTimeMillis();
-			elapsedTime = stopTime - startTime;
-			System.out.println(indentation() + "The total time of processing files is " + elapsedTime + " ms");
+				stopTime = System.currentTimeMillis();
+				elapsedTime = stopTime - startTime;
+				System.out.println(indentation() + "The total time of processing files is " + elapsedTime + " ms");
+
+			} else {
+				char command = ReceiveCommandType(geoGrids);
+				if (command == GRIDDATACMD) {
+					ResvGridData(geoGrids);
+				}
+			}
 
 			// sort the ArrayList
 			Collections.sort(geoGrids);
 
 			// output the results
 			for (GeoGrid geoGrid : geoGrids) {
-				System.out.println("\t\t" + geoGrid.id + ": " + geoGrid.Counter);
+				System.out.println(indentation() + "\t#" + (int)geoGrid.internalID + "\t(" +geoGrid.name+ "):\t " + geoGrid.Counter);
 			}
 
 			//
@@ -145,19 +153,54 @@ public class TwitterGeoProcessing {
 		}
 	}
 
-	public static void BcastGridData (ArrayList<GeoGrid> geoGrids) throws Exception{
+	public static void BcastGridData (ArrayList<GeoGrid> geoGrids) throws Exception {
 		char[] commandType = new char[1];
-		int size = MPI.COMM_WORLD.getSize() ;
 		commandType[0] = 'G';
+		int[] gridSize = new int[1];
+		gridSize[0] = geoGrids.size();
+		
+		int size = MPI.COMM_WORLD.getSize() ;
+
 		for (int i = 0 ; i < size ; i++) {
+			// command type
 			MPI.COMM_WORLD.send(commandType, 1, MPI.CHAR, i, tag);
+			// Grid count
+			MPI.COMM_WORLD.send(gridSize, 1, MPI.INT, i, tag);
+			//System.out.println(indentation() + "The sent data is <" + geoGrids.size() + ">. ");
+			
+
+			// the grid data
+			for (GeoGrid geoGrid : geoGrids) {
+				MPI.COMM_WORLD.send(geoGrid.toArray(), GRIDDATASIZE, MPI.INT, i, tag);
+			}
 		}
 	}
 
+	public static void ResvGridData (ArrayList<GeoGrid> geoGrids) throws Exception {
+		int[] dataSize = new int[1];
+		// get the dataSize
+		MPI.COMM_WORLD.recv(dataSize, 1, MPI.INT, mainProcessRank, tag);
 
-	public static void ReceiveGridData (ArrayList<GeoGrid> geoGrids) throws Exception{
+		System.out.println(indentation() + "The received data is <" + dataSize[0] + ">. ");
+
+		double[] gridData = new double[GRIDDATASIZE];
+
+		for (int i = 0 ; i < dataSize[0] ; i++) {
+
+			MPI.COMM_WORLD.recv(gridData, GRIDDATASIZE, MPI.DOUBLE, mainProcessRank, tag);
+
+			System.out.println(indentation() + "The received data is <" + gridData[0] +" " + gridData[1] + ">. ");
+			geoGrids.add(new GeoGrid(gridData));
+
+		}
+	}
+
+	public static char ReceiveCommandType (ArrayList<GeoGrid> geoGrids) throws Exception {
 		char[] commandType = new char[1];
 		MPI.COMM_WORLD.recv(commandType, 1, MPI.CHAR, mainProcessRank, tag);
 		System.out.println(indentation() + "The received commandType is " + commandType[0] + ". ");
+
+		return commandType[0];
+
 	}
 }
