@@ -10,21 +10,31 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-//import mpi.*;
+import mpi.*;
 
 
 public class TwitterGeoProcessing {
+	private static int mainProcessRank = 0;
 
 	public static void main(String[] args) {
 		long startTime = System.currentTimeMillis();
-
+		long stopTime;
+		long elapsedTime;
 		try {
-
+			// get all the data from file
 			ArrayList<GeoGrid> geoGrids = new ArrayList<GeoGrid>();
-			ArrayList<Coordinate> allCoor = new ArrayList<Coordinate>();
 
 			// get all the grids
 			String allGrid = ReadFullFile("./Data/melbGrid.json");
+
+			// get all twitter data
+			String allData = ReadFullFile("./Data/tinyTwitterError.json");
+
+			stopTime = System.currentTimeMillis();
+			elapsedTime = stopTime - startTime;
+			System.out.println("The total time of reading files is " + elapsedTime + " ms");
+
+			// process the files
 			JsonArray gridArray = new JsonParser().parse(allGrid).getAsJsonObject().getAsJsonArray("features");
 
 			for (JsonElement singleData : gridArray) {
@@ -32,20 +42,10 @@ public class TwitterGeoProcessing {
 				geoGrids.add(tempGrid);
 			}
 
-			// get all twitter data
-			String allData = ReadFullFile("./Data/tinyTwitterError.json");
-
 			JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
 			for (JsonElement singleData : jsonArray) {
 				try {
-					Coordinate tempCoor = new Coordinate();
-					JsonArray geo = singleData.getAsJsonObject().getAsJsonObject("json").getAsJsonObject("coordinates")
-					                .getAsJsonArray("coordinates");
-
-					tempCoor.longitude = geo.get(0).getAsJsonPrimitive().getAsDouble();
-					tempCoor.latitude = geo.get(1).getAsJsonPrimitive().getAsDouble();
-
-					allCoor.add(tempCoor);
+					ProcessSingleJson(singleData, geoGrids);	
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.out.println("Exception when processing the data, the data is  " + singleData.getAsString());
@@ -53,15 +53,10 @@ public class TwitterGeoProcessing {
 				}
 			}
 
-			// process the data
-			for (Coordinate coordinate : allCoor) {
-				for (GeoGrid geoGrid : geoGrids) {
-					if (geoGrid.isInGrid(coordinate)) {
-						geoGrid.Counter++;
-						break;
-					}
-				}
-			}
+			stopTime = System.currentTimeMillis();
+			elapsedTime = stopTime - startTime;
+			System.out.println("The total time of processing files is " + elapsedTime + " ms");
+
 			// sort the ArrayList
 			Collections.sort(geoGrids);
 
@@ -76,10 +71,37 @@ public class TwitterGeoProcessing {
 			e.printStackTrace();
 		}
 
-		long stopTime = System.currentTimeMillis();
-		long elapsedTime = stopTime - startTime;
+		stopTime = System.currentTimeMillis();
+		elapsedTime = stopTime - startTime;
 		System.out.println("The total time of execution is " + elapsedTime + " ms");
 
+	}
+
+	public static void ProcessSingleJson(JsonElement singleData, ArrayList<GeoGrid> geoGrids) {
+		Coordinate tempCoor = new Coordinate();
+		JsonArray geo = singleData.getAsJsonObject().getAsJsonObject("json").getAsJsonObject("coordinates")
+		                .getAsJsonArray("coordinates");
+
+		tempCoor.longitude = geo.get(0).getAsJsonPrimitive().getAsDouble();
+		tempCoor.latitude = geo.get(1).getAsJsonPrimitive().getAsDouble();
+
+		// find which grid it's in
+		for (GeoGrid geoGrid : geoGrids) {
+			if (geoGrid.isInGrid(tempCoor)) {
+				geoGrid.Counter++;
+				break;
+			}
+		}
+	}
+
+	public static Boolean isMainProcess() {
+		try {
+			int myrank = MPI.COMM_WORLD.getRank() ;
+			return myrank == mainProcessRank;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	public static String ReadFullFile(String fileName) {
