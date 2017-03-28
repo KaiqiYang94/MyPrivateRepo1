@@ -147,8 +147,11 @@ public class TwitterGeoProcessing {
 
 	public static void BcastGridData (ArrayList<GeoGrid> geoGrids) throws Exception{
 		char[] commandType = new char[1];
+		int size = MPI.COMM_WORLD.getSize() ;
 		commandType[0] = 'G';
-		MPI.COMM_WORLD.send(commandType, 1, MPI.CHAR, 1, tag);
+		for (int i = 0 ; i < size ; i++) {
+			MPI.COMM_WORLD.send(commandType, 1, MPI.CHAR, i, tag);
+		}
 	}
 
 

@@ -25,7 +25,6 @@ public class TwitterGeoProcessing {
 		
 		try {
 			
-			MPI.COMM_WORLD(message, 2, MPI.DOUBLE, next, tag);
 			
 			ArrayList<GeoGrid> geoGrids = new ArrayList<GeoGrid>();
 			ArrayList<Coordinate> allCoor = new ArrayList<Coordinate>();
