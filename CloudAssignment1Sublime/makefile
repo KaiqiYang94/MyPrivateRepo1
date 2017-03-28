@@ -25,4 +25,4 @@ javarun:
 		$(JVM) $(JFLAGS) $(CPATH) TwitterGeoProcessing
 
 mpirun:
-		mpirun -np 1 java $(JFLAGS) $(CPATH) TwitterGeoProcessing
+		mpirun -np 3 java $(JFLAGS) $(CPATH) TwitterGeoProcessing

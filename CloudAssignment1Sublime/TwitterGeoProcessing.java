@@ -15,66 +15,80 @@ import mpi.*;
 
 public class TwitterGeoProcessing {
 	private static int mainProcessRank = 0;
+	private static int tag = 10;
 
 	public static void main(String[] args) {
-		long startTime = System.currentTimeMillis();
-		long stopTime;
-		long elapsedTime;
+
 		try {
+			long startTime = System.currentTimeMillis();
+			long stopTime;
+			long elapsedTime;
+
+			// initialize mpi comm world
+			MPI.Init(args) ;
+
 			// get all the data from file
 			ArrayList<GeoGrid> geoGrids = new ArrayList<GeoGrid>();
 
-			// get all the grids
-			String allGrid = ReadFullFile("./Data/melbGrid.json");
+			// read all the file only if it's the main process
+			if (isMainProcess()) {
+				// get all the grids
+				String allGrid = ReadFullFile("./Data/melbGrid.json");
 
-			// get all twitter data
-			String allData = ReadFullFile("./Data/tinyTwitterError.json");
+				// get all twitter data
+				String allData = ReadFullFile("./Data/tinyTwitterError.json");
 
-			stopTime = System.currentTimeMillis();
-			elapsedTime = stopTime - startTime;
-			System.out.println("The total time of reading files is " + elapsedTime + " ms");
+				stopTime = System.currentTimeMillis();
+				elapsedTime = stopTime - startTime;
+				System.out.println(indentation() + "The total time of reading files is " + elapsedTime + " ms");
 
-			// process the files
-			JsonArray gridArray = new JsonParser().parse(allGrid).getAsJsonObject().getAsJsonArray("features");
+				// process the files
+				JsonArray gridArray = new JsonParser().parse(allGrid).getAsJsonObject().getAsJsonArray("features");
 
-			for (JsonElement singleData : gridArray) {
-				GeoGrid tempGrid = new GeoGrid(singleData);
-				geoGrids.add(tempGrid);
-			}
-
-			JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
-			for (JsonElement singleData : jsonArray) {
-				try {
-					ProcessSingleJson(singleData, geoGrids);	
-				} catch (Exception e) {
-					e.printStackTrace();
-					System.out.println("Exception when processing the data, the data is  " + singleData.getAsString());
-					continue;
+				for (JsonElement singleData : gridArray) {
+					GeoGrid tempGrid = new GeoGrid(singleData);
+					geoGrids.add(tempGrid);
 				}
-			}
+
+				BcastGridData(geoGrids);
+
+				JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
+				for (JsonElement singleData : jsonArray) {
+					try {
+						ProcessSingleJson(singleData, geoGrids);
+					} catch (Exception e) {
+						e.printStackTrace();
+						System.out.println("Exception when processing the data, the data is  " + singleData.getAsString());
+						continue;
+					}
+				}
+			} 
+			else
+			{
+				ReceiveGridData(geoGrids);
+			} 
 
 			stopTime = System.currentTimeMillis();
 			elapsedTime = stopTime - startTime;
-			System.out.println("The total time of processing files is " + elapsedTime + " ms");
+			System.out.println(indentation() + "The total time of processing files is " + elapsedTime + " ms");
 
 			// sort the ArrayList
 			Collections.sort(geoGrids);
 
 			// output the results
 			for (GeoGrid geoGrid : geoGrids) {
-				System.out.println(geoGrid.id + ": " + geoGrid.Counter);
+				System.out.println("\t\t" + geoGrid.id + ": " + geoGrid.Counter);
 			}
 
-			System.out.println();
+			//
+			stopTime = System.currentTimeMillis();
+			elapsedTime = stopTime - startTime;
+			System.out.println(indentation() + "The total time of execution is " + elapsedTime + " ms");
 
+			MPI.Finalize();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		stopTime = System.currentTimeMillis();
-		elapsedTime = stopTime - startTime;
-		System.out.println("The total time of execution is " + elapsedTime + " ms");
-
 	}
 
 	public static void ProcessSingleJson(JsonElement singleData, ArrayList<GeoGrid> geoGrids) {
@@ -91,6 +105,16 @@ public class TwitterGeoProcessing {
 				geoGrid.Counter++;
 				break;
 			}
+		}
+	}
+
+	public static String indentation() {
+		try {
+			int myrank = MPI.COMM_WORLD.getRank() ;
+			return "Rank " + myrank + ": ";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
 	}
 
@@ -121,4 +145,16 @@ public class TwitterGeoProcessing {
 		}
 	}
 
+	public static void BcastGridData (ArrayList<GeoGrid> geoGrids) throws Exception{
+		char[] commandType = new char[1];
+		commandType[0] = 'G';
+		MPI.COMM_WORLD.send(commandType, 1, MPI.CHAR, 1, tag);
+	}
+
+
+	public static void ReceiveGridData (ArrayList<GeoGrid> geoGrids) throws Exception{
+		char[] commandType = new char[1];
+		MPI.COMM_WORLD.recv(commandType, 1, MPI.CHAR, mainProcessRank, tag);
+		System.out.println(indentation() + "The received commandType is " + commandType[0] + ". ");
+	}
 }

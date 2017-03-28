@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
+import mpi.*;
+
 import javax.swing.SortingFocusTraversalPolicy;
 
 import com.google.gson.*;
@@ -22,6 +24,9 @@ public class TwitterGeoProcessing {
 	public static void main(String[] args) {
 		
 		try {
+			
+			MPI.COMM_WORLD(message, 2, MPI.DOUBLE, next, tag);
+			
 			ArrayList<GeoGrid> geoGrids = new ArrayList<GeoGrid>();
 			ArrayList<Coordinate> allCoor = new ArrayList<Coordinate>();
 
