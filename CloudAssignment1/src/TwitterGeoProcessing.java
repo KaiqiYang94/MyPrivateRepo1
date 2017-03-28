@@ -4,26 +4,24 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import javax.swing.SortingFocusTraversalPolicy;
-
 
 import com.google.gson.*;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import mpi.*;
 
 import sun.org.mozilla.javascript.internal.ast.NewExpression;
-
 
 public class TwitterGeoProcessing {
 
 	public static void main(String[] args) {
 		
 		try {
-
 			ArrayList<GeoGrid> geoGrids = new ArrayList<GeoGrid>();
 			ArrayList<Coordinate> allCoor = new ArrayList<Coordinate>();
 
@@ -42,7 +40,7 @@ public class TwitterGeoProcessing {
 			JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
 			for (JsonElement singleData : jsonArray) {
 				try {
-									Coordinate tempCoor = new Coordinate();
+					Coordinate tempCoor = new Coordinate();
 				JsonArray geo = singleData.getAsJsonObject().getAsJsonObject("json").getAsJsonObject("coordinates")
 						.getAsJsonArray("coordinates");
 
@@ -67,6 +65,8 @@ public class TwitterGeoProcessing {
 					}
 				}
 			}
+			
+			Collections.sort(geoGrids);
 
 			// output the results 
 			for (GeoGrid geoGrid : geoGrids) {
