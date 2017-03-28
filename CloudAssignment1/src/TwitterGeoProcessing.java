@@ -85,7 +85,7 @@ public class TwitterGeoProcessing {
 
 			// output the results
 			for (GeoGrid geoGrid : geoGrids) {
-				System.out.println("\t#" + (int)geoGrid.internalID + "\t(" +geoGrid.name+ "):\t " + geoGrid.Counter);
+				System.out.println(indentation() + "\t#" + (int)geoGrid.internalID + "\t(" +geoGrid.name+ "):\t " + geoGrid.Counter);
 			}
 
 			//
@@ -155,13 +155,20 @@ public class TwitterGeoProcessing {
 
 	public static void BcastGridData (ArrayList<GeoGrid> geoGrids) throws Exception {
 		char[] commandType = new char[1];
-		int size = MPI.COMM_WORLD.getSize() ;
 		commandType[0] = 'G';
+		int[] gridSize = new int[1];
+		gridSize[0] = geoGrids.size();
+		
+		int size = MPI.COMM_WORLD.getSize() ;
+
 		for (int i = 0 ; i < size ; i++) {
 			// command type
 			MPI.COMM_WORLD.send(commandType, 1, MPI.CHAR, i, tag);
 			// Grid count
-			MPI.COMM_WORLD.send(geoGrids.size(), 1, MPI.INT, i, tag);
+			MPI.COMM_WORLD.send(gridSize, 1, MPI.INT, i, tag);
+			//System.out.println(indentation() + "The sent data is <" + geoGrids.size() + ">. ");
+			
+
 			// the grid data
 			for (GeoGrid geoGrid : geoGrids) {
 				MPI.COMM_WORLD.send(geoGrid.toArray(), GRIDDATASIZE, MPI.INT, i, tag);
