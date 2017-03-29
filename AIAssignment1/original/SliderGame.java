@@ -1,0 +1,122 @@
+import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;	
+
+public class SliderGame{
+
+	//inital size
+	int inputsize;
+
+	//inital board
+	String[][] board;
+
+	//horizontal move sum
+	int numH = 0;
+
+	//vertical move sum
+	int numV = 0;
+
+	//main function goes here
+	public static void main(String[] args){
+
+		SliderGame sliderGame = new SliderGame();
+
+		sliderGame.inputMatrix();
+		sliderGame.caculateMoves();
+
+	}
+
+	//print the board
+	public void printMatrix(){
+		for(int y = 0; y< inputsize; y++){
+			for(int x = 0; x < inputsize; x++){
+
+			}
+		}
+	}
+
+	//use java standard input to load the board
+	public void inputMatrix(){
+		File file = new File("input.txt");
+
+		try{
+			Scanner scan = new Scanner(file);
+			//get the size
+			inputsize = scan.nextInt();
+			//get the next line
+			scan.nextLine();
+
+			board = new String[inputsize][inputsize];
+
+			int index = 0;
+			while(scan.hasNextLine()){
+
+				board[index] = scan.nextLine().split(" ");
+				index++;
+			}
+		} catch (FileNotFoundException e) {
+        	e.printStackTrace();
+    	}
+	}
+
+	//iterate the matrix to check sum possible move
+	public void caculateMoves(){
+			//caculate the legal moves for vertical and horizontal player
+			for(int y = 0; y < inputsize; y++){
+				for(int x = 0; x < inputsize; x++){
+					//System.out.print(board[y][x]);
+					//caculate the legal moves for horizontal player
+					if(board[y][x].equals("H")){
+						//System.out.println("Find H");
+						numH = numH + countMove(x, y, 'H');
+
+					}
+
+					//caculate the legal moves for vertical player
+					if(board[y][x].equals("V")){
+						//System.out.println("Find V");
+						numV = numV + countMove(x, y, 'V');
+						
+					}
+					//System.out.println(x);
+				}
+				
+			}
+			System.out.println(numH);
+			System.out.println(numV);
+
+	}
+
+
+
+	//count the possible move for each point
+	public int countMove(int x, int y, char type){
+		int count = 0;
+
+		if(type == 'H'){
+			if(isLegal(x+1, y)){ count++; }
+			if(isLegal(x, y+1)){ count++; }
+			if(isLegal(x, y-1)){ count++; }		
+		}
+		if(type == 'V'){
+			if(isLegal(x+1, y)){ count++; }
+			if(isLegal(x-1, y)){ count++; }
+			if(isLegal(x, y-1)){ count++; }
+		}
+		return count;
+	}
+
+	//check if the next movement is legal
+	public boolean isLegal(int x, int y){
+		if(x < 0 || y < 0 || x >= inputsize || y >= inputsize){
+			return false;
+		}
+
+		if(board[y][x].equals("+")){
+			return true;
+		} else{
+			return false;
+		}
+	}
+	
+}

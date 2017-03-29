@@ -14,7 +14,7 @@ public class GeoGrid implements Comparable<GeoGrid> {
 
 	public Coordinate topLeft;
 	public Coordinate topRight;
-	public Coordinate bottomLeft;
+	public Coordinate bottomLeft; 
 	public Coordinate bottomRight;
 
 	public int Counter = 0;
