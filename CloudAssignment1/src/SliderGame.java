@@ -4,10 +4,10 @@ import java.io.FileNotFoundException;
 
 public class SliderGame {
 
-	//the input size
-	int inputSize;
+	//inital size
+	int inputsize;
 
-	//the board
+	//inital board
 	String[][] board;
 
 	//horizontal move sum
@@ -27,8 +27,8 @@ public class SliderGame {
 
 	//print the board
 	public void printMatrix() {
-		for (int y = 0; y < inputSize; y++) {
-			for (int x = 0; x < inputSize; x++) {
+		for (int y = 0; y < inputsize; y++) {
+			for (int x = 0; x < inputsize; x++) {
 
 			}
 		}
@@ -39,14 +39,14 @@ public class SliderGame {
 
 		Scanner scan = new Scanner(System.in);
 		//get the size
-		inputSize = scan.nextInt();
+		inputsize = scan.nextInt();
 		//get the next line
 		scan.nextLine();
 
-		board = new String[inputSize][inputSize];
+		board = new String[inputsize][inputsize];
 
 		int index = 0;
-		while (scan.hasNextLine() && index < inputSize) {
+		while (scan.hasNextLine()) {
 
 			board[index] = scan.nextLine().split(" ");
 			index++;
@@ -56,11 +56,11 @@ public class SliderGame {
 	//iterate the matrix to check sum possible move
 	public void caculateMoves() {
 		//caculate the legal moves for vertical and horizontal player
-		for (int y = 0; y < inputSize; y++) {
-			for (int x = 0; x < inputSize; x++) {
+		for (int y = 0; y < inputsize; y++) {
+			for (int x = 0; x < inputsize; x++) {
 				//caculate the legal moves for horizontal player
 				if (board[y][x].equals("H")) {
-					numH = numH + countMove(x, y, 'H');
+					numH = numH + countMove(x, y, board[y][x].charAt(0));
 				}
 
 				//caculate the legal moves for vertical player
@@ -82,7 +82,7 @@ public class SliderGame {
 			if (isLegal(x, y + 1)) { count++; }
 			if (isLegal(x, y - 1)) { count++; }
 		}
-		if (Character.compare(type, 'V') == 0) {
+		if (type == 'V') {
 			if (isLegal(x + 1, y)) { count++; }
 			if (isLegal(x - 1, y)) { count++; }
 			if (isLegal(x, y - 1)) { count++; }
@@ -92,8 +92,7 @@ public class SliderGame {
 
 	//check if the next movement is legal
 	public boolean isLegal(int x, int y) {
-		// the move should not be outside of the board
-		if (x < 0 || y < 0 || x >= inputSize || y >= inputSize) {
+		if (x < 0 || y < 0 || x >= inputsize || y >= inputsize) {
 			return false;
 		}
 

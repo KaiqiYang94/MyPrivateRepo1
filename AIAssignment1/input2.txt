@@ -1,5 +1,11 @@
-6
-+ V V V + H
+4
+V V + H
+H V + H
+V V + H
++ B + H
+
+
+V V V V + H
 + + H V + H
 + V V V + H
 + + + B + H
