@@ -8,7 +8,7 @@ public class SliderGame {
 	int inputsize;
 
 	//inital board
-	char[][] board;
+	String[][] board;
 
 	//horizontal move sum
 	int numH = 0;
@@ -21,7 +21,7 @@ public class SliderGame {
 
 		SliderGame sliderGame = new SliderGame();
 
-		sliderGame.inputMatrix(args);
+		sliderGame.inputMatrix();
 		sliderGame.caculateMoves();
 
 	}
@@ -36,32 +36,21 @@ public class SliderGame {
 	}
 
 	//use java standard input to load the board
-	public void inputMatrix(String[] args) {
-		File file = null;
-		if (0 < args.length) {
-			file = new File(args[0]);
-		} else {
-			System.err.println("Invalid arguments count:" + args.length);
-			System.exit();
-		}
+	public void inputMatrix() {
+		
+		Scanner scan = new Scanner(System.in);
+		//get the size
+		inputsize = scan.nextInt();
+		//get the next line
+		scan.nextLine();
 
-		try {
-			Scanner scan = new Scanner(file);
-			//get the size
-			inputsize = scan.nextInt();
-			//get the next line
-			scan.nextLine();
+		board = new String[inputsize][inputsize];
 
-			board = new char[inputsize][inputsize];
+		int index = 0;
+		while (scan.hasNextLine()) {
 
-			int index = 0;
-			while (scan.hasNextLine()) {
-
-				board[index] = scan.nextLine().split(" ");
-				index++;
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			board[index] = scan.nextLine().split(" ");
+			index++;
 		}
 	}
 
@@ -72,14 +61,14 @@ public class SliderGame {
 			for (int x = 0; x < inputsize; x++) {
 				//System.out.print(board[y][x]);
 				//caculate the legal moves for horizontal player
-				if (board[y][x].equals('H')) {
+				if (board[y][x].equals("H")) {
 					//System.out.println("Find H");
 					numH = numH + countMove(x, y, 'H');
 
 				}
 
 				//caculate the legal moves for vertical player
-				if (board[y][x].equals('V')) {
+				if (board[y][x].equals("V")) {
 					//System.out.println("Find V");
 					numV = numV + countMove(x, y, 'V');
 
@@ -88,7 +77,7 @@ public class SliderGame {
 			}
 
 		}
-		System.out.println(numH);  
+		System.out.println(numH);
 		System.out.println(numV);
 
 	}
@@ -118,7 +107,7 @@ public class SliderGame {
 			return false;
 		}
 
-		if (board[y][x].equals('+')) {
+		if (board[y][x].equals("+")) {
 			return true;
 		} else {
 			return false;
