@@ -23,7 +23,6 @@ public class SliderGame {
 
 		sliderGame.inputMatrix();
 		sliderGame.caculateMoves();
-
 	}
 
 	//print the board
@@ -37,7 +36,7 @@ public class SliderGame {
 
 	//use java standard input to load the board
 	public void inputMatrix() {
-		
+
 		Scanner scan = new Scanner(System.in);
 		//get the size
 		inputsize = scan.nextInt();
@@ -59,30 +58,20 @@ public class SliderGame {
 		//caculate the legal moves for vertical and horizontal player
 		for (int y = 0; y < inputsize; y++) {
 			for (int x = 0; x < inputsize; x++) {
-				//System.out.print(board[y][x]);
 				//caculate the legal moves for horizontal player
 				if (board[y][x].equals("H")) {
-					//System.out.println("Find H");
 					numH = numH + countMove(x, y, 'H');
-
 				}
 
 				//caculate the legal moves for vertical player
 				if (board[y][x].equals("V")) {
-					//System.out.println("Find V");
 					numV = numV + countMove(x, y, 'V');
-
 				}
-				//System.out.println(x);
 			}
-
 		}
 		System.out.println(numH);
 		System.out.println(numV);
-
 	}
-
-
 
 	//count the possible move for each point
 	public int countMove(int x, int y, char type) {
