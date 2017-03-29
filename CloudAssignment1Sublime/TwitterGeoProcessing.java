@@ -50,18 +50,23 @@ public class TwitterGeoProcessing {
 
 				// process the files
 				JsonArray gridArray = new JsonParser().parse(allGrid).getAsJsonObject().getAsJsonArray("features");
-
+				// read all the grids
 				for (JsonElement singleData : gridArray) {
 					GeoGrid tempGrid = new GeoGrid(singleData);
 					geoGrids.add(tempGrid);
 				}
-
+				// bcast gird data
 				BcastGridData(geoGrids);
 
 				JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
 				for (JsonElement singleData : jsonArray) {
 					try {
-						ProcessSingleJson(singleData, geoGrids);
+						//ProcessSingleJson(singleData, geoGrids);
+						SendSingleTwitter(singleData.toString(), 1);
+
+						SendSingleTwitter(singleData.toString(), 2);
+
+						break;
 					} catch (Exception e) {
 						e.printStackTrace();
 						System.out.println("Exception when processing the data, the data is  " + singleData.getAsString());
@@ -75,9 +80,16 @@ public class TwitterGeoProcessing {
 
 			} else {
 				char command = ReceiveCommandType(geoGrids);
-				if (command == GRIDDATACMD) {
-					ResvGridData(geoGrids);
+				while (command != FINISHECMD) {
+					if (command == GRIDDATACMD) {
+						ResvGridData(geoGrids);
+					} else if (command == SINGLETWITTERCMD) {
+						ResvSingleTwitter();
+					}
+
+					command = ReceiveCommandType(geoGrids);
 				}
+
 			}
 
 			// sort the ArrayList
@@ -85,7 +97,7 @@ public class TwitterGeoProcessing {
 
 			// output the results
 			for (GeoGrid geoGrid : geoGrids) {
-				System.out.println(indentation() + "\t#" + (int)geoGrid.internalID + "\t(" +geoGrid.name+ "):\t " + geoGrid.Counter);
+				System.out.println(indentation() + "\t#" + (int)geoGrid.internalID + "\t(" + geoGrid.name + "):\t " + geoGrid.Counter);
 			}
 
 			//
@@ -153,12 +165,22 @@ public class TwitterGeoProcessing {
 		}
 	}
 
+	public static char ReceiveCommandType (ArrayList<GeoGrid> geoGrids) throws Exception {
+		char[] commandType = new char[1];
+		MPI.COMM_WORLD.recv(commandType, 1, MPI.CHAR, mainProcessRank, tag);
+		System.out.println(indentation() + "The received commandType is " + commandType[0] + ". ");
+
+		return commandType[0];
+
+	}
+
+
 	public static void BcastGridData (ArrayList<GeoGrid> geoGrids) throws Exception {
 		char[] commandType = new char[1];
-		commandType[0] = 'G';
+		commandType[0] = GRIDDATACMD;
 		int[] gridSize = new int[1];
 		gridSize[0] = geoGrids.size();
-		
+
 		int size = MPI.COMM_WORLD.getSize() ;
 
 		for (int i = 0 ; i < size ; i++) {
@@ -167,7 +189,7 @@ public class TwitterGeoProcessing {
 			// Grid count
 			MPI.COMM_WORLD.send(gridSize, 1, MPI.INT, i, tag);
 			//System.out.println(indentation() + "The sent data is <" + geoGrids.size() + ">. ");
-			
+
 
 			// the grid data
 			for (GeoGrid geoGrid : geoGrids) {
@@ -177,30 +199,55 @@ public class TwitterGeoProcessing {
 	}
 
 	public static void ResvGridData (ArrayList<GeoGrid> geoGrids) throws Exception {
-		int[] dataSize = new int[1];
+		int[] numberOfGird = new int[1];
 		// get the dataSize
-		MPI.COMM_WORLD.recv(dataSize, 1, MPI.INT, mainProcessRank, tag);
+		MPI.COMM_WORLD.recv(numberOfGird, 1, MPI.INT, mainProcessRank, tag);
 
-		System.out.println(indentation() + "The received data is <" + dataSize[0] + ">. ");
+		System.out.println(indentation() + "The received data is <" + numberOfGird[0] + ">. ");
 
 		double[] gridData = new double[GRIDDATASIZE];
 
-		for (int i = 0 ; i < dataSize[0] ; i++) {
+		for (int i = 0 ; i < numberOfGird[0] ; i++) {
 
 			MPI.COMM_WORLD.recv(gridData, GRIDDATASIZE, MPI.DOUBLE, mainProcessRank, tag);
 
-			System.out.println(indentation() + "The received data is <" + gridData[0] +" " + gridData[1] + ">. ");
+			System.out.println(indentation() + "The received data is <" + gridData[0] + " " + gridData[1] + ">. ");
 			geoGrids.add(new GeoGrid(gridData));
 
 		}
 	}
 
-	public static char ReceiveCommandType (ArrayList<GeoGrid> geoGrids) throws Exception {
+	public static void SendSingleTwitter (String msg, int targetRank) throws Exception {
 		char[] commandType = new char[1];
-		MPI.COMM_WORLD.recv(commandType, 1, MPI.CHAR, mainProcessRank, tag);
-		System.out.println(indentation() + "The received commandType is " + commandType[0] + ". ");
+		commandType[0] = SINGLETWITTERCMD;
+		int[] gridSize = new int[1];
+		gridSize[0] = msg.length();
 
-		return commandType[0];
+		// command type
+		MPI.COMM_WORLD.send(commandType, 1, MPI.CHAR, targetRank, tag);
+		// string length
+		MPI.COMM_WORLD.send(gridSize, 1, MPI.INT, targetRank, tag);
+		//System.out.println(indentation() + "The sent data is <" + geoGrids.size() + ">. ");
+
+		MPI.COMM_WORLD.send(msg.toCharArray(), msg.length(), MPI.CHAR, targetRank, tag);
+	}
+
+	public static String ResvSingleTwitter () throws Exception {
+		int[] strLength = new int[1];
+		// get the dataSize
+		MPI.COMM_WORLD.recv(strLength, 1, MPI.INT, mainProcessRank, tag);
+
+		System.out.println(indentation() + "The received string Length is <" + strLength[0] + ">. ");
+
+		char[] msg = new char[strLength[0]];
+
+		MPI.COMM_WORLD.recv(msg, strLength[0], MPI.CHAR, mainProcessRank, tag);
+
+		System.out.println(indentation() + "The received string is <" + new String(msg) + ">. ");
+		
+		return new String(msg);
 
 	}
+
+
 }
