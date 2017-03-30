@@ -13,7 +13,8 @@ CLASSES = \
 		Ring.java\
 		TwitterGeoProcessing.java\
 		Coordinate.java\
-		GeoGrid.java
+		GeoGrid.java\
+		MPICommands.java
 
 default: classes
 

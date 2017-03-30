@@ -73,11 +73,34 @@ public class GeoGrid implements Comparable<GeoGrid> {
 		this.longtMin = data[2];
 		this.latMax = data[3];
 		this.latMin = data[4];
+
+		
+		System.out.println(MPICommands.indentation() + " initialized object "+ this.toString());
 	}
+	
+	public void toArray(double[] dataArray) {
+		dataArray[0] = this.internalID;
+		dataArray[1] = this.longtMax;
+		dataArray[2] = this.longtMin;
+		dataArray[3] = this.latMax;
+		dataArray[4] = this.latMin;
+
+
+	}
+	
+	public String toString()
+	{
+		return(" GeoGrid object "
+				+"<("+ this.longtMax+", " + this.longtMin +"), ("+ this.latMax +", "+ this.latMin+")>");
+	}
+
 
 
 	// TODO The boundary values should be identified
 	public boolean isInGrid(Coordinate coord) {
+		System.out.println(MPICommands.indentation() + " <"+ coord.longitude + ", "+coord.latitude +">"
+				+this.toString());
+
 		return 	coord.longitude > this.longtMin
 		        && coord.longitude < this.longtMax
 		        && coord.latitude > this.latMin
@@ -96,15 +119,5 @@ public class GeoGrid implements Comparable<GeoGrid> {
 
 	}
 
-	public double[] toArray() {
-		double[] dataArray = new double[5];
-		dataArray[0] = this.internalID;
-		dataArray[1] = this.longtMin;
-		dataArray[2] = this.longtMax;
-		dataArray[3] = this.latMin;
-		dataArray[4] = this.latMax;
-
-		return dataArray;
-	}
 
 }
