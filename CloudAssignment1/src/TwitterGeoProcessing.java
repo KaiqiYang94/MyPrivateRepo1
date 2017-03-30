@@ -9,12 +9,15 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
 import mpi.*;
 
 
 public class TwitterGeoProcessing {
 	private static int mainProcessRank = 0;
 	private static int tag = 10;
+	private static int prevSentProcess = 0;
+
 
 	protected static final int GRIDDATASIZE = 5;
 
@@ -58,22 +61,24 @@ public class TwitterGeoProcessing {
 				// bcast gird data
 				BcastGridData(geoGrids);
 
+				int fortest = 2000;
+
 				JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
 				for (JsonElement singleData : jsonArray) {
 					try {
-						//ProcessSingleJson(singleData, geoGrids);
-						SendSingleTwitter(singleData.toString(), 1);
+						SendSingleTwitter(singleData.toString(), nextRankToSend());
 
-						SendSingleTwitter(singleData.toString(), 2);
+						if ((fortest --) <= 0) {
+							break;
+						}
 
-						break;
 					} catch (Exception e) {
 						e.printStackTrace();
 						System.out.println("Exception when processing the data, the data is  " + singleData.getAsString());
 						continue;
 					}
 				}
-
+				BcastFinished();
 				stopTime = System.currentTimeMillis();
 				elapsedTime = stopTime - startTime;
 				System.out.println(indentation() + "The total time of processing files is " + elapsedTime + " ms");
@@ -84,13 +89,17 @@ public class TwitterGeoProcessing {
 					if (command == GRIDDATACMD) {
 						ResvGridData(geoGrids);
 					} else if (command == SINGLETWITTERCMD) {
-						ResvSingleTwitter();
+						String singleTwitter = ResvSingleTwitter();
+
+						ProcessSingleJson(singleTwitter , geoGrids);
 					}
 
 					command = ReceiveCommandType(geoGrids);
 				}
 
 			}
+
+			
 
 			// sort the ArrayList
 			Collections.sort(geoGrids);
@@ -111,20 +120,29 @@ public class TwitterGeoProcessing {
 		}
 	}
 
-	public static void ProcessSingleJson(JsonElement singleData, ArrayList<GeoGrid> geoGrids) {
-		Coordinate tempCoor = new Coordinate();
-		JsonArray geo = singleData.getAsJsonObject().getAsJsonObject("json").getAsJsonObject("coordinates")
-		                .getAsJsonArray("coordinates");
+	public static void ProcessSingleJson(String singleTwitter, ArrayList<GeoGrid> geoGrids) {
 
-		tempCoor.longitude = geo.get(0).getAsJsonPrimitive().getAsDouble();
-		tempCoor.latitude = geo.get(1).getAsJsonPrimitive().getAsDouble();
+		try {
+			JsonElement singleData = new JsonParser().parse(singleTwitter);
 
-		// find which grid it's in
-		for (GeoGrid geoGrid : geoGrids) {
-			if (geoGrid.isInGrid(tempCoor)) {
-				geoGrid.Counter++;
-				break;
+			Coordinate tempCoor = new Coordinate();
+			JsonArray geo = singleData.getAsJsonObject().getAsJsonObject("json").getAsJsonObject("coordinates")
+			.getAsJsonArray("coordinates");
+
+			tempCoor.longitude = geo.get(0).getAsJsonPrimitive().getAsDouble();
+			tempCoor.latitude = geo.get(1).getAsJsonPrimitive().getAsDouble();
+
+			// find which grid it's in
+			for (GeoGrid geoGrid : geoGrids) {
+				if (geoGrid.isInGrid(tempCoor)) {
+					geoGrid.Counter++;
+					break;
+				}
 			}
+		} catch (Exception e) {
+
+			System.out.println("Exception when processing the data, the data is  " + singleTwitter);
+			e.printStackTrace();
 		}
 	}
 
@@ -217,6 +235,18 @@ public class TwitterGeoProcessing {
 		}
 	}
 
+	public static void BcastFinished () throws Exception {
+		char[] commandType = new char[1];
+		commandType[0] = FINISHECMD;
+
+		int size = MPI.COMM_WORLD.getSize() ;
+
+		for (int i = mainProcessRank + 1 ; i < size ; i++) {
+			// command type
+			MPI.COMM_WORLD.send(commandType, 1, MPI.CHAR, i, tag);
+		}
+	}
+
 	public static void SendSingleTwitter (String msg, int targetRank) throws Exception {
 		char[] commandType = new char[1];
 		commandType[0] = SINGLETWITTERCMD;
@@ -227,8 +257,8 @@ public class TwitterGeoProcessing {
 		MPI.COMM_WORLD.send(commandType, 1, MPI.CHAR, targetRank, tag);
 		// string length
 		MPI.COMM_WORLD.send(gridSize, 1, MPI.INT, targetRank, tag);
-		//System.out.println(indentation() + "The sent data is <" + geoGrids.size() + ">. ");
 
+		System.out.println(indentation() + "The sent data is <" + gridSize[0] + "> to rank " + targetRank +" ");
 		MPI.COMM_WORLD.send(msg.toCharArray(), msg.length(), MPI.CHAR, targetRank, tag);
 	}
 
@@ -243,10 +273,25 @@ public class TwitterGeoProcessing {
 
 		MPI.COMM_WORLD.recv(msg, strLength[0], MPI.CHAR, mainProcessRank, tag);
 
-		System.out.println(indentation() + "The received string is <" + new String(msg) + ">. ");
-		
+		//System.out.println(indentation() + "The received string is <" + new String(msg) + ">. ");
+
 		return new String(msg);
 
+	}
+
+	public static int nextRankToSend() throws Exception {
+
+		int myrank = MPI.COMM_WORLD.getRank() ;
+		int size = MPI.COMM_WORLD.getSize() ;
+
+		int next = (prevSentProcess + 1) % size;
+		if (next == myrank) {
+			next = (next + 1) % size;
+		}
+
+		prevSentProcess = next;
+
+		return next;
 	}
 
 

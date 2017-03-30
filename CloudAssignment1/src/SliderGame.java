@@ -60,7 +60,7 @@ public class SliderGame {
 			for (int x = 0; x < inputsize; x++) {
 				//caculate the legal moves for horizontal player
 				if (board[y][x].equals("H")) {
-					numH = numH + countMove(x, y, board[y][x].charAt(0));
+					numH = numH + countMove(x, y, 'H');
 				}
 
 				//caculate the legal moves for vertical player
