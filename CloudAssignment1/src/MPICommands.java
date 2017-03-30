@@ -76,7 +76,7 @@ public class MPICommands {
 		// get the dataSize
 		MPI.COMM_WORLD.recv(numberOfGird, 1, MPI.INT, mainProcessRank, tag);
 
-		System.out.println(indentation() + "The received data is <" + numberOfGird[0] + ">. ");
+		//System.out.println(indentation() + "The received data is <" + numberOfGird[0] + ">. ");
 
 		double[] gridData = new double[GRIDDATASIZE];
 
@@ -84,7 +84,7 @@ public class MPICommands {
 
 			MPI.COMM_WORLD.recv(gridData, GRIDDATASIZE, MPI.DOUBLE, mainProcessRank, tag);
 
-			System.out.println(indentation() + "The received data is <" + gridData[0] + " " + gridData[1] + ">. ");
+			//System.out.println(indentation() + "The received data is <" + gridData[0] + " " + gridData[1] + ">. ");
 			geoGrids.add(new GeoGrid(gridData));
 
 		}

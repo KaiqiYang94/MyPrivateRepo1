@@ -74,7 +74,7 @@ public class GeoGrid implements Comparable<GeoGrid> {
 		this.latMax = data[3];
 		this.latMin = data[4];
 
-		
+
 		System.out.println(MPICommands.indentation() + " initialized object "+ this.toString());
 	}
 	
@@ -98,8 +98,7 @@ public class GeoGrid implements Comparable<GeoGrid> {
 
 	// TODO The boundary values should be identified
 	public boolean isInGrid(Coordinate coord) {
-		System.out.println(MPICommands.indentation() + " <"+ coord.longitude + ", "+coord.latitude +">"
-				+this.toString());
+		//System.out.println(MPICommands.indentation() + " <"+ coord.longitude + ", "+coord.latitude +">" +this.toString());
 
 		return 	coord.longitude > this.longtMin
 		        && coord.longitude < this.longtMax

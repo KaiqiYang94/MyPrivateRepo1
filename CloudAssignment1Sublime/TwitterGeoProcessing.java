@@ -52,7 +52,7 @@ public class TwitterGeoProcessing {
 				// bcast gird data
 				MPICommands.BcastGridData(geoGrids);
 
-				int fortest = 20;
+				int fortest = 1000;
 
 				JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
 				for (JsonElement singleData : jsonArray) {
