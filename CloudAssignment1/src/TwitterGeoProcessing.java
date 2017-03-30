@@ -33,15 +33,7 @@ public class TwitterGeoProcessing {
 			// read all the file only if it's the main process
 			if (isMainProcess()) {
 				// get all the grids
-				String allGrid = MPICommands.ReadFullFile("./Data/melbGrid.json");
-
-				// get all twitter data
-				String allData = MPICommands.ReadFullFile("./Data/tinyTwitterError.json");
-
-				stopTime = System.currentTimeMillis();
-				elapsedTime = stopTime - startTime;
-				System.out.println(MPICommands.indentation() + "The total time of reading files is " + elapsedTime + " ms");
-
+				String allGrid = ReadFullFile("./Data/melbGrid.json");
 				// process the files
 				JsonArray gridArray = new JsonParser().parse(allGrid).getAsJsonObject().getAsJsonArray("features");
 				// read all the grids
@@ -52,27 +44,22 @@ public class TwitterGeoProcessing {
 				// bcast gird data
 				MPICommands.BcastGridData(geoGrids);
 
-				int fortest = 1000;
-
-				JsonArray jsonArray = new JsonParser().parse(allData).getAsJsonArray();
-				for (JsonElement singleData : jsonArray) {
-					try {
-						MPICommands.SendSingleTwitter(singleData.toString(), nextRankToSend());
-
-						if ((fortest --) <= 0) {
-							break;
-						}
-
-					} catch (Exception e) {
-						e.printStackTrace();
-						System.out.println("Exception when processing the data, the data is  " + singleData.getAsString());
-						continue;
-					}
+				FileInputStream fstream = new FileInputStream("./Data/smallTwitter.json");
+				BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+				String strLine;
+				while ((strLine = br.readLine()) != null) {
+					MPICommands.SendSingleTwitter(strLine.toString().replaceAll(",$", ""), nextRankToSend());
 				}
+				br.close();
+
+				stopTime = System.currentTimeMillis();
+				elapsedTime = stopTime - startTime;
+				System.out.println(MPICommands.indentation() + "The total time of reading files is " + elapsedTime + " ms");
+
 				MPICommands.BcastFinished();
-				
+
 				MPICommands.ResvResults(geoGrids);
-				
+
 				stopTime = System.currentTimeMillis();
 				elapsedTime = stopTime - startTime;
 				System.out.println(MPICommands.indentation() + "The total time of processing files is " + elapsedTime + " ms");
@@ -90,19 +77,22 @@ public class TwitterGeoProcessing {
 
 					command = MPICommands.ReceiveCommandType(geoGrids);
 				}
-				
+
 				MPICommands.SendResults(geoGrids);
 
 			}
 
-			
+
 
 			// sort the ArrayList
 			Collections.sort(geoGrids);
 
-			// output the results
-			for (GeoGrid geoGrid : geoGrids) {
-				System.out.println(MPICommands.indentation() + "\t#" + (int)geoGrid.internalID + "\t(" + geoGrid.name + "):\t " + geoGrid.Counter);
+			if (isMainProcess()) {
+
+				// output the results
+				for (GeoGrid geoGrid : geoGrids) {
+					System.out.println(MPICommands.indentation() + "\t#" + (int)geoGrid.internalID + "\t(" + geoGrid.name + "):\t " + geoGrid.Counter);
+				}
 			}
 
 			//
@@ -116,6 +106,23 @@ public class TwitterGeoProcessing {
 		}
 	}
 
+	public static String ReadFullFile(String fileName) {
+		try {
+			FileInputStream fstream = new FileInputStream(fileName);
+			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+			String allData = "";
+			String strLine;
+			while ((strLine = br.readLine()) != null) {
+				allData += strLine;
+			}
+			br.close();
+			return allData;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	public static void ProcessSingleJson(String singleTwitter, ArrayList<GeoGrid> geoGrids) {
 
 		try {
@@ -123,7 +130,7 @@ public class TwitterGeoProcessing {
 
 			Coordinate tempCoor = new Coordinate();
 			JsonArray geo = singleData.getAsJsonObject().getAsJsonObject("json").getAsJsonObject("coordinates")
-			.getAsJsonArray("coordinates");
+			                .getAsJsonArray("coordinates");
 
 			tempCoor.longitude = geo.get(0).getAsJsonPrimitive().getAsDouble();
 			tempCoor.latitude = geo.get(1).getAsJsonPrimitive().getAsDouble();
@@ -138,7 +145,7 @@ public class TwitterGeoProcessing {
 		} catch (Exception e) {
 
 			System.out.println("Exception when processing the data, the data is  " + singleTwitter);
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 

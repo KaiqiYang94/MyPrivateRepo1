@@ -19,27 +19,10 @@ public class MPICommands {
 	protected static final char RESULTCMD = 'R';
 	protected static final char FINISHECMD = 'F';
 	
-	public static String ReadFullFile(String fileName) {
-		try {
-			FileInputStream fstream = new FileInputStream(fileName);
-			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-			String allData = "";
-			String strLine;
-			while ((strLine = br.readLine()) != null) {
-				allData += strLine;
-			}
-			br.close();
-			return allData;
-		} catch (IOException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-
 	public static char ReceiveCommandType (ArrayList<GeoGrid> geoGrids) throws Exception {
 		char[] commandType = new char[1];
 		MPI.COMM_WORLD.recv(commandType, 1, MPI.CHAR, mainProcessRank, tag);
-		System.out.println(indentation() + "The received commandType is " + commandType[0] + ". ");
+		//System.out.println(indentation() + "The received commandType is " + commandType[0] + ". ");
 
 		return commandType[0];
 
@@ -114,7 +97,7 @@ public class MPICommands {
 		// string length
 		MPI.COMM_WORLD.send(gridSize, 1, MPI.INT, targetRank, tag);
 
-		System.out.println(indentation() + "The sent data is <" + gridSize[0] + "> to rank " + targetRank +" ");
+		//System.out.println(indentation() + "The sent data is <" + gridSize[0] + "> to rank " + targetRank +" ");
 		MPI.COMM_WORLD.send(msg.toCharArray(), msg.length(), MPI.CHAR, targetRank, tag);
 	}
 
@@ -123,7 +106,7 @@ public class MPICommands {
 		// get the dataSize
 		MPI.COMM_WORLD.recv(strLength, 1, MPI.INT, mainProcessRank, tag);
 
-		System.out.println(indentation() + "The received string Length is <" + strLength[0] + ">. ");
+		//System.out.println(indentation() + "The received string Length is <" + strLength[0] + ">. ");
 
 		char[] msg = new char[strLength[0]];
 
@@ -178,7 +161,7 @@ public class MPICommands {
 
 				MPI.COMM_WORLD.recv(gridData, GRIDRESULTSIZE, MPI.DOUBLE, i, tag);
 
-				System.out.println(indentation() + "The received data is <" + gridData[0] + " " + gridData[1] + ">. ");
+				//System.out.println(indentation() + "The received data is <" + gridData[0] + " " + gridData[1] + ">. ");
 				//geoGrids.add(new GeoGrid(gridData));
 				for(GeoGrid geoGrid: geoGrids)
 				{
