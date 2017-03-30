@@ -70,6 +70,9 @@ public class TwitterGeoProcessing {
 					}
 				}
 				MPICommands.BcastFinished();
+				
+				MPICommands.ResvResults(geoGrids);
+				
 				stopTime = System.currentTimeMillis();
 				elapsedTime = stopTime - startTime;
 				System.out.println(MPICommands.indentation() + "The total time of processing files is " + elapsedTime + " ms");
@@ -87,6 +90,8 @@ public class TwitterGeoProcessing {
 
 					command = MPICommands.ReceiveCommandType(geoGrids);
 				}
+				
+				MPICommands.SendResults(geoGrids);
 
 			}
 

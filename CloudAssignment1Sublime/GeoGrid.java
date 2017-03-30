@@ -84,10 +84,13 @@ public class GeoGrid implements Comparable<GeoGrid> {
 		dataArray[2] = this.longtMin;
 		dataArray[3] = this.latMax;
 		dataArray[4] = this.latMin;
-
-
 	}
-	
+
+	public void toResult(double[] dataArray) {
+		dataArray[0] = this.internalID;
+		dataArray[1] = this.Counter;
+	}
+
 	public String toString()
 	{
 		return(" GeoGrid object "

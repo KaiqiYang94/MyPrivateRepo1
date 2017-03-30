@@ -12,6 +12,7 @@ public class MPICommands {
 	public static int mainProcessRank = 0;
 	private static int tag = 10;
 	protected static final int GRIDDATASIZE = 5;
+	protected static final int GRIDRESULTSIZE = 2;
 
 	protected static final char GRIDDATACMD = 'G';
 	protected static final char SINGLETWITTERCMD = 'S';
@@ -133,6 +134,67 @@ public class MPICommands {
 		return new String(msg);
 
 	}
+
+
+	public static void SendResults (ArrayList<GeoGrid> geoGrids) throws Exception {
+		char[] commandType = new char[1];
+		commandType[0] = RESULTCMD;
+		int[] gridSize = new int[1];
+		gridSize[0] = geoGrids.size();
+		double[] gridData = new double[GRIDRESULTSIZE];
+	
+		// command type
+		MPI.COMM_WORLD.send(commandType, 1, MPI.CHAR, mainProcessRank, tag);
+		// Grid count
+		MPI.COMM_WORLD.send(gridSize, 1, MPI.INT, mainProcessRank, tag);
+		//System.out.println(indentation() + "The sent data is <" + geoGrids.size() + ">. ");
+
+		// the grid data
+		for (GeoGrid geoGrid : geoGrids) {
+			geoGrid.toResult(gridData);
+			
+			MPI.COMM_WORLD.send(gridData, GRIDRESULTSIZE, MPI.DOUBLE, mainProcessRank, tag);
+		}
+		
+	}
+
+	public static void ResvResults (ArrayList<GeoGrid> geoGrids) throws Exception {
+
+		int size = MPI.COMM_WORLD.getSize() ;
+		for (int i = mainProcessRank + 1 ; i < size ; i++) {
+			char[] commandType = new char[1];
+			int[] numberOfGird = new int[1];
+			// command type
+			MPI.COMM_WORLD.recv(commandType, 1, MPI.CHAR, i, tag);
+
+			// get the dataSize
+			MPI.COMM_WORLD.recv(numberOfGird, 1, MPI.INT, i, tag);
+
+			//System.out.println(indentation() + "The received data is <" + numberOfGird[0] + ">. ");
+
+			double[] gridData = new double[GRIDRESULTSIZE];
+
+			for (int j = 0 ; j < numberOfGird[0] ; j++) {
+
+				MPI.COMM_WORLD.recv(gridData, GRIDRESULTSIZE, MPI.DOUBLE, i, tag);
+
+				System.out.println(indentation() + "The received data is <" + gridData[0] + " " + gridData[1] + ">. ");
+				//geoGrids.add(new GeoGrid(gridData));
+				for(GeoGrid geoGrid: geoGrids)
+				{
+					if (geoGrid.internalID == gridData[0]) {
+						geoGrid.Counter += gridData[1];
+						break;
+					}
+				}
+
+			}
+		}
+
+
+
+	}
+
 	
 	public static String indentation() {
 		try {
