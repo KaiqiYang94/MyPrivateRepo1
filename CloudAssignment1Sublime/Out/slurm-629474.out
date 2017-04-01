@@ -1,0 +1,28 @@
+TwitterGeoProcessing.java:51: error: cannot find symbol
+					if (MPI.COMM_WORLD.getSize() > 1) {
+					                  ^
+  symbol:   method getSize()
+  location: variable COMM_WORLD of type Intracomm
+TwitterGeoProcessing.java:62: error: cannot find symbol
+				if (MPI.COMM_WORLD.getSize() > 1) {
+				                  ^
+  symbol:   method getSize()
+  location: variable COMM_WORLD of type Intracomm
+TwitterGeoProcessing.java:162: error: cannot find symbol
+			int myrank = MPI.COMM_WORLD.getRank() ;
+			                           ^
+  symbol:   method getRank()
+  location: variable COMM_WORLD of type Intracomm
+TwitterGeoProcessing.java:174: error: cannot find symbol
+		int myrank = MPI.COMM_WORLD.getRank() ;
+		                           ^
+  symbol:   method getRank()
+  location: variable COMM_WORLD of type Intracomm
+TwitterGeoProcessing.java:175: error: cannot find symbol
+		int size = MPI.COMM_WORLD.getSize() ;
+		                         ^
+  symbol:   method getSize()
+  location: variable COMM_WORLD of type Intracomm
+5 errors
+Number of Processes should be equal to or greater than 1
+exiting ...

@@ -2,7 +2,7 @@ JFLAGS = -cp
 JC = javac
 JVM= java 
 CPATH= ./gson.2.6.2.jar:./mpi.jar:.
-MPJPATH= ./gson.2.6.2.jar:/Users/KaiqiYang/Documents/MasterCourse/Knowledge\ Technologies/Assignment1/MPI_express/mpj-v0_44/lib/mpj.jar.
+MPJPATH= ./gson.2.6.2.jar:/Users/KaiqiYang/Documents/MasterCourse/Cloud/MPI_express/mpj-v0_44/lib/mpj.jar:.
 FILE=
 
 .SUFFIXES: .java .class
@@ -11,7 +11,6 @@ FILE=
 		$(JC) $(JFLAGS) $(CPATH) $*.java
 
 CLASSES = \
-		Ring.java\
 		TwitterGeoProcessing.java\
 		Coordinate.java\
 		GeoGrid.java\
@@ -20,7 +19,7 @@ CLASSES = \
 default: classes
 
 mpjc: 
-	$(JC) $(JFLAGS) $(MPJPATH) TwitterGeoProcessing.java
+	$(JC) $(JFLAGS) $(MPJPATH) *.java
 
 mpjrun: 	
 	mpjrun.sh -np -1 TwitterGeoProcessing

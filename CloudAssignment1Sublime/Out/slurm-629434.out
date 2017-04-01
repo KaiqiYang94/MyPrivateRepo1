@@ -1,0 +1,23 @@
+
+The following have been reloaded with a version change:
+  1) OpenMPI/2.0.2-GCC-6.2.0 => OpenMPI/2.0.2-intel-2017.u2
+  2) hwloc/1.11.3-GCC-6.2.0 => hwloc/1.11.3-intel-2017.u2
+  3) numactl/2.0.11-GCC-6.2.0 => numactl/2.0.11-intel-2017.u2
+
+Exception in thread "main" java.lang.UnsatisfiedLinkError: no mpi_java in java.library.path
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1864)
+	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+	at java.lang.System.loadLibrary(System.java:1122)
+	at mpi.MPI.<clinit>(MPI.java:206)
+	at TwitterGeoProcessing.main(TwitterGeoProcessing.java:27)
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[7515,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------

@@ -47,8 +47,8 @@ public class TwitterGeoProcessing {
 				BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 				String strLine;
 				while ((strLine = br.readLine()) != null) {
-					//System.out.println("The size is " + MPI.COMM_WORLD.getSize());
-					if (MPI.COMM_WORLD.getSize() > 1) {
+					//System.out.println("The size is " + MPI.COMM_WORLD.Size());
+					if (MPI.COMM_WORLD.Size() > 1) {
 						MPICommands.SendSingleTwitter(strLine.toString().replaceAll(",$", ""), nextRankToSend());
 
 					} else {
@@ -59,7 +59,7 @@ public class TwitterGeoProcessing {
 
 				printOutTime(startTime, "The total time of bcast info is ");
 
-				if (MPI.COMM_WORLD.getSize() > 1) {
+				if (MPI.COMM_WORLD.Size() > 1) {
 					MPICommands.BcastFinished();
 
 					MPICommands.ResvResults(geoGrids);
@@ -159,7 +159,7 @@ public class TwitterGeoProcessing {
 
 	public static Boolean isMainProcess() {
 		try {
-			int myrank = MPI.COMM_WORLD.getRank() ;
+			int myrank = MPI.COMM_WORLD.Rank() ;
 			return myrank == MPICommands.mainProcessRank;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -171,8 +171,8 @@ public class TwitterGeoProcessing {
 
 	public static int nextRankToSend() throws Exception {
 
-		int myrank = MPI.COMM_WORLD.getRank() ;
-		int size = MPI.COMM_WORLD.getSize() ;
+		int myrank = MPI.COMM_WORLD.Rank() ;
+		int size = MPI.COMM_WORLD.Size() ;
 
 		int next = (prevSentProcess + 1) % size;
 		if (next == myrank) {

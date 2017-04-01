@@ -1,0 +1,17 @@
+Exception in thread "main" java.lang.UnsatisfiedLinkError: no mpi_java in java.library.path
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1864)
+	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+	at java.lang.System.loadLibrary(System.java:1122)
+	at mpi.MPI.<clinit>(MPI.java:206)
+	at TwitterGeoProcessing.main(TwitterGeoProcessing.java:27)
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[5455,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
