@@ -46,7 +46,7 @@ public class TwitterGeoProcessing {
 				// bcast gird data
 				MPICommands.BcastGridData(geoGrids);
 
-				FileInputStream fstream = new FileInputStream("smallTwitter.json");
+				FileInputStream fstream = new FileInputStream("tinyTwitter.json");
 				BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 				String strLine;
 				while ((strLine = br.readLine()) != null) {
