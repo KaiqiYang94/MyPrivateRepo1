@@ -1,0 +1,28 @@
+error: Class names, 'TwitterGeoProcessing', are only accepted if annotation processing is explicitly requested
+1 error
+Unrecognized option: -np
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Unrecognized option: -np
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Unrecognized option: -np
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+Unrecognized option: -np
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+Unrecognized option: -np
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[33898,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
