@@ -38,7 +38,9 @@ public class MPICommands {
 
 		int size = MPI.COMM_WORLD.Size() ;
 
-		for (int i = 0 ; i < size ; i++) {
+		for (int i = mainProcessRank + 1 ; i < size ; i++) {
+
+			//System.out.println(indentation() + "The sent commandType is " + commandType[0] + " to " + i);
 			// command type
 			MPI.COMM_WORLD.Send(commandType, 0, 1, MPI.CHAR, i, tag);
 			// Grid count

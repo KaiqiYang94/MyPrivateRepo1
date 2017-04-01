@@ -26,6 +26,9 @@ public class TwitterGeoProcessing {
 			// initialize mpi comm world
 			MPI.Init(args) ;
 
+			System.out.println("Size is " + MPI.COMM_WORLD.Size() + " Rank is " + MPI.COMM_WORLD.Rank());
+
+			//MPI.Barrier();
 			// get all the data from file
 			ArrayList<GeoGrid> geoGrids = new ArrayList<GeoGrid>();
 

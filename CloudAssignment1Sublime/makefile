@@ -1,14 +1,14 @@
 JFLAGS = -cp
 JC = javac
-JVM= java 
+JVM= java
 CPATH= ./gson.2.6.2.jar:./mpi.jar:.
-MPJPATH= ./gson.2.6.2.jar:/Users/KaiqiYang/Documents/MasterCourse/Cloud/MPI_express/mpj-v0_44/lib/mpj.jar:.
+MPJPATH= .:$MPJ_HOME/lib/mpj.jar:./gson.2.6.2.jar
 FILE=
 
 .SUFFIXES: .java .class
 
 .java.class:
-		$(JC) $(JFLAGS) $(CPATH) $*.java
+		$(JC) $(JFLAGS) $(MPJPATH) $*.java
 
 CLASSES = \
 		TwitterGeoProcessing.java\
@@ -18,11 +18,15 @@ CLASSES = \
 
 default: classes
 
-mpjc: 
-	$(JC) $(JFLAGS) $(MPJPATH) *.java
 
-mpjrun: 	
-	mpjrun.sh -np -1 TwitterGeoProcessing
+mpjc: 
+	javac -cp .:$MPJ_HOME/lib/mpj.jar:./gson.2.6.2.jar TwitterGeoProcessing.java
+	#$(JC) $(JFLAGS) $(MPJPATH) TwitterGeoProcessing.java
+
+mpjrun:
+	mpjrun.sh -np 1 -cp .:PJ_HOME/lib/mpj.jar:./gson.2.6.2.jar TwitterGeoProcessing
+
+	#mpjrun.sh -np 1  $(JFLAGS) $(MPJPATH) TwitterGeoProcessing
 
 
 classes: $(CLASSES:.java=.class)
