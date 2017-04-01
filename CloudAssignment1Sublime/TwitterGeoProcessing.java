@@ -9,8 +9,15 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import mpi.*;
+
+
 
 
 public class TwitterGeoProcessing {
@@ -46,7 +53,7 @@ public class TwitterGeoProcessing {
 				// bcast gird data
 				MPICommands.BcastGridData(geoGrids);
 
-				FileInputStream fstream = new FileInputStream("tinyTwitter.json");
+				FileInputStream fstream = new FileInputStream("smallTwitter.json");
 				BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 				String strLine;
 				while ((strLine = br.readLine()) != null) {
@@ -98,9 +105,10 @@ public class TwitterGeoProcessing {
 
 			if (isMainProcess()) {
 				// output the results
-				for (GeoGrid geoGrid : geoGrids) {
-					System.out.println(MPICommands.indentation() + "\t#" + (int)geoGrid.internalID + "\t(" + geoGrid.name + "):\t " + geoGrid.Counter);
-				}
+				PrintOutGrids(geoGrids);
+				// for (GeoGrid geoGrid : geoGrids) {
+				// 	System.out.println(MPICommands.indentation() + "\t#" + (int)geoGrid.internalID + "\t(" + geoGrid.name + "):\t " + geoGrid.Counter);
+				// }
 			}
 
 
@@ -193,5 +201,93 @@ public class TwitterGeoProcessing {
 
 	}
 
+	public static void PrintOutGrids (ArrayList<GeoGrid> geoGrids) throws Exception {
+
+		// output the results
+		for (GeoGrid geoGrid : geoGrids) {
+			System.out.println(MPICommands.indentation()
+			                   + "\t#" + (int)geoGrid.internalID + "\t(" + geoGrid.name + "):\t " + geoGrid.Counter);
+		}
+
+
+		String[] rows = new String[] {"A", "B", "C", "D"};
+
+		Map<String, Integer> rowsMap = new HashMap<String, Integer>();
+
+		String[] columns = new String[] {"1", "2", "3", "4", "5"};
+
+		Map<String, Integer> columnsMap = new HashMap<String, Integer>();
+
+		for (String row : rows) {
+			int rowCounter = 0;
+			for (GeoGrid geoGrid : geoGrids) {
+				if(geoGrid.name.indexOf(row) != -1)
+				{
+					rowCounter += geoGrid.Counter;
+				}
+				rowCounter += geoGrid.Counter;
+			}
+			rowsMap.put(row, rowCounter);
+		}
+
+		for (String col : columns) {
+			int colCounter = 0;
+			for (GeoGrid geoGrid : geoGrids) {
+				if(geoGrid.name.indexOf(col) != -1)
+				{
+					colCounter += geoGrid.Counter;
+				}
+			}
+			columnsMap.put(col, colCounter);
+		}
+
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+		Map<String, Integer> sortedMap = sortByValue(columnsMap);
+		printMap(sortedMap, "Col-");
+
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+		sortedMap = sortByValue(rowsMap);
+		printMap(sortedMap, "Rows");
+		
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+	}
+	private static Map<String, Integer> sortByValue(Map<String, Integer> unsortMap) {
+
+		// 1. Convert Map to List of Map
+		List<Map.Entry<String, Integer>> list =
+		    new LinkedList<Map.Entry<String, Integer>>(unsortMap.entrySet());
+
+		// 2. Sort list with Collections.sort(), provide a custom Comparator
+		//    Try switch the o1 o2 position for a different order
+		Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+			public int compare(Map.Entry<String, Integer> o1,
+			                   Map.Entry<String, Integer> o2) {
+				return (o2.getValue()).compareTo(o1.getValue());
+			}
+		});
+
+		// 3. Loop the sorted list and put it into a new insertion order Map LinkedHashMap
+		Map<String, Integer> sortedMap = new LinkedHashMap<String, Integer>();
+		for (Map.Entry<String, Integer> entry : list) {
+			sortedMap.put(entry.getKey(), entry.getValue());
+		}
+
+		/*
+		//classic iterator example
+		for (Iterator<Map.Entry<String, Integer>> it = list.iterator(); it.hasNext(); ) {
+		    Map.Entry<String, Integer> entry = it.next();
+		    sortedMap.put(entry.getKey(), entry.getValue());
+		}*/
+
+
+		return sortedMap;
+	}
+
+	public static <K, V> void printMap(Map<K, V> map, String str) {
+		for (Map.Entry<K, V> entry : map.entrySet()) {
+			System.out.println(MPICommands.indentation() + str + " :" + entry.getKey()
+			                   + "  : " + entry.getValue());
+		}
+	}
 
 }

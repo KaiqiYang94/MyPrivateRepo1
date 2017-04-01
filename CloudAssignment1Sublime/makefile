@@ -5,10 +5,10 @@ CPATH= ./gson.2.6.2.jar:./mpi.jar:.
 MPJPATH= .:$MPJ_HOME/lib/mpj.jar:./gson.2.6.2.jar
 FILE=
 
-.SUFFIXES: .java .class
+.SUFFIXES: #.java .class
 
 .java.class:
-		$(JC) $(JFLAGS) $(MPJPATH) $*.java
+		$(JC) $(JFLAGS) $(MPJPATH) TwitterGeoProcessing.java
 
 CLASSES = \
 		TwitterGeoProcessing.java\
