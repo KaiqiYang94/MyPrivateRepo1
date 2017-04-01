@@ -1,7 +1,8 @@
 JFLAGS = -cp
 JC = javac
 JVM= java 
-CPATH= ./JAR/*:.
+CPATH= ./gson.2.6.2.jar:./mpi.jar:.
+MPJPATH= ./gson.2.6.2.jar:/Users/KaiqiYang/Documents/MasterCourse/Knowledge\ Technologies/Assignment1/MPI_express/mpj-v0_44/lib/mpj.jar.
 FILE=
 
 .SUFFIXES: .java .class
@@ -17,6 +18,13 @@ CLASSES = \
 		MPICommands.java
 
 default: classes
+
+mpjc: 
+	$(JC) $(JFLAGS) $(MPJPATH) TwitterGeoProcessing.java
+
+mpjrun: 	
+	mpjrun.sh -np -1 TwitterGeoProcessing
+
 
 classes: $(CLASSES:.java=.class)
 
