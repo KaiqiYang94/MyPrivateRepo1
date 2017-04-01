@@ -1,0 +1,4 @@
+MPJ Express (0.44) is started in the multicore configuration
+Size is 1 Rank is 0
+Exception when processing the data, the data is  [
+slurmstepd: error: Exceeded step memory limit at some point.

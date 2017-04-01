@@ -1,0 +1,36 @@
+MPJ Express (0.44) is started in the multicore configuration
+Size is 1 Rank is 0
+Exception when processing the data, the data is  [
+Exception when processing the data, the data is  ]
+Rank 0: The total time of bcast info is 3704 ms
+Rank 0: The total time of gathering results is 3704 ms
+Rank 0: 	#10	(C2):	 407
+Rank 0: 	#6	(B2):	 267
+Rank 0: 	#11	(C3):	 171
+Rank 0: 	#7	(B3):	 75
+Rank 0: 	#12	(C4):	 56
+Rank 0: 	#5	(B1):	 53
+Rank 0: 	#14	(D3):	 47
+Rank 0: 	#15	(D4):	 34
+Rank 0: 	#8	(B4):	 22
+Rank 0: 	#9	(C1):	 19
+Rank 0: 	#3	(A3):	 16
+Rank 0: 	#2	(A2):	 14
+Rank 0: 	#13	(C5):	 10
+Rank 0: 	#16	(D5):	 10
+Rank 0: 	#1	(A1):	 9
+Rank 0: 	#4	(A4):	 0
+++++++++++++++++++++++++++++++++++++++++++
+Rank 0: Col- :2  : 688
+Rank 0: Col- :3  : 309
+Rank 0: Col- :4  : 112
+Rank 0: Col- :1  : 81
+Rank 0: Col- :5  : 20
+++++++++++++++++++++++++++++++++++++++++++
+Rank 0: Rows :C  : 1873
+Rank 0: Rows :B  : 1627
+Rank 0: Rows :D  : 1301
+Rank 0: Rows :A  : 1249
+++++++++++++++++++++++++++++++++++++++++++
+Rank 0: The total time of execution is 3708 ms
+++++++++++++++++++++++++++++++++++++++++++

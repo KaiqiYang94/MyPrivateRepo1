@@ -53,7 +53,7 @@ public class TwitterGeoProcessing {
 				// bcast gird data
 				MPICommands.BcastGridData(geoGrids);
 
-				FileInputStream fstream = new FileInputStream("smallTwitter.json");
+				FileInputStream fstream = new FileInputStream("bigTwitter.json");
 				BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 				String strLine;
 				while ((strLine = br.readLine()) != null) {
@@ -248,7 +248,7 @@ public class TwitterGeoProcessing {
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 		sortedMap = sortByValue(rowsMap);
 		printMap(sortedMap, "Rows");
-		
+
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 	}
 	private static Map<String, Integer> sortByValue(Map<String, Integer> unsortMap) {
