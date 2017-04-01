@@ -5,4 +5,5 @@
 #SBATCH --ntasks-per-node=1
 module load Java/1.8.0_71
 module load OpenMPI/2.0.2-GCC-6.2.0
-mpirun -np 8 java -cp ./JAR/*:. TwitterGeoProcessing
+javac -cp ./JAR/*:. TwitterGeoProcessing
+mpirun -np 1 java -cp ./JAR/*:. TwitterGeoProcessing

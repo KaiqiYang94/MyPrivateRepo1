@@ -47,15 +47,23 @@ public class TwitterGeoProcessing {
 				BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 				String strLine;
 				while ((strLine = br.readLine()) != null) {
-					MPICommands.SendSingleTwitter(strLine.toString().replaceAll(",$", ""), nextRankToSend());
+					//System.out.println("The size is " + MPI.COMM_WORLD.getSize());
+					if (MPI.COMM_WORLD.getSize() > 1) {
+						MPICommands.SendSingleTwitter(strLine.toString().replaceAll(",$", ""), nextRankToSend());
+
+					} else {
+						ProcessSingleJson(strLine.toString().replaceAll(",$", "") , geoGrids);
+					}
 				}
 				br.close();
 
 				printOutTime(startTime, "The total time of bcast info is ");
 
-				MPICommands.BcastFinished();
+				if (MPI.COMM_WORLD.getSize() > 1) {
+					MPICommands.BcastFinished();
 
-				MPICommands.ResvResults(geoGrids);
+					MPICommands.ResvResults(geoGrids);
+				}
 
 				printOutTime(startTime, "The total time of gathering results is ");
 
@@ -96,7 +104,7 @@ public class TwitterGeoProcessing {
 			printOutTime(startTime, "The total time of execution is ");
 
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
- 
+
 			MPI.Finalize();
 
 		} catch (Exception e) {
