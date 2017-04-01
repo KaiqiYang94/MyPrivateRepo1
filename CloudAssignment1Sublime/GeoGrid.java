@@ -75,7 +75,7 @@ public class GeoGrid implements Comparable<GeoGrid> {
 		this.latMin = data[4];
 
 
-		System.out.println(MPICommands.indentation() + " initialized object "+ this.toString());
+		//System.out.println(MPICommands.indentation() + " initialized object "+ this.toString());
 	}
 	
 	public void toArray(double[] dataArray) {

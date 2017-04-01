@@ -22,7 +22,6 @@ public class TwitterGeoProcessing {
 		try {
 			long startTime = System.currentTimeMillis();
 			long stopTime;
-			long elapsedTime;
 
 			// initialize mpi comm world
 			MPI.Init(args) ;
@@ -33,7 +32,7 @@ public class TwitterGeoProcessing {
 			// read all the file only if it's the main process
 			if (isMainProcess()) {
 				// get all the grids
-				String allGrid = ReadFullFile("./Data/melbGrid.json");
+				String allGrid = ReadFullFile("melbGrid.json");
 				// process the files
 				JsonArray gridArray = new JsonParser().parse(allGrid).getAsJsonObject().getAsJsonArray("features");
 				// read all the grids
@@ -44,7 +43,7 @@ public class TwitterGeoProcessing {
 				// bcast gird data
 				MPICommands.BcastGridData(geoGrids);
 
-				FileInputStream fstream = new FileInputStream("./Data/smallTwitter.json");
+				FileInputStream fstream = new FileInputStream("smallTwitter.json");
 				BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 				String strLine;
 				while ((strLine = br.readLine()) != null) {
@@ -52,26 +51,25 @@ public class TwitterGeoProcessing {
 				}
 				br.close();
 
-				stopTime = System.currentTimeMillis();
-				elapsedTime = stopTime - startTime;
-				System.out.println(MPICommands.indentation() + "The total time of reading files is " + elapsedTime + " ms");
+				printOutTime(startTime, "The total time of bcast info is ");
 
 				MPICommands.BcastFinished();
 
 				MPICommands.ResvResults(geoGrids);
 
-				stopTime = System.currentTimeMillis();
-				elapsedTime = stopTime - startTime;
-				System.out.println(MPICommands.indentation() + "The total time of processing files is " + elapsedTime + " ms");
+				printOutTime(startTime, "The total time of gathering results is ");
 
 			} else {
+				startTime = System.currentTimeMillis();
+
 				char command = MPICommands.ReceiveCommandType(geoGrids);
+
 				while (command != MPICommands.FINISHECMD) {
+
 					if (command == MPICommands.GRIDDATACMD) {
 						MPICommands.ResvGridData(geoGrids);
 					} else if (command == MPICommands.SINGLETWITTERCMD) {
 						String singleTwitter = MPICommands.ResvSingleTwitter();
-
 						ProcessSingleJson(singleTwitter , geoGrids);
 					}
 
@@ -80,25 +78,21 @@ public class TwitterGeoProcessing {
 
 				MPICommands.SendResults(geoGrids);
 
+				printOutTime(startTime, "The total time of processing twitters is ");
+
 			}
-
-
 
 			// sort the ArrayList
 			Collections.sort(geoGrids);
 
 			if (isMainProcess()) {
-
 				// output the results
 				for (GeoGrid geoGrid : geoGrids) {
 					System.out.println(MPICommands.indentation() + "\t#" + (int)geoGrid.internalID + "\t(" + geoGrid.name + "):\t " + geoGrid.Counter);
 				}
 			}
 
-			//
-			stopTime = System.currentTimeMillis();
-			elapsedTime = stopTime - startTime;
-			System.out.println(MPICommands.indentation() + "The total time of execution is " + elapsedTime + " ms");
+			printOutTime(startTime, "The total time of execution is ");
 
 			MPI.Finalize();
 		} catch (Exception e) {
@@ -176,6 +170,12 @@ public class TwitterGeoProcessing {
 		prevSentProcess = next;
 
 		return next;
+	}
+
+	public static void printOutTime(long prevTimeMs, String comment) {
+		long elapsedTime = System.currentTimeMillis() - prevTimeMs;
+		System.out.println(MPICommands.indentation() + comment + elapsedTime + " ms");
+
 	}
 
 

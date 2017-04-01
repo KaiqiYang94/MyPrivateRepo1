@@ -138,7 +138,6 @@ public class MPICommands {
 			
 			MPI.COMM_WORLD.send(gridData, GRIDRESULTSIZE, MPI.DOUBLE, mainProcessRank, tag);
 		}
-		
 	}
 
 	public static void ResvResults (ArrayList<GeoGrid> geoGrids) throws Exception {
@@ -170,12 +169,8 @@ public class MPICommands {
 						break;
 					}
 				}
-
 			}
 		}
-
-
-
 	}
 
 	
@@ -188,5 +183,4 @@ public class MPICommands {
 			return null;
 		}
 	}
-
 }
