@@ -92,9 +92,13 @@ public class TwitterGeoProcessing {
 				}
 			}
 
+
 			printOutTime(startTime, "The total time of execution is ");
 
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+ 
 			MPI.Finalize();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
