@@ -1,5 +1,7 @@
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.io.BufferedReader;
@@ -9,14 +11,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.AbstractMap.SimpleEntry;
 
-import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
-import com.sun.xml.internal.stream.Entity;
-
-import sun.org.mozilla.javascript.internal.ast.WhileLoop;
-
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Computes the edit distance between pairs of words. Can be used for
@@ -62,14 +60,22 @@ public class ImprovedGEDDoubleChar {
 		CharMaps.put(GetMapKey('o', 'v'), (float) 0.0);
 		// k x
 		CharMaps.put(GetMapKey('k', 'x'), (float) 0.0);
+		// k q
+		CharMaps.put(GetMapKey('k', 'q'), (float) 0.0);
 		// k c
 		CharMaps.put(GetMapKey('k', 'c'), (float) 0.0);
 		// v w
 		CharMaps.put(GetMapKey('v', 'w'), (float) 0.0);
 		// v u
 		CharMaps.put(GetMapKey('v', 'u'), (float) 0.0);
+		// z s
+		CharMaps.put(GetMapKey('z', 's'), (float) 0.0);
 
-		// y ei
+		// s sh
+		CharMaps.put(GetMapKey("s", "sh"), (float) 0.0);
+		// t th
+		CharMaps.put(GetMapKey("t", "th"), (float) 0.0);
+		// y eizs
 		CharMaps.put(GetMapKey("y", "ei"), (float) 0.0);
 		// l ll
 		CharMaps.put(GetMapKey("l", "ll"), (float) 0.5);
@@ -85,11 +91,16 @@ public class ImprovedGEDDoubleChar {
 		CharMaps.put(GetMapKey("y", "ee"), (float) 0.0);
 		// CharMaps.put(GetMapKey("ie", "y"), (float) 0.0);
 		// c ch
-		CharMaps.put(GetMapKey("c", "ch"), (float) 0.0);
+		CharMaps.put(GetMapKey("c", "ch"), (float) -0.3);
 		// k ck
 		CharMaps.put(GetMapKey("c", "ck"), (float) 0.0);
 		// ks x
 		CharMaps.put(GetMapKey("ks", "x"), (float) 0.0);
+		
+		
+		// dangerous
+		// as a
+		CharMaps.put(GetMapKey("as", "s"), (float) 0.0);
 	}
 
 	public String GetMapKey(char c1, char c2) {
@@ -270,6 +281,41 @@ public class ImprovedGEDDoubleChar {
 		return String.format("%1$" + length + "s", string);
 	}
 
+
+	private static Map<String, ArrayList<String>> sortByValue(Map<String, ArrayList<String>> unsortMap) {
+
+		// 1. Convert Map to List of Map
+		List<Map.Entry<String, ArrayList<String>>> list =
+		    new LinkedList<Map.Entry<String, ArrayList<String>>>(unsortMap.entrySet());
+
+		// 2. Sort list with Collections.sort(), provide a custom Comparator
+		//    Try switch the o1 o2 position for a different order
+		Collections.sort(list, new Comparator<Map.Entry<String, ArrayList<String>>>() {
+			public int compare(Map.Entry<String, ArrayList<String>> o1,
+			                   Map.Entry<String, ArrayList<String>> o2) {
+				return (o1.getKey()).compareTo(o2.getKey());
+			}
+		});
+
+		// 3. Loop the sorted list and put it into a new insertion order Map LinkedHashMap
+		Map<String, ArrayList<String>> sortedMap = new LinkedHashMap<String, ArrayList<String>>();
+		for (Map.Entry<String, ArrayList<String>> entry : list) {
+			sortedMap.put(entry.getKey(), entry.getValue());
+		}
+
+		/*
+		//classic iterator example
+		for (Iterator<Map.Entry<String, Integer>> it = list.iterator(); it.hasNext(); ) {
+		    Map.Entry<String, Integer> entry = it.next();
+		    sortedMap.put(entry.getKey(), entry.getValue());
+		}*/
+
+
+		return sortedMap;
+	}
+
+	
+	
 	/**
 	 * Testing program
 	 */
@@ -283,7 +329,10 @@ public class ImprovedGEDDoubleChar {
 		ArrayList<String> nameDict = new ArrayList<String>();
 
 		// all the train data in the train.txt
-		ArrayList<SimpleEntry<String, String>> trainData = new ArrayList<SimpleEntry<String, String>>();
+
+		Map<String, ArrayList<String>> trainData = new HashMap<String, ArrayList<String>>();
+		
+//		ArrayList<SimpleEntry<String, String>> trainData = new ArrayList<SimpleEntry<String, String>>();
 
 		try {
 			// the names.txt
@@ -303,7 +352,17 @@ public class ImprovedGEDDoubleChar {
 			while ((strLine = br.readLine()) != null) {
 				// System.out.println(strLine);
 				String[] temp = strLine.split("\t");
-				trainData.add(new SimpleEntry<String, String>(temp[0], temp[1]));
+				
+				if(trainData.containsKey(temp[0]))
+				{
+					trainData.get(temp[0]).add(temp[1]);
+				}
+				else
+				{
+					trainData.put(temp[0], new ArrayList<String>());
+					trainData.get(temp[0]).add(temp[1]);
+				}
+//				trainData.add(new SimpleEntry<String, String>(temp[0], temp[1]));
 			}
 			System.out.println("the train.txt contains " + trainData.size());
 
@@ -314,86 +373,18 @@ public class ImprovedGEDDoubleChar {
 		}
 
 		ImprovedGEDDoubleChar calc = new ImprovedGEDDoubleChar();
-		// first
-		// when the testSize = 100 the 23/100
-		// when the testSize = 200 the 40/200
 
-		// fix the return length
-		// when the testSize = 100 the 30/100
-		// when the testSize = 200 the 53/200
-
-		// Using the vowelSet
-		// when the testSize = 100 the 35/100
-		// when the testSize = 200 the 60/200
-
-		// Adding the y to the vowelSet
-		// when the testSize = 100 the 38/100
-		// when the testSize = 200 the 68/200
-		// found that
-		// The name AACTAY should be aechtie matched to mackay Distance is 4
-		// faild
-
-		// Adding punishment when replacing vowels and non-vowels
-		// when the testSize = 100 the 42/100
-		// when the testSize = 200 the 73/200
-		// now
-		// The name AACTAY should be aechtie matched to aechtie Distance is 5
-		// succeed
-
-		// Adding data for the interchangeable letters yi, vo
-		// when the testSize = 100 the 46/100
-		// when the testSize = 200 the 81/200
-
-		// Change the order of the conditions in the GetReplaceCost
-		// when the testSize = 100 the 46/100
-		// when the testSize = 200 the 86/200
-
-		// Adding String matching
-		// when the testSize = 100 the 51/100
-		// when the testSize = 200 the 96/200
-		// when the textSize = 300 the 131/300 43%
-
-		// Adding the k and x mapping
-		// when the textSize = 300 the 134/300 44%
-
-		// Adding the v and w mapping (300 - 400)
-		// when the textSize = 100 the 38/100 (from 37)
-
-		// Adding the v and u mapping (300 - 400)
-		// when the textSize = 100 the 41/100
-
-		// Adding the k and c mapping (400 - 500)
-		// when the textSize = 100 the 44/100 (from 42)
-
-		// Adding the ks and x mapping (400 - 500) (from 44)
-		// when the textSize = 100 the 47/100
-
-		// Adding the double letter check 
-		// when the textSize = 500 (0 -500) 241/500 (48%)
+		Map<String, ArrayList<String>> sortedMap = sortByValue(trainData);
 		
-		// Adding lower distance for removing a in the first place 
-		// was 27/100 (1100 - 1200)
-		// now 38/100
-		// now 65/100 (100 - 200)
-		// now 66/100 (100 - 200)
-		// now 39/100 (1100-1200)
+		List<Map.Entry<String, ArrayList<String>>> list =
+			    new LinkedList<Map.Entry<String, ArrayList<String>>>(sortedMap.entrySet());
 		
-		// Adding v to oo
-		// was 76/130 58% (130p1)
-		// same 
-		
-		// Do not add chars for the first place 
-		// was 76/130 58% (130p1)
-		// now 79/130 60% (130p1)
-		
-		// now 84/137 61% (130p1)
-				
 		int lowerB = 0;
 		int upperB = 137;
 
 		int CorrectSize = 0;
 		int i = 0;
-		for (SimpleEntry<String, String> trainPair : trainData) {
+		for (Map.Entry<String, ArrayList<String>> trainPair : list) {
 
 			if (i++ < lowerB) {
 				continue;
@@ -411,23 +402,28 @@ public class ImprovedGEDDoubleChar {
 					matchedName = name;
 					minDistance = editDistance;
 				}
-				if (editDistance == 0) {
+				if (editDistance == -0.3) {
 					break;
 				}
 			}
 
-			if (matchedName.equalsIgnoreCase(trainPair.getValue())) {
+			if(trainPair.getValue().contains(matchedName.toLowerCase()))
+			{
 				CorrectSize++;
 			}
+			
+//			if (matchedName.equalsIgnoreCase(trainPair.getValue())) {
+//				CorrectSize++;
+//			}
 
 			System.out.println("The name " + fixedLength(trainPair.getKey().toString()) + "\t should be "
 					+ fixedLength(trainPair.getValue().toString()) + "\t matched to "
 					+ fixedLength(matchedName.toString()) + "\t Distance is " + minDistance + "\t"
-					+ (matchedName.equalsIgnoreCase(trainPair.getValue()) ? "succeed" : "faild"));
+					+ (trainPair.getValue().contains(matchedName.toLowerCase()) ? "succeed" : "faild"));
 		}
 
-		System.out.println("Test size = " + (upperB - lowerB) + " Corrcte ones are " + CorrectSize + "("
-				+ (((float) CorrectSize / (upperB - lowerB)) * 100) + "%)");
+		System.out.println("Test size = " + (i - lowerB) + " Corrcte ones are " + CorrectSize + "("
+				+ (((float) CorrectSize / (i - lowerB)) * 100) + "%)");
 
 	}
 }

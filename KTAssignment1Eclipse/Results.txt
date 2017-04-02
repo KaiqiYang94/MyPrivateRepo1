@@ -1,0 +1,103 @@
+		// first
+		// when the testSize = 100 the 23/100
+		// when the testSize = 200 the 40/200
+
+		// fix the return length
+		// when the testSize = 100 the 30/100
+		// when the testSize = 200 the 53/200
+
+		// Using the vowelSet
+		// when the testSize = 100 the 35/100
+		// when the testSize = 200 the 60/200
+
+		// Adding the y to the vowelSet
+		// when the testSize = 100 the 38/100
+		// when the testSize = 200 the 68/200
+		// found that
+		// The name AACTAY should be aechtie matched to mackay Distance is 4
+		// faild
+
+		// Adding punishment when replacing vowels and non-vowels
+		// when the testSize = 100 the 42/100
+		// when the testSize = 200 the 73/200
+		// now
+		// The name AACTAY should be aechtie matched to aechtie Distance is 5
+		// succeed
+
+		// Adding data for the interchangeable letters yi, vo
+		// when the testSize = 100 the 46/100
+		// when the testSize = 200 the 81/200
+
+		// Change the order of the conditions in the GetReplaceCost
+		// when the testSize = 100 the 46/100
+		// when the testSize = 200 the 86/200
+
+		// Adding String matching
+		// when the testSize = 100 the 51/100
+		// when the testSize = 200 the 96/200
+		// when the textSize = 300 the 131/300 43%
+
+		// Adding the k and x mapping
+		// when the textSize = 300 the 134/300 44%
+
+		// Adding the v and w mapping (300 - 400)
+		// when the textSize = 100 the 38/100 (from 37)
+
+		// Adding the v and u mapping (300 - 400)
+		// when the textSize = 100 the 41/100
+
+		// Adding the k and c mapping (400 - 500)
+		// when the textSize = 100 the 44/100 (from 42)
+
+		// Adding the ks and x mapping (400 - 500) (from 44)
+		// when the textSize = 100 the 47/100
+
+		// Adding the double letter check 
+		// when the textSize = 500 (0 -500) 241/500 (48%)
+		
+		// Adding lower distance for removing a in the first place 
+		// was 27/100 (1100 - 1200)
+		// now 38/100
+		// now 65/100 (100 - 200)
+		// now 66/100 (100 - 200)
+		// now 39/100 (1100-1200)
+		
+		// Adding v to oo
+		// was 76/130 58% (130p1)
+		// same 
+		
+		// Do not add chars for the first place 
+		// was 76/130 58% (130p1)
+		// now 79/130 60% (130p1)
+		
+		// now 84/137 61% (130p1)
+		
+		// change to string -> arrayList 
+		// now 39/100 (1100-1200 train.txt)
+		// now 49/100 (1100-1200 train.txt)
+
+		// adding as to s and t to th
+		// was 49/100 (1100-1200 train.txt)
+		// now 68/100 (1100-1200 train.txt)	
+		// was 84/137 61% (130p1)
+		// now same 
+		// now 71/130 (130p2)
+		
+		// adding z to s
+		// was 71/137  (130p2)
+		// was 74/137 59% (130p2)
+		
+		// adding k to q
+		// was 74/130 (130p2)
+		// now 75/130 (130p2)
+		
+		// fix the min value
+		// was 75/130 (130p2)
+		// now 77/130 (130p2)
+
+
+		// adding s to sh
+		// was 77/130 (130p2)
+		// now 80/130 (130p2)
+		// now 87/137 (130p1)
+		
