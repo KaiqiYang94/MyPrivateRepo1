@@ -290,7 +290,7 @@ public class ImprovedGEDDoubleChar {
 			System.out.println("the names.txt contains " + nameDict.size());
 
 			// the train.txt
-			fstream = new FileInputStream("train.txt");
+			fstream = new FileInputStream("train130p1.txt");
 			br = new BufferedReader(new InputStreamReader(fstream));
 			while ((strLine = br.readLine()) != null) {
 				// System.out.println(strLine);
@@ -369,8 +369,8 @@ public class ImprovedGEDDoubleChar {
 		// now 65/100 (100 - 200)
 		// now 66/100 (100 - 200)
 		// now 39/100 (1100-1200)
-		int lowerB = 1100;
-		int upperB = 1200;
+		int lowerB = 0;
+		int upperB = 130;
 
 		int CorrectSize = 0;
 		int i = 0;
