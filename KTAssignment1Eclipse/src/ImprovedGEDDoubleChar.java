@@ -69,6 +69,14 @@ public class ImprovedGEDDoubleChar {
 		// v u
 		CharMaps.put(GetMapKey('v', 'u'), (float) 0.0);
 
+		// y ei
+		CharMaps.put(GetMapKey("y", "ei"), (float) 0.0);
+		// l ll
+		CharMaps.put(GetMapKey("l", "ll"), (float) 0.5);
+		// j dg
+		CharMaps.put(GetMapKey("j", "dg"), (float) 0.0);
+		// v w
+		CharMaps.put(GetMapKey("v", "oo"), (float) 0.0);
 		// f ph
 		CharMaps.put(GetMapKey("f", "ph"), (float) 0.0);
 		// CharMaps.put(GetMapKey("ph", "f"), (float) 0.0);
@@ -224,7 +232,7 @@ public class ImprovedGEDDoubleChar {
 			return DoubleLetterInsertDist;
 		}
 
-		if (vowelSet.contains(insertChar)) {
+		if (preChar != null && vowelSet.contains(insertChar)) {
 			return VowelsInsertDist;
 		}
 		 if(plosiveSet.contains(insertChar)){
@@ -369,8 +377,19 @@ public class ImprovedGEDDoubleChar {
 		// now 65/100 (100 - 200)
 		// now 66/100 (100 - 200)
 		// now 39/100 (1100-1200)
+		
+		// Adding v to oo
+		// was 76/130 58% (130p1)
+		// same 
+		
+		// Do not add chars for the first place 
+		// was 76/130 58% (130p1)
+		// now 79/130 60% (130p1)
+		
+		// now 84/137 61% (130p1)
+				
 		int lowerB = 0;
-		int upperB = 130;
+		int upperB = 137;
 
 		int CorrectSize = 0;
 		int i = 0;

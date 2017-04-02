@@ -1,6 +1,8 @@
 ABHY	abhay
 ABRAM	abram
+ALDRYJ	aldridge
 ALDRYJ	auldridge
+ALDRYJ	eldridge
 ALYVT	elliot
 ALZN	olson
 AMYH	amie
@@ -105,7 +107,7 @@ PYPGRAS	pipgras
 PYRSN	pearsen
 RVBY	rubie
 RVTGRT	rutgert
-SAGA	suga
+SAGA	sug
 SALGA	shulga
 SAVAN	sawan
 SL	sell
