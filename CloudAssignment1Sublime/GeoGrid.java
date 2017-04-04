@@ -103,10 +103,10 @@ public class GeoGrid implements Comparable<GeoGrid> {
 	public boolean isInGrid(Coordinate coord) {
 		//System.out.println(MPICommands.indentation() + " <"+ coord.longitude + ", "+coord.latitude +">" +this.toString());
 
-		return 	coord.longitude > this.longtMin
-		        && coord.longitude < this.longtMax
-		        && coord.latitude > this.latMin
-		        && coord.latitude < this.latMax;
+		return 	coord.longitude >= this.longtMin
+		        && coord.longitude <= this.longtMax
+		        && coord.latitude >= this.latMin
+		        && coord.latitude <= this.latMax;
 	}
 
 	public int compareTo(GeoGrid compareGrid) {
