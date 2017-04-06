@@ -1,0 +1,64 @@
+MPJ Express (0.44) is started in the multicore configuration
+Size is 8 Rank is 2
+Size is 8 Rank is 1
+Size is 8 Rank is 5
+Size is 8 Rank is 7
+Size is 8 Rank is 3
+Size is 8 Rank is 0
+Size is 8 Rank is 4
+Size is 8 Rank is 6
+Exception when processing the data, the data is  [
+Rank 0: The total time of bcast info is 398673 ms
+Exception when processing the data, the data is  ]
+Rank 1: The total time of processing twitters is 398265 ms
+Rank 1: The total time of execution is 398266 ms
+++++++++++++++++++++++++++++++++++++++++++
+Rank 2: The total time of processing twitters is 398266 ms
+Rank 2: The total time of execution is 398287 ms
+++++++++++++++++++++++++++++++++++++++++++
+Rank 3: The total time of processing twitters is 398281 ms
+Rank 4: The total time of processing twitters is 398281 ms
+Rank 5: The total time of processing twitters is 398280 ms
+Rank 6: The total time of processing twitters is 398286 ms
+Rank 3: The total time of execution is 398297 ms
+++++++++++++++++++++++++++++++++++++++++++
+Rank 5: The total time of execution is 398294 ms
+++++++++++++++++++++++++++++++++++++++++++
+Rank 6: The total time of execution is 398292 ms
+++++++++++++++++++++++++++++++++++++++++++
+Rank 0: The total time of gathering results is 398735 ms
+Rank 0: 	#10	(C2):	 139308
+Rank 0: 	#6	(B2):	 78693
+Rank 0: 	#11	(C3):	 52749
+Rank 0: 	#7	(B3):	 26209
+Rank 0: 	#12	(C4):	 19450
+Rank 0: 	#5	(B1):	 16384
+Rank 0: 	#15	(D4):	 14555
+Rank 0: 	#14	(D3):	 13305
+Rank 0: 	#9	(C1):	 8374
+Rank 0: 	#8	(B4):	 5445
+Rank 0: 	#3	(A3):	 5024
+Rank 0: 	#2	(A2):	 4159
+Rank 0: 	#13	(C5):	 4026
+Rank 0: 	#16	(D5):	 3153
+Rank 0: 	#1	(A1):	 2546
+Rank 0: 	#4	(A4):	 309
+++++++++++++++++++++++++++++++++++++++++++
+Rank 4: The total time of execution is 398305 ms
+++++++++++++++++++++++++++++++++++++++++++
+Rank 7: The total time of processing twitters is 398311 ms
+Rank 7: The total time of execution is 398311 ms
+++++++++++++++++++++++++++++++++++++++++++
+Rank 0: Col- :2  : 222160
+Rank 0: Col- :3  : 97287
+Rank 0: Col- :4  : 39759
+Rank 0: Col- :1  : 27304
+Rank 0: Col- :5  : 7179
+++++++++++++++++++++++++++++++++++++++++++
+Rank 0: Rows :C  : 617596
+Rank 0: Rows :B  : 520420
+Rank 0: Rows :D  : 424702
+Rank 0: Rows :A  : 405727
+++++++++++++++++++++++++++++++++++++++++++
+Rank 0: The total time of execution is 398740 ms
+++++++++++++++++++++++++++++++++++++++++++
