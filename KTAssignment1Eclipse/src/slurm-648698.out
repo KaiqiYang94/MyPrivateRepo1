@@ -1,0 +1,901 @@
+MPJ Express (0.44) is started in the multicore configuration
+Current relative path is: /home/kaiqiy
+the names.txt contains 25909
+the train.txt contains 11967
+The name            'ABR	 should be         [aabar]	 matched to [baabar, babar]	 Distance is 2.0	failed
+The name            'ADL	 should be          [adel]	 matched to    [adel, adil]	 Distance is 2.0	succeeded
+The name           'ADYL	 should be          [adil]	 matched to   [adil, fadil]	 Distance is 2.0	succeeded
+The name            'ALY	 should be          [aali]	 matched to   [ali, bailey]	 Distance is 2.0	failed
+The name           'ALYA	 should be       [aaliyah]	 matched to   [alia, aliya]	 Distance is 2.0	failed
+The name           'ALYH	 should be       [aaliyah]	 matched to       [aliyyah]	 Distance is 2.0	failed
+The name           'ASYF	 should be          [asif]	 matched to   [asif, saiph]	 Distance is 2.0	succeeded
+The name           'AYMN	 should be         [ayman]	 matched to  [aiman, ayman]	 Distance is 2.0	failed
+The name           'AYSA	 should be [aiesha, ayesha]	 matched to [aiesha, aisha, ayesha]	 Distance is 2.0	succeeded
+The name           'AYSH	 should be [aiesha, ayesha]	 matched to         [ayush]	 Distance is 2.0	failed
+The name       'BDAL'ZYR	 should be     [abdulaziz]	 matched to        [balzer]	 Distance is 6.5	failed
+The name       'BDAL'ZYZ	 should be     [abdulaziz]	 matched to     [abdulaziz]	 Distance is 5.5	succeeded
+The name          'BDALH	 should be      [abdullah]	 matched to [abdullah, bdale]	 Distance is 4.0	succeeded
+The name         'BDALLH	 should be      [abdullah]	 matched to      [abdullah]	 Distance is 3.5	succeeded
+The name      'BDALRHMAN	 should be [abdalrahman, abdulrahman]	 matched to   [abdalrahman]	 Distance is 3.0	succeeded
+The name       'BDALRHMN	 should be [abdalrahman, abdulrahman]	 matched to   [abdalrahman]	 Distance is 3.0	succeeded
+The name          'BDHBY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 3.0	succeeded
+The name            'BDL	 should be         [abdul]	 matched to [bdale, beadle]	 Distance is 2.5	failed
+The name        'BDL'ZYZ	 should be     [abdulaziz]	 matched to     [abdulaziz]	 Distance is 5.0	succeeded
+The name      'BDVAL'ZYZ	 should be     [abdulaziz]	 matched to     [abdulaziz]	 Distance is 7.0	succeeded
+The name           'BDVL	 should be         [abdul]	 matched to       [bidwell]	 Distance is 2.5	failed
+The name       'BDVLRHMN	 should be   [abdulrahman]	 matched to   [abdulrahman]	 Distance is 3.0	succeeded
+The name        'BVDHABY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 3.0	succeeded
+The name            'BYD	 should be         [ubaid]	 matched to          [boyd]	 Distance is 2.0	failed
+The name            'DYL	 should be          [adil]	 matched to     [dial, dil]	 Distance is 2.0	failed
+The name            'FAF	 should be          [afaf]	 matched to    [afaf, fife]	 Distance is 3.0	succeeded
+The name            'FYF	 should be          [afif]	 matched to          [fife]	 Distance is 2.5	failed
+The name            'HYH	 should be         [aahie]	 matched to  [sheehy, shuh]	 Distance is 2.5	failed
+The name        'LAALDYN	 should be      [alaaldin]	 matched to      [alaaldin]	 Distance is 3.0	succeeded
+The name          'LADYN	 should be      [alaaldin]	 matched to       [saladin]	 Distance is 2.0	failed
+The name       'LAKVABAH	 should be      [alaqabah]	 matched to      [alaqabah]	 Distance is 5.0	succeeded
+The name         'LAYDYN	 should be      [alaaldin]	 matched to [claudine, leiden, leyden]	 Distance is 3.0	failed
+The name          'LAYYN	 should be         [alain]	 matched to       [malayan]	 Distance is 2.5	failed
+The name            'LVY	 should be [allaway, alleway]	 matched to [cleavey, lavey]	 Distance is 2.0	failed
+The name             'LY	 should be [aali, ali, allee]	 matched to  [bailey, bali]	 Distance is 2.0	failed
+The name            'LYA	 should be [aaliyah, alia, aliya, alya]	 matched to  [celia, delia]	 Distance is 2.0	failed
+The name            'LYM	 should be          [alim]	 matched to     [liam, lim]	 Distance is 2.0	failed
+The name           'LYMA	 should be  [alima, ulima]	 matched to [kolyma, lima, selima]	 Distance is 2.0	failed
+The name            'LYN	 should be         [alain]	 matched to  [balin, blain]	 Distance is 2.0	failed
+The name          'LYYAH	 should be       [aaliyah]	 matched to       [aliyyah]	 Distance is 3.0	failed
+The name             'ML	 should be          [amal]	 matched to  [camel, cemal]	 Distance is 2.0	failed
+The name             'MR	 should be          [umar]	 matched to [comer, daumier]	 Distance is 2.0	failed
+The name            'NBR	 should be         [anbar]	 matched to [dunbar, manber]	 Distance is 2.0	failed
+The name           'NYZH	 should be        [unaiza]	 matched to [danish, manish]	 Distance is 2.0	failed
+The name            'QYL	 should be    [akil, aqil]	 matched to     [guayaquil]	 Distance is 2.0	failed
+The name           'QYLA	 should be [akilah, aqila]	 matched to        [quayle]	 Distance is 2.5	failed
+The name           'RBYL	 should be         [arbil]	 matched to [kerbel, maribel]	 Distance is 2.5	failed
+The name          'RRYFA	 should be        [arrifa]	 matched to        [arrifa]	 Distance is 3.0	succeeded
+The name           'SMAN	 should be        [othman]	 matched to [coisman, cushman]	 Distance is 2.0	failed
+The name            'SRT	 should be         [israt]	 matched to [seurat, short, surat]	 Distance is 2.0	failed
+The name            'TYH	 should be         [atiya]	 matched to [fatah, ptah, teh]	 Distance is 2.5	failed
+The name             'YN	 should be           [ain]	 matched to    [bain, bian]	 Distance is 2.0	failed
+The name            A'LY	 should be          [aali]	 matched to  [abley, agali]	 Distance is 2.0	failed
+The name          A'LYAH	 should be       [aaliyah]	 matched to       [aliyyah]	 Distance is 2.0	failed
+The name           A'MAL	 should be          [amal]	 matched to          [amal]	 Distance is 2.0	succeeded
+The name          AACTAY	 should be       [aechtie]	 matched to       [aechtie]	 Distance is 1.2	succeeded
+The name           AALTJ	 should be        [aeltje]	 matched to        [aaltje]	 Distance is 0.5	failed
+The name          AAMYNA	 should be        [aamina]	 matched to        [aamina]	 Distance is 0.0	succeeded
+The name           AARVN	 should be         [aaron]	 matched to         [aaron]	 Distance is 0.0	succeeded
+The name             ABA	 should be           [aba]	 matched to     [aba, abia]	 Distance is 0.0	succeeded
+The name            ABAD	 should be          [abad]	 matched to   [abad, abiad]	 Distance is 0.0	succeeded
+The name           ABADA	 should be        [obadja]	 matched to [ibadan, obadiah]	 Distance is 1.0	failed
+The name         ABADHBY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 0.5	succeeded
+The name           ABAJA	 should be        [obadja]	 matched to         [abuja]	 Distance is 0.5	failed
+The name            ABAR	 should be         [aabar]	 matched to   [aabar, ibar]	 Distance is 0.5	succeeded
+The name            ABCR	 should be        [abcher]	 matched to        [abcher]	 Distance is -0.3	succeeded
+The name           ABDJA	 should be        [obadja]	 matched to [abidjan, obadja]	 Distance is 0.5	failed
+The name       ABDLRHMAN	 should be   [abdalrahman]	 matched to [abdalrahman, abdulrahman]	 Distance is 0.0	succeeded
+The name           ABDVN	 should be         [ebdon]	 matched to         [ebdon]	 Distance is 0.5	succeeded
+The name             ABH	 should be           [abe]	 matched to         [abhay]	 Distance is 0.5	failed
+The name           ABHAY	 should be         [abhay]	 matched to         [abhay]	 Distance is 0.0	succeeded
+The name            ABHY	 should be         [abhay]	 matched to         [abhay]	 Distance is 0.0	succeeded
+The name             ABL	 should be   [abel, abell]	 matched to [abel, abul, aibel]	 Distance is 0.0	succeeded
+The name            ABLA	 should be        [abella]	 matched to [abele, abella]	 Distance is 0.5	failed
+The name            ABLH	 should be         [abele]	 matched to   [abel, abele]	 Distance is 2.0	failed
+The name          ABLHYD	 should be      [adelheid]	 matched to      [adelheid]	 Distance is 2.0	succeeded
+The name            ABLJ	 should be       [abeltje]	 matched to   [abel, abele]	 Distance is 2.0	failed
+The name            ABLT	 should be       [abeltje]	 matched to [abeltje, ablett]	 Distance is 0.5	succeeded
+The name           ABLTJ	 should be       [abeltje]	 matched to       [abeltje]	 Distance is 0.5	succeeded
+The name            ABLY	 should be         [abley]	 matched to         [abley]	 Distance is 0.0	succeeded
+The name          ABLYSN	 should be      [ablation]	 matched to [abelson, abolin]	 Distance is 2.0	failed
+The name            ABND	 should be         [abend]	 matched to         [abend]	 Distance is 0.0	succeeded
+The name            ABNR	 should be         [abner]	 matched to         [abner]	 Distance is 0.0	succeeded
+The name             ABR	 should be         [aabar]	 matched to  [aabar, aberg]	 Distance is 0.5	succeeded
+The name         ABRAHAM	 should be       [abraham]	 matched to       [abraham]	 Distance is 0.0	succeeded
+The name         ABRAHYM	 should be [ebrahim, ibrahim]	 matched to [abraham, ebrahim, ibrahim]	 Distance is 0.5	failed
+The name           ABRAM	 should be         [abram]	 matched to         [abram]	 Distance is 0.0	succeeded
+The name        ABRAMSVN	 should be      [abramson]	 matched to      [abramson]	 Distance is 0.0	succeeded
+The name          ABRAPT	 should be        [abrupt]	 matched to        [abrupt]	 Distance is 0.5	succeeded
+The name          ABRAYT	 should be       [ebright]	 matched to        [aubrey]	 Distance is 2.5	failed
+The name          ABRBAC	 should be      [eberbach]	 matched to      [eberbach]	 Distance is 0.19999999	succeeded
+The name            ABRG	 should be  [aberg, oborg]	 matched to         [aberg]	 Distance is 0.0	succeeded
+The name       ABRKRVMBY	 should be   [abercrombie]	 matched to   [abercrombie]	 Distance is 0.0	succeeded
+The name            ABRL	 should be        [oberle]	 matched to [eberle, eberly, oberle]	 Distance is 1.0	failed
+The name           ABRLY	 should be        [eberle]	 matched to        [eberly]	 Distance is 0.5	failed
+The name         ABRMSKY	 should be      [obremski]	 matched to      [obremski]	 Distance is 0.5	succeeded
+The name            ABRT	 should be [ebbert, ebert]	 matched to         [ebert]	 Distance is 0.5	succeeded
+The name          ABRVTR	 should be    [oberreuter]	 matched to    [oberreuter]	 Distance is 1.0	succeeded
+The name            ABRY	 should be [abery, aubrey]	 matched to [abery, aubrey, aubrie]	 Distance is 0.0	succeeded
+The name           ABRYN	 should be        [obrien]	 matched to [iberian, obrien]	 Distance is 0.5	failed
+The name          ABRYNY	 should be        [ibrini]	 matched to        [ibrini]	 Distance is 0.5	succeeded
+The name            ABST	 should be          [obst]	 matched to          [obst]	 Distance is 0.5	succeeded
+The name       ABSTGARTN	 should be    [obstgarten]	 matched to    [obstgarten]	 Distance is 0.5	succeeded
+The name         ABSTRKT	 should be      [abstract]	 matched to      [abstract]	 Distance is 0.0	succeeded
+The name             ABT	 should be        [abbott]	 matched to         [abbot]	 Distance is 0.5	failed
+The name           ABTYN	 should be        [abtine]	 matched to        [abtine]	 Distance is 0.5	succeeded
+The name             ABV	 should be          [abou]	 matched to          [abou]	 Distance is 0.0	succeeded
+The name           ABVBA	 should be         [aboba]	 matched to         [aboba]	 Distance is 0.0	succeeded
+The name          ABVDBY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 2.0	succeeded
+The name        ABVDHABY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 0.0	succeeded
+The name         ABVHBYB	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 4.0	succeeded
+The name          ABVLYN	 should be        [abolin]	 matched to        [abolin]	 Distance is 0.0	succeeded
+The name         ABVRYMH	 should be      [eboreime]	 matched to      [eboreime]	 Distance is 2.5	succeeded
+The name            ABVT	 should be [abbot, abbott]	 matched to         [abbot]	 Distance is 0.5	succeeded
+The name        ABVTSMYT	 should be    [abbotsmith]	 matched to    [abbotsmith]	 Distance is 0.5	succeeded
+The name             ABY	 should be [abbey, abby, ebe]	 matched to    [aba, abbey]	 Distance is 0.5	failed
+The name            ABYA	 should be          [abia]	 matched to          [abia]	 Distance is 0.0	succeeded
+The name           ABYAB	 should be         [abiab]	 matched to         [abiab]	 Distance is 0.0	succeeded
+The name           ABYAD	 should be         [abiad]	 matched to         [abiad]	 Distance is 0.0	succeeded
+The name           ABYAN	 should be         [abyan]	 matched to         [abyan]	 Distance is 0.0	succeeded
+The name            ABYD	 should be         [ubaid]	 matched to         [abiad]	 Distance is 0.0	failed
+The name            ABYL	 should be          [abel]	 matched to [abel, abul, aibel]	 Distance is 0.5	succeeded
+The name          ABYLAK	 should be       [abilock]	 matched to       [abilock]	 Distance is 1.0	succeeded
+The name           ABYNA	 should be         [ebina]	 matched to         [ebina]	 Distance is 0.5	succeeded
+The name          ABYNGM	 should be      [obbingem]	 matched to      [obbingem]	 Distance is 1.0	succeeded
+The name          ABYNGN	 should be      [obbingem]	 matched to        [bingen]	 Distance is 2.0	failed
+The name              AC	 should be           [ech]	 matched to       [ac, ack]	 Distance is 0.0	failed
+The name            ACDL	 should be      [archdale]	 matched to [abdul, acadia]	 Distance is 2.0	failed
+The name             ACR	 should be        [archer]	 matched to  [ecker, ocker]	 Distance is 0.5	failed
+The name          ACRNAR	 should be      [achernar]	 matched to      [achernar]	 Distance is -0.3	succeeded
+The name            ACTY	 should be       [aechtie]	 matched to       [aechtie]	 Distance is -0.3	succeeded
+The name           ACTYH	 should be       [aechtie]	 matched to       [aechtie]	 Distance is 1.7	succeeded
+The name             ACY	 should be       [aechtie]	 matched to          [acee]	 Distance is 0.0	failed
+The name           ACYLS	 should be      [achilles]	 matched to      [achilles]	 Distance is 0.19999999	succeeded
+The name          ACYSVN	 should be      [atchison]	 matched to       [acheson]	 Distance is 0.19999999	failed
+The name            ACYT	 should be       [aechtie]	 matched to    [acee, adit]	 Distance is 2.0	failed
+The name            ADAB	 should be          [adab]	 matched to          [adab]	 Distance is 0.0	succeeded
+The name            ADAM	 should be          [adam]	 matched to          [adam]	 Distance is 0.0	succeeded
+The name           ADAMV	 should be         [adamo]	 matched to         [adamo]	 Distance is 0.0	succeeded
+The name            ADAN	 should be          [adan]	 matched to          [adan]	 Distance is 0.0	succeeded
+The name           ADANA	 should be         [adana]	 matched to         [adana]	 Distance is 0.0	succeeded
+The name           ADANL	 should be      [odonnell]	 matched to   [adan, adana]	 Distance is 2.0	failed
+The name           ADARA	 should be         [edara]	 matched to         [edara]	 Distance is 0.5	succeeded
+The name             ADB	 should be          [adab]	 matched to          [adab]	 Distance is 0.0	succeeded
+The name           ADBRG	 should be        [edberg]	 matched to        [edberg]	 Distance is 0.5	succeeded
+The name      ADGRYNGLND	 should be [adgeringelant]	 matched to [adgeringelant]	 Distance is 2.0	succeeded
+The name      ADGRYNGLNT	 should be [adgeringelant]	 matched to [adgeringelant]	 Distance is 0.0	succeeded
+The name       ADGYNGTVN	 should be     [edgington]	 matched to     [edgington]	 Distance is 0.5	succeeded
+The name             ADH	 should be           [ade]	 matched to         [idaho]	 Distance is 1.0	failed
+The name           ADKAK	 should be        [adcock]	 matched to        [adcock]	 Distance is 1.0	succeeded
+The name            ADKK	 should be        [adcock]	 matched to        [adcock]	 Distance is 0.5	succeeded
+The name          ADKRYK	 should be      [oudekirk]	 matched to [acrux, oudekirk]	 Distance is 2.5	failed
+The name           ADKVK	 should be        [adcock]	 matched to        [adcock]	 Distance is 0.5	succeeded
+The name          ADKYNZ	 should be        [adkins]	 matched to        [adkins]	 Distance is 0.0	succeeded
+The name          ADKYRK	 should be      [oudekirk]	 matched to      [oudekirk]	 Distance is 0.5	succeeded
+The name             ADL	 should be   [adel, odell]	 matched to    [adel, adil]	 Distance is 0.0	succeeded
+The name            ADLA	 should be         [adela]	 matched to [adalia, adela]	 Distance is 0.0	failed
+The name         ADLARDV	 should be      [adelardo]	 matched to      [adelardo]	 Distance is 0.0	succeeded
+The name          ADLAYD	 should be [adelaide, adelheid]	 matched to      [adelaide]	 Distance is 0.5	succeeded
+The name          ADLHYD	 should be      [adelheid]	 matched to      [adelheid]	 Distance is 0.0	succeeded
+The name           ADLMA	 should be        [adalma]	 matched to        [adalma]	 Distance is 0.0	succeeded
+The name            ADLR	 should be         [adler]	 matched to         [adler]	 Distance is 0.0	succeeded
+The name          ADLSVN	 should be       [adelson]	 matched to       [adelson]	 Distance is 0.0	succeeded
+The name            ADLY	 should be        [audley]	 matched to        [audley]	 Distance is 0.0	succeeded
+The name          ADMVND	 should be       [edmonds]	 matched to [edmond, edmund]	 Distance is 0.5	failed
+The name         ADMVNDS	 should be       [edmonds]	 matched to [edmonds, edmunds]	 Distance is 0.5	succeeded
+The name         ADMVNDZ	 should be       [edmonds]	 matched to [edmonds, edmunds]	 Distance is 0.5	succeeded
+The name          ADMVNZ	 should be       [edmonds]	 matched to [adonis, audions]	 Distance is 2.0	failed
+The name        ADMYRALN	 should be     [admiralen]	 matched to     [admiralen]	 Distance is 0.0	succeeded
+The name        ADMYRALZ	 should be      [admirals]	 matched to      [admirals]	 Distance is 0.0	succeeded
+The name        ADMYSTVN	 should be      [edmiston]	 matched to      [edmiston]	 Distance is 0.5	succeeded
+The name          ADNAMS	 should be        [adnams]	 matched to        [adnams]	 Distance is 0.0	succeeded
+The name          ADNAMZ	 should be        [adnams]	 matched to        [adnams]	 Distance is 0.0	succeeded
+The name         ADNBRAG	 should be   [edenborough]	 matched to   [edenborough]	 Distance is 1.5	succeeded
+The name          ADNBRG	 should be   [edenborough]	 matched to [edenborough, edinburgh]	 Distance is 1.0	succeeded
+The name          ADNBRV	 should be   [edenborough]	 matched to [edenborough, edinburgh]	 Distance is 3.0	succeeded
+The name         ADNBRVG	 should be   [edenborough]	 matched to   [edenborough]	 Distance is 1.0	succeeded
+The name         ADNBVRG	 should be   [edenborough]	 matched to [edenborough, edinburgh]	 Distance is 1.0	succeeded
+The name            ADRY	 should be   [adri, adrie]	 matched to [adri, adrie, audrey]	 Distance is 0.0	succeeded
+The name          ADRYAN	 should be       [adriaen]	 matched to [adriaen, adrian]	 Distance is 0.0	succeeded
+The name         ADRYANA	 should be       [adriana]	 matched to       [adriana]	 Distance is 0.0	succeeded
+The name         ADRYANS	 should be      [adriance]	 matched to      [adrianas]	 Distance is 0.0	failed
+The name           ADRYN	 should be       [adriane]	 matched to [adriaen, adrian]	 Distance is 0.0	failed
+The name       ADRYNKLNT	 should be [adgeringelant]	 matched to [adgeringelant]	 Distance is 5.1	succeeded
+The name          ADRYNS	 should be      [adriance]	 matched to      [adrianas]	 Distance is 0.0	failed
+The name          ADRYNY	 should be [adriene, adrienne]	 matched to [adriana, adriane]	 Distance is 0.5	failed
+The name           ADRYS	 should be         [idris]	 matched to       [audreys]	 Distance is 0.0	failed
+The name           ADSAL	 should be        [edsall]	 matched to [edsall, edsel]	 Distance is 1.0	succeeded
+The name            ADST	 should be        [adsett]	 matched to        [adsett]	 Distance is 0.5	succeeded
+The name           ADSVN	 should be       [eidsson]	 matched to [addison, edison]	 Distance is 0.5	failed
+The name             ADT	 should be        [adsett]	 matched to          [adit]	 Distance is 0.0	failed
+The name          ADVARD	 should be [edvard, edward]	 matched to [edvard, edward]	 Distance is 0.5	succeeded
+The name        ADVARDSN	 should be    [edwardsson]	 matched to    [edwardsson]	 Distance is 1.0	succeeded
+The name          ADVART	 should be       [eduwart]	 matched to       [eduwart]	 Distance is 0.5	succeeded
+The name           ADVLF	 should be [adolph, udolph]	 matched to [adolf, adolph]	 Distance is 0.0	failed
+The name        ADVLFSVN	 should be     [adolfsson]	 matched to     [adolfsson]	 Distance is 0.5	succeeded
+The name          ADVNCR	 should be     [adventure]	 matched to     [adventure]	 Distance is 2.5	succeeded
+The name           ADVNL	 should be      [odonnell]	 matched to      [odonnell]	 Distance is 1.5	succeeded
+The name          ADVNYS	 should be        [adonis]	 matched to        [adonis]	 Distance is 0.0	succeeded
+The name       ADVSVMALY	 should be    [adusumalli]	 matched to    [adusumalli]	 Distance is 0.5	succeeded
+The name         ADVVART	 should be       [eduwart]	 matched to       [eduwart]	 Distance is 0.5	succeeded
+The name             ADY	 should be [addy, athey, eadie, eady, eddey]	 matched to    [adie, audi]	 Distance is 0.0	failed
+The name            ADYH	 should be          [adie]	 matched to         [idaho]	 Distance is 1.5	failed
+The name            ADYK	 should be          [adik]	 matched to          [adik]	 Distance is 0.0	succeeded
+The name           ADYKS	 should be       [addicks]	 matched to  [adidas, adik]	 Distance is 2.0	failed
+The name            ADYL	 should be          [adil]	 matched to          [adil]	 Distance is 0.0	succeeded
+The name          ADYLRD	 should be     [ethilrede]	 matched to      [adelardo]	 Distance is 1.0	failed
+The name           ADYNA	 should be         [adina]	 matched to         [adina]	 Distance is 0.0	succeeded
+The name        ADYNGTVN	 should be [addington, edgington]	 matched to     [addington]	 Distance is 0.5	succeeded
+The name            ADYS	 should be         [addis]	 matched to   [adis, audis]	 Distance is 0.0	failed
+The name          ADYSAK	 should be        [adisak]	 matched to        [adisak]	 Distance is 0.0	succeeded
+The name          ADYSVN	 should be       [addison]	 matched to [addison, edison]	 Distance is 0.5	succeeded
+The name            ADYT	 should be          [adit]	 matched to          [adit]	 Distance is 0.0	succeeded
+The name             AFA	 should be           [afa]	 matched to           [afa]	 Distance is 0.0	succeeded
+The name            AFAF	 should be          [afaf]	 matched to          [afaf]	 Distance is 0.0	succeeded
+The name            AFRA	 should be          [afra]	 matched to          [afra]	 Distance is 0.0	succeeded
+The name          AFRDYT	 should be     [aphrodite]	 matched to     [aphrodite]	 Distance is 0.5	succeeded
+The name         AFRVDYT	 should be     [aphrodite]	 matched to     [aphrodite]	 Distance is 0.5	succeeded
+The name           AFTAB	 should be         [aftab]	 matched to         [aftab]	 Distance is 0.0	succeeded
+The name             AFV	 should be          [afou]	 matched to          [afou]	 Distance is 0.0	succeeded
+The name          AFVRYL	 should be      [aphoriel]	 matched to      [aphoriel]	 Distance is 0.0	succeeded
+The name         AFYCART	 should be     [aphichart]	 matched to     [aphichart]	 Distance is -0.3	succeeded
+The name            AFYF	 should be          [afif]	 matched to          [afif]	 Distance is 0.0	succeeded
+The name          AFYGTN	 should be     [uffington]	 matched to [iphigenia, uffington]	 Distance is 3.0	failed
+The name         AFYNGTN	 should be     [uffington]	 matched to     [uffington]	 Distance is 1.0	succeeded
+The name            AFYS	 should be        [office]	 matched to  [effies, ufas]	 Distance is 1.0	failed
+The name           AFYSR	 should be       [officer]	 matched to        [fisher]	 Distance is 2.0	failed
+The name           AFYVN	 should be        [afioun]	 matched to        [afioun]	 Distance is 0.0	succeeded
+The name           AFZAL	 should be         [afzal]	 matched to         [afzal]	 Distance is 0.0	succeeded
+The name            AFZL	 should be         [afzal]	 matched to         [afzal]	 Distance is 0.0	succeeded
+The name              AG	 should be           [egg]	 matched to       [ag, aug]	 Distance is 0.0	failed
+The name           AGALY	 should be         [agali]	 matched to         [agali]	 Distance is 0.0	succeeded
+The name            AGAS	 should be         [agass]	 matched to     [ags, augs]	 Distance is 0.0	failed
+The name           AGATY	 should be         [agate]	 matched to [agate, agatha]	 Distance is 0.5	succeeded
+The name           AGBRN	 should be        [ogborn]	 matched to        [ogborn]	 Distance is 0.5	succeeded
+The name          AGBVRN	 should be        [ogborn]	 matched to        [ogborn]	 Distance is 0.5	succeeded
+The name         AGLSTVN	 should be    [eaglestone]	 matched to    [eaglestone]	 Distance is 1.0	succeeded
+The name            AGMN	 should be       [eggeman]	 matched to       [eggeman]	 Distance is 1.0	succeeded
+The name           AGMVZ	 should be        [egmose]	 matched to        [egmose]	 Distance is 1.0	succeeded
+The name           AGNDY	 should be        [agndie]	 matched to        [agndie]	 Distance is 0.0	succeeded
+The name            AGNV	 should be         [ageno]	 matched to  [ageno, agnew]	 Distance is 0.0	succeeded
+The name          AGNVYK	 should be      [aganovic]	 matched to      [aganovic]	 Distance is 0.0	succeeded
+The name          AGPYAN	 should be       [agopian]	 matched to       [agopian]	 Distance is 0.0	succeeded
+The name             AGR	 should be         [augor]	 matched to  [auger, augor]	 Distance is 0.0	failed
+The name        AGRAVALA	 should be      [agrawala]	 matched to      [agrawala]	 Distance is 0.0	succeeded
+The name            AGRN	 should be         [agren]	 matched to         [agren]	 Distance is 0.0	succeeded
+The name           AGRTN	 should be       [egerton]	 matched to       [egerton]	 Distance is 0.5	succeeded
+The name          AGRTVN	 should be       [egerton]	 matched to       [egerton]	 Distance is 0.5	succeeded
+The name      AGRYNGLANT	 should be [adgeringelant]	 matched to [adgeringelant]	 Distance is 3.1	succeeded
+The name       AGRYNGLND	 should be [adgeringelant]	 matched to     [greenland]	 Distance is 4.0	failed
+The name           AGVLV	 should be        [agullo]	 matched to        [agullo]	 Distance is 0.5	succeeded
+The name            AGVR	 should be         [augor]	 matched to         [augor]	 Distance is 0.0	succeeded
+The name          AGVSTV	 should be       [augusto]	 matched to       [augusto]	 Distance is 0.0	succeeded
+The name         AGVSTYN	 should be      [augustyn]	 matched to [agustin, augustin, augustyn]	 Distance is 0.0	failed
+The name       AGVSTYNLY	 should be   [agostinelli]	 matched to   [agostinelli]	 Distance is 0.5	succeeded
+The name        AGVSTYNY	 should be      [agostini]	 matched to      [agostini]	 Distance is 0.0	succeeded
+The name          AGVYRV	 should be        [aguero]	 matched to        [aguero]	 Distance is 0.5	succeeded
+The name           AGVYV	 should be         [agoyo]	 matched to         [agoyo]	 Distance is 0.0	succeeded
+The name            AGYL	 should be          [aqil]	 matched to [agali, agoult]	 Distance is 1.0	failed
+The name           AGYLA	 should be         [aqila]	 matched to       [aguilar]	 Distance is 0.5	failed
+The name         AGYLSVN	 should be      [egilsson]	 matched to      [egilsson]	 Distance is 1.0	succeeded
+The name          AGYNST	 should be       [against]	 matched to       [against]	 Distance is 0.0	succeeded
+The name            AHAY	 should be         [aahie]	 matched to [aahie, ohio, yahoo]	 Distance is 1.5	succeeded
+The name          AHLAND	 should be        [ohlund]	 matched to        [ohlund]	 Distance is 1.0	succeeded
+The name           AHMAN	 should be        [ohmann]	 matched to         [ohman]	 Distance is 0.5	failed
+The name            AHMN	 should be         [ohman]	 matched to         [ohman]	 Distance is 0.5	succeeded
+The name            AHRN	 should be         [ahern]	 matched to         [ahern]	 Distance is 0.0	succeeded
+The name             AHY	 should be         [aahie]	 matched to         [aahie]	 Distance is 0.5	succeeded
+The name            AHYH	 should be         [aahie]	 matched to [aliyyah, ayah]	 Distance is 2.0	failed
+The name              AJ	 should be         [aetje]	 matched to          [ajay]	 Distance is 0.5	failed
+The name           AJAST	 should be        [ojaste]	 matched to        [ojaste]	 Distance is 1.0	succeeded
+The name            AJAY	 should be          [ajay]	 matched to          [ajay]	 Distance is 0.0	succeeded
+The name            AJDA	 should be         [ojeda]	 matched to         [ojeda]	 Distance is 0.5	succeeded
+The name           AJLVS	 should be       [aggelos]	 matched to [aeolus, ajlun]	 Distance is 2.0	failed
+The name            AJNT	 should be         [agent]	 matched to   [agent, aint]	 Distance is 2.0	succeeded
+The name      AJRAYNGLND	 should be [adgeringelant]	 matched to [adgeringelant]	 Distance is 4.0	succeeded
+The name        AJYNGTVN	 should be     [eggington]	 matched to     [edgington]	 Distance is 0.5	failed
+The name         AJYNTVN	 should be      [edginton]	 matched to      [edginton]	 Distance is 0.5	succeeded
+The name              AK	 should be [ack, eck, oke]	 matched to       [ac, aik]	 Distance is 0.0	failed
+The name             AKA	 should be           [aka]	 matched to           [aka]	 Distance is 0.0	succeeded
+The name          AKADMY	 should be       [academy]	 matched to       [academy]	 Distance is 0.0	succeeded
+The name         AKADMYK	 should be      [akademik]	 matched to      [akademik]	 Distance is 0.0	succeeded
+The name           AKAKS	 should be          [acox]	 matched to [acox, oaxacas]	 Distance is 0.5	succeeded
+The name         AKAPADY	 should be      [accapadi]	 matched to      [accapadi]	 Distance is 0.5	succeeded
+The name           AKBRG	 should be        [ekberg]	 matched to        [ekberg]	 Distance is 0.5	succeeded
+The name          AKBVRN	 should be     [ayckbourn]	 matched to     [ayckbourn]	 Distance is 2.0	succeeded
+The name           AKDAG	 should be         [akdag]	 matched to         [akdag]	 Distance is 0.0	succeeded
+The name           AKGAN	 should be         [akgun]	 matched to         [akgun]	 Distance is 0.5	succeeded
+The name             AKL	 should be           [akl]	 matched to     [akil, akl]	 Distance is 0.0	failed
+The name          AKLAND	 should be        [eklund]	 matched to [iceland, oakland]	 Distance is 0.5	failed
+The name           AKLND	 should be      [auckland]	 matched to [eklund, iceland, oakland]	 Distance is 0.5	failed
+The name           AKLVF	 should be         [eklof]	 matched to         [eklof]	 Distance is 0.5	succeeded
+The name            AKLY	 should be [ackley, oakley]	 matched to [aqila, aquila]	 Distance is 0.5	failed
+The name             AKM	 should be         [akeem]	 matched to          [axum]	 Distance is 0.0	failed
+The name           AKMAN	 should be  [akman, ekman]	 matched to         [akman]	 Distance is 0.0	succeeded
+The name      AKMANDNSYS	 should be   [ekmundensis]	 matched to   [ekmundensis]	 Distance is 1.0	succeeded
+The name       AKMANDSYS	 should be   [ekmundensis]	 matched to   [ekmundensis]	 Distance is 3.0	succeeded
+The name            AKMN	 should be         [ekman]	 matched to         [akman]	 Distance is 0.0	failed
+The name           AKMNA	 should be        [acmena]	 matched to        [acmena]	 Distance is 0.0	succeeded
+The name            AKMR	 should be       [alcmere]	 matched to  [acuner, akar]	 Distance is 2.0	failed
+The name      AKMVNDNSYS	 should be   [ekmundensis]	 matched to   [ekmundensis]	 Distance is 0.5	succeeded
+The name            AKMY	 should be         [akemi]	 matched to         [akemi]	 Distance is 0.0	succeeded
+The name             AKN	 should be         [akeem]	 matched to   [aiken, akin]	 Distance is 0.0	failed
+The name             AKR	 should be         [ecker]	 matched to   [akar, auker]	 Distance is 0.0	failed
+The name            AKRM	 should be      [ackerman]	 matched to  [abram, acrux]	 Distance is 2.0	failed
+The name          AKRMAN	 should be      [ackerman]	 matched to [ackerman, ahriman]	 Distance is 2.0	succeeded
+The name           AKRMN	 should be      [ackerman]	 matched to [ackerman, ahriman]	 Distance is 2.0	succeeded
+The name         AKRSAND	 should be     [eckersand]	 matched to     [eckersand]	 Distance is 2.5	succeeded
+The name        AKRSLATV	 should be     [ekerslato]	 matched to     [ekerslato]	 Distance is 0.5	succeeded
+The name        AKRSLYTV	 should be     [ekerslato]	 matched to     [ekerslato]	 Distance is 1.0	succeeded
+The name          AKRSTV	 should be     [ekerslato]	 matched to       [ariosto]	 Distance is 2.0	failed
+The name            AKRT	 should be        [eckert]	 matched to [ackeret, acrux]	 Distance is 2.0	failed
+The name          AKRVYD	 should be       [ackroyd]	 matched to       [ackroyd]	 Distance is 2.0	succeeded
+The name           AKRYL	 should be        [akrill]	 matched to        [akrill]	 Distance is 0.5	succeeded
+The name             AKS	 should be           [axe]	 matched to           [acs]	 Distance is 0.0	failed
+The name          AKSAYL	 should be         [exile]	 matched to          [axel]	 Distance is 2.5	failed
+The name          AKSDLM	 should be       [axthelm]	 matched to [absalom, anselm]	 Distance is 4.0	failed
+The name          AKSFRD	 should be        [axford]	 matched to        [axford]	 Distance is 0.0	succeeded
+The name         AKSFVRD	 should be [axford, oxford]	 matched to        [axford]	 Distance is 0.0	succeeded
+The name       AKSKRYTYA	 should be      [excretia]	 matched to      [excretia]	 Distance is 1.0	succeeded
+The name         AKSLSVN	 should be      [axelsson]	 matched to      [axelsson]	 Distance is 0.5	succeeded
+The name           AKSLY	 should be         [oxley]	 matched to         [oxley]	 Distance is 0.5	succeeded
+The name            AKSS	 should be        [access]	 matched to  [access, oxus]	 Distance is 0.5	succeeded
+The name         AKSTRND	 should be      [ekstrand]	 matched to      [ekstrand]	 Distance is 0.5	succeeded
+The name          AKSTYN	 should be      [eckstein]	 matched to         [oxton]	 Distance is 1.0	failed
+The name            AKSV	 should be          [aksu]	 matched to          [aksu]	 Distance is 0.0	succeeded
+The name           AKSYL	 should be          [axel]	 matched to          [axel]	 Distance is 0.5	succeeded
+The name            AKTS	 should be       [awketts]	 matched to          [acts]	 Distance is 0.0	failed
+The name           AKTVN	 should be [acton, eckton]	 matched to [actaeon, acton]	 Distance is 0.0	failed
+The name            AKTY	 should be       [aechtie]	 matched to [active, akita, aquitaine]	 Distance is 0.5	failed
+The name           AKTYV	 should be        [active]	 matched to        [active]	 Distance is 0.5	succeeded
+The name           AKVAL	 should be        [ekwall]	 matched to [aquila, ekwall]	 Distance is 1.0	failed
+The name          AKVAYL	 should be          [aqil]	 matched to [aquila, quayle]	 Distance is 2.5	failed
+The name         AKVAYLA	 should be         [aqila]	 matched to        [aquila]	 Distance is 2.0	failed
+The name           AKVDV	 should be       [acevedo]	 matched to       [acevedo]	 Distance is 0.0	succeeded
+The name           AKVKS	 should be          [acox]	 matched to          [acox]	 Distance is 0.0	succeeded
+The name           AKVNA	 should be         [acuna]	 matched to         [acuna]	 Distance is 0.0	succeeded
+The name           AKVNR	 should be        [acuner]	 matched to        [acuner]	 Distance is 0.0	succeeded
+The name          AKVSTA	 should be        [acosta]	 matched to        [acosta]	 Distance is 0.0	succeeded
+The name             AKY	 should be     [acee, aki]	 matched to [acee, aki, aoki]	 Distance is 0.0	succeeded
+The name            AKYF	 should be        [okeefe]	 matched to [acuff, okeefe]	 Distance is 1.0	failed
+The name         AKYHYKV	 should be       [akihiko]	 matched to       [akihiko]	 Distance is 0.0	succeeded
+The name            AKYL	 should be    [akil, aqil]	 matched to    [akil, aqil]	 Distance is 0.0	succeeded
+The name           AKYLA	 should be [akilah, aqila]	 matched to [aqila, aquila]	 Distance is 0.0	succeeded
+The name          AKYLAH	 should be        [akilah]	 matched to        [akilah]	 Distance is 0.0	succeeded
+The name           AKYLH	 should be        [akilah]	 matched to        [akilah]	 Distance is 0.0	succeeded
+The name           AKYLS	 should be       [akilesh]	 matched to       [akilesh]	 Distance is 0.0	succeeded
+The name            AKYM	 should be         [akeem]	 matched to         [akeem]	 Distance is 0.0	succeeded
+The name            AKYN	 should be          [akin]	 matched to          [akin]	 Distance is 0.0	succeeded
+The name         AKYTVMV	 should be       [akitomo]	 matched to       [akitomo]	 Distance is 0.0	succeeded
+The name              AL	 should be           [all]	 matched to            [al]	 Distance is 0.0	failed
+The name         AL'ADYN	 should be      [alaaldin]	 matched to       [aladdin]	 Distance is 2.5	failed
+The name          AL'QBH	 should be      [alaqabah]	 matched to      [alaqabah]	 Distance is 2.0	succeeded
+The name           AL'YN	 should be         [alain]	 matched to [aileen, alain]	 Distance is 2.0	failed
+The name     ALAHAYDYKYA	 should be  [alladhiqiyah]	 matched to  [alladhiqiyah]	 Distance is 8.5	succeeded
+The name         ALAHDVD	 should be       [alhudud]	 matched to       [alhudud]	 Distance is 2.0	succeeded
+The name         ALALDYN	 should be      [alaaldin]	 matched to      [alaaldin]	 Distance is 0.0	succeeded
+The name            ALAM	 should be         [ellam]	 matched to [alamo, alim, elam]	 Distance is 0.5	failed
+The name           ALAMZ	 should be        [allums]	 matched to        [alamos]	 Distance is 0.0	failed
+The name           ALANA	 should be         [alana]	 matched to         [alana]	 Distance is 0.0	succeeded
+The name         ALANGKV	 should be       [elangco]	 matched to       [elangco]	 Distance is 0.5	succeeded
+The name         ALAPATY	 should be       [alapati]	 matched to       [alapati]	 Distance is 0.0	succeeded
+The name          ALAQBH	 should be      [alaqabah]	 matched to      [alaqabah]	 Distance is 0.0	succeeded
+The name           ALARD	 should be        [allard]	 matched to        [allard]	 Distance is 0.5	succeeded
+The name           ALASR	 should be        [aleser]	 matched to        [aleser]	 Distance is 0.0	succeeded
+The name         ALASVRS	 should be      [alsworth]	 matched to [alisons, alistairs]	 Distance is 2.0	failed
+The name          ALAVAY	 should be       [allaway]	 matched to       [allaway]	 Distance is 0.5	succeeded
+The name           ALAVY	 should be       [allaway]	 matched to       [allaway]	 Distance is 0.5	succeeded
+The name           ALAYN	 should be         [alain]	 matched to         [alain]	 Distance is 0.0	succeeded
+The name           ALAYS	 should be         [elyse]	 matched to  [alias, eloys]	 Distance is 1.0	failed
+The name        ALAYSDYR	 should be     [alaisdair]	 matched to     [alaisdair]	 Distance is 0.0	succeeded
+The name         ALBAHAH	 should be       [albahah]	 matched to       [albahah]	 Distance is 0.0	succeeded
+The name           ALBHA	 should be       [albahah]	 matched to       [albahah]	 Distance is 0.5	succeeded
+The name          ALBHAH	 should be       [albahah]	 matched to       [albahah]	 Distance is 0.0	succeeded
+The name          ALBLJH	 should be       [abeltje]	 matched to [albahah, allah]	 Distance is 4.0	failed
+The name            ALBR	 should be         [alber]	 matched to         [alber]	 Distance is 0.0	succeeded
+The name         ALBRAYT	 should be      [albright]	 matched to [alberio, alberios]	 Distance is 3.0	failed
+The name           ALBRT	 should be        [albert]	 matched to        [albert]	 Distance is 0.0	succeeded
+The name        ALBRTYNY	 should be     [albertini]	 matched to     [albertini]	 Distance is 0.0	succeeded
+The name           ALBRY	 should be       [allbery]	 matched to [alberio, albireo, allbery]	 Distance is 0.5	failed
+The name          ALBRYJ	 should be      [albright]	 matched to [alberio, alberios]	 Distance is 2.0	failed
+The name           ALBVN	 should be        [labdon]	 matched to        [albion]	 Distance is 0.0	failed
+The name           ALBVZ	 should be        [elbows]	 matched to        [elbows]	 Distance is 0.5	succeeded
+The name         ALBYNGR	 should be      [albinger]	 matched to      [albinger]	 Distance is 0.0	succeeded
+The name             ALD	 should be          [ould]	 matched to          [auld]	 Distance is 0.0	failed
+The name         ALDHAYD	 should be      [adelheid]	 matched to [alkaid, almohad]	 Distance is 4.0	failed
+The name         ALDLHLD	 should be      [adelheid]	 matched to [adelheid, allahabad]	 Distance is 4.0	succeeded
+The name            ALDN	 should be [alden, allden]	 matched to  [aldan, alden]	 Distance is 0.0	failed
+The name            ALDR	 should be         [alder]	 matched to         [alder]	 Distance is 0.0	succeeded
+The name           ALDRD	 should be        [eldred]	 matched to [aldridge, auldridge, eldred]	 Distance is 0.5	failed
+The name          ALDRYC	 should be       [aldrich]	 matched to       [aldrich]	 Distance is -0.3	succeeded
+The name         ALDRYDJ	 should be      [eldridge]	 matched to [aldridge, auldridge]	 Distance is 2.5	failed
+The name          ALDRYG	 should be [aldridge, auldridge]	 matched to        [aldrin]	 Distance is 2.0	failed
+The name          ALDRYJ	 should be [aldridge, auldridge, eldridge]	 matched to [aldridge, auldridge]	 Distance is 0.5	succeeded
+The name         ALDRYJH	 should be      [aldridge]	 matched to [aldrich, aldridge, auldridge]	 Distance is 2.0	failed
+The name           ALDYN	 should be         [eldin]	 matched to [aladdin, aldan]	 Distance is 0.5	failed
+The name            ALDZ	 should be          [olds]	 matched to         [aldos]	 Distance is 0.0	failed
+The name             ALF	 should be      [alf, elf]	 matched to           [alf]	 Distance is 0.0	succeeded
+The name            ALFA	 should be         [alpha]	 matched to         [alpha]	 Distance is 0.0	succeeded
+The name         ALFANSV	 should be       [alfonso]	 matched to [alfonso, alphonso]	 Distance is 0.5	succeeded
+The name          ALFARV	 should be        [alfaro]	 matched to        [alfaro]	 Distance is 0.0	succeeded
+The name           ALFRD	 should be        [alfred]	 matched to [alford, alfred, alphard]	 Distance is 0.0	failed
+The name          ALFRDV	 should be       [alfredo]	 matched to       [alfredo]	 Distance is 0.0	succeeded
+The name           ALFRS	 should be        [alfors]	 matched to        [alfors]	 Distance is 0.0	succeeded
+The name         ALFRYNG	 should be      [elfering]	 matched to      [elfering]	 Distance is 0.5	succeeded
+The name          ALFVRD	 should be [alford, elford]	 matched to        [alford]	 Distance is 0.0	succeeded
+The name          ALGADV	 should be       [alegado]	 matched to       [alegado]	 Distance is 0.0	succeeded
+The name          ALGARD	 should be     [ellegaard]	 matched to     [ellegaard]	 Distance is 1.0	succeeded
+The name          ALGAYN	 should be        [olguin]	 matched to        [olguin]	 Distance is 1.0	succeeded
+The name           ALGRV	 should be       [allegro]	 matched to       [allegro]	 Distance is 0.5	succeeded
+The name          ALGSAN	 should be      [alagesan]	 matched to      [alagesan]	 Distance is 0.0	succeeded
+The name            ALGY	 should be         [algie]	 matched to         [algie]	 Distance is 0.0	succeeded
+The name       ALGYNGTVN	 should be     [elkington]	 matched to      [alington]	 Distance is 2.0	failed
+The name          ALHDAD	 should be       [alhudud]	 matched to       [alhudud]	 Distance is 0.5	succeeded
+The name          ALHDVD	 should be       [alhudud]	 matched to       [alhudud]	 Distance is 0.0	succeeded
+The name             ALJ	 should be        [aeltje]	 matched to    [aeolus, al]	 Distance is 2.0	failed
+The name            ALJH	 should be        [aeltje]	 matched to        [elijah]	 Distance is 0.5	failed
+The name           ALKAN	 should be         [elkan]	 matched to [alcuin, elkan]	 Distance is 0.5	failed
+The name          ALKBAH	 should be      [alaqabah]	 matched to      [alaqabah]	 Distance is 0.0	succeeded
+The name           ALKBR	 should be      [alkabeer]	 matched to      [alkabeer]	 Distance is 0.5	succeeded
+The name          ALKBYR	 should be      [alkabeer]	 matched to      [alkabeer]	 Distance is 0.0	succeeded
+The name            ALKK	 should be       [allcock]	 matched to [allcock, ilkka]	 Distance is 1.0	succeeded
+The name           ALKMR	 should be       [alcmere]	 matched to       [alcmere]	 Distance is 0.5	succeeded
+The name          ALKMRH	 should be       [alcmere]	 matched to       [alcmere]	 Distance is 2.0	succeeded
+The name          ALKMRY	 should be       [alcmere]	 matched to       [alcmere]	 Distance is 0.5	succeeded
+The name            ALKR	 should be        [allcor]	 matched to        [allcor]	 Distance is 0.5	succeeded
+The name          ALKRTN	 should be      [alkerton]	 matched to      [alkerton]	 Distance is 0.0	succeeded
+The name         ALKRTVN	 should be      [alkerton]	 matched to      [alkerton]	 Distance is 0.0	succeeded
+The name            ALKS	 should be          [alex]	 matched to [alcoas, alecs]	 Distance is 0.0	failed
+The name        ALKSANDR	 should be     [alexander]	 matched to     [alexander]	 Distance is 0.0	succeeded
+The name      ALKSANDRVZ	 should be    [alexandros]	 matched to    [alexandros]	 Distance is 0.0	succeeded
+The name         ALKSNDR	 should be     [alexander]	 matched to     [alexander]	 Distance is 0.0	succeeded
+The name           ALKSY	 should be         [alexy]	 matched to [alexei, alexy]	 Distance is 0.0	failed
+The name          ALKSYV	 should be       [alexiou]	 matched to       [alexiou]	 Distance is 0.0	succeeded
+The name          ALKVAB	 should be      [alaqabah]	 matched to [alcoa, alcoas]	 Distance is 2.0	failed
+The name           ALKVK	 should be       [allcock]	 matched to       [allcock]	 Distance is 1.0	succeeded
+The name           ALKVR	 should be        [allcor]	 matched to        [allcor]	 Distance is 0.5	succeeded
+The name        ALKYNGTN	 should be     [elkington]	 matched to     [elkington]	 Distance is 0.5	succeeded
+The name       ALKYNGTVN	 should be     [elkington]	 matched to     [elkington]	 Distance is 0.5	succeeded
+The name         ALKYNTN	 should be      [elkinton]	 matched to      [elkinton]	 Distance is 0.5	succeeded
+The name      ALLADHKYAH	 should be  [alladhiqiyah]	 matched to  [alladhiqiyah]	 Distance is 0.0	succeeded
+The name     ALLADHYKYAH	 should be  [alladhiqiyah]	 matched to  [alladhiqiyah]	 Distance is 0.0	succeeded
+The name      ALLAHYGYAH	 should be  [alladhiqiyah]	 matched to  [alladhiqiyah]	 Distance is 5.0	succeeded
+The name      ALLDHYKYAH	 should be  [alladhiqiyah]	 matched to  [alladhiqiyah]	 Distance is 0.0	succeeded
+The name       ALLDYKYAH	 should be  [alladhiqiyah]	 matched to  [alladhiqiyah]	 Distance is 2.0	succeeded
+The name        ALLHYQYH	 should be  [alladhiqiyah]	 matched to  [alladhiqiyah]	 Distance is 2.5	succeeded
+The name             ALM	 should be           [alm]	 matched to     [alim, alm]	 Distance is 0.0	failed
+The name           ALMAR	 should be         [elmar]	 matched to         [elmar]	 Distance is 0.5	succeeded
+The name           ALMAS	 should be         [almas]	 matched to [alamos, almas]	 Distance is 0.0	failed
+The name         ALMATVN	 should be      [olematon]	 matched to      [olematon]	 Distance is 0.5	succeeded
+The name          ALMGRN	 should be       [almgren]	 matched to       [almgren]	 Distance is 0.0	succeeded
+The name        ALMKVAST	 should be      [elmquist]	 matched to      [almqvist]	 Distance is 0.0	failed
+The name        ALMKVYST	 should be      [almqvist]	 matched to      [almqvist]	 Distance is 0.0	succeeded
+The name            ALMN	 should be         [elman]	 matched to [allman, elman, ilmin]	 Distance is 0.5	failed
+The name         ALMNTAJ	 should be    [almintaqah]	 matched to    [illuminati]	 Distance is 3.5	failed
+The name            ALMR	 should be       [alcmere]	 matched to [almira, elmar, elmer]	 Distance is 0.5	failed
+The name           ALMRS	 should be        [elmers]	 matched to        [elmers]	 Distance is 0.5	succeeded
+The name          ALMRVT	 should be      [almeroth]	 matched to      [almeroth]	 Distance is 0.0	succeeded
+The name            ALMV	 should be          [elmo]	 matched to         [alamo]	 Distance is 0.0	failed
+The name           ALMVD	 should be       [alamode]	 matched to       [alamode]	 Distance is 0.5	succeeded
+The name       ALMVDYVAR	 should be     [almudevar]	 matched to     [almudevar]	 Distance is 0.5	succeeded
+The name         ALMVMAN	 should be       [elmoman]	 matched to       [elmoman]	 Distance is 0.5	succeeded
+The name           ALMVR	 should be        [elmore]	 matched to        [elmore]	 Distance is 1.0	succeeded
+The name       ALMYNAKAH	 should be    [almintaqah]	 matched to    [almintaqah]	 Distance is 3.0	succeeded
+The name      ALMYNTAGAH	 should be    [almintaqah]	 matched to    [almintaqah]	 Distance is 2.0	succeeded
+The name      ALMYNTAKAH	 should be    [almintaqah]	 matched to    [almintaqah]	 Distance is 0.0	succeeded
+The name      ALMYNTAKVA	 should be    [almintaqah]	 matched to    [almintaqah]	 Distance is 2.5	succeeded
+The name        ALMYNTKH	 should be    [almintaqah]	 matched to    [almintaqah]	 Distance is 0.0	succeeded
+The name         ALMYRAL	 should be      [almirall]	 matched to      [almirall]	 Distance is 0.5	succeeded
+The name             ALN	 should be [alden, allen, ellen]	 matched to [alain, alan, alien]	 Distance is 0.0	failed
+The name            ALND	 should be        [allden]	 matched to [allende, yelland, yolanda]	 Distance is 1.0	failed
+The name           ALNDR	 should be      [allender]	 matched to      [allender]	 Distance is 0.5	succeeded
+The name           ALNVR	 should be        [alnoor]	 matched to        [alnoor]	 Distance is 0.0	succeeded
+The name            ALNY	 should be         [olney]	 matched to [alana, aline, olney]	 Distance is 0.5	failed
+The name            ALPN	 should be         [alpen]	 matched to         [alpen]	 Distance is 0.0	succeeded
+The name           ALPRT	 should be        [alpert]	 matched to        [alpert]	 Distance is 0.0	succeeded
+The name          ALPVRT	 should be       [allport]	 matched to       [allport]	 Distance is 0.5	succeeded
+The name           ALRBK	 should be     [ellerbeck]	 matched to     [ellerbeck]	 Distance is 1.5	succeeded
+The name            ALRD	 should be        [allred]	 matched to [allard, allred, alridge]	 Distance is 0.5	failed
+The name           ALRTN	 should be      [allerton]	 matched to      [allerton]	 Distance is 0.5	succeeded
+The name          ALRTVN	 should be      [allerton]	 matched to      [allerton]	 Distance is 0.5	succeeded
+The name           ALRVY	 should be         [elroy]	 matched to         [elroy]	 Distance is 0.5	succeeded
+The name            ALRY	 should be        [ellery]	 matched to [alaric, elroy]	 Distance is 0.5	failed
+The name          ALRYGH	 should be       [alridge]	 matched to      [almighty]	 Distance is 2.5	failed
+The name           ALRYJ	 should be       [alridge]	 matched to       [alridge]	 Distance is 0.5	succeeded
+The name           ALSAN	 should be [olson, olsson]	 matched to [alison, alyson, elysian]	 Distance is 0.5	failed
+The name        ALSANDRY	 should be    [alessandri]	 matched to [alesandro, alessandri]	 Distance is 0.5	failed
+The name           ALSAP	 should be [allsop, allsopp, alsop]	 matched to         [alsop]	 Distance is 0.5	succeeded
+The name            ALSN	 should be [olhsson, olsen]	 matched to [alison, alyson]	 Distance is 0.0	failed
+The name         ALSNDRV	 should be     [alesandro]	 matched to     [alesandro]	 Distance is 0.0	succeeded
+The name           ALSNR	 should be        [elsner]	 matched to        [elsner]	 Distance is 0.5	succeeded
+The name            ALSP	 should be [allsop, alsop]	 matched to         [alsop]	 Distance is 0.0	succeeded
+The name           ALSPD	 should be       [elspeth]	 matched to [alsop, alsops]	 Distance is 2.0	failed
+The name            ALSR	 should be        [aleser]	 matched to        [aleser]	 Distance is 0.0	succeeded
+The name         ALSTRVM	 should be      [ahlstrom]	 matched to      [ahlstrom]	 Distance is 2.0	succeeded
+The name           ALSVN	 should be [elson, olson, olsson]	 matched to [alison, alyson]	 Distance is 0.0	failed
+The name           ALSVP	 should be [allsop, alsop]	 matched to         [alsop]	 Distance is 0.0	succeeded
+The name          ALSVRS	 should be      [alsworth]	 matched to [alfors, alisons]	 Distance is 2.0	failed
+The name          ALSVRT	 should be      [alsworth]	 matched to      [alsworth]	 Distance is 0.0	succeeded
+The name           ALSVZ	 should be     [allshouse]	 matched to       [eliseos]	 Distance is 0.5	failed
+The name            ALSY	 should be         [elsie]	 matched to  [ailsa, alisa]	 Distance is 0.5	failed
+The name             ALT	 should be [aeltje, arlet]	 matched to [aleut, alioth]	 Distance is 0.0	failed
+The name         ALTANYN	 should be       [eltanin]	 matched to       [eltanin]	 Distance is 0.5	succeeded
+The name          ALTAYR	 should be        [altair]	 matched to        [altair]	 Distance is 0.0	succeeded
+The name          ALTMAN	 should be        [altman]	 matched to        [altman]	 Distance is 0.0	succeeded
+The name           ALTMN	 should be [altman, oltmann]	 matched to        [altman]	 Distance is 0.0	succeeded
+The name        ALTRVAYD	 should be     [aaltruide]	 matched to     [aaltruide]	 Distance is 3.0	succeeded
+The name          ALTRVD	 should be     [aaltruide]	 matched to     [aaltruide]	 Distance is 1.0	succeeded
+The name         ALTRVYD	 should be     [aaltruide]	 matched to     [aaltruide]	 Distance is 1.0	succeeded
+The name        ALTRVYYD	 should be     [aaltruide]	 matched to     [aaltruide]	 Distance is 3.0	succeeded
+The name          ALTSVN	 should be      [elletson]	 matched to      [elletson]	 Distance is 1.0	succeeded
+The name            ALTV	 should be          [alto]	 matched to          [alto]	 Distance is 0.0	succeeded
+The name           ALTYR	 should be        [altair]	 matched to        [altair]	 Distance is 0.0	succeeded
+The name            ALTZ	 should be          [oltz]	 matched to [aleuts, alioths]	 Distance is 0.0	failed
+The name            ALVA	 should be          [alva]	 matched to          [alva]	 Distance is 0.0	succeeded
+The name           ALVAN	 should be         [alwan]	 matched to         [alwan]	 Distance is 0.0	succeeded
+The name          ALVARV	 should be        [alvaro]	 matched to        [alvaro]	 Distance is 0.0	succeeded
+The name         ALVARVS	 should be       [alvarus]	 matched to [alvaros, alvarus]	 Distance is 0.0	failed
+The name          ALVARZ	 should be       [alvarez]	 matched to [alvarez, alvaros, alvarus]	 Distance is 0.0	succeeded
+The name           ALVAY	 should be       [alleway]	 matched to [allaway, alleway, elway]	 Distance is 0.5	failed
+The name            ALVF	 should be          [elof]	 matched to          [elof]	 Distance is 0.5	succeeded
+The name            ALVK	 should be          [alok]	 matched to          [alok]	 Distance is 0.0	succeeded
+The name          ALVKAL	 should be        [alukal]	 matched to        [alukal]	 Distance is 0.0	succeeded
+The name           ALVLD	 should be       [eleveld]	 matched to       [eleveld]	 Distance is 0.5	succeeded
+The name           ALVRS	 should be        [elvers]	 matched to [alvaros, alvarus]	 Distance is 0.0	failed
+The name           ALVSA	 should be       [alyosha]	 matched to       [alyosha]	 Distance is 0.0	succeeded
+The name           ALVVD	 should be [ellwood, elwood]	 matched to        [elwood]	 Distance is 0.5	succeeded
+The name            ALVY	 should be [allaway, alleway]	 matched to [allaway, alleway]	 Distance is 0.5	succeeded
+The name           ALVYN	 should be [alvin, alwin, alwyn, elwin, elwyn]	 matched to [alvin, alwin, alwyn]	 Distance is 0.0	succeeded
+The name           ALVYS	 should be         [alwis]	 matched to         [alwis]	 Distance is 0.0	succeeded
+The name            ALVZ	 should be         [alves]	 matched to [aeolus, alves, alwis]	 Distance is 0.0	failed
+The name          ALXZNA	 should be      [alkhazna]	 matched to        [alzena]	 Distance is 2.0	failed
+The name             ALY	 should be [aali, allee, alley, allie, elie, ely, olea]	 matched to           [ali]	 Distance is 0.0	failed
+The name            ALYA	 should be [aaliyah, alya, elia]	 matched to [alia, aliya, alya]	 Distance is 0.0	failed
+The name           ALYAH	 should be       [aaliyah]	 matched to       [aliyyah]	 Distance is 0.0	failed
+The name           ALYAN	 should be         [alain]	 matched to         [alien]	 Distance is 0.5	failed
+The name           ALYAS	 should be         [alias]	 matched to         [alias]	 Distance is 0.0	succeeded
+The name         ALYASVN	 should be       [eliason]	 matched to [alison, alyson]	 Distance is 0.0	failed
+The name           ALYBY	 should be        [alibey]	 matched to        [alibey]	 Distance is 0.0	succeeded
+The name          ALYFAS	 should be       [aliphas]	 matched to       [aliphas]	 Distance is 0.0	succeeded
+The name            ALYJ	 should be       [arlidge]	 matched to [aileen, alain]	 Distance is 2.0	failed
+The name           ALYKS	 should be          [alyx]	 matched to [alices, alicias]	 Distance is 0.0	failed
+The name       ALYLYVNAS	 should be     [alelyunas]	 matched to     [alelyunas]	 Distance is 0.5	succeeded
+The name           ALYMA	 should be         [ulima]	 matched to         [alima]	 Distance is 0.0	failed
+The name            ALYN	 should be [alain, alien, allyn, elin, olin]	 matched to [aileen, alain, alien]	 Distance is 0.0	failed
+The name          ALYNGR	 should be      [ellinger]	 matched to      [ellinger]	 Distance is 1.0	succeeded
+The name        ALYNGTVN	 should be [alington, elkington]	 matched to      [alington]	 Distance is 0.0	succeeded
+The name          ALYNYK	 should be       [oleinik]	 matched to       [oleinik]	 Distance is 0.5	succeeded
+The name            ALYS	 should be [alias, alice, elyse]	 matched to         [alias]	 Distance is 0.0	succeeded
+The name           ALYSA	 should be        [alyssa]	 matched to [alisa, alisha, alyosha]	 Distance is 0.0	failed
+The name           ALYSN	 should be       [allison]	 matched to [alison, alyson]	 Distance is 0.0	failed
+The name         ALYSTVN	 should be      [elliston]	 matched to      [elliston]	 Distance is 1.0	succeeded
+The name         ALYSTYR	 should be      [alistair]	 matched to      [alistair]	 Distance is 0.0	succeeded
+The name          ALYSVN	 should be [allison, allyson, elison, ellison]	 matched to [alison, alyson]	 Distance is 0.0	failed
+The name          ALYSYA	 should be        [alicia]	 matched to       [elysian]	 Distance is 1.0	failed
+The name           ALYVA	 should be         [oliva]	 matched to [oliva, olivia]	 Distance is 0.5	succeeded
+The name         ALYVRYA	 should be      [oliveira]	 matched to [oliveira, olivia]	 Distance is 2.5	succeeded
+The name           ALYVT	 should be [eliot, elliot]	 matched to        [alioth]	 Distance is 0.0	failed
+The name           ALYVY	 should be       [alleway]	 matched to        [olivie]	 Distance is 0.5	failed
+The name           ALYYA	 should be          [elya]	 matched to         [aliya]	 Distance is 0.0	failed
+The name            ALYZ	 should be         [allyz]	 matched to         [alias]	 Distance is 0.0	failed
+The name           ALYZA	 should be         [alisa]	 matched to         [alisa]	 Distance is 0.0	succeeded
+The name         ALYZABT	 should be     [elizabeth]	 matched to [elisabeth, elizabeth]	 Distance is 0.5	failed
+The name           ALYZR	 should be        [aleser]	 matched to        [aleser]	 Distance is 0.5	succeeded
+The name             ALZ	 should be           [elz]	 matched to [aeolus, alias]	 Distance is 0.0	failed
+The name            ALZN	 should be         [olson]	 matched to [alison, alyson]	 Distance is 0.0	failed
+The name           ALZNA	 should be        [alzena]	 matched to        [alzena]	 Distance is 0.0	succeeded
+The name          ALZVRS	 should be      [alsworth]	 matched to [alfors, alisons]	 Distance is 2.0	failed
+The name             AMA	 should be           [ama]	 matched to           [ama]	 Distance is 0.0	succeeded
+The name          AMADVR	 should be        [amador]	 matched to        [amador]	 Distance is 0.0	succeeded
+The name          AMAGYV	 should be       [omaggio]	 matched to       [omaggio]	 Distance is 1.0	succeeded
+The name            AMAL	 should be          [amal]	 matched to          [amal]	 Distance is 0.0	succeeded
+The name           AMAND	 should be         [amand]	 matched to         [amand]	 Distance is 0.0	succeeded
+The name           AMANV	 should be         [amano]	 matched to         [amano]	 Distance is 0.0	succeeded
+The name         AMANVAL	 should be      [emmanuel]	 matched to       [emanuel]	 Distance is 1.0	failed
+The name          AMANVL	 should be      [emmanuel]	 matched to       [emanuel]	 Distance is 0.5	failed
+The name         AMANVYL	 should be      [emmanuel]	 matched to       [emanuel]	 Distance is 1.0	failed
+The name           AMANY	 should be         [amani]	 matched to         [amani]	 Distance is 0.0	succeeded
+The name         AMANYVL	 should be      [emmanuel]	 matched to       [emanuel]	 Distance is 2.5	failed
+The name           AMARA	 should be         [amara]	 matched to [amara, aymara]	 Distance is 0.0	succeeded
+The name          AMARAL	 should be        [amaral]	 matched to        [amaral]	 Distance is 0.0	succeeded
+The name         AMARDYV	 should be       [amardeo]	 matched to       [amardeo]	 Distance is 0.5	succeeded
+The name          AMARNT	 should be      [amarnath]	 matched to      [amarnath]	 Distance is 0.0	succeeded
+The name          AMARYT	 should be        [amarit]	 matched to        [amarit]	 Distance is 0.0	succeeded
+The name           AMBAR	 should be         [embar]	 matched to  [amber, embar]	 Distance is 0.5	failed
+The name          AMBASY	 should be       [embassy]	 matched to       [embassy]	 Distance is 1.0	succeeded
+The name           AMBLR	 should be        [ambler]	 matched to        [ambler]	 Distance is 0.0	succeeded
+The name          AMBRLY	 should be [amberle, emberley]	 matched to [amberle, emberley]	 Distance is 0.5	succeeded
+The name        AMBRLYNG	 should be     [emberling]	 matched to     [emberling]	 Distance is 0.5	succeeded
+The name         AMBRVSS	 should be     [ambrosius]	 matched to     [ambrosius]	 Distance is 0.0	succeeded
+The name        AMBRVSVS	 should be     [ambrosius]	 matched to     [ambrosius]	 Distance is 0.0	succeeded
+The name        AMBRVSYV	 should be      [ambrosio]	 matched to      [ambrosio]	 Distance is 0.0	succeeded
+The name       AMBRVSYVS	 should be     [ambrosius]	 matched to     [ambrosius]	 Distance is 0.0	succeeded
+The name           AMBVS	 should be        [ambush]	 matched to        [ambush]	 Distance is 0.0	succeeded
+The name           AMBYJ	 should be       [ambidge]	 matched to       [ambidge]	 Distance is 0.5	succeeded
+The name           AMDYV	 should be        [amedeo]	 matched to        [amedeo]	 Distance is 0.5	succeeded
+The name            AMFN	 should be        [amphon]	 matched to        [amphon]	 Distance is 0.0	succeeded
+The name             AML	 should be          [amal]	 matched to          [amal]	 Distance is 0.0	succeeded
+The name           AMLAK	 should be         [amlak]	 matched to         [amlak]	 Distance is 0.0	succeeded
+The name            AMLK	 should be         [amlak]	 matched to         [amlak]	 Distance is 0.0	succeeded
+The name            AMLN	 should be         [emlen]	 matched to         [emlen]	 Distance is 0.5	succeeded
+The name           AMLYA	 should be        [amelia]	 matched to [amalia, amelia]	 Distance is 0.0	failed
+The name             AMN	 should be         [emmen]	 matched to [aiman, amin, ayman]	 Distance is 0.0	failed
+The name            AMNA	 should be          [amna]	 matched to   [amina, amna]	 Distance is 0.0	failed
+The name           AMNVN	 should be         [amnon]	 matched to         [amnon]	 Distance is 0.0	succeeded
+The name            AMPN	 should be         [ampon]	 matched to         [ampon]	 Distance is 0.0	succeeded
+The name          AMPRVR	 should be      [empereur]	 matched to [empereur, emperor]	 Distance is 0.5	succeeded
+The name          AMPSVN	 should be        [empson]	 matched to        [empson]	 Distance is 0.5	succeeded
+The name            AMPT	 should be         [ampte]	 matched to         [ampte]	 Distance is 0.5	succeeded
+The name           AMPTH	 should be         [ampte]	 matched to [ampte, sampath]	 Distance is 2.0	succeeded
+The name            AMPY	 should be         [empey]	 matched to         [empey]	 Distance is 0.5	succeeded
+The name             AMR	 should be          [emre]	 matched to    [amir, amur]	 Distance is 0.0	failed
+The name          AMRALD	 should be       [emerald]	 matched to       [emerald]	 Distance is 0.5	succeeded
+The name         AMRJYNG	 should be      [emerging]	 matched to      [emerging]	 Distance is 2.5	succeeded
+The name          AMRMAN	 should be       [amerman]	 matched to       [amerman]	 Distance is 0.0	succeeded
+The name         AMRVSYV	 should be      [ambrosio]	 matched to       [amoroso]	 Distance is 2.0	failed
+The name            AMRY	 should be [amery, amory, emery]	 matched to  [amery, amory]	 Distance is 0.0	succeeded
+The name          AMRYKA	 should be       [america]	 matched to       [america]	 Distance is 0.0	succeeded
+The name          AMRYKN	 should be [american, amerikan]	 matched to [american, amerikan]	 Distance is 0.0	succeeded
+The name          AMRYTA	 should be       [amritha]	 matched to       [amritha]	 Distance is 0.0	succeeded
+The name             AMS	 should be           [ems]	 matched to  [amies, amish]	 Distance is 0.0	failed
+The name          AMSTAT	 should be       [amstadt]	 matched to [amstadt, amster]	 Distance is 2.5	succeeded
+The name           AMSTD	 should be       [umstead]	 matched to [amstadt, umstead]	 Distance is 0.5	failed
+The name           AMSTR	 should be        [amster]	 matched to        [amster]	 Distance is 0.0	succeeded
+The name            AMSY	 should be        [amshey]	 matched to        [amshey]	 Distance is 0.0	succeeded
+The name             AMT	 should be         [ampte]	 matched to [amiot, amit, amyot]	 Distance is 0.0	failed
+The name         AMTYSTA	 should be     [amethysta]	 matched to     [amethysta]	 Distance is 0.0	succeeded
+The name           AMVNA	 should be         [emona]	 matched to         [emona]	 Distance is 0.5	succeeded
+The name        AMVNDSYZ	 should be   [ekmundensis]	 matched to      [amundsen]	 Distance is 2.5	failed
+The name         AMVRVSV	 should be       [amoroso]	 matched to       [amoroso]	 Distance is 0.0	succeeded
+The name           AMVRY	 should be         [amory]	 matched to         [amory]	 Distance is 0.0	succeeded
+The name            AMVS	 should be          [amos]	 matched to  [amos, amways]	 Distance is 0.0	succeeded
+The name             AMY	 should be      [ami, amy]	 matched to   [aimee, amai]	 Distance is 0.0	failed
+The name            AMYH	 should be          [amie]	 matched to        [amihai]	 Distance is 0.5	failed
+The name          AMYHAY	 should be        [amihai]	 matched to        [amihai]	 Distance is 0.0	succeeded
+The name          AMYKVS	 should be        [amicus]	 matched to        [amicus]	 Distance is 0.0	succeeded
+The name           AMYLY	 should be [emilie, emily]	 matched to [emilie, emily]	 Distance is 0.5	succeeded
+The name         AMYLYYV	 should be        [emilio]	 matched to        [emilio]	 Distance is 2.5	succeeded
+The name           AMYNA	 should be [aamina, amina]	 matched to         [amina]	 Distance is 0.0	succeeded
+The name           AMYNH	 should be        [aamina]	 matched to       [yaminah]	 Distance is 0.5	failed
+The name            AMYR	 should be    [amir, emyr]	 matched to          [amir]	 Distance is 0.0	succeeded
+The name           AMYRA	 should be         [amira]	 matched to         [amira]	 Distance is 0.0	succeeded
+The name            AMYT	 should be [amit, emit, emmett]	 matched to [amiot, amit, amyot]	 Distance is 0.0	failed
+The name         AMYTAVA	 should be       [amitava]	 matched to       [amitava]	 Distance is 0.0	succeeded
+The name           AMYVT	 should be  [amiot, amyot]	 matched to  [amiot, amyot]	 Distance is 0.0	succeeded
+The name         AMYZVTA	 should be     [amezquita]	 matched to     [umasuthan]	 Distance is 1.5	failed
+The name              AN	 should be          [anne]	 matched to   [ain, aoyoun]	 Distance is 0.0	failed
+The name         ANAGRAM	 should be       [anagram]	 matched to       [anagram]	 Distance is 0.0	succeeded
+The name          ANAKYN	 should be        [anakin]	 matched to [anacin, anakin]	 Distance is 0.0	failed
+The name          ANALVG	 should be        [analog]	 matched to        [analog]	 Distance is 0.0	succeeded
+The name           ANAND	 should be         [anand]	 matched to         [anand]	 Distance is 0.0	succeeded
+The name          ANANDA	 should be        [ananda]	 matched to        [ananda]	 Distance is 0.0	succeeded
+The name          ANANSA	 should be       [anantha]	 matched to [ananda, ananias]	 Distance is 2.0	failed
+The name           ANANT	 should be         [anant]	 matched to         [anant]	 Distance is 0.0	succeeded
+The name            ANAS	 should be          [anas]	 matched to  [aeneas, anas]	 Distance is 0.0	failed
+The name       ANASTASYA	 should be     [anastacia]	 matched to     [anastasia]	 Distance is 0.0	failed
+The name         ANATVLY	 should be       [anatoly]	 matched to       [anatoly]	 Distance is 0.0	succeeded
+The name           ANATY	 should be       [anathea]	 matched to       [anathea]	 Distance is 0.5	succeeded
+The name            ANAY	 should be          [anay]	 matched to          [anay]	 Distance is 0.0	succeeded
+The name         ANAYLYN	 should be       [anilane]	 matched to [anatolian, anilane]	 Distance is 3.0	failed
+The name          ANAYZA	 should be        [unaiza]	 matched to        [unaiza]	 Distance is 0.5	succeeded
+The name            ANAZ	 should be          [anas]	 matched to  [aeneas, anas]	 Distance is 0.0	failed
+The name           ANAZA	 should be        [unaiza]	 matched to [anasazi, anisa, unaiza]	 Distance is 0.5	failed
+The name           ANBAR	 should be         [anbar]	 matched to         [anbar]	 Distance is 0.0	succeeded
+The name            ANBR	 should be         [anbar]	 matched to         [anbar]	 Distance is 0.0	succeeded
+The name            ANBV	 should be          [anbu]	 matched to          [anbu]	 Distance is 0.0	succeeded
+The name            ANCY	 should be         [anchi]	 matched to         [anchi]	 Distance is -0.3	succeeded
+The name             AND	 should be     [and, ande]	 matched to   [aeneid, and]	 Distance is 0.0	failed
+The name          ANDAMZ	 should be        [adnams]	 matched to [adams, addams]	 Distance is 2.0	failed
+The name           ANDNS	 should be       [andenes]	 matched to       [andenes]	 Distance is 0.0	succeeded
+The name            ANDR	 should be [ander, andr, ender, endre]	 matched to [ander, andor, andr]	 Distance is 0.0	succeeded
+The name           ANDRA	 should be         [andra]	 matched to [andra, andrea, andreaea]	 Distance is 0.0	succeeded
+The name         ANDRBRG	 should be     [anderberg]	 matched to     [anderberg]	 Distance is 0.0	succeeded
+The name        ANDRBVRG	 should be     [enderborg]	 matched to     [enderborg]	 Distance is 0.5	succeeded
+The name          ANDRBY	 should be       [enderby]	 matched to       [enderby]	 Distance is 0.5	succeeded
+The name           ANDRR	 should be       [anderer]	 matched to       [anderer]	 Distance is 0.0	succeeded
+The name           ANDRS	 should be [andres, andress]	 matched to [andras, andreas]	 Distance is 0.0	failed
+The name          ANDRSN	 should be [andersen, andreasen]	 matched to [andersen, anderson, andreasen]	 Distance is 0.0	succeeded
+The name         ANDRSVN	 should be      [anderson]	 matched to      [anderson]	 Distance is 0.0	succeeded
+The name          ANDRVS	 should be        [andrus]	 matched to [andrews, andrus]	 Distance is 0.0	failed
+The name          ANDRVZ	 should be       [andrews]	 matched to [andrews, andrus]	 Distance is 0.0	succeeded
+The name           ANDRY	 should be [andree, andrei]	 matched to [andree, andrei]	 Distance is 0.0	succeeded
+The name          ANDRYA	 should be        [andrea]	 matched to [andrea, andreaea]	 Distance is 0.5	succeeded
+The name         ANDRYAS	 should be       [andreas]	 matched to [andreis, andries, andris]	 Distance is 0.0	failed
+The name          ANDRYS	 should be [andres, andries, andris]	 matched to [andreis, andries, andris]	 Distance is 0.0	failed
+The name         ANDRYSN	 should be [andreassen, andreessen]	 matched to [andreasen, andreessen]	 Distance is 0.5	failed
+The name         ANDRYVZ	 should be       [andrews]	 matched to       [andrews]	 Distance is 0.5	succeeded
+The name         ANDRYYA	 should be      [andreaea]	 matched to      [andreaea]	 Distance is 1.0	succeeded
+The name          ANDRYZ	 should be       [andries]	 matched to [andreis, andries, andris]	 Distance is 0.0	failed
+The name         ANDSVRS	 should be    [endesworth]	 matched to [andorras, windsors]	 Distance is 2.5	failed
+The name         ANDSVRT	 should be    [endesworth]	 matched to    [endesworth]	 Distance is 0.5	succeeded
+The name        ANDSVVRT	 should be    [endesworth]	 matched to    [endesworth]	 Distance is 0.5	succeeded
+The name         ANDVLSN	 should be      [andolsen]	 matched to      [andolsen]	 Distance is 0.0	succeeded
+The name          ANDYSL	 should be     [anthistle]	 matched to         [andys]	 Distance is 2.0	failed
+The name      ANDYYVRANS	 should be     [endurance]	 matched to     [indianans]	 Distance is 5.0	failed
+The name          ANFANT	 should be        [enfant]	 matched to        [enfant]	 Distance is 0.5	succeeded
+The name          ANFYLD	 should be       [enfield]	 matched to       [enfield]	 Distance is 0.5	succeeded
+The name        ANGBRTSN	 should be   [engebretsen]	 matched to [engebretsen, engebretson]	 Distance is 0.5	succeeded
+The name            ANGH	 should be         [anghe]	 matched to         [anghe]	 Distance is 0.5	succeeded
+The name         ANGLAND	 should be       [englund]	 matched to       [england]	 Distance is 0.5	failed
+The name        ANGLANDR	 should be     [englander]	 matched to     [englander]	 Distance is 0.5	succeeded
+The name        ANGLASMA	 should be      [engelsma]	 matched to      [engelsma]	 Distance is 0.5	succeeded
+The name        ANGLHARD	 should be    [engelhardt]	 matched to    [engelhardt]	 Distance is 1.0	succeeded
+The name         ANGLHLM	 should be     [engelholm]	 matched to     [engelholm]	 Distance is 0.5	succeeded
+The name        ANGLHVRN	 should be     [engelhorn]	 matched to     [engelhorn]	 Distance is 0.5	succeeded
+The name          ANGLND	 should be       [england]	 matched to [england, englund]	 Distance is 0.5	succeeded
+The name           ANGLS	 should be [angles, engels]	 matched to [angelas, angeles]	 Distance is 0.0	failed
+The name         ANGLSMA	 should be      [engelsma]	 matched to      [engelsma]	 Distance is 0.5	succeeded
+The name         ANGLSVN	 should be      [engelson]	 matched to      [engelson]	 Distance is 0.5	succeeded
+The name          ANGLTH	 should be      [engeltje]	 matched to [angelita, angelitas]	 Distance is 2.0	failed
+The name          ANGLTJ	 should be      [engeltje]	 matched to      [engeltje]	 Distance is 1.0	succeeded
+The name         ANGLTJH	 should be      [engeltje]	 matched to      [engeltje]	 Distance is 2.5	succeeded
+The name         ANGLYNA	 should be      [engelina]	 matched to      [angelina]	 Distance is 0.0	failed
+The name          ANGLYS	 should be       [english]	 matched to [angelias, angelis]	 Distance is 0.0	failed
+The name           ANGLZ	 should be        [engels]	 matched to [angelas, angeles]	 Distance is 0.0	failed
+The name         ANGRSVL	 should be     [ingresole]	 matched to     [ingresole]	 Distance is 1.0	succeeded
+The name          ANGVLV	 should be        [angulo]	 matched to        [angulo]	 Distance is 0.0	succeeded
+The name             ANH	 should be          [anne]	 matched to          [inho]	 Distance is 1.0	failed
+The name           ANHLD	 should be        [anhold]	 matched to        [anhold]	 Distance is 0.0	succeeded
+The name       ANJBRTSVN	 should be   [engebretson]	 matched to   [engebretson]	 Distance is 2.5	succeeded
+The name            ANJL	 should be         [angle]	 matched to [anabel, angel]	 Distance is 2.0	failed
+The name          ANJLJY	 should be      [engeltje]	 matched to [ainley, anatoly]	 Distance is 4.0	failed
+The name           ANJLS	 should be       [angeles]	 matched to [anabels, anatoles]	 Distance is 2.0	failed
+The name           ANJLT	 should be      [engeltje]	 matched to        [anujit]	 Distance is 2.0	failed
+The name         ANJLTJA	 should be      [engeltje]	 matched to      [engeltje]	 Distance is 3.0	succeeded
+The name           ANJLV	 should be        [angelo]	 matched to [anello, angelo]	 Distance is 2.0	failed
+The name         ANJLYNA	 should be      [engelina]	 matched to      [angelina]	 Distance is 2.0	failed
+The name          ANJLYS	 should be       [angelis]	 matched to [anatolias, angelias, angelis]	 Distance is 2.0	failed
+The name        ANJLYSYA	 should be      [anglesea]	 matched to     [andalusia]	 Distance is 2.5	failed
+The name            ANJY	 should be          [engi]	 matched to        [anujit]	 Distance is 0.5	failed
+The name        ANJYLYNY	 should be      [angelini]	 matched to      [angelini]	 Distance is 2.5	succeeded
+The name           ANKNY	 should be       [ankeney]	 matched to       [ankeney]	 Distance is 0.0	succeeded
+The name            ANKR	 should be         [anker]	 matched to         [anker]	 Distance is 0.0	succeeded
+The name          ANKRLY	 should be       [enkerli]	 matched to       [enkerli]	 Distance is 0.5	succeeded
+The name         ANKSTAD	 should be     [annexstad]	 matched to     [annexstad]	 Distance is 0.5	succeeded
+The name          ANKVRN	 should be       [anckorn]	 matched to [anacreon, anckorn]	 Distance is 2.0	failed
+The name        ANPYNGKV	 should be      [unpingco]	 matched to      [unpingco]	 Distance is 0.5	succeeded
+The name             ANQ	 should be         [anghe]	 matched to [aeneas, aeneid]	 Distance is 2.0	failed
+The name            ANQH	 should be         [anghe]	 matched to       [anouilh]	 Distance is 2.0	failed
+The name             ANR	 should be          [oner]	 matched to          [oner]	 Distance is 0.5	succeeded
+The name           ANRAH	 should be         [unruh]	 matched to         [unruh]	 Distance is 1.0	succeeded
+The name           ANRYK	 should be         [enric]	 matched to         [enric]	 Distance is 0.5	succeeded
+The name          ANRYKV	 should be        [enrico]	 matched to        [enrico]	 Distance is 0.5	succeeded
+The name         ANRYKYV	 should be       [enrique]	 matched to        [enrico]	 Distance is 2.5	failed
+The name       ANRYKYYVZ	 should be      [enriquez]	 matched to [enriques, enriquez]	 Distance is 3.5	failed
+The name           ANSAR	 should be         [anwar]	 matched to       [ainsaar]	 Distance is 0.0	failed
+The name         ANSKAMB	 should be       [anscomb]	 matched to       [anscomb]	 Distance is 0.5	succeeded
+The name            ANSL	 should be        [ansell]	 matched to [ansell, anselm]	 Distance is 0.5	succeeded
+The name           ANSLM	 should be        [anselm]	 matched to        [anselm]	 Distance is 0.0	succeeded
+The name          ANSLMV	 should be       [anselmo]	 matched to       [anselmo]	 Distance is 0.0	succeeded
+The name           ANSLY	 should be        [ansley]	 matched to        [ansley]	 Distance is 0.0	succeeded
+The name          ANSLYN	 should be      [ansselin]	 matched to      [ansselin]	 Distance is 0.5	succeeded
+The name          ANSPAC	 should be       [anspach]	 matched to       [anspach]	 Distance is -0.3	succeeded
+The name            ANSR	 should be         [anwer]	 matched to       [ainsaar]	 Distance is 0.5	failed
+The name         ANSTYTV	 should be      [institut]	 matched to      [institut]	 Distance is 1.0	succeeded
+The name            ANSY	 should be [anssi, anthea]	 matched to  [anisa, anshu]	 Distance is 0.5	failed
+The name           ANSYH	 should be         [anisa]	 matched to [ainsaar, anisa]	 Distance is 2.5	failed
+The name          ANSYKR	 should be      [unsicker]	 matched to [ainsaar, arsikere, unsicker]	 Distance is 2.5	failed
+The name             ANT	 should be         [enete]	 matched to          [aint]	 Distance is 0.0	failed
+The name           ANTAL	 should be         [antal]	 matched to         [antal]	 Distance is 0.0	succeeded
+The name      ANTANAYTYS	 should be    [antanaitis]	 matched to    [antanaitis]	 Distance is 0.0	succeeded
+The name      ANTARAMYAN	 should be    [antaramian]	 matched to    [antaramian]	 Distance is 0.0	succeeded
+The name            ANTH	 should be       [annette]	 matched to [anathea, anthea]	 Distance is 0.5	failed
+The name           ANTNA	 should be       [antenna]	 matched to       [antonia]	 Distance is 0.0	failed
+The name         ANTRAPY	 should be       [entropy]	 matched to       [entropy]	 Distance is 1.0	succeeded
+The name           ANTRV	 should be        [antero]	 matched to        [antero]	 Distance is 0.0	succeeded
+The name        ANTRVSYV	 should be      [antrosio]	 matched to      [antrosio]	 Distance is 0.0	succeeded
+The name        ANTRYKYN	 should be      [entrikin]	 matched to      [entrikin]	 Distance is 0.5	succeeded
+The name          ANTSTL	 should be     [anthistle]	 matched to     [anthistle]	 Distance is 0.5	succeeded
+The name         ANTSYTL	 should be     [anthistle]	 matched to     [anthistle]	 Distance is 2.5	succeeded
+The name           ANTVN	 should be [anthon, antone, antoun]	 matched to [anthon, anton]	 Distance is 0.0	succeeded
+The name       ANTVNVGLV	 should be    [antonoglou]	 matched to    [antonoglou]	 Distance is 0.0	succeeded
+The name       ANTVNVVYC	 should be    [antonowich]	 matched to    [antonowich]	 Distance is -0.3	succeeded
+The name          ANTVNY	 should be [anthony, antoni, antony]	 matched to [anthony, antoni, antony]	 Distance is 0.0	succeeded
+The name         ANTVNYS	 should be [antonis, antonius]	 matched to [anthonis, antonias]	 Distance is 0.0	failed
+The name         ANTVNYV	 should be       [antonio]	 matched to       [antonio]	 Distance is 0.0	succeeded
+The name        ANTVNYVS	 should be      [antonius]	 matched to [antonios, antonius]	 Distance is 0.0	failed
+The name           ANTVS	 should be        [antevs]	 matched to [antaeus, antevs]	 Distance is 0.0	failed
+The name            ANTY	 should be         [antti]	 matched to [anathea, anita]	 Distance is 0.5	failed
+The name          ANTYLA	 should be        [antila]	 matched to        [antila]	 Distance is 0.0	succeeded
+The name         ANTYPDS	 should be     [antipodes]	 matched to     [antipodes]	 Distance is 0.0	succeeded
+The name         ANTYSTL	 should be     [anthistle]	 matched to     [anthistle]	 Distance is 0.5	succeeded
+The name        ANTYSTLH	 should be     [anthistle]	 matched to     [anthistle]	 Distance is 2.0	succeeded
+The name             ANV	 should be [anno, anu, enno, eno]	 matched to     [ainu, anu]	 Distance is 0.0	failed
+The name           ANVAR	 should be         [anwar]	 matched to         [anwar]	 Distance is 0.0	succeeded
+The name          ANVCYN	 should be       [anuchin]	 matched to       [anuchin]	 Distance is -0.3	succeeded
+The name          ANVJYT	 should be        [anujit]	 matched to        [anujit]	 Distance is 0.0	succeeded
+The name          ANVKVL	 should be        [anukul]	 matched to        [anukul]	 Distance is 0.0	succeeded
+The name            ANVN	 should be          [anon]	 matched to          [anon]	 Distance is 0.0	succeeded
+The name            ANVP	 should be         [anoop]	 matched to         [anoop]	 Distance is 0.0	succeeded
+The name          ANVPAM	 should be        [anupam]	 matched to        [anupam]	 Distance is 0.0	succeeded
+The name            ANVR	 should be [anwar, anwer, honnur]	 matched to  [anwar, anwer]	 Distance is 0.0	succeeded
+The name           ANVRS	 should be        [anvers]	 matched to        [anvers]	 Distance is 0.0	succeeded
+The name            ANVS	 should be  [anoosh, enos]	 matched to        [anoosh]	 Distance is 0.0	succeeded
+The name      ANVTYYADYS	 should be     [enotiadis]	 matched to     [enotiadis]	 Distance is 2.5	succeeded
+The name           ANVVY	 should be         [envoy]	 matched to         [envoy]	 Distance is 0.5	succeeded
+The name          ANYART	 should be        [enyart]	 matched to        [enyart]	 Distance is 0.5	succeeded
+The name          ANYJMA	 should be        [enigma]	 matched to        [enigma]	 Distance is 2.5	succeeded
+The name            ANYL	 should be [anil, oneal, oneill]	 matched to          [anil]	 Distance is 0.0	succeeded
+The name           ANYMA	 should be        [aamina]	 matched to [alima, anisa, anita]	 Distance is 2.0	failed
+The name           ANYNG	 should be        [enying]	 matched to        [enying]	 Distance is 0.5	succeeded
+The name            ANYS	 should be         [ennis]	 matched to [aeneas, ainissa]	 Distance is 0.5	failed
+The name           ANYSA	 should be         [anisa]	 matched to         [anisa]	 Distance is 0.0	succeeded
+The name           ANYSH	 should be         [anisa]	 matched to        [anoosh]	 Distance is 0.5	failed
+The name         ANYSTYN	 should be      [einstein]	 matched to [agustin, augustin]	 Distance is 2.5	failed
+The name        ANYVRSRY	 should be   [anniversary]	 matched to   [anniversary]	 Distance is 0.5	succeeded
+The name           ANYVS	 should be        [annius]	 matched to [annius, anoosh]	 Distance is 0.5	succeeded
+The name           ANYYV	 should be          [enyo]	 matched to [aeneid, agoyo]	 Distance is 2.5	failed
+The name        ANZALVNY	 should be      [anzalone]	 matched to      [anzalone]	 Distance is 0.5	succeeded
+The name         ANZLVAR	 should be      [anzlovar]	 matched to      [anzlovar]	 Distance is 0.0	succeeded
+The name         ANZYNGR	 should be      [enzinger]	 matched to      [enzinger]	 Distance is 0.5	succeeded
+The name              AP	 should be           [epp]	 matched to [apia, apr, yap]	 Distance is 0.5	failed
+The name           APCRC	 should be      [upchurch]	 matched to      [upchurch]	 Distance is -0.100000024	succeeded
+The name             APL	 should be   [apel, appel]	 matched to          [apel]	 Distance is 0.0	succeeded
+The name          APLBAY	 should be       [appleby]	 matched to      [applebee]	 Distance is 1.5	failed
+The name          APLBRG	 should be     [appelberg]	 matched to     [appelberg]	 Distance is 0.5	succeeded
+The name           APLBY	 should be [applebee, appleby]	 matched to [applebee, appleby]	 Distance is 0.5	succeeded
+The name           APLMN	 should be      [appleman]	 matched to      [appleman]	 Distance is 0.5	succeeded
+The name          APLNDS	 should be       [uplands]	 matched to       [uplands]	 Distance is 0.5	succeeded
+The name          APLYBY	 should be [applebee, appleby]	 matched to [applebee, appleby]	 Distance is 1.0	succeeded
+The name           APLYN	 should be         [aplin]	 matched to         [aplin]	 Distance is 0.0	succeeded
+The name          APNDYS	 should be      [apendice]	 matched to         [andys]	 Distance is 2.0	failed
+The name          APRAYT	 should be       [upright]	 matched to        [pruitt]	 Distance is 3.0	failed
+The name           APRLY	 should be       [epperly]	 matched to       [epperly]	 Distance is 1.0	succeeded
+The name          APRSVN	 should be       [aperson]	 matched to       [aperson]	 Distance is 0.0	succeeded
+The name           APRYL	 should be         [april]	 matched to         [april]	 Distance is 0.0	succeeded
+The name           APSTN	 should be        [upston]	 matched to [epshteyn, epstein, upston]	 Distance is 0.5	failed
+The name          APSTVN	 should be        [upston]	 matched to        [upston]	 Distance is 0.5	succeeded
+The name          APSTYN	 should be      [epshteyn]	 matched to [epshteyn, epstein]	 Distance is 0.5	succeeded
+The name         APSYLVN	 should be       [epsilon]	 matched to       [epsilon]	 Distance is 0.5	succeeded
+The name          APVNTH	 should be        [aponte]	 matched to        [aponte]	 Distance is 2.0	succeeded
+The name          APVRVA	 should be       [apoorva]	 matched to       [apoorva]	 Distance is 0.0	succeeded
+The name          APYDAL	 should be       [oppedal]	 matched to       [oppedal]	 Distance is 1.5	succeeded
+The name         APYSTYN	 should be      [eppstein]	 matched to [agustin, augustin]	 Distance is 2.5	failed
+The name           AQBAL	 should be         [ikbal]	 matched to         [iqbal]	 Distance is 0.5	failed
+The name              AR	 should be           [ear]	 matched to       [air, ar]	 Distance is 0.0	failed
+The name            ARAM	 should be          [oram]	 matched to  [aramco, oram]	 Distance is 0.5	failed
+The name            ARAN	 should be          [eran]	 matched to         [aryan]	 Distance is 0.0	failed
+The name           ARAND	 should be        [aurand]	 matched to        [aurand]	 Distance is 0.0	succeeded
+The name          ARARKH	 should be       [orourke]	 matched to         [erach]	 Distance is 2.5	failed
+The name            ARAS	 should be  [arras, erach]	 matched to    [aras, ares]	 Distance is 0.0	failed
+The name         ARASMVS	 should be       [erasmus]	 matched to       [erasmus]	 Distance is 0.5	succeeded
+The name            ARAY	 should be         [airay]	 matched to         [airay]	 Distance is 0.0	succeeded
+The name           ARAYZ	 should be         [aries]	 matched to [aries, arius, oriyas]	 Distance is 1.0	succeeded
+The name         ARBANAS	 should be       [arbanas]	 matched to [arabians, arbanas]	 Distance is 0.0	failed
+The name            ARBR	 should be         [arber]	 matched to  [arber, arbur]	 Distance is 0.0	succeeded
+The name           ARBVR	 should be         [arbur]	 matched to         [arbur]	 Distance is 0.0	succeeded
+The name            ARBY	 should be   [ereby, orbi]	 matched to         [araby]	 Distance is 0.0	failed
+The name           ARBYD	 should be         [irbid]	 matched to         [irbid]	 Distance is 0.5	succeeded
+The name           ARBYL	 should be         [arbil]	 matched to         [arbil]	 Distance is 0.0	succeeded
+The name             ARC	 should be          [arch]	 matched to          [arch]	 Distance is -0.3	succeeded
+The name           ARCAL	 should be      [archdale]	 matched to       [araceli]	 Distance is 1.0	failed
+The name          ARCALH	 should be      [archdale]	 matched to [araceli, aracelis]	 Distance is 2.5	failed
+The name          ARCARD	 should be       [orchard]	 matched to       [orchard]	 Distance is 0.19999999	succeeded
+The name         ARCDALY	 should be      [archdale]	 matched to      [archdale]	 Distance is 0.19999999	succeeded
+The name           ARCDL	 should be      [archdale]	 matched to      [archdale]	 Distance is 0.19999999	succeeded
+The name          ARCDYL	 should be      [archdale]	 matched to      [archdale]	 Distance is 0.7	succeeded
+The name            ARCR	 should be        [archer]	 matched to        [archer]	 Distance is -0.3	succeeded
+The name        ARCYBALD	 should be     [archibald]	 matched to     [archibald]	 Distance is -0.3	succeeded
+The name         ARDALYC	 should be      [ardalich]	 matched to      [ardalich]	 Distance is -0.3	succeeded
+The name           ARDMN	 should be       [erdmann]	 matched to       [erdmann]	 Distance is 1.0	succeeded
+The name            ARDN	 should be         [aaron]	 matched to         [arden]	 Distance is 0.0	failed
+The name           ARDRZ	 should be       [arthers]	 matched to [adars, airedales]	 Distance is 2.0	failed
+The name           ARDYS	 should be         [ardis]	 matched to         [ardis]	 Distance is 0.0	succeeded
+The name       ARFANAKYS	 should be     [orfanakis]	 matched to     [orfanakis]	 Distance is 0.5	succeeded
+The name          ARFVRD	 should be        [orford]	 matched to        [orford]	 Distance is 0.5	succeeded
+The name          ARFYVS	 should be        [orfeus]	 matched to [orfeus, orpheus]	 Distance is 1.0	succeeded
+The name           ARGAN	 should be [oregan, organ]	 matched to [oregan, organ, uruguayan]	 Distance is 0.5	succeeded
+The name           ARGAR	 should be         [orgar]	 matched to         [orgar]	 Distance is 0.5	succeeded
+The name          ARHARD	 should be        [erhard]	 matched to        [erhard]	 Distance is 0.5	succeeded
+The name          ARKARD	 should be       [orchard]	 matched to [arcadia, erhard]	 Distance is 2.5	failed
+The name          ARKDYL	 should be      [archdale]	 matched to [arcadia, arcadian, arcadias]	 Distance is 2.0	failed
+The name         ARKTYKY	 should be       [arktiki]	 matched to       [arktiki]	 Distance is 0.0	succeeded
+The name             ARL	 should be [earl, earle, orrell]	 matched to   [aral, ariel]	 Distance is 0.0	failed
+The name          ARLAYJ	 should be       [arlidge]	 matched to       [arlidge]	 Distance is 2.5	succeeded
+The name            ARLT	 should be         [arlet]	 matched to         [arlet]	 Distance is 0.0	succeeded
+The name            ARLY	 should be        [earley]	 matched to [arline, aurelia]	 Distance is 0.5	failed
+The name           ARLYJ	 should be       [arlidge]	 matched to       [arlidge]	 Distance is 0.5	succeeded
+The name         ARLYNDH	 should be       [arlidge]	 matched to [ireland, irelands]	 Distance is 3.0	failed
+The name          ARLYNG	 should be        [arling]	 matched to        [arling]	 Distance is 0.0	succeeded
+The name             ARM	 should be           [arm]	 matched to           [arm]	 Distance is 0.0	succeeded
+The name          ARMAND	 should be        [ormond]	 matched to        [armand]	 Distance is 0.0	failed
+The name      ARMASTRANG	 should be     [armstrong]	 matched to     [armstrong]	 Distance is 0.5	succeeded
+The name          ARMATV	 should be        [armato]	 matched to        [armato]	 Distance is 0.0	succeeded
+The name           ARMNY	 should be        [armeni]	 matched to [armani, armeni]	 Distance is 0.0	failed
+The name           ARMRY	 should be        [ermrey]	 matched to        [ermrey]	 Distance is 0.5	succeeded
+The name        ARMSRVNG	 should be     [armstrong]	 matched to     [armstrong]	 Distance is 3.1	succeeded
+The name       ARMSTRANG	 should be     [armstrong]	 matched to     [armstrong]	 Distance is 0.5	succeeded
+The name       ARMVNTRVT	 should be    [armontrout]	 matched to    [armontrout]	 Distance is 0.0	succeeded
+The name           ARMVR	 should be        [armour]	 matched to        [armour]	 Distance is 0.0	succeeded
+The name           ARMYN	 should be        [eremin]	 matched to        [eremin]	 Distance is 0.5	succeeded
+The name           ARMYT	 should be        [armitt]	 matched to        [armitt]	 Distance is 0.5	succeeded
+The name         ARMYTAJ	 should be      [armitage]	 matched to      [armitage]	 Distance is 2.5	succeeded
+The name         ARMYTAZ	 should be      [armitage]	 matched to [armenias, arminius, armitage]	 Distance is 2.5	failed
+The name             ARN	 should be         [aaron]	 matched to [airoun, aron, aryan]	 Distance is 0.0	failed
+The name           ARNAT	 should be         [arnot]	 matched to         [arnot]	 Distance is 0.5	succeeded
+The name            ARND	 should be         [arend]	 matched to [arend, aurand]	 Distance is 0.0	succeeded

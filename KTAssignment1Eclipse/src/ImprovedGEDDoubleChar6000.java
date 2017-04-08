@@ -26,7 +26,7 @@ import java.util.Comparator;
  * 
  * @author Scot Drysdale
  */
-public class ImprovedGEDDoubleChar {
+public class ImprovedGEDDoubleChar6000 {
 	private float GeneralInsertDist = 2;
 	private float GeneralReplaceDist = 2;
 	private float GeneralDeleteDist = 2;
@@ -51,7 +51,7 @@ public class ImprovedGEDDoubleChar {
 
 	private Map<String, Float> CharMaps = new HashMap<String, Float>();
 
-	public ImprovedGEDDoubleChar() {
+	public ImprovedGEDDoubleChar6000() {
 		// y i
 		CharMaps.put(GetMapKey('y', 'i'), (float) 0.0);
 		CharMaps.put(GetMapKey('i', 'y'), (float) 0.0);
@@ -70,11 +70,7 @@ public class ImprovedGEDDoubleChar {
 		CharMaps.put(GetMapKey('v', 'u'), (float) 0.0);
 		// z s
 		CharMaps.put(GetMapKey('z', 's'), (float) 0.0);
-		// z j
-		CharMaps.put(GetMapKey('z', 'j'), (float) 0.0);
-		// s c
-		CharMaps.put(GetMapKey('s', 'c'), (float) 0.0);
-		
+
 		// s sh
 		CharMaps.put(GetMapKey("s", "sh"), (float) 0.0);
 		// t th
@@ -351,7 +347,7 @@ public class ImprovedGEDDoubleChar {
 			System.out.println("the names.txt contains " + nameDict.size());
 
 			// the train.txt
-			fstream = new FileInputStream("train1300p2.txt");
+			fstream = new FileInputStream("train1300p1.txt");
 			br = new BufferedReader(new InputStreamReader(fstream));
 			while ((strLine = br.readLine()) != null) {
 				// System.out.println(strLine);
@@ -382,8 +378,8 @@ public class ImprovedGEDDoubleChar {
 		List<Map.Entry<String, ArrayList<String>>> list =
 			    new LinkedList<Map.Entry<String, ArrayList<String>>>(sortedMap.entrySet());
 		
-		int lowerB = 0;
-		int upperB = 3000;
+		int lowerB = 3001;
+		int upperB = 6000;
 
 		int allattempt = 0;
 		int CorrectSize = 0;
@@ -399,7 +395,7 @@ public class ImprovedGEDDoubleChar {
 				break;
 			}
 
-			ImprovedGEDDoubleChar calc = new ImprovedGEDDoubleChar();
+			ImprovedGEDDoubleChar6000 calc = new ImprovedGEDDoubleChar6000();
 			
 			float minDistance = Float.MAX_VALUE;
 			List<String> matchedName = new ArrayList<String>();

@@ -130,8 +130,8 @@ public class BasicGED {
 		}
 
 		BasicGED calc = new BasicGED();
-		int testSize  = 100;
-		int CorrectSize = 0;
+		int testSize  = 1000;
+		int CorrectSize = 1200;
 		int i = testSize;
 		for (SimpleEntry<String, String> trainPair : trainData) {
 			

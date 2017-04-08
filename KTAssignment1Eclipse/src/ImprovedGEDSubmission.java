@@ -7,8 +7,6 @@ import java.util.Map;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.AbstractMap.SimpleEntry;
 
 import java.util.ArrayList;
@@ -16,17 +14,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
-/**
- * Computes the edit distance between pairs of words. Can be used for
- * applications like finding near-match names in Kevin Bacon or spelling
- * correction.
- * 
- * There are two versions: a recursive version and a dynamic programming version
- * that memoizes the function by storing previously solved problems in a map.
- * 
- * @author Scot Drysdale
- */
-public class ImprovedGEDDoubleChar {
+public class ImprovedGEDSubmission {
+
+	// the distances
 	private float GeneralInsertDist = 2;
 	private float GeneralReplaceDist = 2;
 	private float GeneralDeleteDist = 2;
@@ -38,20 +28,21 @@ public class ImprovedGEDDoubleChar {
 	private float VowelsInsertDist = 0;
 	private float PlosiveInsertDist = (float) 3.1;
 	private float PlosiveDeleteDist = 4;
-	//TODO: when as occur in the first two letters, replace with s
-	// or when 'a' occur as the first letter, possibly gets removed 
-	
+
+	// a map to store the solved problems to speed up
 	private Map<SimpleEntry<String, String>, Float> solvedProblems = new HashMap<SimpleEntry<String, String>, Float>();
 
 	private List<Character> vowelSet = Arrays.asList('a', 'e', 'i', 'o', 'u', 'y');
 
 	private List<Character> plosiveSet = Arrays.asList('b', 'd', 'g', 'p', 't', 'k');
-	
+
 	private List<Character> removeFromFirstSet = Arrays.asList('a');
 
 	private Map<String, Float> CharMaps = new HashMap<String, Float>();
 
-	public ImprovedGEDDoubleChar() {
+	public ImprovedGEDSubmission() {
+
+		// adding the replacing pairs and its distance
 		// y i
 		CharMaps.put(GetMapKey('y', 'i'), (float) 0.0);
 		CharMaps.put(GetMapKey('i', 'y'), (float) 0.0);
@@ -74,7 +65,7 @@ public class ImprovedGEDDoubleChar {
 		CharMaps.put(GetMapKey('z', 'j'), (float) 0.0);
 		// s c
 		CharMaps.put(GetMapKey('s', 'c'), (float) 0.0);
-		
+
 		// s sh
 		CharMaps.put(GetMapKey("s", "sh"), (float) 0.0);
 		// t th
@@ -89,20 +80,16 @@ public class ImprovedGEDDoubleChar {
 		CharMaps.put(GetMapKey("v", "oo"), (float) 0.0);
 		// f ph
 		CharMaps.put(GetMapKey("f", "ph"), (float) 0.0);
-		// CharMaps.put(GetMapKey("ph", "f"), (float) 0.0);
 		// y ie
 		CharMaps.put(GetMapKey("y", "ie"), (float) 0.0);
 		CharMaps.put(GetMapKey("y", "ee"), (float) 0.0);
-		// CharMaps.put(GetMapKey("ie", "y"), (float) 0.0);
 		// c ch
 		CharMaps.put(GetMapKey("c", "ch"), (float) -0.3);
 		// k ck
 		CharMaps.put(GetMapKey("c", "ck"), (float) 0.0);
 		// ks x
 		CharMaps.put(GetMapKey("ks", "x"), (float) 0.0);
-		
-		
-		// dangerous
+
 		// as a
 		CharMaps.put(GetMapKey("as", "s"), (float) 0.0);
 	}
@@ -117,16 +104,16 @@ public class ImprovedGEDDoubleChar {
 
 	private float GlobalEditDist(String s1, String s2, Character preCharOfS1, Character preCharOfS2) {
 
-		float matchCharStrDist = Float.MAX_VALUE; 
-		float matchStrCharDist = Float.MAX_VALUE; 
-		float matchCharDist; 
-		float insertDist; 
-		float deleteDist; 
+		float matchCharStrDist = Float.MAX_VALUE;
+		float matchStrCharDist = Float.MAX_VALUE;
+		float matchCharDist;
+		float insertDist;
+		float deleteDist;
 
 		if (s1.length() == 0)
-			return insertString(s2); // Insert the remainder of s2
+			return insertString(s2);
 		else if (s2.length() == 0)
-			return removeString(s1); // Delete the remainder of s1
+			return removeString(s1);
 		else {
 			SimpleEntry<String, String> pair = new SimpleEntry<String, String>(s1, s2);
 			Float result = solvedProblems.containsKey(pair) ? solvedProblems.get(pair) : null;
@@ -170,21 +157,21 @@ public class ImprovedGEDDoubleChar {
 				} else {
 					matchCharDist = matchCharDist + GetMatchCost();
 				}
-				deleteDist  = GlobalEditDist(s1.substring(1), s2, s1.charAt(0), preCharOfS2) + GetDeleteCost (s1.charAt(0), preCharOfS1);
-				insertDist = GlobalEditDist(s1, s2.substring(1), preCharOfS1, s2.charAt(0)) + GetInsertCost (s2.charAt(0), preCharOfS2);
+				deleteDist = GlobalEditDist(s1.substring(1), s2, s1.charAt(0), preCharOfS2)
+						+ GetDeleteCost(s1.charAt(0), preCharOfS1);
+				insertDist = GlobalEditDist(s1, s2.substring(1), preCharOfS1, s2.charAt(0))
+						+ GetInsertCost(s2.charAt(0), preCharOfS2);
 
 				float dist = Math.min(matchCharDist,
 						Math.min(insertDist, Math.min(deleteDist, Math.min(matchCharStrDist, matchStrCharDist))));
 
-				// System.out.println("Selected dist " + dist + "m, i, d = "
-				// matchDist +","+ insertDist + ", "+ deleteDist);
-
-				solvedProblems.put(pair, dist); // Save the result for future
+				solvedProblems.put(pair, dist);
 				return dist;
 			}
 		}
 	}
 
+	// distance of inserting the whole string
 	public float insertString(String str) {
 		float dist = 0;
 		if (str.length() > 0) {
@@ -197,6 +184,7 @@ public class ImprovedGEDDoubleChar {
 		return dist;
 	}
 
+	// distance of removing the whole string
 	public float removeString(String str) {
 		float dist = 0;
 		Character preChar = str.charAt(0);
@@ -234,44 +222,39 @@ public class ImprovedGEDDoubleChar {
 					|| (!vowelSet.contains(oldc) && vowelSet.contains(newc))) {
 				return VowelsNonVowelsReplaceDist;
 			}
-
 			return GeneralReplaceDist;
 		}
-
 		return GeneralReplaceDist;
 	}
 
 	public float GetInsertCost(char insertChar, Character preChar) {
-
+		// doubled same letter will not be punished too hard
 		if (preChar != null && preChar.charValue() == insertChar) {
 			return DoubleLetterInsertDist;
 		}
-
+		// inserting vowel, small distance
 		if (preChar != null && vowelSet.contains(insertChar)) {
 			return VowelsInsertDist;
 		}
-		 if(plosiveSet.contains(insertChar)){
-		 return PlosiveInsertDist;
-		 }
+		// inserting plosive, long distance
+		if (plosiveSet.contains(insertChar)) {
+			return PlosiveInsertDist;
+		}
 		return GeneralInsertDist;
 	}
 
 	public float GetDeleteCost(char removedChar, Character preChar) {
-		if(preChar == null)
-		{
-			if(removeFromFirstSet.contains(removedChar)) 
-			{
+		// remove the first char?
+		if (preChar == null) {
+			if (removeFromFirstSet.contains(removedChar)) {
 				return DeleteFromFirstDist;
 			}
 		}
-		
-		
-		// did not really work, means there are almost no plosive letters get
-		// removed
-		 if(plosiveSet.contains(removedChar))
-		 {
-			 return PlosiveDeleteDist;
-		 }
+
+		// remove the plosive
+		if (plosiveSet.contains(removedChar)) {
+			return PlosiveDeleteDist;
+		}
 		return GeneralDeleteDist;
 	}
 
@@ -285,90 +268,58 @@ public class ImprovedGEDDoubleChar {
 		return String.format("%1$" + length + "s", string);
 	}
 
-
 	private static Map<String, ArrayList<String>> sortByValue(Map<String, ArrayList<String>> unsortMap) {
 
-		// 1. Convert Map to List of Map
-		List<Map.Entry<String, ArrayList<String>>> list =
-		    new LinkedList<Map.Entry<String, ArrayList<String>>>(unsortMap.entrySet());
+		List<Map.Entry<String, ArrayList<String>>> list = new LinkedList<Map.Entry<String, ArrayList<String>>>(
+				unsortMap.entrySet());
 
-		// 2. Sort list with Collections.sort(), provide a custom Comparator
-		//    Try switch the o1 o2 position for a different order
 		Collections.sort(list, new Comparator<Map.Entry<String, ArrayList<String>>>() {
-			public int compare(Map.Entry<String, ArrayList<String>> o1,
-			                   Map.Entry<String, ArrayList<String>> o2) {
+			public int compare(Map.Entry<String, ArrayList<String>> o1, Map.Entry<String, ArrayList<String>> o2) {
 				return (o1.getKey()).compareTo(o2.getKey());
 			}
 		});
 
-		// 3. Loop the sorted list and put it into a new insertion order Map LinkedHashMap
 		Map<String, ArrayList<String>> sortedMap = new LinkedHashMap<String, ArrayList<String>>();
 		for (Map.Entry<String, ArrayList<String>> entry : list) {
 			sortedMap.put(entry.getKey(), entry.getValue());
 		}
 
-		/*
-		//classic iterator example
-		for (Iterator<Map.Entry<String, Integer>> it = list.iterator(); it.hasNext(); ) {
-		    Map.Entry<String, Integer> entry = it.next();
-		    sortedMap.put(entry.getKey(), entry.getValue());
-		}*/
-
-
 		return sortedMap;
 	}
 
-	
-	
 	/**
 	 * Testing program
 	 */
 	public static void main(String[] args) {
 
-		Path currentRelativePath = Paths.get("");
-		String s = currentRelativePath.toAbsolutePath().toString();
-		System.out.println("Current relative path is: " + s);
-
 		// All the names in the names.txt
 		ArrayList<String> nameDict = new ArrayList<String>();
 
-		// all the train data in the train.txt
-
 		Map<String, ArrayList<String>> trainData = new HashMap<String, ArrayList<String>>();
-		
-//		ArrayList<SimpleEntry<String, String>> trainData = new ArrayList<SimpleEntry<String, String>>();
 
 		try {
 			// the names.txt
 			FileInputStream fstream = new FileInputStream("names.txt");
 			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 			String strLine;
-			// Read File Line By Line
 			while ((strLine = br.readLine()) != null) {
-				// System.out.println(strLine);
 				nameDict.add(strLine);
 			}
-			System.out.println("the names.txt contains " + nameDict.size());
 
 			// the train.txt
-			fstream = new FileInputStream("train1300p2.txt");
+			fstream = new FileInputStream("train.txt");
 			br = new BufferedReader(new InputStreamReader(fstream));
 			while ((strLine = br.readLine()) != null) {
 				// System.out.println(strLine);
 				String[] temp = strLine.split("\t");
-				
-				if(trainData.containsKey(temp[0]))
-				{
+
+				if (trainData.containsKey(temp[0])) {
 					trainData.get(temp[0]).add(temp[1]);
-				}
-				else
-				{
+				} else {
 					trainData.put(temp[0], new ArrayList<String>());
 					trainData.get(temp[0]).add(temp[1]);
 				}
-//				trainData.add(new SimpleEntry<String, String>(temp[0], temp[1]));
 			}
-			System.out.println("the train.txt contains " + trainData.size());
 
 			// Close the input stream
 			br.close();
@@ -376,14 +327,13 @@ public class ImprovedGEDDoubleChar {
 			e.printStackTrace();
 		}
 
-
 		Map<String, ArrayList<String>> sortedMap = sortByValue(trainData);
-		
-		List<Map.Entry<String, ArrayList<String>>> list =
-			    new LinkedList<Map.Entry<String, ArrayList<String>>>(sortedMap.entrySet());
-		
+
+		List<Map.Entry<String, ArrayList<String>>> list = new LinkedList<Map.Entry<String, ArrayList<String>>>(
+				sortedMap.entrySet());
+
 		int lowerB = 0;
-		int upperB = 3000;
+		int upperB = Integer.MAX_VALUE;
 
 		int allattempt = 0;
 		int CorrectSize = 0;
@@ -391,6 +341,7 @@ public class ImprovedGEDDoubleChar {
 		int i = 0;
 		for (Map.Entry<String, ArrayList<String>> trainPair : list) {
 
+			// processing part of the data // for testing 
 			if (i++ < lowerB) {
 				continue;
 			}
@@ -399,8 +350,8 @@ public class ImprovedGEDDoubleChar {
 				break;
 			}
 
-			ImprovedGEDDoubleChar calc = new ImprovedGEDDoubleChar();
-			
+			ImprovedGEDSubmission calc = new ImprovedGEDSubmission();
+
 			float minDistance = Float.MAX_VALUE;
 			List<String> matchedName = new ArrayList<String>();
 			for (String name : nameDict) {
@@ -409,51 +360,44 @@ public class ImprovedGEDDoubleChar {
 					minDistance = editDistance;
 					matchedName = new ArrayList<String>();
 					matchedName.add(name);
-				}else if (editDistance == minDistance) {
+				} else if (editDistance == minDistance) {
 					matchedName.add(name);
 				}
 				if (editDistance == -0.3) {
 					break;
 				}
 			}
-			
-			if(matchedName.size()>3)
-			{
+
+			if (matchedName.size() > 3) {
 				matchedName = matchedName.subList(0, 2);
 			}
 
-			if(trainPair.getValue().contains(matchedName.get(0)))
-			{
+			if (trainPair.getValue().contains(matchedName.get(0))) {
 				CorrectSize++;
 			}
-			
+
 			for (String str : matchedName) {
-				if(trainPair.getValue().contains(str))
-				{
+				if (trainPair.getValue().contains(str)) {
 					recall++;
 				}
 			}
-			
-			allattempt += matchedName.size();
 
-			
-//			if (matchedName.equalsIgnoreCase(trainPair.getValue())) {
-//				CorrectSize++;
-//			}
+			allattempt += matchedName.size();
 
 			System.out.println("The name " + fixedLength(trainPair.getKey().toString()) + "\t should be "
 					+ fixedLength(trainPair.getValue().toString()) + "\t matched to "
 					+ fixedLength(matchedName.toString()) + "\t Distance is " + minDistance + "\t"
-					+ (trainPair.getValue().contains(matchedName.get(0)) ? "succeeded" : "failed"));
+					+ (trainPair.getValue().contains(matchedName.get(0)) ? "succeeded" : "failed")
+					);
 		}
 
-		System.out.println("Test size = " + (i - lowerB) + " Correct first attempts are " + CorrectSize + " ( Accuracy is "
-				+ (((float) CorrectSize / (i - lowerB)) * 100) + "%)");
-		
+		System.out.println("Test size = " + (i - lowerB) + " Correct first attempts are " + CorrectSize
+				+ " ( Accuracy of just using the first attempt is " + (((float) CorrectSize / (i - lowerB)) * 100) + "%)");
+
 		System.out.println("Test size = " + (i - lowerB) + " All corret answers are " + recall + " ( Recall is "
 				+ (((float) recall / (i - lowerB)) * 100) + "%)");
 
 		System.out.println("Test size = " + (i - lowerB) + " All attempts are " + allattempt + " ( precision is "
-				+ (((float) recall / allattempt ) * 100) + "%)");
+				+ (((float) recall / allattempt) * 100) + "%)");
 	}
 }

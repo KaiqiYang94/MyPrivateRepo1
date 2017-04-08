@@ -1,0 +1,127 @@
+MPJ Express (0.44) is started in the multicore configuration
+Current relative path is: /home/kaiqiy
+the names.txt contains 25909
+the train.txt contains 11967
+The name            'ABR	 should be         [aabar]	 matched to [baabar, babar, babur, dauber, faber, gabor, haber, jabir, kabir]	 Distance is 2.0	failed
+The name            'ADL	 should be          [adel]	 matched to [adel, adil, fadil, fadl, gadil, hadil, ladeuil, padial]	 Distance is 2.0	succeeded
+The name           'ADYL	 should be          [adil]	 matched to [adil, fadil, gadil, hadil, ladeuil, padial]	 Distance is 2.0	succeeded
+The name            'ALY	 should be          [aali]	 matched to [ali, bailey, bali, bayly, bouali, cali, dailey, daley, dali, dalie, daly, dealy, gali, hailey, haley, healey, kali, laly, malay, mali, paley, pauli, saley]	 Distance is 2.0	failed
+The name           'ALYA	 should be       [aaliyah]	 matched to [alia, aliya, alya, kalia]	 Distance is 2.0	failed
+The name           'ALYH	 should be       [aaliyah]	 matched to       [aliyyah]	 Distance is 2.0	failed
+The name           'ASYF	 should be          [asif]	 matched to   [asif, saiph]	 Distance is 2.0	succeeded
+The name           'AYMN	 should be         [ayman]	 matched to [aiman, ayman, cayman, gaiman, gayman, layamon, maiman]	 Distance is 2.0	failed
+The name           'AYSA	 should be [aiesha, ayesha]	 matched to [aiesha, aisha, ayesha]	 Distance is 2.0	succeeded
+The name           'AYSH	 should be [aiesha, ayesha]	 matched to         [ayush]	 Distance is 2.0	failed
+The name       'BDAL'ZYR	 should be     [abdulaziz]	 matched to        [balzer]	 Distance is 6.5	failed
+The name       'BDAL'ZYZ	 should be     [abdulaziz]	 matched to     [abdulaziz]	 Distance is 5.5	succeeded
+The name          'BDALH	 should be      [abdullah]	 matched to [abdullah, bdale]	 Distance is 4.0	succeeded
+The name         'BDALLH	 should be      [abdullah]	 matched to      [abdullah]	 Distance is 3.5	succeeded
+The name      'BDALRHMAN	 should be [abdalrahman, abdulrahman]	 matched to   [abdalrahman]	 Distance is 3.0	succeeded
+The name       'BDALRHMN	 should be [abdalrahman, abdulrahman]	 matched to   [abdalrahman]	 Distance is 3.0	succeeded
+The name          'BDHBY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 3.0	succeeded
+The name            'BDL	 should be         [abdul]	 matched to [bdale, beadle, bedell, bodla]	 Distance is 2.5	failed
+The name        'BDL'ZYZ	 should be     [abdulaziz]	 matched to     [abdulaziz]	 Distance is 5.0	succeeded
+The name      'BDVAL'ZYZ	 should be     [abdulaziz]	 matched to     [abdulaziz]	 Distance is 7.0	succeeded
+The name           'BDVL	 should be         [abdul]	 matched to       [bidwell]	 Distance is 2.5	failed
+The name       'BDVLRHMN	 should be   [abdulrahman]	 matched to   [abdulrahman]	 Distance is 3.0	succeeded
+The name        'BVDHABY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 3.0	succeeded
+The name            'BYD	 should be         [ubaid]	 matched to          [boyd]	 Distance is 2.0	failed
+The name            'DYL	 should be          [adil]	 matched to [dial, dil, fadil, gadil, hadil, ladeuil, padial]	 Distance is 2.0	failed
+The name            'FAF	 should be          [afaf]	 matched to    [afaf, fife]	 Distance is 3.0	succeeded
+The name            'FYF	 should be          [afif]	 matched to          [fife]	 Distance is 2.5	failed
+The name            'HYH	 should be         [aahie]	 matched to  [sheehy, shuh]	 Distance is 2.5	failed
+The name        'LAALDYN	 should be      [alaaldin]	 matched to      [alaaldin]	 Distance is 3.0	succeeded
+The name          'LADYN	 should be      [alaaldin]	 matched to       [saladin]	 Distance is 2.0	failed
+The name       'LAKVABAH	 should be      [alaqabah]	 matched to      [alaqabah]	 Distance is 5.0	succeeded
+The name         'LAYDYN	 should be      [alaaldin]	 matched to [claudine, leiden, leyden]	 Distance is 3.0	failed
+The name          'LAYYN	 should be         [alain]	 matched to       [malayan]	 Distance is 2.5	failed
+The name            'LVY	 should be [allaway, alleway]	 matched to [cleavey, lavey, levey, levi, levy, livy, loewi, louie, malawi, railway, silvey, solovay, solvay, sylvie, vilyui]	 Distance is 2.0	failed
+The name             'LY	 should be [aali, ali, allee]	 matched to [bailey, bali, bayly, boily, bouali, cali, clay, coley, dailey, daley, dali, dalie, daly, dealy, fly, foley, gali, hailey, haley, healey, holy, jolee, joly, julie, july, kali, kiely, klee, klie, lai, laly, lee, lei, ley, li, lie, lily, louie, lyly, malay, mali, mili, mouli, paley, pauli, pelee, riley, saley, sly, soli, tuli, vilyui, wiley, wylie]	 Distance is 2.0	failed
+The name            'LYA	 should be [aaliyah, alia, aliya, alya]	 matched to [celia, delia, julia, kalia, lelia, lilia]	 Distance is 2.0	failed
+The name            'LYM	 should be          [alim]	 matched to [liam, lim, selim, slim, valium]	 Distance is 2.0	failed
+The name           'LYMA	 should be  [alima, ulima]	 matched to [kolyma, lima, selima]	 Distance is 2.0	failed
+The name            'LYN	 should be         [alain]	 matched to [balin, blain, boleyn, coleen, colin, dalian, dolin, jilin, jolyon, julian, kalyan, klein, lian, lien, lilian, lin, lion, lyn, lyon, malayan, malian, paulin, poulin, salian]	 Distance is 2.0	failed
+The name          'LYYAH	 should be       [aaliyah]	 matched to       [aliyyah]	 Distance is 3.0	failed
+The name             'ML	 should be          [amal]	 matched to [camel, cemal, gamal, gamil, hamel, jamal, jamel, jamil, kamal, kamel, kamil, lemuel, mel, samel, samuel, tamil, vimal, zemel]	 Distance is 2.0	failed
+The name             'MR	 should be          [umar]	 matched to [comer, daumier, gymer, hamer, hemer, homer, jamar, kumar, lamar, lemer, maier, mair, mar, mauer, mayer, mayr, meier, meir, meyer, mier, mir, moyer, mr, muir, myer, qamar, ramer, roemer, samar, samir, semir, seymour, simer, tamir, timor, timur, weimar, wiemar]	 Distance is 2.0	failed
+The name            'NBR	 should be         [anbar]	 matched to [dunbar, manber]	 Distance is 2.0	failed
+The name           'NYZH	 should be        [unaiza]	 matched to [danish, manish]	 Distance is 2.0	failed
+The name            'QYL	 should be    [akil, aqil]	 matched to     [guayaquil]	 Distance is 2.0	failed
+The name           'QYLA	 should be [akilah, aqila]	 matched to        [quayle]	 Distance is 2.5	failed
+The name           'RBYL	 should be         [arbil]	 matched to [kerbel, maribel, rabel, raboel, robel, ruebel, wrobel]	 Distance is 2.5	failed
+The name          'RRYFA	 should be        [arrifa]	 matched to        [arrifa]	 Distance is 3.0	succeeded
+The name           'SMAN	 should be        [othman]	 matched to [coisman, cushman, heisman, houseman, housman, samoan, seaman, seman, tasman, wiseman]	 Distance is 2.0	failed
+The name            'SRT	 should be         [israt]	 matched to [seurat, short, surat]	 Distance is 2.0	failed
+The name            'TYH	 should be         [atiya]	 matched to [fatah, ptah, teh]	 Distance is 2.5	failed
+The name             'YN	 should be           [ain]	 matched to [bain, bian, bien, bin, cain, deen, dien, din, dion, fin, hain, hein, hin, hyun, iain, ian, in, ion, jain, jayan, jian, jin, kain, keen, keyuan, kian, kien, kin, kuin, lian, lien, lin, lion, lyn, lyon, main, mayan, mayeen, min, nien, nin, pion, queen, quin, rain, ryan, sian, sin, taiyuan, tien, tin, vin, wein, xian, yan, yuan, zion]	 Distance is 2.0	failed
+The name            A'LY	 should be          [aali]	 matched to [abley, agali, ainley, ali, allee, alley, allie, audley]	 Distance is 2.0	failed
+The name          A'LYAH	 should be       [aaliyah]	 matched to       [aliyyah]	 Distance is 2.0	failed
+The name           A'MAL	 should be          [amal]	 matched to          [amal]	 Distance is 2.0	succeeded
+The name          AACTAY	 should be       [aechtie]	 matched to       [aechtie]	 Distance is 1.2	succeeded
+The name           AALTJ	 should be        [aeltje]	 matched to        [aaltje]	 Distance is 0.5	failed
+The name          AAMYNA	 should be        [aamina]	 matched to        [aamina]	 Distance is 0.0	succeeded
+The name           AARVN	 should be         [aaron]	 matched to         [aaron]	 Distance is 0.0	succeeded
+The name             ABA	 should be           [aba]	 matched to     [aba, abia]	 Distance is 0.0	succeeded
+The name            ABAD	 should be          [abad]	 matched to   [abad, abiad]	 Distance is 0.0	succeeded
+The name           ABADA	 should be        [obadja]	 matched to [ibadan, obadiah]	 Distance is 1.0	failed
+The name         ABADHBY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 0.5	succeeded
+The name           ABAJA	 should be        [obadja]	 matched to         [abuja]	 Distance is 0.5	failed
+The name            ABAR	 should be         [aabar]	 matched to   [aabar, ibar]	 Distance is 0.5	succeeded
+The name            ABCR	 should be        [abcher]	 matched to        [abcher]	 Distance is -0.3	succeeded
+The name           ABDJA	 should be        [obadja]	 matched to [abidjan, obadja]	 Distance is 0.5	failed
+The name       ABDLRHMAN	 should be   [abdalrahman]	 matched to [abdalrahman, abdulrahman]	 Distance is 0.0	succeeded
+The name           ABDVN	 should be         [ebdon]	 matched to         [ebdon]	 Distance is 0.5	succeeded
+The name             ABH	 should be           [abe]	 matched to         [abhay]	 Distance is 0.5	failed
+The name           ABHAY	 should be         [abhay]	 matched to         [abhay]	 Distance is 0.0	succeeded
+The name            ABHY	 should be         [abhay]	 matched to         [abhay]	 Distance is 0.0	succeeded
+The name             ABL	 should be   [abel, abell]	 matched to [abel, abul, aibel]	 Distance is 0.0	succeeded
+The name            ABLA	 should be        [abella]	 matched to [abele, abella, able, abley, ebola]	 Distance is 0.5	failed
+The name            ABLH	 should be         [abele]	 matched to [abel, abele, abell, abels, able, abley, abolin, abul, aibel, akilah, allah, anouilh, beulah]	 Distance is 2.0	failed
+The name          ABLHYD	 should be      [adelheid]	 matched to      [adelheid]	 Distance is 2.0	succeeded
+The name            ABLJ	 should be       [abeltje]	 matched to [abel, abele, abell, abels, able, abley, abolin, abul, aibel]	 Distance is 2.0	failed
+The name            ABLT	 should be       [abeltje]	 matched to [abeltje, ablett]	 Distance is 0.5	succeeded
+The name           ABLTJ	 should be       [abeltje]	 matched to       [abeltje]	 Distance is 0.5	succeeded
+The name            ABLY	 should be         [abley]	 matched to         [abley]	 Distance is 0.0	succeeded
+The name          ABLYSN	 should be      [ablation]	 matched to [abelson, abolin, alison, allison, allyson, alyson, rabelaisian]	 Distance is 2.0	failed
+The name            ABND	 should be         [abend]	 matched to         [abend]	 Distance is 0.0	succeeded
+The name            ABNR	 should be         [abner]	 matched to         [abner]	 Distance is 0.0	succeeded
+The name             ABR	 should be         [aabar]	 matched to [aabar, aberg, abery, aubrey, aubrie, ibar, ober]	 Distance is 0.5	succeeded
+The name         ABRAHAM	 should be       [abraham]	 matched to       [abraham]	 Distance is 0.0	succeeded
+The name         ABRAHYM	 should be [ebrahim, ibrahim]	 matched to [abraham, ebrahim, ibrahim]	 Distance is 0.5	failed
+The name           ABRAM	 should be         [abram]	 matched to         [abram]	 Distance is 0.0	succeeded
+The name        ABRAMSVN	 should be      [abramson]	 matched to      [abramson]	 Distance is 0.0	succeeded
+The name          ABRAPT	 should be        [abrupt]	 matched to        [abrupt]	 Distance is 0.5	succeeded
+The name          ABRAYT	 should be       [ebright]	 matched to        [aubrey]	 Distance is 2.5	failed
+The name          ABRBAC	 should be      [eberbach]	 matched to      [eberbach]	 Distance is 0.19999999	succeeded
+The name            ABRG	 should be  [aberg, oborg]	 matched to         [aberg]	 Distance is 0.0	succeeded
+The name       ABRKRVMBY	 should be   [abercrombie]	 matched to   [abercrombie]	 Distance is 0.0	succeeded
+The name            ABRL	 should be        [oberle]	 matched to [eberle, eberly, oberle]	 Distance is 1.0	failed
+The name           ABRLY	 should be        [eberle]	 matched to        [eberly]	 Distance is 0.5	failed
+The name         ABRMSKY	 should be      [obremski]	 matched to      [obremski]	 Distance is 0.5	succeeded
+The name            ABRT	 should be [ebbert, ebert]	 matched to         [ebert]	 Distance is 0.5	succeeded
+The name          ABRVTR	 should be    [oberreuter]	 matched to    [oberreuter]	 Distance is 1.0	succeeded
+The name            ABRY	 should be [abery, aubrey]	 matched to [abery, aubrey, aubrie]	 Distance is 0.0	succeeded
+The name           ABRYN	 should be        [obrien]	 matched to [iberian, obrien]	 Distance is 0.5	failed
+The name          ABRYNY	 should be        [ibrini]	 matched to        [ibrini]	 Distance is 0.5	succeeded
+The name            ABST	 should be          [obst]	 matched to          [obst]	 Distance is 0.5	succeeded
+The name       ABSTGARTN	 should be    [obstgarten]	 matched to    [obstgarten]	 Distance is 0.5	succeeded
+The name         ABSTRKT	 should be      [abstract]	 matched to      [abstract]	 Distance is 0.0	succeeded
+The name             ABT	 should be        [abbott]	 matched to         [abbot]	 Distance is 0.5	failed
+The name           ABTYN	 should be        [abtine]	 matched to        [abtine]	 Distance is 0.5	succeeded
+The name             ABV	 should be          [abou]	 matched to          [abou]	 Distance is 0.0	succeeded
+The name           ABVBA	 should be         [aboba]	 matched to         [aboba]	 Distance is 0.0	succeeded
+The name          ABVDBY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 2.0	succeeded
+The name        ABVDHABY	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 0.0	succeeded
+The name         ABVHBYB	 should be      [abudhabi]	 matched to      [abudhabi]	 Distance is 4.0	succeeded
+The name          ABVLYN	 should be        [abolin]	 matched to        [abolin]	 Distance is 0.0	succeeded
+The name         ABVRYMH	 should be      [eboreime]	 matched to      [eboreime]	 Distance is 2.5	succeeded
+The name            ABVT	 should be [abbot, abbott]	 matched to         [abbot]	 Distance is 0.5	succeeded
+The name        ABVTSMYT	 should be    [abbotsmith]	 matched to    [abbotsmith]	 Distance is 0.5	succeeded
+The name             ABY	 should be [abbey, abby, ebe]	 matched to [aba, abbey, abby, abe, abia, abou]	 Distance is 0.5	failed
+The name            ABYA	 should be          [abia]	 matched to          [abia]	 Distance is 0.0	succeeded
+The name           ABYAB	 should be         [abiab]	 matched to         [abiab]	 Distance is 0.0	succeeded
+The name           ABYAD	 should be         [abiad]	 matched to         [abiad]	 Distance is 0.0	succeeded
+The name           ABYAN	 should be         [abyan]	 matched to         [abyan]	 Distance is 0.0	succeeded
+The name            ABYD	 should be         [ubaid]	 matched to         [abiad]	 Distance is 0.0	failed
+The name            ABYL	 should be          [abel]	 matched to [abel, abul, aibel]	 Distance is 0.5	succeeded
+slurmstepd: error: *** JOB 648691 ON spartan-rc077 CANCELLED AT 2017-04-06T17:52:29 ***
