@@ -5,9 +5,10 @@ const UntaggedBicycle=2
 const TaggedBicycleChecked=3
 const UntaggedBicycleChecked=4
 const TaggedBicycleInspected=5
+const UntaggedBicycleInspected=6
 
-range Bicycles = TaggedBicycle..TaggedBicycleInspected
-range Segment =Empty..TaggedBicycleInspected
+range Bicycles = TaggedBicycle..UntaggedBicycleInspected
+range Segment =Empty..UntaggedBicycleInspected
 range UncheckedBicycles = TaggedBicycle..UntaggedBicycle
 range CheckedBicycles = TaggedBicycleChecked..UntaggedBicycleChecked
 
@@ -20,26 +21,46 @@ CONSUMER = (get[n:CheckedBicycles] -> CONSUMER).
 //BELT
 
 //ROBOT
+ROBOT =(checkForInspector[b:Segment]->checkInspector[i:Segment] -> (
+when(i==Empty && b == TaggedBicycleChecked) offBelt[t:Bicycles]-> inInspector[t]->ROBOT
+|when(i==UntaggedBicycleInspected && b == Empty) outInspector[t:Bicycles]-> fromInspector[t]->ROBOT
+| wait -> ROBOT)
+).
+
 
 //SENSOR
-SENSOR = (check -> SENSOR).
+SENSOR = (sensorCheck -> SENSOR).
 //SENSOR[n: Segment] = 
 //		(when(n == TaggedBicycle) check[TaggedBicycle]->SENSOR[TaggedBicycleChecked]
 //		|when(n == UntaggedBicycle) check[UntaggedBicycle]->SENSOR[UntaggedBicycleChecked]
 //		|when (n != TaggedBicycle && n!= UntaggedBicycle) check[n]->SENSOR[n]).
 
 //INSPECTOR
-
+INSPECTOR = INSPECTOR[Empty],
+INSPECTOR[b:Segment] = (
+when (b == TaggedBicycle) inspect->INSPECTOR[UntaggedBicycleInspected]
+|when (b == Empty) inInspector[n:Bicycles] -> INSPECTOR[n]
+|when (b == UntaggedBicycleInspected) outInspector[b] -> INSPECTOR[Empty]
+| checkInspector[b]->INSPECTOR[b]
+).
 
 // initialized status
 BELT=BELT[Empty][Empty][Empty][Empty][Empty],
 BELT[n0:Segment][n1:Segment][n2:Segment][n3:Segment][n4:Segment]=(
 
 // the bicycle must be checked after the new status established
-when (n2 == TaggedBicycle || n2 == UntaggedBicycle) check->
+when (n2 == TaggedBicycle || n2 == UntaggedBicycle) sensorCheck->
 if (n2 == TaggedBicycle) then BELT[n0][n1][TaggedBicycleChecked][n3][n4]
 else if(n2 == UntaggedBicycle) then BELT[n0][n1][UntaggedBicycleChecked][n3][n4]
 
+// check for robot
+| when((n2 != TaggedBicycle && n2 != UntaggedBicycle)) checkForInspector[n2] -> BELT[n0][n1][n2][n3][n4]
+
+// check for robot
+| when((n2 != TaggedBicycle && n2 != UntaggedBicycle)&& n2 == UntaggedBicycleInspected) offBelt[n2] -> BELT[n0][n1][Empty][n3][n4]
+
+// check for robot
+| when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && n2 == Empty) fromInspector[b: Bicycles] -> BELT[n0][n1][b][n3][n4]
 
 // the rest of the conditions must assert that the 3rd bicycle has been checked
 // bicycles can be put the belt
@@ -56,4 +77,4 @@ move->BELT[Empty][n0][n1][n2][n3]
 // here should followed by the checking* functions and other stuff waiting on the belt 
 ).
 
-||SYSTEM=(PRODUCER||BELT||CONSUMER||SENSOR).
+||SYSTEM=(PRODUCER||BELT||CONSUMER||SENSOR||INSPECTOR||ROBOT).
