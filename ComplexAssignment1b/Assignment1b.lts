@@ -1,0 +1,32 @@
+
+const Empty=0
+const TaggedBicycle=1
+const UntaggedBicycle=2
+
+range Segment =Empty..UntaggedBicycle
+range Bicycles =TaggedBicycle..UntaggedBicycle
+
+PRODUCER = (put[TaggedBicycle] ->PRODUCER |put[UntaggedBicycle] -> PRODUCER).
+CONSUMER = (get[n:Bicycles] -> CONSUMER).
+
+//BICYCLES
+
+//BELT
+
+//ROBOT
+//SENSOR
+//INSPECTOR
+
+// initialized status
+BELT=BELT[Empty][Empty][Empty][Empty][Empty],
+BELT[n0:Segment][n1:Segment][n2:Segment][n3:Segment][n4:Segment]=(
+// producer put bicycle to the belt 
+when(n0==Empty) put[n5:Bicycles]-> BELT[n5][n1][n2][n3][n4]
+// move action
+| when(n4==Empty ) move->BELT[Empty][n0][n1][n2][n3]
+
+// consumer get from the belt
+| when(n4!=Empty ) get[n4]->BELT[n0][n1][n2][n3][Empty]
+).
+
+||SYSTEM=(PRODUCER||BELT||CONSUMER).

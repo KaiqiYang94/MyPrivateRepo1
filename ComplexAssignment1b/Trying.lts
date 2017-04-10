@@ -1,0 +1,115 @@
+ 
+
+
+const MaxIF=4
+range IF=0..MaxIF
+ARRIVE=ARRIVE[0],
+ARRIVE[num:IF]=(
+enterarrq[num]->ARRIVE[(num+1)%MaxIF]).
+ARRIVALQ=(enterarrq[num:IF]->ARRIVALQ[num]),
+ARRIVALQ[n0:IF]=(enterarrq[num:IF]->ARRIVALQ[n0][num]
+|perm_land[n0]->land[n0]->ARRIVALQ),
+ARRIVALQ[n0:IF][n1:IF]=(enterarrq[num:IF]->ARRIVALQ[n0][n1][num]
+|perm_land[n0]->land[n0]->ARRIVALQ[n1]),
+ARRIVALQ[n0:IF][n1:IF][n2:IF]=(
+enterarrq[num:IF]->ARRIVALQ[n0][n1][n2][num]
+|perm_land[n0]->land[n0]->ARRIVALQ[n1][n2]),
+ARRIVALQ[n0:IF][n1:IF][n2:IF][n3:IF]=(
+perm_land[n0]->land[n0]->ARRIVALQ[n1][n2][n3]).
+||AIRPORT=(ARRIVE || ARRIVALQ).
+
+
+const Read=0
+const Write=1
+range LOCK=Read..Write
+range NUMLOCKS=0..9
+ACCOUNT = ACCOUNT[0][0],
+ACCOUNT[reading:NUMLOCKS][writing:NUMLOCKS] = (
+when (writing==0) lock[Read] -> ACCOUNT[reading+1][writing]
+|when (reading==0 && writing==0)
+lock[Write]->ACCOUNT[reading][writing+1]
+|when (reading>0) unlock[Read] -> ACCOUNT[reading-1][writing]
+|when (writing>0) unlock[Write] -> ACCOUNT[reading][writing-1]
+|credit -> ACCOUNT[reading][writing]
+|debit -> ACCOUNT[reading][writing]
+|balance -> ACCOUNT[reading][writing]).
+||ACCOUNTS = (a:ACCOUNT|| b:ACCOUNT).
+TRANSFER = (a.lock[Write]-> b.lock[Write] ->
+a.credit -> b.debit ->
+a.unlock[Write] -> b.unlock[Write]->TRANSFER).
+BALANCE = (a.lock[Read]-> b.lock[Read] ->
+a.balance -> b.balance->
+a.unlock[Read] -> b.unlock[Read]->BALANCE).
+||BANK = (ACCOUNTS || TRANSFER || BALANCE).
+
+
+
+//TRAFFIC_LIGHT = (green->yellow->red->TRAFFIC_LIGHT).
+
+ 
+//TRAFFIC_LIGHT = GREEN, 
+//GREEN = (green -> YELLOW), 
+//YELLOW = (yellow -> RED), 
+//RED = (red -> GREEN).
+
+ 
+//TRAFFIC_LIGHT = (button -> YELLOW | none -> GREEN), GREEN = (green -> TRAFFIC_LIGHT),
+//YELLOW = (yellow -> RED),
+//RED = (red -> TRAFFIC_LIGHT).
+
+const N = 5 
+range Int = 0..N
+SEMAPHORE(I=0) = SEMA[I],
+SEMA[v:Int] = (when (v<N) up -> SEMA[v+1]
+| when (v>0) down -> SEMA[v-1]
+).
+BUFFER = ( put -> empty.down -> full.up -> BUFFER 
+| get -> full.down -> empty.up -> BUFFER).
+
+PRODUCER = (put -> PRODUCER).
+CONSUMER = (get -> CONSUMER).
+||BOUNDEDBUFFER = ( PRODUCER || BUFFER || CONSUMER || empty:SEMAPHORE(N)
+|| full:SEMAPHORE(0) ).
+
+
+//BUFFER(N=5) = COUNT[0], COUNT[i:0..N]
+//= ( when (i<N) put -> COUNT[i+1] | when (i>0) get -> COUNT[i-1] ).
+//PRODUCER = (put -> PRODUCER). CONSUMER = (get -> CONSUMER).
+//||BOUNDEDBUFFER = (PRODUCER || BUFFER(5) || CONSUMER).
+
+ 
+TRAFFIC_LIGHT = ( button -> YELLOW
+| button -> green -> YELLOW
+| none -> GREEN
+),
+GREEN = (green -> TRAFFIC_LIGHT),
+YELLOW = (yellow -> RED),
+RED = (red -> TRAFFIC_LIGHT).
+
+BUFF = (in[i:0..3] -> out[i] -> BUFF).
+ 
+const False = 0
+P = (when (False) doanything -> P).
+
+//const N = 3
+TIMER = (start -> TIMER[N]),
+TIMER[i:0..N]=
+(when (i>0) tick -> TIMER[i-1]
+|when (i==0) beep -> STOP
+|stop -> STOP).
+
+ 
+ITCH = (scratch->STOP). 
+CONVERSE = (think->talk->STOP). 
+LAUGH = (laugh -> LAUGH).
+||CONVERSE_ITCH = (ITCH || CONVERSE).
+||CONVERSE_ITCH_LAUGH = (CONVERSE_ITCH || LAUGH).
+
+
+  
+CLIENT = (call -> wait -> continue -> CLIENT).
+SERVER = (request -> service -> reply -> SERVER).
+||TWO_CLIENT_SERVER
+= (a:CLIENT || b:CLIENT ||
+{a,b}::(SERVER/{call/request, wait/reply})).
+ 
