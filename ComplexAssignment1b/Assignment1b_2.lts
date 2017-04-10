@@ -1,0 +1,48 @@
+
+const Empty=0
+const TaggedBicycle=1
+const UntaggedBicycle=2
+const TaggedBicycleChecked=3
+const UntaggedBicycleChecked=4
+const TaggedBicycleInspected=5
+
+range Bicycles = TaggedBicycle..TaggedBicycleInspected
+range Segment =Empty..TaggedBicycleInspected
+range UncheckedBicycles = TaggedBicycle..UntaggedBicycle
+range CheckedBicycles = TaggedBicycleChecked..UntaggedBicycleChecked
+
+
+PRODUCER = (put[TaggedBicycle] ->PRODUCER |put[UntaggedBicycle] -> PRODUCER).
+CONSUMER = (get[n:CheckedBicycles] -> CONSUMER).
+
+//BICYCLES
+
+//BELT
+
+//ROBOT
+
+//SENSOR
+SENSOR = SENSOR[Empty],
+SENSOR[n:Empty..UntaggedBicycle] = 
+		(when(n == TaggedBicycle) check[TaggedBicycle]->SENSOR[TaggedBicycleChecked]
+		|when(n == UntaggedBicycle) check[UntaggedBicycle]->SENSOR[UntaggedBicycleChecked]
+		|when (n != TaggedBicycle && n!= UntaggedBicycle) check[n]->SENSOR[n]).
+
+//INSPECTOR
+
+
+// initialized status
+BELT=BELT[Empty][Empty][Empty][Empty][Empty],
+BELT[n0:Segment][n1:Segment][n2:Segment][n3:Segment][n4:Segment]=(
+// bicycles can be put the belt
+when(n0==Empty) put[n5:UncheckedBicycles]-> BELT[n5][n1][n2][n3][n4]
+
+//Bicycles can be get from the belt
+| when(n4!=Empty) get[n4]->BELT[n0][n1][n2][n3][Empty]
+
+// move when (the last segment is empty and the belt is not empty)
+| when(n4==Empty && !(n0 == Empty && n1 == Empty && n2 == Empty && n3 == Empty) ) move->check[n2]->BELT[Empty][n0][n1][n2][n3]
+// here should followed by the checking* functions and other stuff waiting on the belt 
+).
+
+||SYSTEM=(PRODUCER||BELT||CONSUMER||SENSOR).
