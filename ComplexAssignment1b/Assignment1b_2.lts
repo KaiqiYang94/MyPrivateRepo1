@@ -34,9 +34,11 @@ SENSOR = (check -> SENSOR).
 // initialized status
 BELT=BELT[Empty][Empty][Empty][Empty][Empty],
 BELT[n0:Segment][n1:Segment][n2:Segment][n3:Segment][n4:Segment]=(
+
 // the bicycle must be checked after the new status established
-when(n2 == TaggedBicycle) check-> BELT[n0][n1][TaggedBicycleChecked][n3][n4]
-| when(n2 == UntaggedBicycle) check-> BELT[n0][n1][UntaggedBicycleChecked][n3][n4]
+when (n2 == TaggedBicycle || n2 == UntaggedBicycle) check->
+if (n2 == TaggedBicycle) then BELT[n0][n1][TaggedBicycleChecked][n3][n4]
+else if(n2 == UntaggedBicycle) then BELT[n0][n1][UntaggedBicycleChecked][n3][n4]
 
 
 // the rest of the conditions must assert that the 3rd bicycle has been checked
@@ -47,7 +49,10 @@ when(n2 == TaggedBicycle) check-> BELT[n0][n1][TaggedBicycleChecked][n3][n4]
 | when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && n4!=Empty) get[n4]->BELT[n0][n1][n2][n3][Empty]
 
 // move when (the last segment is empty and the belt is not empty)
-| when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && n4==Empty && !(n0 == Empty && n1 == Empty && n2 == Empty && n3 == Empty)) move->BELT[Empty][n0][n1][n2][n3] 
+| when((n2 != TaggedBicycle && n2 != UntaggedBicycle) 
+&& n4==Empty 
+&& !(n0 == Empty && n1 == Empty && n2 == Empty && n3 == Empty)) 
+move->BELT[Empty][n0][n1][n2][n3] 
 // here should followed by the checking* functions and other stuff waiting on the belt 
 ).
 
