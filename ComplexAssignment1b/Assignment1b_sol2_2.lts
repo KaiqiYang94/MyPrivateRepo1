@@ -104,10 +104,11 @@ when(n0 == Empty) fromInspector[UntaggedBicycleInspected] -> SHORTBELT[UntaggedB
 
 ||SYSTEM=(b::PRODUCER||b:BELT||b::SENSOR||INSPECTOR||s:SHORTBELT||ROBOT||b::CONSUMER||s::SHORTBELTCONSUMER).
 
-// the property checks that the bicycle in hte inspector must be put back to the belt
+// the property checks that the bicycle in the inspector must be put back to the belt
 property WRONGRESULTS = 
-(inspect->inspectorCall->outInspector[UntaggedBicycleInspected]
-->(s.fromInspector[UntaggedBicycleInspected]->WRONGRESULTS|b.fromInspector[UntaggedBicycleInspected]->WRONGRESULTS)).
+(inInspector[TaggedBicycleChecked]->inspect->inspectorCall->outInspector[UntaggedBicycleInspected]
+->(s.fromInspector[UntaggedBicycleInspected]->WRONGRESULTS
+|b.fromInspector[UntaggedBicycleInspected]->WRONGRESULTS)).
 
 ||SAFE_SYSTEM = (SYSTEM||WRONGRESULTS).
 

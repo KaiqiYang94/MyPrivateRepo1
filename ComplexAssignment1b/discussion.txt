@@ -1,0 +1,6 @@
+Which problems did you find in the two models as a result of using LTSA? 
+Were these problems also present in the Java implementation? 
+If you find problems with the Java solution submitted for part 1a, Solution 2, why do you think you picked these up now and not before submitting the Java code? 
+If you did not find problems with your part 1a, Solution 2 submission, were you convinced when you submitted part 1a, Solution 2 that no problems existed? 
+Why did you believe this? Do you still believe there are no problems? 
+
