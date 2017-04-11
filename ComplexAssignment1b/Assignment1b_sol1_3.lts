@@ -21,10 +21,8 @@ range CheckedBicycles = TaggedBicycleChecked..UntaggedBicycleInspected
 PRODUCER = (put[TaggedBicycle] ->PRODUCER | put[UntaggedBicycle] -> PRODUCER).
 
 // the consumer can took chencked bicycles off the belt 
-//CONSUMER = (get[n:CheckedBicycles] -> CONSUMER).
 CONSUMER = (get[UntaggedBicycleChecked] -> CONSUMER
-			|get[TaggedBicycleInspected] -> CONSUMER).
-
+			|get[UntaggedBicycleInspected] -> CONSUMER).
 //ROBOT
 ROBOT = ROBOT[Available],
 ROBOT[s:RobotStatus] =( 
