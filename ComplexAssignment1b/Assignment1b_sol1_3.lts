@@ -119,14 +119,15 @@ move->BELT[Empty][n0][n1][n2][n3]
 //| when(n1==Empty && n0 != Empty) move->SHORTBELT[Empty][n0]
 //).
 
-//property WRONGRESULTS = (b.get.{[1..3], [5]}-> ERROR|s.get[1..5]->ERROR).
-
+property WRONGRESULTS = 
+(inspect->inspectorCall->outInspector[UntaggedBicycleInspected]
+->fromInspector[UntaggedBicycleInspected]->WRONGRESULTS).
 
 //||SYSTEM=(b::PRODUCER||b:BELT||b::SENSOR||INSPECTOR||s:SHORTBELT||ROBOT||{b,s}::CONSUMER).
 ||SYSTEM=(PRODUCER||BELT||SENSOR||INSPECTOR||ROBOT||CONSUMER).
 
 //progress UNTAG = {b.get[UntaggedBicycleChecked], b.get[UntaggedBicycleInspected], 
 //s.get[UntaggedBicycleInspected], s.get[UntaggedBicycleChecked]}
-//||SAFE_SYSTEM = (SYSTEM||WRONGRESULTS).
+||SAFE_SYSTEM = (SYSTEM||WRONGRESULTS).
 
 
