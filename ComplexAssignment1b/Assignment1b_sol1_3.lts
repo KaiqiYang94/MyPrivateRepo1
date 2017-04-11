@@ -27,33 +27,21 @@ CONSUMER = (get[UntaggedBicycleChecked] -> CONSUMER
 ROBOT = ROBOT[Available],
 ROBOT[s:RobotStatus] =( 
 when (s == Available) sensorCall -> ROBOT[ToInspector]
-//|when (s == ToBelt) inspectorCall -> ROBOT[ToBelt]
+
+// robot will transfer a bicycle from belt to the inspector
 |when (s == ToInspector) 	
-	//(
-//checkInspector[Empty]-> 
-moveToInspector->
-offBelt[TaggedBicycleChecked]-> inInspector[TaggedBicycleChecked]->ROBOT[ToBelt]
-	//|checkInspector[i:CheckedBicycles]->ROBOT[])
+moveToInspector->offBelt[TaggedBicycleChecked]-> inInspector[TaggedBicycleChecked]->ROBOT[ToBelt]
+// or transfer a bicycle from the inspector to the belt 
 |when (s == ToBelt) 
 inspectorCall -> outInspector[UntaggedBicycleInspected]-> 
 	fromInspector[UntaggedBicycleInspected]->ROBOT[Available]
-	//|s.fromInspector[UntaggedBicycleInspected]->ROBOT[Available]
 ).
-// robot will transfer a bicycle from belt to the inspector
-//when (n == Empty)
-//b.sensorCall -> 
-//	(checkInspector[Empty]-> b.offBelt[TaggedBicycleChecked]-> inInspector[TaggedBicycleChecked]->ROBOT
-//	|checkInspector[i:CheckedBicycles]->ROBOT)
-// or transfer a bicycle from the inspector to the belt 
-//|//when (n == Empty) 
-//inspectorCall -> outInspector[UntaggedBicycleInspected]-> 
-//	(b.fromInspector[UntaggedBicycleInspected]->ROBOT
-//	|s.fromInspector[UntaggedBicycleInspected]->ROBOT)).
 
 //SENSOR
 SENSOR = (
 // when sensoer checked a Tagged bicycles it will call the robot to transfer it
 sensorCheck[TaggedBicycle] -> sensorCall -> SENSOR
+// or do nothing
 | sensorCheck[UntaggedBicycle] -> SENSOR
 ).
 
@@ -66,8 +54,6 @@ when (i == TaggedBicycleChecked) inspect->INSPECTOR[UntaggedBicycleInspected]
 |when (i == Empty) inInspector[TaggedBicycleChecked] -> INSPECTOR[TaggedBicycleChecked]
 // the bicycle can be transfered after the inspection
 |when (i == UntaggedBicycleInspected) inspectorCall -> outInspector[UntaggedBicycleInspected] -> INSPECTOR[Empty]
-
-//| checkInspector[i] -> INSPECTOR[i]
 ).
 
 // Belt is initialized as empty
@@ -75,11 +61,6 @@ BELT=BELT[Empty][Empty][Empty][Empty][Empty],
 BELT[n0:Segment][n1:Segment][n2:Segment][n3:Segment][n4:Segment]=(
 
 // the bicycle must be checked after the new status been established
-// the status of the bicycle will be changed after been checked by the sensor
-//when(n2 == TaggedBicycleChecked)
-//sensorCheck[n2]-> BELT[n0][n1][n2][n3][n4]
-
-//| 
 when (n2 == TaggedBicycle || n2 == UntaggedBicycle) sensorCheck[n2]-> 
 if (n2 == TaggedBicycle) then BELT[n0][n1][TaggedBicycleChecked][n3][n4]
 else if(n2 == UntaggedBicycle) then BELT[n0][n1][UntaggedBicycleChecked][n3][n4]
@@ -94,7 +75,6 @@ else if(n2 == UntaggedBicycle) then BELT[n0][n1][UntaggedBicycleChecked][n3][n4]
 | when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && n0==Empty) put[n5:UncheckedBicycles]-> BELT[n5][n1][n2][n3][n4]
 
 //only when the last segment is not empty, the bicycle can be get by the consumer
-//| when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && n4!=Empty)
 | when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && (n4== UntaggedBicycleChecked ||n4 == UntaggedBicycleInspected))
  get[n4]->BELT[n0][n1][n2][n3][Empty]
 
@@ -105,29 +85,16 @@ else if(n2 == UntaggedBicycle) then BELT[n0][n1][UntaggedBicycleChecked][n3][n4]
 move->BELT[Empty][n0][n1][n2][n3] 
 ).
 
-// Belt is initialized as empty
-//SHORTBELT=SHORTBELT[Empty][Empty],
-//SHORTBELT[n0:Segment][n1:Segment]=(
-
-// Only when the 3rd segment is empty the bicycle can be put to the belt
-//when(n0 == Empty) fromInspector[UntaggedBicycleInspected] -> SHORTBELT[UntaggedBicycleInspected][n1]
-
-//only when the last segment is not empty, the bicycle can be get by the consumer
-//| when(n1!=Empty && n1 == UntaggedBicycleInspected) get[n1]->SHORTBELT[n0][Empty]
-
-// move when the last segment is empty and the belt is not empty and the 3rd segment has been checked
-//| when(n1==Empty && n0 != Empty) move->SHORTBELT[Empty][n0]
-//).
-
+// the bicycles should be put back to the belt eventually
 property WRONGRESULTS = 
 (inspect->inspectorCall->outInspector[UntaggedBicycleInspected]
 ->fromInspector[UntaggedBicycleInspected]->WRONGRESULTS).
 
-//||SYSTEM=(b::PRODUCER||b:BELT||b::SENSOR||INSPECTOR||s:SHORTBELT||ROBOT||{b,s}::CONSUMER).
 ||SYSTEM=(PRODUCER||BELT||SENSOR||INSPECTOR||ROBOT||CONSUMER).
 
-//progress UNTAG = {b.get[UntaggedBicycleChecked], b.get[UntaggedBicycleInspected], 
-//s.get[UntaggedBicycleInspected], s.get[UntaggedBicycleChecked]}
 ||SAFE_SYSTEM = (SYSTEM||WRONGRESULTS).
 
+// the belt should get inspected and checked bicycles 
+progress GETINSPECTED = {get[UntaggedBicycleInspected]}
+progress GETCHECKED = {get[UntaggedBicycleChecked]}
 
