@@ -95,7 +95,9 @@ else if(n2 == UntaggedBicycle) then BELT[n0][n1][UntaggedBicycleChecked][n3][n4]
 | when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && n0==Empty) put[n5:UncheckedBicycles]-> BELT[n5][n1][n2][n3][n4]
 
 //only when the last segment is not empty, the bicycle can be get by the consumer
-| when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && n4!=Empty) get[n4]->BELT[n0][n1][n2][n3][Empty]
+//| when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && n4!=Empty)
+| when((n2 != TaggedBicycle && n2 != UntaggedBicycle) && (n4== UntaggedBicycleChecked ||n4 == UntaggedBicycleInspected))
+ get[n4]->BELT[n0][n1][n2][n3][Empty]
 
 // move when the last segment is empty and the belt is not empty and the 3rd segment has been checked
 | when((n2 != TaggedBicycle && n2 != UntaggedBicycle && n2 != TaggedBicycleChecked) && n4==Empty 
@@ -105,21 +107,26 @@ move->BELT[Empty][n0][n1][n2][n3]
 ).
 
 // Belt is initialized as empty
-SHORTBELT=SHORTBELT[Empty][Empty][Empty],
-SHORTBELT[n0:Segment][n1:Segment][n2:Segment]=(
+SHORTBELT=SHORTBELT[Empty][Empty],
+SHORTBELT[n0:Segment][n1:Segment]=(
 
 // Only when the 3rd segment is empty the bicycle can be put to the belt
-when(n0 == Empty) fromInspector[UntaggedBicycleInspected] -> SHORTBELT[UntaggedBicycleInspected][n1][n2]
+when(n0 == Empty) fromInspector[UntaggedBicycleInspected] -> SHORTBELT[UntaggedBicycleInspected][n1]
 
 //only when the last segment is not empty, the bicycle can be get by the consumer
-| when(n2!=Empty) get[n2]->SHORTBELT[n0][n1][Empty]
+| when(n1!=Empty && n1 == UntaggedBicycleInspected) get[n1]->SHORTBELT[n0][Empty]
 
 // move when the last segment is empty and the belt is not empty and the 3rd segment has been checked
-| when(n2==Empty && !(n0 == Empty && n1 == Empty )) move->SHORTBELT[Empty][n0][n1]
+| when(n1==Empty && n0 != Empty) move->SHORTBELT[Empty][n0]
 ).
-property WRONGRESULTS = (b.get.{[1..3], [5]}-> ERROR|s.get[1..5]->ERROR).
-progress COMSUMERGET = {b.get[4], b.get[6], s.get[6], s.get[5]}
 
-||SYSTEM=(b::PRODUCER||b:BELT||b::SENSOR||INSPECTOR||s:SHORTBELT||ROBOT||{b,s}::CONSUMER||WRONGRESULTS).
+//property WRONGRESULTS = (b.get.{[1..3], [5]}-> ERROR|s.get[1..5]->ERROR).
+
+
+||SYSTEM=(b::PRODUCER||b:BELT||b::SENSOR||INSPECTOR||s:SHORTBELT||ROBOT||{b,s}::CONSUMER).
+
+//progress UNTAG = {b.get[UntaggedBicycleChecked], b.get[UntaggedBicycleInspected], 
+//s.get[UntaggedBicycleInspected], s.get[UntaggedBicycleChecked]}
+//||SAFE_SYSTEM = (SYSTEM||WRONGRESULTS).
 
 
