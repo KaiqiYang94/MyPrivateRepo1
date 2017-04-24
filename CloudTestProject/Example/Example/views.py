@@ -6,7 +6,7 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.http import HttpResponse
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404, render, HttpResponseRedirect
 from couchdb import Server
 from couchdb.http import ResourceNotFound
 
@@ -34,7 +34,7 @@ def index(request):
         return HttpResponseRedirect(u"/doc/%s/" % title)
     # html = "<html><body>there are %s dbs in the data base </body></html>" % docs
     # return HttpResponse(html)
-    return render_to_response('Example/index.html',{'rows':docs})
+    return render(request, 'Example/index.html',{'rows':docs})
 
 
 def detail(request,id):
