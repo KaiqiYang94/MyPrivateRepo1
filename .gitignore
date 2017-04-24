@@ -9,3 +9,5 @@
 *.fdt
 
 \.metadata/
+
+*.pyc

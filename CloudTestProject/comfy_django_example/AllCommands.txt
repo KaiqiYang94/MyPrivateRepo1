@@ -1,0 +1,201 @@
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://localhost:5986/_config
+{"native_query_servers":{"query":"{mango_native_proc, start_link, []}"},"httpd_design_handlers":{"_compact":"{couch_mrview_http, handle_compact_req}","_info":"{couch_mrview_http, handle_info_req}","_list":"{couch_mrview_show, handle_view_list_req}","_rewrite":"{couch_httpd_rewrite, handle_rewrite_req}","_show":"{couch_mrview_show, handle_doc_show_req}","_update":"{couch_mrview_show, handle_doc_update_req}","_view":"{couch_mrview_http, handle_view_req}","_view_changes":"{couch_mrview_http, handle_view_changes_req}"},"uuids":{"algorithm":"sequential","max_count":"1000"},"cluster":{"n":"1","q":"2"},"cors":{"credentials":"false"},"chttpd":{"backlog":"512","bind_address":"127.0.0.1","docroot":"./share/www","port":"5984","socket_options":"[{recbuf, 262144}, {sndbuf, 262144}, {nodelay, true}]"},"httpd_global_handlers":{"/":"{couch_httpd_misc_handlers, handle_welcome_req, <<\"Welcome\">>}","_active_tasks":"{couch_httpd_misc_handlers, handle_task_status_req}","_all_dbs":"{couch_httpd_misc_handlers, handle_all_dbs_req}","_config":"{couch_httpd_misc_handlers, handle_config_req}","_oauth":"{couch_httpd_oauth, handle_oauth_req}","_plugins":"{couch_plugins_httpd, handle_req}","_replicate":"{couch_replicator_httpd, handle_req}","_restart":"{couch_httpd_misc_handlers, handle_restart_req}","_session":"{couch_httpd_auth, handle_session_req}","_stats":"{couch_stats_httpd, handle_stats_req}","_system":"{chttpd_misc, handle_system_req}","_utils":"{couch_httpd_misc_handlers, handle_utils_dir_req, \"./share/www\"}","_uuids":"{couch_httpd_misc_handlers, handle_uuids_req}","favicon.ico":"{couch_httpd_misc_handlers, handle_favicon_req, \"./share/www\"}"},"attachments":{"compressible_types":"text/*, application/javascript, application/json, application/xml","compression_level":"8"},"query_server_config":{"os_process_limit":"25","reduce_limit":"true"},"vendor":{"name":"The Apache Software Foundation"},"replicator":{"connection_timeout":"30000","http_connections":"20","max_replication_retry_count":"10","retries_per_request":"10","socket_options":"[{keepalive, true}, {nodelay, false}]","ssl_certificate_max_depth":"3","start_delay":"0","start_splay":"0","verify_ssl_certificates":"false","worker_batch_size":"500","worker_processes":"4"},"couch_httpd_oauth":{"use_users_db":"false"},"ssl":{"port":"6984"},"log":{"file":"/Users/KaiqiYang/Library/Logs/CouchDB2.log","level":"info","writer":"file"},"indexers":{"couch_mrview":"true"},"view_compaction":{"keyvalue_buffer_size":"2097152"},"query_servers":{"coffeescript":"./bin/couchjs ./share/server/main-coffee.js","javascript":"./bin/couchjs ./share/server/main.js"},"daemons":{"auth_cache":"{couch_auth_cache, start_link, []}","compaction_daemon":"{couch_compaction_daemon, start_link, []}","couch_peruser":"{couch_peruser, start_link, []}","external_manager":"{couch_external_manager, start_link, []}","httpd":"{couch_httpd, start_link, []}","index_server":"{couch_index_server, start_link, []}","os_daemons":"{couch_os_daemons, start_link, []}","query_servers":"{couch_proc_manager, start_link, []}","uuids":"{couch_uuids, start, []}","vhosts":"{couch_httpd_vhost, start_link, []}"},"couch_peruser":{"delete_dbs":"false","enable":"false"},"httpd":{"allow_jsonp":"false","authentication_handlers":"{couch_httpd_oauth, oauth_authentication_handler}, {couch_httpd_auth, cookie_authentication_handler}, {couch_httpd_auth, default_authentication_handler}","bind_address":"127.0.0.1","default_handler":"{couch_httpd_db, handle_request}","enable_cors":"false","port":"5986","secure_rewrites":"true","socket_options":"[{recbuf, 262144}, {sndbuf, 262144}]","vhost_global_handlers":"_utils, _uuids, _session, _oauth, _users"},"httpd_db_handlers":{"_all_docs":"{couch_mrview_http, handle_all_docs_req}","_changes":"{couch_httpd_db, handle_db_changes_req}","_compact":"{couch_httpd_db, handle_compact_req}","_design":"{couch_httpd_db, handle_design_req}","_design_docs":"{couch_mrview_http, handle_design_docs_req}","_local_docs":"{couch_mrview_http, handle_local_docs_req}","_temp_view":"{couch_mrview_http, handle_temp_view_req}","_view_cleanup":"{couch_mrview_http, handle_cleanup_req}"},"database_compaction":{"checkpoint_after":"5242880","doc_buffer_size":"524288"},"csp":{"enable":"true"},"couch_httpd_auth":{"allow_persistent_cookies":"false","auth_cache_size":"50","authentication_db":"_users","authentication_redirect":"/_utils/session.html","iterations":"10","require_valid_user":"false","timeout":"600"},"couchdb":{"attachment_stream_buffer_size":"4096","database_dir":"/Users/KaiqiYang/Library/Application Support/CouchDB2/var/lib/couchdb","default_security":"admin_local","delayed_commits":"false","file_compression":"snappy","max_dbs_open":"500","max_document_size":"67108864","os_process_timeout":"5000","uri_file":"/Users/KaiqiYang/Library/Application Support/CouchDB2/var/run/couchdb/couch.uri","uuid":"4438c7b899629206a2df0ad45f8ef418","view_index_dir":"/Users/KaiqiYang/Library/Application Support/CouchDB2/var/lib/couchdb"},"compaction_daemon":{"check_interval":"300","min_file_size":"131072"}}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://localhost:5986/_config
+{"native_query_servers":{"query":"{mango_native_proc, start_link, []}"},"httpd_design_handlers":{"_compact":"{couch_mrview_http, handle_compact_req}","_info":"{couch_mrview_http, handle_info_req}","_list":"{couch_mrview_show, handle_view_list_req}","_rewrite":"{couch_httpd_rewrite, handle_rewrite_req}","_show":"{couch_mrview_show, handle_doc_show_req}","_update":"{couch_mrview_show, handle_doc_update_req}","_view":"{couch_mrview_http, handle_view_req}","_view_changes":"{couch_mrview_http, handle_view_changes_req}"},"uuids":{"algorithm":"sequential","max_count":"1000"},"cluster":{"n":"1","q":"2"},"cors":{"credentials":"false"},"chttpd":{"backlog":"512","bind_address":"127.0.0.1","docroot":"./share/www","port":"5984","socket_options":"[{recbuf, 262144}, {sndbuf, 262144}, {nodelay, true}]"},"httpd_global_handlers":{"/":"{couch_httpd_misc_handlers, handle_welcome_req, <<\"Welcome\">>}","_active_tasks":"{couch_httpd_misc_handlers, handle_task_status_req}","_all_dbs":"{couch_httpd_misc_handlers, handle_all_dbs_req}","_config":"{couch_httpd_misc_handlers, handle_config_req}","_oauth":"{couch_httpd_oauth, handle_oauth_req}","_plugins":"{couch_plugins_httpd, handle_req}","_replicate":"{couch_replicator_httpd, handle_req}","_restart":"{couch_httpd_misc_handlers, handle_restart_req}","_session":"{couch_httpd_auth, handle_session_req}","_stats":"{couch_stats_httpd, handle_stats_req}","_system":"{chttpd_misc, handle_system_req}","_utils":"{couch_httpd_misc_handlers, handle_utils_dir_req, \"./share/www\"}","_uuids":"{couch_httpd_misc_handlers, handle_uuids_req}","favicon.ico":"{couch_httpd_misc_handlers, handle_favicon_req, \"./share/www\"}"},"attachments":{"compressible_types":"text/*, application/javascript, application/json, application/xml","compression_level":"8"},"query_server_config":{"os_process_limit":"25","reduce_limit":"true"},"vendor":{"name":"The Apache Software Foundation"},"replicator":{"connection_timeout":"30000","http_connections":"20","max_replication_retry_count":"10","retries_per_request":"10","socket_options":"[{keepalive, true}, {nodelay, false}]","ssl_certificate_max_depth":"3","start_delay":"0","start_splay":"0","verify_ssl_certificates":"false","worker_batch_size":"500","worker_processes":"4"},"couch_httpd_oauth":{"use_users_db":"false"},"ssl":{"port":"6984"},"log":{"file":"/Users/KaiqiYang/Library/Logs/CouchDB2.log","level":"info","writer":"file"},"indexers":{"couch_mrview":"true"},"view_compaction":{"keyvalue_buffer_size":"2097152"},"query_servers":{"coffeescript":"./bin/couchjs ./share/server/main-coffee.js","javascript":"./bin/couchjs ./share/server/main.js"},"daemons":{"auth_cache":"{couch_auth_cache, start_link, []}","compaction_daemon":"{couch_compaction_daemon, start_link, []}","couch_peruser":"{couch_peruser, start_link, []}","external_manager":"{couch_external_manager, start_link, []}","httpd":"{couch_httpd, start_link, []}","index_server":"{couch_index_server, start_link, []}","os_daemons":"{couch_os_daemons, start_link, []}","query_servers":"{couch_proc_manager, start_link, []}","uuids":"{couch_uuids, start, []}","vhosts":"{couch_httpd_vhost, start_link, []}"},"couch_peruser":{"delete_dbs":"false","enable":"false"},"httpd":{"allow_jsonp":"false","authentication_handlers":"{couch_httpd_oauth, oauth_authentication_handler}, {couch_httpd_auth, cookie_authentication_handler}, {couch_httpd_auth, default_authentication_handler}","bind_address":"127.0.0.1","default_handler":"{couch_httpd_db, handle_request}","enable_cors":"false","port":"5986","secure_rewrites":"true","socket_options":"[{recbuf, 262144}, {sndbuf, 262144}]","vhost_global_handlers":"_utils, _uuids, _session, _oauth, _users"},"httpd_db_handlers":{"_all_docs":"{couch_mrview_http, handle_all_docs_req}","_changes":"{couch_httpd_db, handle_db_changes_req}","_compact":"{couch_httpd_db, handle_compact_req}","_design":"{couch_httpd_db, handle_design_req}","_design_docs":"{couch_mrview_http, handle_design_docs_req}","_local_docs":"{couch_mrview_http, handle_local_docs_req}","_temp_view":"{couch_mrview_http, handle_temp_view_req}","_view_cleanup":"{couch_mrview_http, handle_cleanup_req}"},"database_compaction":{"checkpoint_after":"5242880","doc_buffer_size":"524288"},"csp":{"enable":"true"},"couch_httpd_auth":{"allow_persistent_cookies":"false","auth_cache_size":"50","authentication_db":"_users","authentication_redirect":"/_utils/session.html","iterations":"10","require_valid_user":"false","timeout":"600"},"couchdb":{"attachment_stream_buffer_size":"4096","database_dir":"/Users/KaiqiYang/Library/Application Support/CouchDB2/var/lib/couchdb","default_security":"admin_local","delayed_commits":"false","file_compression":"snappy","max_dbs_open":"500","max_document_size":"67108864","os_process_timeout":"5000","uri_file":"/Users/KaiqiYang/Library/Application Support/CouchDB2/var/run/couchdb/couch.uri","uuid":"4438c7b899629206a2df0ad45f8ef418","view_index_dir":"/Users/KaiqiYang/Library/Application Support/CouchDB2/var/lib/couchdb"},"compaction_daemon":{"check_interval":"300","min_file_size":"131072"}}
+
+
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X PUT http://127.0.0.1:5986/_config/admins/kaiqi -d '"password"'
+""
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X PUT http://localhost:5984/_all_dbs
+{"error":"method_not_allowed","reason":"Only GET,HEAD allowed"}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X PUT http://localhost:5984/somedata
+{"error":"unauthorized","reason":"You are not a server admin."}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://localhost:5984/
+{"couchdb":"Welcome","version":"2.0.0","vendor":{"name":"The Apache Software Foundation"}}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://kaiqiy:password@localhost:5984/
+{"error":"unauthorized","reason":"Name or password is incorrect."}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://kaiqi:password@localhost:5984/
+{"couchdb":"Welcome","version":"2.0.0","vendor":{"name":"The Apache Software Foundation"}}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X PUT http://kaiqi:password@localhost:5984/testDB
+{"error":"illegal_database_name","reason":"Name: 'testDB'. Only lowercase characters (a-z), digits (0-9), and any of the characters _, $, (, ), +, -, and / are allowed. Must begin with a letter."}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X PUT http://kaiqi:password@localhost:5984/test_db
+{"ok":true}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://kaiqi:password@localhost:5984/_all_dbs
+["my_database","test_db"]
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://kaiqi:password@localhost:5984/my_database
+{"db_name":"my_database","update_seq":"0-g1AAAABXeJzLYWBgYMpgTmEQTM4vTc5ISXLIyU9OzMnILy7JAUklMiTV____PyuRAY-iPBYgydAApP5D1GYBAJmvHGw","sizes":{"file":8488,"external":0,"active":0},"purge_seq":0,"other":{"data_size":0},"doc_del_count":0,"doc_count":0,"disk_size":8488,"disk_format_version":6,"data_size":0,"compact_running":false,"instance_start_time":"0"}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X DELETE http://kaiqi:password@localhost:5984/test_db
+{"ok":true}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://kaiqi:password@localhost:5984/_all_dbs
+["my_database"]
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X PUT http://kaiqi:password@localhost:5984/my_database/"001" -d '{"Name":"Raju", "age" : "23", "Designation":"Designer"}'
+{"ok":true,"id":"001","rev":"1-e4bc14c10df0034bdce0b6a16dd15df9"}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://kaiqi:password@localhost:5984/my_database/"001"
+{"_id":"001","_rev":"1-e4bc14c10df0034bdce0b6a16dd15df9","Name":"Raju","age":"23","Designation":"Designer"}
+Kaiqis-MacBook-Pro:~ KaiqiYang$ python
+Python 2.7.10 (default, Feb  6 2017, 23:53:20)
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from couchdb import *
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named couchdb
+>>>
+[2]+  Stopped                 python
+Kaiqis-MacBook-Pro:~ KaiqiYang$ curl -X GET http://kaiqi:password@localhost:5984/_all_dbs
+curl: (7) Failed to connect to localhost port 5984: Connection refused
+
+
+Kaiqis-MacBook-Pro:Cloud KaiqiYang$ python get-pip.py
+Collecting pip
+  Downloading pip-9.0.1-py2.py3-none-any.whl (1.3MB)
+    100% |████████████████████████████████| 1.3MB 902kB/s
+Collecting wheel
+  Downloading wheel-0.29.0-py2.py3-none-any.whl (66kB)
+    100% |████████████████████████████████| 71kB 6.8MB/s
+Installing collected packages: pip, wheel
+Exception:
+Traceback (most recent call last):
+  File "/var/folders/sc/6xs4303j3656s3qnh7cxrrmh0000gn/T/tmpcdGd3O/pip.zip/pip/basecommand.py", line 215, in main
+    status = self.run(options, args)
+  File "/var/folders/sc/6xs4303j3656s3qnh7cxrrmh0000gn/T/tmpcdGd3O/pip.zip/pip/commands/install.py", line 342, in run
+    prefix=options.prefix_path,
+  File "/var/folders/sc/6xs4303j3656s3qnh7cxrrmh0000gn/T/tmpcdGd3O/pip.zip/pip/req/req_set.py", line 784, in install
+    **kwargs
+  File "/var/folders/sc/6xs4303j3656s3qnh7cxrrmh0000gn/T/tmpcdGd3O/pip.zip/pip/req/req_install.py", line 851, in install
+    self.move_wheel_files(self.source_dir, root=root, prefix=prefix)
+  File "/var/folders/sc/6xs4303j3656s3qnh7cxrrmh0000gn/T/tmpcdGd3O/pip.zip/pip/req/req_install.py", line 1064, in move_wheel_files
+    isolated=self.isolated,
+  File "/var/folders/sc/6xs4303j3656s3qnh7cxrrmh0000gn/T/tmpcdGd3O/pip.zip/pip/wheel.py", line 345, in move_wheel_files
+    clobber(source, lib_dir, True)
+  File "/var/folders/sc/6xs4303j3656s3qnh7cxrrmh0000gn/T/tmpcdGd3O/pip.zip/pip/wheel.py", line 316, in clobber
+    ensure_dir(destdir)
+  File "/var/folders/sc/6xs4303j3656s3qnh7cxrrmh0000gn/T/tmpcdGd3O/pip.zip/pip/utils/__init__.py", line 83, in ensure_dir
+    os.makedirs(path)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py", line 157, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 13] Permission denied: '/Library/Python/2.7/site-packages/pip'
+Kaiqis-MacBook-Pro:Cloud KaiqiYang$ sudo python get-pip.py
+Password:
+Sorry, try again.
+Password:
+The directory '/Users/KaiqiYang/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/Users/KaiqiYang/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting pip
+  Downloading pip-9.0.1-py2.py3-none-any.whl (1.3MB)
+    100% |████████████████████████████████| 1.3MB 892kB/s
+Collecting wheel
+  Downloading wheel-0.29.0-py2.py3-none-any.whl (66kB)
+    100% |████████████████████████████████| 71kB 7.1MB/s
+Installing collected packages: pip, wheel
+Successfully installed pip-9.0.1 wheel-0.29.0
+
+Kaiqis-MacBook-Pro:Cloud KaiqiYang$ pip install virtualenv
+Collecting virtualenv
+  Downloading virtualenv-15.1.0-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 645kB/s
+Installing collected packages: virtualenv
+Exception:
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/pip/basecommand.py", line 215, in main
+    status = self.run(options, args)
+  File "/Library/Python/2.7/site-packages/pip/commands/install.py", line 342, in run
+    prefix=options.prefix_path,
+  File "/Library/Python/2.7/site-packages/pip/req/req_set.py", line 784, in install
+    **kwargs
+  File "/Library/Python/2.7/site-packages/pip/req/req_install.py", line 851, in install
+    self.move_wheel_files(self.source_dir, root=root, prefix=prefix)
+  File "/Library/Python/2.7/site-packages/pip/req/req_install.py", line 1064, in move_wheel_files
+    isolated=self.isolated,
+  File "/Library/Python/2.7/site-packages/pip/wheel.py", line 345, in move_wheel_files
+    clobber(source, lib_dir, True)
+  File "/Library/Python/2.7/site-packages/pip/wheel.py", line 323, in clobber
+    shutil.copyfile(srcfile, destfile)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py", line 83, in copyfile
+    with open(dst, 'wb') as fdst:
+IOError: [Errno 13] Permission denied: '/Library/Python/2.7/site-packages/virtualenv.py'
+Kaiqis-MacBook-Pro:Cloud KaiqiYang$ sudo pip install virtualenv
+The directory '/Users/KaiqiYang/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/Users/KaiqiYang/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting virtualenv
+  Downloading virtualenv-15.1.0-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 666kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-15.1.0
+
+Kaiqis-MacBook-Pro:Cloud KaiqiYang$ sudo pip install Django
+Password:
+The directory '/Users/KaiqiYang/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/Users/KaiqiYang/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting Django
+  Downloading Django-1.11-py2.py3-none-any.whl (6.9MB)
+    100% |████████████████████████████████| 6.9MB 107kB/s
+Requirement already satisfied: pytz in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from Django)
+Installing collected packages: Django
+Successfully installed Django-1.11
+
+
+Kaiqis-MacBook-Pro:JavaProj KaiqiYang$ cd BitBucketPrivateRepo/
+Kaiqis-MacBook-Pro:BitBucketPrivateRepo KaiqiYang$ ls
+AIAssignment1		CloudAssignment1Sublime	KTAssignment1Eclipse
+CloudAssignment1	ComplexAssignment1b	javax.json-1.0.4.jar
+CloudAssignment1MPI	KTAssignment1		javax.json-api-1.0.jar
+Kaiqis-MacBook-Pro:BitBucketPrivateRepo KaiqiYang$ ls
+AIAssignment1		CloudAssignment1Sublime	KTAssignment1Eclipse
+CloudAssignment1	ComplexAssignment1b	javax.json-1.0.4.jar
+CloudAssignment1MPI	KTAssignment1		javax.json-api-1.0.jar
+Kaiqis-MacBook-Pro:BitBucketPrivateRepo KaiqiYang$ cd CloudTestProject/
+Kaiqis-MacBook-Pro:CloudTestProject KaiqiYang$ ls
+
+Kaiqis-MacBook-Pro:CloudTestProject KaiqiYang$ sudo easy_install couchdb
+Password:
+Searching for couchdb
+Reading https://pypi.python.org/simple/couchdb/
+Best match: CouchDB 1.1
+Downloading https://pypi.python.org/packages/9a/e8/c3c8da6d00145aaca07f2b784794917613dad26532068da4e8392dc48d7f/CouchDB-1.1.tar.gz#md5=2ed5ad2a477fd3cb472ed6dc5a381ff3
+Processing CouchDB-1.1.tar.gz
+Writing /tmp/easy_install-ZNJsOH/CouchDB-1.1/setup.cfg
+Running CouchDB-1.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-ZNJsOH/CouchDB-1.1/egg-dist-tmp-kDKgl0
+Copying CouchDB-1.1-py2.7.egg to /Library/Python/2.7/site-packages
+Adding CouchDB 1.1 to easy-install.pth file
+Installing couchdb-load-design-doc script to /usr/local/bin
+Installing couchdb-dump script to /usr/local/bin
+Installing couchpy script to /usr/local/bin
+Installing couchdb-load script to /usr/local/bin
+Installing couchdb-replicate script to /usr/local/bin
+
+Installed /Library/Python/2.7/site-packages/CouchDB-1.1-py2.7.egg
+Processing dependencies for couchdb
+Finished processing dependencies for couchdb
+
+Kaiqis-MacBook-Pro:CloudTestProject KaiqiYang$ django-admin.py startproject comfy_django_example
+Kaiqis-MacBook-Pro:CloudTestProject KaiqiYang$ ls
+comfy_django_example
+Kaiqis-MacBook-Pro:CloudTestProject KaiqiYang$ cd comfy_django_example/
+Kaiqis-MacBook-Pro:comfy_django_example KaiqiYang$ python manage.py startapp couch_docs
+Kaiqis-MacBook-Pro:comfy_django_example KaiqiYang$ python
+Python 2.7.10 (default, Feb  6 2017, 23:53:20)
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from couchdb import *
+>>> s = Server('http://kaiqi:password@localhost:5984/')
+>>> s
+<Server 'http://localhost:5984/'>
+>>> len(s)
+1
+>>> db = s.create('docs')
+>>> len(db)
+0
+>>> db.create({'type':'Document','title':'Document One','txt':"This is some text."})
+u'98ec6607527d94d54b38016edf0004a8'
+>>> len(db)
+1
+>>> db['manifesto'] = {'type':'Document','title':'Personal Manifesto','txt':'I strongly believe in something. I think.'}
+>>> db['manifesto']
+<Document u'manifesto'@u'1-c5cbb58b08b1e09e8c842e51a72f4b84' {u'txt': u'I strongly believe in something. I think.', u'type': u'Document', u'title': u'Personal Manifesto'}>
+>>> a = db['manifesto']
+>>> a
+<Document u'manifesto'@u'1-c5cbb58b08b1e09e8c842e51a72f4b84' {u'txt': u'I strongly believe in something. I think.', u'type': u'Document', u'title': u'Personal Manifesto'}>
+>>> a['title']
+u'Personal Manifesto'
+>>>
