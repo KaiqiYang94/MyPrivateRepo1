@@ -19,22 +19,22 @@ if (len(SERVER) == 0):
 
 def index(request):
     docs = SERVER['docs']
-    cnt = len(docs)
-    now = datetime.datetime.now()
-    # # html = "<html><body>It is now %s. there are %s dbs in the data base </body></html>" % now % cnt
-    html = "<html><body>there are %s dbs in the data base </body></html>" % cnt
-    return HttpResponse(html)
+    # cnt = len(docs)
+    # now = datetime.datetime.now()
+    # # # html = "<html><body>It is now %s. there are %s dbs in the data base </body></html>" % now % cnt
+    # html = "<html><body>there are %s dbs in the data base </body></html>" % cnt
+    # return HttpResponse(html)
 
 
     if request.method == "POST":
         title = request.POST['title'].replace(' ','')
         docs[title] = {'title':title,'text':""}
-        html = "<html><body>there are %s dbs in the data base </body></html>" % title
-        return HttpResponse(html)
-        #return HttpResponseRedirect(u"/doc/%s/" % title)
-    html = "<html><body>there are %s dbs in the data base </body></html>" % docs
-    return HttpResponse(html)
-    #return render_to_response('Example/index.html',{'rows':docs})
+        # html = "<html><body>there are %s dbs in the data base </body></html>" % title
+        # return HttpResponse(html)
+        return HttpResponseRedirect(u"/doc/%s/" % title)
+    # html = "<html><body>there are %s dbs in the data base </body></html>" % docs
+    # return HttpResponse(html)
+    return render_to_response('Example/index.html',{'rows':docs})
 
 
 def detail(request,id):
