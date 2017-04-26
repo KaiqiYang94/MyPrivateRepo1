@@ -66,4 +66,15 @@
       apt:
         name: upstart
         state: present
+
+    - name: install yum
+      sudo: yes
+      apt:
+        name: yum
+        state: present
+
+    - name: Update all packages to the latest version
+      sudo: yes
+      apt:
+        upgrade: dist
 ...

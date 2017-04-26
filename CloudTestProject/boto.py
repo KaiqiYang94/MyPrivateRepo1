@@ -21,4 +21,9 @@ for idx, res in enumerate(reservations):
 print reservations[0].instances[0].ip_address 
 print reservations[0].instances[0].placement
 
+
+# copy the commands to the terminal and execute that 
+
+
+# This is to build an instance 
 #ec2_conn.run_instances('ami-00003b2e', key_name='test_key', instance_type='m2.small', security_groups=['ssh','default'])
