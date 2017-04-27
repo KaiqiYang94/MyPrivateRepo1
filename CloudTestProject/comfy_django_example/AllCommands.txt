@@ -199,3 +199,56 @@ u'98ec6607527d94d54b38016edf0004a8'
 >>> a['title']
 u'Personal Manifesto'
 >>>
+
+
+
+
+
+
+
+
+
+
+
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl GET http://localhost:5984/_membership
+curl: (6) Could not resolve host: GET
+{"all_nodes":["couchdb@localhost"],"cluster_nodes":["couchdb@localhost"]}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "admin", "password":"password"}'
+{"error":"unauthorized","reason":"Name or password is incorrect."}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "admin", "password":"password", "port": 15984, "remote_node": "130.56.252.114", "remote_current_user": "admin", "remote_current_password": "password" }'
+{"error":"unauthorized","reason":"Name or password is incorrect."}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X PUT http://127.0.0.1:5984/_node/couchdb@130.56.252.131/_config/admins/admin -d '"password"'
+{"error":"not_found","reason":"no such node: couchdb@130.56.252.131"}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X PUT http://127.0.0.1:5986/_node/couchdb@130.56.252.131/_config/admins/admin -d '"password"'
+{"error":"illegal_database_name","reason":"Name: '_node'. Only lowercase characters (a-z), digits (0-9), and any of the characters _, $, (, ), +, -, and / are allowed. Must begin with a letter."}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X PUT http://127.0.0.1:5984/_node/couchdb@130.56.252.131/_config/admins/admin -d '"password"'
+{"error":"not_found","reason":"no such node: couchdb@130.56.252.131"}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X PUT http://127.0.0.1:5986/_config/admins/kaiqi -d '"password"'
+""
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X PUT http://127.0.0.1:5986/_config/admins/admin -d '"password"'
+{"error":"unauthorized","reason":"You are not a server admin."}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X PUT http://kaiqi@password@127.0.0.1:5986/_config/admins/admin -d '"password"'
+curl: (6) Could not resolve host: password@127.0.0.1
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X PUT http://kaiqi:password@127.0.0.1:5986/_config/admins/admin -d '"password"'
+""
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "admin", "password":"password", "port": 15984, "remote_node": "130.56.252.114", "remote_current_user": "admin", "remote_current_password": "password" }'
+{"ok":true}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "add_node", "host":"130.56.252.112", "port": "15984", "username": "admin", "password":"password"}'
+{"error":"error","reason":"{invalid_ejson,{conn_failed,{error,ehostunreach}}}"}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "admin", "password":"password"}'
+{"error":"bad_request","reason":"Cluster is already enabled"}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "admin", "password":"password", "port": 15984, "remote_node": "130.56.252.114", "remote_current_user": "admin", "remote_current_password": "password" }'
+{"ok":true}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "add_node", "host":"130.56.252.131", "port": "15984", "username": "admin", "password":"password"}'
+{"error":"bad_request","reason":"Add node failed. Invalid Host and/or Port."}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "add_node", "host":"130.56.252.131", "port": "5984", "username": "admin", "password":"password"}'
+{"ok":true}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "finish_cluster"}'
+{"ok":true}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl GET http://localhost:5984/_membership
+curl: (6) Could not resolve host: GET
+{"error":"unauthorized","reason":"You are not a server admin."}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl GET http://admin:password@localhost:5984/_membership
+curl: (6) Could not resolve host: GET
+{"all_nodes":["couchdb@localhost"],"cluster_nodes":["couchdb@130.56.252.131","couchdb@localhost"]}
+ubuntu@r-dyvuklou-0:~/apache-couchdb-2.0.0$ curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "add_node", "host":"130.56.252.112", "port": "15984", "username": "admin", "password":"password"}'
