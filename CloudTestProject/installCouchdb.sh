@@ -31,26 +31,26 @@ cd apache-couchdb-2.0.0/
 
 # 	修改配置：COUCHDB_HOME/rel/couchdb/releases/2.0.0/sys.config为：
 
-# 		[
-# 		    {lager, [
-# 		        {error_logger_hwm, 1000},
-# 		        {error_logger_redirect, true},
-# 		        {handlers, [
-# 		            {lager_console_backend, [debug, {
-# 		                lager_default_formatter,
-# 		                [
-# 		                    date, " ", time,
-# 		                    " [", severity, "] ",
-# 		                    node, " ", pid, " ",
-# 		                    message,
-# 		                    "\n"
-# 		                ]
-# 		            }]}
-# 		        ]},
-# 		        {inet_dist_listen_min, 9100},
-# 		        {inet_dist_listen_max, 9200}
-# 		    ]}
-# 		].
+# [
+#     {lager, [
+#         {error_logger_hwm, 1000},
+#         {error_logger_redirect, true},
+#         {handlers, [
+#             {lager_console_backend, [debug, {
+#                 lager_default_formatter,
+#                 [
+#                     date, " ", time,
+#                     " [", severity, "] ",
+#                     node, " ", pid, " ",
+#                     message,
+#                     "\n"
+#                 ]
+#             }]}
+#         ]},
+#         {inet_dist_listen_min, 9100},
+#         {inet_dist_listen_max, 9200}
+#     ]}
+# ].
 
 sudo adduser --system \
         --no-create-home \
@@ -95,15 +95,24 @@ sudo sv status couchdb
 
 # 集群节点添加
 
-# 如果添加192.168.199.189,在192.168.199.189上按照上述步骤走一遍，将ip更换为192.168.199.189即可。
+#如果需要建立cluster
 
-# 在192.168.199.236节点上添加192.168.199.189节点：
+	# 如果添加192.168.199.189,在192.168.199.189上按照上述步骤走一遍，将ip更换为192.168.199.189即可。
 
-# curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "admin", "password":"password", "port": 5984, "remote_node": "192.168.199.189", "remote_current_user": "admin", "remote_current_password": "password" }'
-# curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "add_node", "host":"192.168.199.189", "port": "5984", "username": "admin", "password":"password"}'
-# curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "finish_cluster"}'
+	# 在192.168.199.236节点上添加192.168.199.189节点：
+
+	# curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "admin", "password":"password", "port": 5984, "remote_node": "192.168.199.189", "remote_current_user": "admin", "remote_current_password": "password" }'
+	# curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "add_node", "host":"192.168.199.189", "port": "5984", "username": "admin", "password":"password"}'
+	# curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "finish_cluster"}'
+
+
+# # 如果建好cluster之后再加节点
+	# curl -X POST -H "Content-Type: application/json" http://admin:password@127.0.0.1:5984/_cluster_setup -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "admin", "password":"password", "port": 5984, "remote_node": "115.146.92.175", "remote_current_user": "admin", "remote_current_password": "password" }'
+	# curl -X PUT "http://admin:password@127.0.0.1:5986/_nodes/couchdb@115.146.92.175" -d {}
 
 # curl http://admin:password@127.0.0.1:5984/_membership
+
+	
 # 访问http://127.0.0.1:5984/_membership时能看到如下返回的数据：
 
 # {
