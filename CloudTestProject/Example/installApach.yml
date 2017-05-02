@@ -1,3 +1,6 @@
+# ansible-playbook /Users/KaiqiYang/Documents/Learning/JavaProj/BitBucketPrivateRepo/CloudTestProject/apache.yaml --syntax-check -i /Users/KaiqiYang/Documents/Learning/JavaProj/BitBucketPrivateRepo/CloudTestProject/ansibleTest.yaml --private-key /Users/KaiqiYang/Documents/MasterCourse/Cloud/Assignment2/cloud.key
+
+
 ---
 - hosts: kai
   vars:
