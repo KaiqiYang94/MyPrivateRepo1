@@ -1,14 +1,13 @@
 JFLAGS = -cp
 JC = javac
 JVM= java
-CPATH= .:./exude-0.0.3.jar
-MPJPATH= .:$MPJ_HOME/lib/mpj.jar:./gson.2.6.2.jar
+CPATH= .
 FILE=
 
 .SUFFIXES: #.java .class
 
 .java.class:
-		$(JC) $(JFLAGS) $(MPJPATH) getAttributes.java
+		$(JC) $(JFLAGS) $(CPATH) getAttributes.java
 
 CLASSES = \
 		getAttributes.java
