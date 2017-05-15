@@ -74,18 +74,45 @@ class getAttributes {
 			System.out.println();
 			System.out.println(" Map Elements " + attributes.size());
 			// System.out.println("\t" + attributes);
-			printOutNumber(attributes);
-			printOutNumber(allEmoji);
+			printOutPersentage(attributes);
 
 			// allEmoji = sortByValue(allEmoji);
 
 			System.out.println(" Map Elements " + allEmoji.size());
+			printOutPersentage(allEmoji);
 
 			// System.out.println("\t" + allEmoji);
 		} catch (Exception e) {
 			e.printStackTrace();
 			//error handling code
 		}
+	}
+
+	public static void printOutPersentage(Map<String, Integer[]> map) {
+		Map<String, Double> percentage = new HashMap<String, Double>();
+		int thereshold = 3;
+		Iterator it = map.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry<String, Integer[]> pair = (Map.Entry<String, Integer[]>)it.next();
+			if ((pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) > thereshold) {
+				double perc = pair.getValue()[2] * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]);
+				percentage.put(pair.getKey(), round(perc, 4) );
+
+			}
+			// System.out.println(pair.getKey() + " = " + pair.getValue()[0] + " " + pair.getValue()[1] + " " + pair.getValue()[2] + " ");
+			//it.remove(); // avoids a ConcurrentModificationException
+		}
+		percentage = sortByValue(percentage);
+
+
+		Iterator percentageIT = percentage.entrySet().iterator();
+		while (percentageIT.hasNext()) {
+			Map.Entry<String, Double> percPair = (Map.Entry<String, Double>)percentageIT.next();
+			Integer[] data = map.get(percPair.getKey()); 
+			System.out.println(percPair.getKey() + " = " + percPair.getValue() + " " + (!map.containsKey(percPair.getKey())? " " :(data[0]+ " " + data[1] + " " + data[2] + " ")));
+			percentageIT.remove(); // avoids a ConcurrentModificationException
+		}
+		 // System.out.println("\t" + percentage);
 	}
 
 	public static void printOutNumber(Map<String, Integer[]> map) {
@@ -103,6 +130,7 @@ class getAttributes {
 		    new LinkedList<Map.Entry<K, V>>( map.entrySet() );
 		Collections.sort( list, new Comparator<Map.Entry<K, V>>() {
 			public int compare( Map.Entry<K, V> o1, Map.Entry<K, V> o2 ) {
+				// return (o2.getValue()[0] + o2.getValue()[1] + o2.getValue()[2]).compareTo(o1.getValue()[0] + o1.getValue()[1] + o1.getValue()[2]);
 				return (o2.getValue()).compareTo( o1.getValue() );
 			}
 		} );
@@ -113,6 +141,23 @@ class getAttributes {
 		}
 		return result;
 	}
+
+
+	// 	public static <String, Integer[] extends Comparable<? super Integer[]>> Map<String, Integer[]> sortByValue( Map<String, Integer[]> map ) {
+	// 	List<Map.Entry<String, Integer[]>> list =
+	// 	    new LinkedList<Map.Entry<String, Integer[]>>( map.entrySet() );
+	// 	Collections.sort( list, new Comparator<Map.Entry<String, Integer[]>>() {
+	// 		public int compare( Map.Entry<String, Integer[]> o1, Map.Entry<String, Integer[]> o2 ) {
+	// 			return (o2.getValue()[0]+o2.getValue()[1]+o2.getValue()[2]).compareTo(o1.getValue()[0]+o1.getValue()[1]+o1.getValue()[2]);
+	// 		}
+	// 	} );
+
+	// 	Map<String, Integer[]> result = new LinkedHashMap<String, Integer[]>();
+	// 	for (Map.Entry<String, Integer[]> entry : list) {
+	// 		result.put( entry.getKey(), entry.getValue() );
+	// 	}
+	// 	return result;
+	// }
 
 	public static void outputEmoji(String str, String decisionStr) throws Exception {
 		// String face = ":)";
@@ -142,23 +187,23 @@ class getAttributes {
 
 	public static void AddToCount(Map<String, Integer[]> map, String key, String decisionStr) {
 		Integer[] countArray = new Integer[3];
-
-
-		if (map.containsKey(key)) {
-			countArray = map.get(key);
-			System.out.println("have the key " + key + " " + countArray[0] + " " + countArray[0] + " " + countArray[0] );
-
-		} else {
 		countArray[0] = 0;
 		countArray[1] = 0;
 		countArray[2] = 0;
+
+		if (map.containsKey(key)) {
+			countArray = map.get(key);
+			// System.out.println("have the key " + key + " " + countArray[0] + " " + countArray[1] + " " + countArray[2] + " " + decisionStr);
+
+		} else {
+
 		}
 
-		if (decisionStr == negative) {
+		if (decisionStr.equals(negative)) {
 			countArray[0] += 1;
-		} else if (decisionStr == neutral) {
+		} else if (decisionStr.equals(neutral)) {
 			countArray[1] += 1;
-		} else if (decisionStr == positive ) {
+		} else if (decisionStr.equals(positive) ) {
 			countArray[2] += 1;
 		}
 
@@ -166,7 +211,14 @@ class getAttributes {
 		map.put(key, countArray);
 	}
 
+public static double round(double value, int places) {
+    if (places < 0) throw new IllegalArgumentException();
 
+    long factor = (long) Math.pow(10, places);
+    value = value * factor;
+    long tmp = Math.round(value);
+    return (double) tmp / factor;
+}
 	public static String[] negationWords = {
 		"without", "no", "nor", "not", "cannot", "few",
 		"neither", "never", "nobody", "non", "none", "nothing", "nowhere",
