@@ -8,17 +8,28 @@ import java.util.regex.Matcher;
 
 class getAttributes {
 
+	static String negative = "negative";
+	static String neutral = "neutral";
+	static String positive = "positive";
+
 	// static List<String> matchList = new ArrayList<String>();
-	static Map<String, Integer> allEmoji = new HashMap<String, Integer>();
+	static Map<String, Integer[]> allEmoji = new HashMap<String, Integer[]>();
+
+	static Map<String, Integer[]> attributes = new HashMap<String, Integer[]>();
 
 	public static void main(String args[]) {
 		try {
 
-			Scanner scan = new Scanner(new File("dev-tweets.txt"));
+			String mode = "dev";
 
-			Map<String, Integer> attributes = new HashMap<String, Integer>();
+			Scanner decisionScan = new Scanner(new File(mode + "-labels.txt"));
+
+			Scanner scan = new Scanner(new File(mode + "-tweets.txt"));
+
 
 			while (scan.hasNextLine()) {
+				String  decison = decisionScan.nextLine();
+				String decisionString = decison.split("\t")[1];
 
 				String line = scan.nextLine();
 				String[] array = line.split("\t");
@@ -33,8 +44,10 @@ class getAttributes {
 				// content = content.replace(":","");
 				array[1] = content;
 
-				outputEmoji(array[1]);
+				// get the emoji
+				outputEmoji(array[1].replace("http://", "").replace("https://", ""), decisionString);
 
+				// for words
 				String[] words = array[1].split(" ");
 				for (String word : words ) {
 					if (word.length() <= 0) {continue;}
@@ -46,10 +59,10 @@ class getAttributes {
 					if (word.indexOf("http") == 0 ) {continue;}
 					if (Arrays.asList(stopWords).contains(word.toLowerCase())) {continue;}
 
-					AddToCount(attributes, word.toLowerCase().replace(":", ""));
+					AddToCount(attributes, word.toLowerCase().replace(":", ""), decisionString);
 
 					if (Arrays.asList(negationWords).contains(word.toLowerCase())) {
-						AddToCount(attributes, "NEGATIONWORD");
+						AddToCount(attributes, "NEGATIONWORD", decisionString);
 
 					}
 
@@ -57,25 +70,35 @@ class getAttributes {
 				}
 			}
 
-			attributes = sortByValue(attributes);
+			// attributes = sortByValue(attributes);
 			System.out.println();
 			System.out.println(" Map Elements " + attributes.size());
-			System.out.println("\t" + attributes);
+			// System.out.println("\t" + attributes);
+			printOutNumber(attributes);
+			printOutNumber(allEmoji);
 
-			allEmoji = sortByValue(allEmoji);
+			// allEmoji = sortByValue(allEmoji);
 
 			System.out.println(" Map Elements " + allEmoji.size());
 
-			System.out.println("\t" + allEmoji);
+			// System.out.println("\t" + allEmoji);
 		} catch (Exception e) {
 			e.printStackTrace();
 			//error handling code
 		}
 	}
 
+	public static void printOutNumber(Map<String, Integer[]> map) {
+		Iterator it = map.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry<String, Integer[]> pair = (Map.Entry<String, Integer[]>)it.next();
+			System.out.println(pair.getKey() + " = " + pair.getValue()[0] + " " + pair.getValue()[1] + " " + pair.getValue()[2] + " ");
+			it.remove(); // avoids a ConcurrentModificationException
+		}
+	}
+
 	// to sort the map
-	public static <K, V extends Comparable<? super V>> Map<K, V>
-	sortByValue( Map<K, V> map ) {
+	public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue( Map<K, V> map ) {
 		List<Map.Entry<K, V>> list =
 		    new LinkedList<Map.Entry<K, V>>( map.entrySet() );
 		Collections.sort( list, new Comparator<Map.Entry<K, V>>() {
@@ -91,13 +114,13 @@ class getAttributes {
 		return result;
 	}
 
-	public static void outputEmoji(String str) throws Exception {
+	public static void outputEmoji(String str, String decisionStr) throws Exception {
 		// String face = ":)";
 		String[] faces = {":-)", ":)", ":D", ":-D", ":P", ":-P", ":(", ":-/", ":/", ";)", "LOL", "HAHA"};
 
 		for (String face : faces) {
 			if (str.toUpperCase().contains(face)) {
-				AddToCount(allEmoji, face);
+				AddToCount(allEmoji, face, decisionStr);
 				// System.out.println("Get a face" + face + " " + str);
 			}
 		}
@@ -112,19 +135,37 @@ class getAttributes {
 		Matcher matcher = pattern.matcher(string1);
 
 		while (matcher.find()) {
-			AddToCount(allEmoji, matcher.group());
+			AddToCount(allEmoji, matcher.group(), decisionStr);
 		}
 
 	}
 
-	public static void AddToCount(Map<String, Integer> map, String key) {
+	public static void AddToCount(Map<String, Integer[]> map, String key, String decisionStr) {
+		Integer[] countArray = new Integer[3];
+
+
 		if (map.containsKey(key)) {
-			int times = map.get(key);
-			map.put(key, times + 1);
+			countArray = map.get(key);
+			System.out.println("have the key " + key + " " + countArray[0] + " " + countArray[0] + " " + countArray[0] );
+
 		} else {
-			map.put(key, 1);
+		countArray[0] = 0;
+		countArray[1] = 0;
+		countArray[2] = 0;
 		}
+
+		if (decisionStr == negative) {
+			countArray[0] += 1;
+		} else if (decisionStr == neutral) {
+			countArray[1] += 1;
+		} else if (decisionStr == positive ) {
+			countArray[2] += 1;
+		}
+
+
+		map.put(key, countArray);
 	}
+
 
 	public static String[] negationWords = {
 		"without", "no", "nor", "not", "cannot", "few",
@@ -160,28 +201,5 @@ class getAttributes {
 		"when's", "where", "where's", "which", "while", "who", "who's", "whom",
 		"why", "why's", "with", "would", "you", "you'd", "you'll",
 		"you're", "you've", "your", "yours", "yourself", "yourselves"
-
-		// "See",
-		// "Unless", "Due", "Also", "Must", "Might", "Like", "Will", "May", "Can", "Much",
-		// "Every", "The", "In", "Other", "This", "The", "Many", "Any", "An", "Or", "For",
-		// "In", "An", "An ", "Is", "A", "About", "Above", "After", "Again", "Against",
-		// "All", "Am", "An", "And", "Any", "Are",  "As", "At", "Be", "Because",
-		// "Been", "Before", "Being", "Below", "Between", "Both", "But", "By",
-		// "Could", "Did",  "Do", "Does",  "Doing",
-		// "Down", "During", "Each",  "For", "From", "Further", "Had",
-		// "Has",  "Have",  "Having", "He", "He'd", "He'll", "He's",
-		// "Her", "Here", "Here's", "Hers", "Herself", "Him", "Himself", "His", "How",
-		// "How's", "I ", " I", "I'd", "I'll", "I'm", "I've", "If", "In", "Into", "Is",
-		// "Isn't", "It", "It's", "Its", "Itself", "Let's", "Me", "More", "Most", "Mustn't",
-		// "My", "Myself",  "Of", "Off", "On", "Once", "Only", "Ought",
-		// "Our", "Ours", "Ourselves", "Out", "Over", "Own", "Same",  "She", "She'd",
-		// "She'll", "She's", "Should",  "So", "Some", "Such", "Than", "That",
-		// "That's", "Their", "Theirs", "Them", "Themselves", "Then", "There", "There's",
-		// "These", "They", "They'd", "They'll", "They're", "They've",
-		// "This", "Those", "Through", "To", "Too", "Under", "Until", "Up", "Very", "Was",
-		// "Wasn't", "We", "We'd", "We'll", "We're", "We've", "Were", "Weren't", "What",
-		// "What's", "When", "When's", "Where", "Where's", "Which", "While", "Who", "Who's", "Whom",
-		// "Why", "Why's", "With", "Would",  "You", "You'd", "You'll",
-		// "You're", "You've", "Your", "Yours", "Yourself", "Yourselves"
 	};
 }

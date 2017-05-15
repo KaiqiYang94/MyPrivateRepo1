@@ -12,6 +12,16 @@ class GenerteFeatures {
 
 	public static void main(String args[]) {
 		try {
+
+			String mode = "dev";
+
+
+			Scanner scan = new Scanner(new File(mode + "-labels.txt"));
+
+			Map<String, String> decisionFeature = new HashMap<String, String>();
+
+
+
 			Scanner scan = new Scanner(new File("test-tweets.txt"));
 			//int i = 10;
 			Map<String, Integer> attributes = new HashMap<String, Integer>();
