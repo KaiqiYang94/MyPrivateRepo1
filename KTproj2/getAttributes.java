@@ -95,7 +95,7 @@ class getAttributes {
 		while (it.hasNext()) {
 			Map.Entry<String, Integer[]> pair = (Map.Entry<String, Integer[]>)it.next();
 			if ((pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) > thereshold) {
-				double perc = pair.getValue()[2] * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]);
+				double perc = pair.getValue()[0] * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]);
 				percentage.put(pair.getKey(), round(perc, 4) );
 
 			}

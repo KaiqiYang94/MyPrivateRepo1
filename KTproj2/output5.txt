@@ -1,5 +1,10 @@
 java -cp . getAttributes
 
+--------------------------------
+The positive persentages
+
+
+
  Map Elements 12512
 enjoyed = 1.0 0 0 5 
 michaels = 1.0 0 0 4 
