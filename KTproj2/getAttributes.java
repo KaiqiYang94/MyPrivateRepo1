@@ -1,5 +1,6 @@
 import java.util.*;
 import java.io.File;
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -12,12 +13,11 @@ class getAttributes {
 
 	public static void main(String args[]) {
 		try {
-			Scanner scan = new Scanner(new File("test-tweets.txt"));
+			Scanner scan = new Scanner(new File("dev-tweets.txt"));
 			//int i = 10;
 			Map<String, Integer> attributes = new HashMap<String, Integer>();
 
 			while (scan.hasNextLine()) {
-				//if (i -- <= 0) break;
 
 				String line = scan.nextLine();
 				String[] array = line.split("\t");
@@ -25,16 +25,8 @@ class getAttributes {
 
 				String[] words = array[1].split(" ");
 				for (String word : words ) {
-					if (attributes.containsKey(word.toLowerCase())) {
-						int times = attributes.get(word.toLowerCase());
-						attributes.put(word.toLowerCase(), times + 1);
-					} else {
-						attributes.put(word.toLowerCase(), 1);
-					}
+					AddToCount(attributes, word);
 				}
-				//System.out.println(line);
-				//System.out.println("the id is " + array[0] + " content is " + array[1]);
-				//Here you can manipulate the string the way you want
 			}
 
 			attributes = sortByValue(attributes);
@@ -47,12 +39,6 @@ class getAttributes {
 			System.out.println(" Map Elements " + allEmoji.size());
 
 			System.out.println("\t" + allEmoji);
-
-
-			// for (int i = 0; i < matchList.size(); i++) {
-			// 	System.out.println(i + ":" + matchList.get(i));
-			// }
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			//error handling code
@@ -77,12 +63,21 @@ class getAttributes {
 		return result;
 	}
 
-	public static void outputEmoji(String string) throws Exception {
-		String face = ":)";
+	public static void outputEmoji(String str) throws Exception {
+		// String face = ":)";
+		String[] faces = {":-)", ":)", ":D", ":-D", ":P", ":-P", ":(", ":-/", ":/", ";)", "LOL", "HAHA"};
+
+		for (String face : faces) {
+			if (str.toUpperCase().contains(face)) {
+				AddToCount(allEmoji, face);
+				System.out.println("Get a face" + face + " " + str);
+
+			}
+		}
 
 
 		String regexPattern = "[\uD83C-\uDBFF\uDC00-\uDFFF]";
-		byte[] utf8 = string.getBytes("UTF-8");
+		byte[] utf8 = str.getBytes("UTF-8");
 
 		String string1 = new String(utf8, "UTF-8");
 
@@ -90,15 +85,18 @@ class getAttributes {
 		Matcher matcher = pattern.matcher(string1);
 
 		while (matcher.find()) {
-			if (allEmoji.containsKey(matcher.group())){
-				int times = allEmoji.get(matcher.group());
-				allEmoji.put(matcher.group(), times + 1);
-			} else {
-				allEmoji.put(matcher.group(), 1);
-			}
-			// matchList.add(matcher.group());
+			AddToCount(allEmoji, matcher.group());
 		}
 
+	}
+
+	public static void AddToCount(Map<String, Integer> map, String key) {
+		if (map.containsKey(key)) {
+			int times = map.get(key);
+			map.put(key, times + 1);
+		} else {
+			map.put(key, 1);
+		}
 	}
 
 

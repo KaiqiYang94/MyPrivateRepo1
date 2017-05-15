@@ -25,12 +25,14 @@ class GenerteFeatures {
 
 				String[] words = array[1].split(" ");
 				for (String word : words ) {
-					if (attributes.containsKey(word.toLowerCase())) {
-						int times = attributes.get(word.toLowerCase());
-						attributes.put(word.toLowerCase(), times + 1);
-					} else {
-						attributes.put(word.toLowerCase(), 1);
-					}
+					AddToCount(attributes, word);
+
+					// if (attributes.containsKey(word.toLowerCase())) {
+					// 	int times = attributes.get(word.toLowerCase());
+					// 	attributes.put(word.toLowerCase(), times + 1);
+					// } else {
+					// 	attributes.put(word.toLowerCase(), 1);
+					// }
 				}
 				//System.out.println(line);
 				//System.out.println("the id is " + array[0] + " content is " + array[1]);
@@ -79,7 +81,9 @@ class GenerteFeatures {
 
 	public static void outputEmoji(String string) throws Exception {
 		String face = ":)";
+		if (string.substring(face) != -1) {
 
+		}
 
 		String regexPattern = "[\uD83C-\uDBFF\uDC00-\uDFFF]";
 		byte[] utf8 = string.getBytes("UTF-8");
@@ -90,15 +94,25 @@ class GenerteFeatures {
 		Matcher matcher = pattern.matcher(string1);
 
 		while (matcher.find()) {
-			if (allEmoji.containsKey(matcher.group())){
-				int times = allEmoji.get(matcher.group());
-				allEmoji.put(matcher.group(), times + 1);
-			} else {
-				allEmoji.put(matcher.group(), 1);
-			}
+			AddToCount(allEmoji, matcher.group());
+			// if (allEmoji.containsKey(matcher.group())) {
+			// 	int times = allEmoji.get(matcher.group());
+			// 	allEmoji.put(matcher.group(), times + 1);
+			// } else {
+			// 	allEmoji.put(matcher.group(), 1);
+			// }
 			// matchList.add(matcher.group());
 		}
 
+	}
+
+	public static void AddToCount(Map<String, Integer> map, String key) {
+		if (map.containsKey(key)) {
+			int times = map.get(key);
+			map.put(key, times + 1);
+		} else {
+			map.put(key, 1);
+		}
 	}
 
 
