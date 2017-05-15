@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-class getAttributes {
+class GenerteFeatures {
 
 	// static List<String> matchList = new ArrayList<String>();
 	static Map<String, Integer> allEmoji = new HashMap<String, Integer>();
