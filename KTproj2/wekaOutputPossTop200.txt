@@ -1,0 +1,218 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.InfoGainAttributeEval 
+Search:       weka.attributeSelection.Ranker -T -1.7976931348623157E308 -N -1
+Relation:     twitter-posi-tops-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    4926
+Attributes:   195
+              [list of attributes omitted]
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Attribute ranking.
+
+Attribute Evaluator (supervised, Class (nominal): 195 sentiment):
+	Information Gain Ranking Filter
+
+Ranked attributes:
+ 0.0168      45 day
+ 0.01546     13 love
+ 0.01438     54 tomorrow
+ 0.01387     11 happy
+ 0.01274     40 NEGATIONWORD
+ 0.01149     34 best
+ 0.01112     47 good
+ 0.00996     38 national
+ 0.00958     31 great
+ 0.00892      5 excited
+ 0.00636     36 birthday
+ 0.00608      9 i
+ 0.00598     32 dog
+ 0.00578     55 ice
+ 0.00566     35 celebrate
+ 0.00564      7 cream
+ 0.00549    191 monday
+ 0.00517    105 night
+ 0.00507     42 ant-man
+ 0.00473     37 hot
+ 0.00443     86 fighters
+ 0.00439     30 favorite
+ 0.00437      3 amazing
+ 0.00432     74 foo
+ 0.00428     69 wait
+ 0.00412     28 thank
+ 0.00382     77 finally
+ 0.00381    124 friday
+ 0.0037      15 bless
+ 0.00364      6 awesome
+ 0.00349    115 star
+ 0.00333     39 nice
+ 0.00325     20 liked
+ 0.00323     87 prince
+ 0.00313    109 iron
+ 0.00297    101 thanks
+ 0.00283     82 weekend
+ 0.00282    146 hope
+ 0.00265     12 loved
+ 0.00265     22 perfect
+ 0.00262     95 maiden
+ 0.00259    130 tonight
+ 0.00254     29 janet
+ 0.00246     17 wonderful
+ 0.00242     18 beautiful
+ 0.00242      1 fantastic
+ 0.00241    159 saturday
+ 0.00235    122 miss
+ 0.00219     92 thanksgiving
+ 0.00213     91 zac
+ 0.00202     62 wars
+ 0.00201    132 song
+ 0.00198     23 enjoy
+ 0.00188     53 jackson
+ 0.00176     79 glad
+ 0.00176     26 proud
+ 0.00175      2 enjoyed
+ 0.00175     64 gig
+ 0.00173     24 fun
+ 0.00172     21 cute
+ 0.00148     83 westworld
+ 0.00148     19 thankful
+ 0.0014      16 congrats
+ 0.0014      73 sweet
+ 0.0014      67 smile
+ 0.0014     179 early
+ 0.00105      4 incredible
+ 0.00105     27 wishing
+ 0.00105     81 treat
+ 0.00105     10 brilliant
+ 0           76 dance
+ 0           75 forever
+ 0           46 celebrating
+ 0           78 pretty
+ 0           72 seeing
+ 0           88 band
+ 0            8 excellent
+ 0           85 catch
+ 0           84 beauty
+ 0           14 lovely
+ 0           80 holy
+ 0           25 welcome
+ 0           71 greatest
+ 0           41 gift
+ 0           56 )
+ 0           52 loves
+ 0           43 dogs
+ 0           51 royal
+ 0           70 hopefully
+ 0           89 saw
+ 0           49 loving
+ 0           50 -)
+ 0           57 23rd
+ 0           58 ;)
+ 0           33 rapper
+ 0           68 hilarious
+ 0           44 harper
+ 0           59 luck
+ 0           66 towns
+ 0           65 songs
+ 0           63 brown
+ 0           61 wow
+ 0           60 forward
+ 0           48 omg
+ 0          194 food
+ 0           90 fourth
+ 0          162 fan
+ 0          161 sister
+ 0          164 bowl
+ 0          163 definitely
+ 0          165 tribute
+ 0          147 lyrics
+ 0          168 truly
+ 0          167 meeting
+ 0          166 win
+ 0          160 lord
+ 0          158 toronto
+ 0          157 god
+ 0          150 concert
+ 0          149 turns
+ 0          156 perform
+ 0          151 video
+ 0          152 week
+ 0          153 winner
+ 0          154 valentines
+ 0          155 cover
+ 0          169 richard
+ 0          170 laughing
+ 0          171 rookie
+ 0          186 followed
+ 0          185 special
+ 0          183 souls
+ 0          187 going
+ 0          188 bowie
+ 0          189 kendrick
+ 0          190 champion
+ 0          192 twilight
+ 0          184 coffee
+ 0          182 friend
+ 0          172 remembered
+ 0          174 respect
+ 0          173 leonard
+ 0          181 justin
+ 0          175 watched
+ 0          176 watchman
+ 0          177 chat
+ 0          178 19
+ 0          180 cohen
+ 0          148 deserves
+ 0          145 seats
+ 0           93 sing
+ 0          110 j
+ 0          108 books
+ 0          112 haha
+ 0          111 friends
+ 0          113 dream
+ 0          144 festival
+ 0          117 christmas
+ 0          116 afternoon
+ 0          114 calibraska
+ 0          107 highest
+ 0          106 cate
+ 0          104 performance
+ 0           96 captain
+ 0           94 cool
+ 0          103 character
+ 0          193 gotta
+ 0           98 blanchett
+ 0           99 listening
+ 0          100 legend
+ 0          102 paper
+ 0          118 movie
+ 0          119 bro
+ 0          120 wedding
+ 0          138 absolutely
+ 0          137 today
+ 0          135 music
+ 0          139 summer
+ 0          140 singing
+ 0          141 walking
+ 0          142 spend
+ 0          143 22nd
+ 0          136 19th
+ 0          134 lamar
+ 0          121 prayers
+ 0          125 strong
+ 0          123 watching
+ 0          133 vamps
+ 0          126 alive
+ 0          127 23
+ 0          128 morning
+ 0          129 cry
+ 0          131 bieber
+ 0           97 vr
+
+Selected attributes: 45,13,54,11,40,34,47,38,31,5,36,9,32,55,35,7,191,105,42,37,86,30,3,74,69,28,77,124,15,6,115,39,20,87,109,101,82,146,12,22,95,130,29,17,18,1,159,122,92,91,62,132,23,53,79,26,2,64,24,21,83,19,16,73,67,179,4,27,81,10,76,75,46,78,72,88,8,85,84,14,80,25,71,41,56,52,43,51,70,89,49,50,57,58,33,68,44,59,66,65,63,61,60,48,194,90,162,161,164,163,165,147,168,167,166,160,158,157,150,149,156,151,152,153,154,155,169,170,171,186,185,183,187,188,189,190,192,184,182,172,174,173,181,175,176,177,178,180,148,145,93,110,108,112,111,113,144,117,116,114,107,106,104,96,94,103,193,98,99,100,102,118,119,120,138,137,135,139,140,141,142,143,136,134,121,125,123,133,126,127,128,129,131,97 : 194
+
