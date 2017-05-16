@@ -33,6 +33,57 @@ class GenerateFeatures {
 		allAttributes.add(new SimpleEntry("at", "NUMERIC"));
 		allAttributes.add(new SimpleEntry("awesome", "NUMERIC"));
 		allAttributes.add(new SimpleEntry("best", "NUMERIC"));
+		// allAttributes.add(new SimpleEntry("NEGATION", "NUMERIC"));
+		allAttributes.add(new SimpleEntry("fantastic", "NUMERIC"));// = 0.9758 0 1 35
+		allAttributes.add(new SimpleEntry("enjoyed", "NUMERIC"));// = 0.9314 1 1 26
+		allAttributes.add(new SimpleEntry("amazing", "NUMERIC"));// = 0.9302 1 6 82
+		allAttributes.add(new SimpleEntry("incredible", "NUMERIC"));// = 0.9257 1 1 24
+		allAttributes.add(new SimpleEntry("excited", "NUMERIC"));// = 0.9245 6 4 105
+		allAttributes.add(new SimpleEntry("awesome", "NUMERIC"));// = 0.9217 2 5 74
+		allAttributes.add(new SimpleEntry("cream", "NUMERIC"));// = 0.9074 0 17 140
+		allAttributes.add(new SimpleEntry("excellent", "NUMERIC"));// = 0.9069 0 2 19
+		allAttributes.add(new SimpleEntry("i", "NUMERIC"));// = 0.8937 1044 2099 1957
+		allAttributes.add(new SimpleEntry("brilliant", "NUMERIC"));// = 0.8741 2 2 27
+		allAttributes.add(new SimpleEntry("happy", "NUMERIC"));// = 0.8739 23 33 292
+		allAttributes.add(new SimpleEntry("&lt;3", "NUMERIC"));// = 0.8697 2 2 26
+		allAttributes.add(new SimpleEntry("loved", "NUMERIC"));// = 0.8459 3 3 32
+		allAttributes.add(new SimpleEntry("love", "NUMERIC"));// = 0.829 27 76 369
+		allAttributes.add(new SimpleEntry("lovely", "NUMERIC"));// = 0.8284 1 3 19
+		allAttributes.add(new SimpleEntry("bless", "NUMERIC"));// = 0.827 1 9 46
+		allAttributes.add(new SimpleEntry("congrats", "NUMERIC"));// = 0.8204 0 4 18
+		allAttributes.add(new SimpleEntry("wonderful", "NUMERIC"));// = 0.8204 0 4 18
+		allAttributes.add(new SimpleEntry("beautiful", "NUMERIC"));// = 0.8195 1 10 48
+		allAttributes.add(new SimpleEntry("thankful", "NUMERIC"));// = 0.8103 0 5 21
+		allAttributes.add(new SimpleEntry("liked", "NUMERIC"));// = 0.7942 4 12 59
+		allAttributes.add(new SimpleEntry("cute", "NUMERIC"));// = 0.7933 3 5 30
+		allAttributes.add(new SimpleEntry("perfect", "NUMERIC"));// = 0.7913 4 8 44
+		allAttributes.add(new SimpleEntry("enjoy", "NUMERIC"));// = 0.7881 7 9 57
+		allAttributes.add(new SimpleEntry("fun", "NUMERIC"));// = 0.7729 9 12 68
+		allAttributes.add(new SimpleEntry("welcome", "NUMERIC"));// = 0.7717 4 6 33
+		allAttributes.add(new SimpleEntry("proud", "NUMERIC"));// = 0.767 4 5 29
+		allAttributes.add(new SimpleEntry("wishing", "NUMERIC"));// = 0.764 1 4 16
+		allAttributes.add(new SimpleEntry("thank", "NUMERIC"));// = 0.762 9 21 90
+		allAttributes.add(new SimpleEntry("janet", "NUMERIC"));// = 0.7528 4 18 64
+		allAttributes.add(new SimpleEntry("favorite", "NUMERIC"));// = 0.7523 2 14 47
+		allAttributes.add(new SimpleEntry("great", "NUMERIC"));// = 0.7474 33 67 248
+		allAttributes.add(new SimpleEntry("dog", "NUMERIC"));// = 0.7455 14 27 111
+		allAttributes.add(new SimpleEntry("rapper", "NUMERIC"));// = 0.7414 0 6 17
+		allAttributes.add(new SimpleEntry("best", "NUMERIC"));// = 0.7351 28 95 280
+		allAttributes.add(new SimpleEntry("celebrate", "NUMERIC"));// = 0.7297 6 20 67
+		allAttributes.add(new SimpleEntry("birthday", "NUMERIC"));// = 0.721 9 54 147
+		allAttributes.add(new SimpleEntry("hot", "NUMERIC"));// = 0.7099 14 51 144
+		allAttributes.add(new SimpleEntry("national", "NUMERIC"));// = 0.7082 21 78 208
+		allAttributes.add(new SimpleEntry("nice", "NUMERIC"));// = 0.7063 6 25 71
+		allAttributes.add(new SimpleEntry("gift", "NUMERIC"));// = 0.6926 3 6 20
+		allAttributes.add(new SimpleEntry("ant-man", "NUMERIC"));// = 0.6917 13 53 135
+		allAttributes.add(new SimpleEntry("dogs", "NUMERIC"));// = 0.6907 4 6 22
+		allAttributes.add(new SimpleEntry("harper", "NUMERIC"));// = 0.684 1 6 15
+		allAttributes.add(new SimpleEntry("day", "NUMERIC"));// = 0.6835 125 432 702
+		allAttributes.add(new SimpleEntry("celebrating", "NUMERIC"));// = 0.6799 4 7 23
+
+		allAttributes.add(new SimpleEntry("NEGATIONWORD", "NUMERIC"));// = 0.703 1830 2316 977
+
+
 
 		allAttributes.add(new SimpleEntry ("sentiment", "{positive,negative,neutral}"));
 	}
@@ -75,6 +126,18 @@ class GenerateFeatures {
 						dataRow += decisionString;
 					} else if (pair.getKey() == "id") {
 						dataRow += array[0] + ",";
+					} else if (pair.getKey() == "NEGATIONWORD") {
+						int count =0 ;
+						for(String negationword: negationWords)
+						{
+							count += findAsWords(array[1], negationword);
+							if(count != 0)
+							{
+								break;
+							}
+						}
+						
+						dataRow += count + ",";
 					} else {
 						int count = findAsWords(array[1], pair.getKey());
 						dataRow += count + ",";
@@ -189,22 +252,6 @@ class GenerateFeatures {
 		return result;
 	}
 
-
-	// 	public static <String, Integer[] extends Comparable<? super Integer[]>> Map<String, Integer[]> sortByValue( Map<String, Integer[]> map ) {
-	// 	List<Map.Entry<String, Integer[]>> list =
-	// 	    new LinkedList<Map.Entry<String, Integer[]>>( map.entrySet() );
-	// 	Collections.sort( list, new Comparator<Map.Entry<String, Integer[]>>() {
-	// 		public int compare( Map.Entry<String, Integer[]> o1, Map.Entry<String, Integer[]> o2 ) {
-	// 			return (o2.getValue()[0]+o2.getValue()[1]+o2.getValue()[2]).compareTo(o1.getValue()[0]+o1.getValue()[1]+o1.getValue()[2]);
-	// 		}
-	// 	} );
-
-	// 	Map<String, Integer[]> result = new LinkedHashMap<String, Integer[]>();
-	// 	for (Map.Entry<String, Integer[]> entry : list) {
-	// 		result.put( entry.getKey(), entry.getValue() );
-	// 	}
-	// 	return result;
-	// }
 
 	public static void outputEmoji(String str, String decisionStr) throws Exception {
 		// String face = ":)";

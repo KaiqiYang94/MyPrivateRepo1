@@ -110,7 +110,8 @@ class getAttributes {
 		while (percentageIT.hasNext()) {
 			Map.Entry<String, Double> percPair = (Map.Entry<String, Double>)percentageIT.next();
 			Integer[] data = map.get(percPair.getKey()); 
-			System.out.println("allAttributes.put(\""+ percPair.getKey() + "\", \"NUMERIC\");" + "// = " + percPair.getValue() + " " + (!map.containsKey(percPair.getKey())? " " :(data[0]+ " " + data[1] + " " + data[2] + " ")));
+
+			System.out.println("allAttributes.add(new SimpleEntry(\""+ percPair.getKey() + "\", \"NUMERIC\"));" + "// = " + percPair.getValue() + " " + (!map.containsKey(percPair.getKey())? " " :(data[0]+ " " + data[1] + " " + data[2] + " ")));
 			percentageIT.remove(); // avoids a ConcurrentModificationException
 		}
 		 // System.out.println("\t" + percentage);
