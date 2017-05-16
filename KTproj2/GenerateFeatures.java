@@ -27,12 +27,12 @@ class GenerateFeatures {
 	public static void initialization() {
 		allAttributes.add(new SimpleEntry("id", "NUMERIC"));
 		allAttributes.add(new SimpleEntry("a", "NUMERIC"));
-		allAttributes.add(new SimpleEntry("amazing", "NUMERIC"));
+		// allAttributes.add(new SimpleEntry("amazing", "NUMERIC"));
 		allAttributes.add(new SimpleEntry("antman", "NUMERIC"));
 		allAttributes.add(new SimpleEntry("are", "NUMERIC"));
 		allAttributes.add(new SimpleEntry("at", "NUMERIC"));
-		allAttributes.add(new SimpleEntry("awesome", "NUMERIC"));
-		allAttributes.add(new SimpleEntry("best", "NUMERIC"));
+		// allAttributes.add(new SimpleEntry("awesome", "NUMERIC"));
+		// allAttributes.add(new SimpleEntry("best", "NUMERIC"));
 		// allAttributes.add(new SimpleEntry("NEGATION", "NUMERIC"));
 		allAttributes.add(new SimpleEntry("fantastic", "NUMERIC"));// = 0.9758 0 1 35
 		allAttributes.add(new SimpleEntry("enjoyed", "NUMERIC"));// = 0.9314 1 1 26
@@ -93,6 +93,15 @@ class GenerateFeatures {
 
 			initialization();
 
+			// pritn out the headers for the arff file
+			System.out.println("@RELATION twitter-posi-tops");
+			for (SimpleEntry<String, String> pair : allAttributes) {
+				System.out.println("@ATTRIBUTE " + pair.getKey() + " " + pair.getValue());
+			}
+			System.out.println("@DATA");
+
+
+
 			String mode = "dev";
 
 			Scanner decisionScan = new Scanner(new File(mode + "-labels.txt"));
@@ -127,16 +136,14 @@ class GenerateFeatures {
 					} else if (pair.getKey() == "id") {
 						dataRow += array[0] + ",";
 					} else if (pair.getKey() == "NEGATIONWORD") {
-						int count =0 ;
-						for(String negationword: negationWords)
-						{
+						int count = 0 ;
+						for (String negationword : negationWords) {
 							count += findAsWords(array[1], negationword);
-							if(count != 0)
-							{
+							if (count != 0) {
 								break;
 							}
 						}
-						
+
 						dataRow += count + ",";
 					} else {
 						int count = findAsWords(array[1], pair.getKey());
