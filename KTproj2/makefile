@@ -24,3 +24,9 @@ clean:
 		$(RM) *.class
 run:
 		$(JVM) $(JFLAGS) $(CPATH) getAttributes
+
+javacf: 
+	$(JC) $(JFLAGS) $(CPATH) GenerateFeatures.java
+
+runf:
+		$(JVM) $(JFLAGS) $(CPATH) GenerateFeatures

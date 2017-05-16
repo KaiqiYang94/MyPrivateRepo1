@@ -1,69 +1,87 @@
 import java.util.*;
 import java.io.File;
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.ArrayList;
+import java.util.AbstractMap.*;
 
-class GenerteFeatures {
+class GenerateFeatures {
+
+	static String negative = "negative";
+	static String neutral = "neutral";
+	static String positive = "positive";
+
+	static List<SimpleEntry<String, String>> allAttributes = new ArrayList<SimpleEntry<String, String>>();
+
+	// <String, String> allAttributes = new HashMap<String, String>();
 
 	// static List<String> matchList = new ArrayList<String>();
-	static Map<String, Integer> allEmoji = new HashMap<String, Integer>();
+	static Map<String, Integer[]> allEmoji = new HashMap<String, Integer[]>();
+
+	static Map<String, Integer[]> attributes = new HashMap<String, Integer[]>();
+
+
+	public static void initialization() {
+		allAttributes.add(new SimpleEntry("id", "NUMERIC"));
+		allAttributes.add(new SimpleEntry("a", "NUMERIC"));
+		allAttributes.add(new SimpleEntry("amazing", "NUMERIC"));
+		allAttributes.add(new SimpleEntry("antman", "NUMERIC"));
+		allAttributes.add(new SimpleEntry("are", "NUMERIC"));
+		allAttributes.add(new SimpleEntry("at", "NUMERIC"));
+		allAttributes.add(new SimpleEntry("awesome", "NUMERIC"));
+		allAttributes.add(new SimpleEntry("best", "NUMERIC"));
+
+		allAttributes.add(new SimpleEntry ("sentiment", "{positive,negative,neutral}"));
+	}
 
 	public static void main(String args[]) {
 		try {
 
+			initialization();
+
 			String mode = "dev";
 
+			Scanner decisionScan = new Scanner(new File(mode + "-labels.txt"));
 
-			Scanner scan = new Scanner(new File(mode + "-labels.txt"));
+			Scanner scan = new Scanner(new File(mode + "-tweets.txt"));
 
-			Map<String, String> decisionFeature = new HashMap<String, String>();
-
-
-
-			Scanner scan = new Scanner(new File("test-tweets.txt"));
-			//int i = 10;
-			Map<String, Integer> attributes = new HashMap<String, Integer>();
 
 			while (scan.hasNextLine()) {
-				//if (i -- <= 0) break;
+				String  decison = decisionScan.nextLine();
+				String decisionString = decison.split("\t")[1];
 
 				String line = scan.nextLine();
 				String[] array = line.split("\t");
-				outputEmoji(array[1]);
+				// preprocessing
+				String content = array[1];
+				content = content.toLowerCase();
+				content = content.replace("\"", "");
+				content = content.replace("?", "");
+				content = content.replace(",", "");
+				content = content.replace("!", "");
+				content = content.replace(".", "");
+				// content = content.replace(":","");
+				array[1] = content;
 
-				String[] words = array[1].split(" ");
-				for (String word : words ) {
-					AddToCount(attributes, word);
 
-					// if (attributes.containsKey(word.toLowerCase())) {
-					// 	int times = attributes.get(word.toLowerCase());
-					// 	attributes.put(word.toLowerCase(), times + 1);
-					// } else {
-					// 	attributes.put(word.toLowerCase(), 1);
-					// }
+
+				String dataRow = "";
+
+				for (SimpleEntry<String, String> pair : allAttributes) {
+					if (pair.getKey() == "sentiment") {
+						dataRow += decisionString;
+					} else if (pair.getKey() == "id") {
+						dataRow += array[0] + ",";
+					} else {
+						int count = findAsWords(array[1], pair.getKey());
+						dataRow += count + ",";
+					}
 				}
-				//System.out.println(line);
-				//System.out.println("the id is " + array[0] + " content is " + array[1]);
-				//Here you can manipulate the string the way you want
+				System.out.println(dataRow);
 			}
-
-			attributes = sortByValue(attributes);
-			System.out.println();
-			System.out.println(" Map Elements " + attributes.size());
-			System.out.println("\t" + attributes);
-
-			allEmoji = sortByValue(allEmoji);
-
-			System.out.println(" Map Elements " + allEmoji.size());
-
-			System.out.println("\t" + allEmoji);
-
-
-			// for (int i = 0; i < matchList.size(); i++) {
-			// 	System.out.println(i + ":" + matchList.get(i));
-			// }
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -71,13 +89,95 @@ class GenerteFeatures {
 		}
 	}
 
+	public static int findAsWords(String str, String subStr) {
+		String[] allWord = str.split(" ");
+		int count = 0;
+		for (String word : allWord) {
+			if (word.length() <= 0) {continue;}
+			// filter out mentions
+			if (word.charAt(0) == '@') {continue;}
+			// filter out topics
+			if (word.charAt(0) == '#') {continue;}
+			// filtrt out https
+			if (word.indexOf("http") == 0 ) {continue;}
+
+			if (word.equals(subStr)) {
+				count ++;
+			}
+
+			// if (Arrays.asList(stopWords).contains(word.toLowerCase())) {continue;}
+
+			// AddToCount(attributes, word.toLowerCase().replace(":", ""), decisionString);
+
+			// if (Arrays.asList(negationWords).contains(word.toLowerCase())) {
+			// 	AddToCount(attributes, "NEGATIONWORD", decisionString);
+
+			// }
+		}
+		return count;
+	}
+
+	public static int countSubstring(String str, String subStr) {
+
+		int lastIndex = 0;
+		int count = 0;
+
+		while (lastIndex != -1) {
+
+			lastIndex = str.indexOf(subStr, lastIndex);
+
+			if (lastIndex != -1) {
+				count ++;
+				lastIndex += subStr.length();
+			}
+		}
+		return count;
+	}
+
+	public static void printOutPersentage(Map<String, Integer[]> map) {
+		Map<String, Double> percentage = new HashMap<String, Double>();
+		int thereshold = 20;
+		Iterator it = map.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry<String, Integer[]> pair = (Map.Entry<String, Integer[]>)it.next();
+			if ((pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) > thereshold) {
+				// double perc = (pair.getValue()[0] + pair.getValue()[2]) * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) + (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) * 0.0001;
+				double perc = pair.getValue()[2] * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) + (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) * 0.0001;
+				percentage.put(pair.getKey(), round(perc, 4) );
+
+			}
+			// System.out.println(pair.getKey() + " = " + pair.getValue()[0] + " " + pair.getValue()[1] + " " + pair.getValue()[2] + " ");
+			//it.remove(); // avoids a ConcurrentModificationException
+		}
+		percentage = sortByValue(percentage);
+
+
+		Iterator percentageIT = percentage.entrySet().iterator();
+		while (percentageIT.hasNext()) {
+			Map.Entry<String, Double> percPair = (Map.Entry<String, Double>)percentageIT.next();
+			Integer[] data = map.get(percPair.getKey());
+			System.out.println(percPair.getKey() + " = " + percPair.getValue() + " " + (!map.containsKey(percPair.getKey()) ? " " : (data[0] + " " + data[1] + " " + data[2] + " ")));
+			percentageIT.remove(); // avoids a ConcurrentModificationException
+		}
+		// System.out.println("\t" + percentage);
+	}
+
+	public static void printOutNumber(Map<String, Integer[]> map) {
+		Iterator it = map.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry<String, Integer[]> pair = (Map.Entry<String, Integer[]>)it.next();
+			System.out.println(pair.getKey() + " = " + pair.getValue()[0] + " " + pair.getValue()[1] + " " + pair.getValue()[2] + " ");
+			it.remove(); // avoids a ConcurrentModificationException
+		}
+	}
+
 	// to sort the map
-	public static <K, V extends Comparable<? super V>> Map<K, V>
-	sortByValue( Map<K, V> map ) {
+	public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue( Map<K, V> map ) {
 		List<Map.Entry<K, V>> list =
 		    new LinkedList<Map.Entry<K, V>>( map.entrySet() );
 		Collections.sort( list, new Comparator<Map.Entry<K, V>>() {
 			public int compare( Map.Entry<K, V> o1, Map.Entry<K, V> o2 ) {
+				// return (o2.getValue()[0] + o2.getValue()[1] + o2.getValue()[2]).compareTo(o1.getValue()[0] + o1.getValue()[1] + o1.getValue()[2]);
 				return (o2.getValue()).compareTo( o1.getValue() );
 			}
 		} );
@@ -89,14 +189,37 @@ class GenerteFeatures {
 		return result;
 	}
 
-	public static void outputEmoji(String string) throws Exception {
-		String face = ":)";
-		if (string.substring(face) != -1) {
 
+	// 	public static <String, Integer[] extends Comparable<? super Integer[]>> Map<String, Integer[]> sortByValue( Map<String, Integer[]> map ) {
+	// 	List<Map.Entry<String, Integer[]>> list =
+	// 	    new LinkedList<Map.Entry<String, Integer[]>>( map.entrySet() );
+	// 	Collections.sort( list, new Comparator<Map.Entry<String, Integer[]>>() {
+	// 		public int compare( Map.Entry<String, Integer[]> o1, Map.Entry<String, Integer[]> o2 ) {
+	// 			return (o2.getValue()[0]+o2.getValue()[1]+o2.getValue()[2]).compareTo(o1.getValue()[0]+o1.getValue()[1]+o1.getValue()[2]);
+	// 		}
+	// 	} );
+
+	// 	Map<String, Integer[]> result = new LinkedHashMap<String, Integer[]>();
+	// 	for (Map.Entry<String, Integer[]> entry : list) {
+	// 		result.put( entry.getKey(), entry.getValue() );
+	// 	}
+	// 	return result;
+	// }
+
+	public static void outputEmoji(String str, String decisionStr) throws Exception {
+		// String face = ":)";
+		String[] faces = {":-)", ":)", ":D", ":-D", ":P", ":-P", ":(", ":-/", ":/", ";)", "LOL", "HAHA"};
+
+		for (String face : faces) {
+			if (str.toUpperCase().contains(face)) {
+				AddToCount(allEmoji, face, decisionStr);
+				// System.out.println("Get a face" + face + " " + str);
+			}
 		}
 
+
 		String regexPattern = "[\uD83C-\uDBFF\uDC00-\uDFFF]";
-		byte[] utf8 = string.getBytes("UTF-8");
+		byte[] utf8 = str.getBytes("UTF-8");
 
 		String string1 = new String(utf8, "UTF-8");
 
@@ -104,27 +227,78 @@ class GenerteFeatures {
 		Matcher matcher = pattern.matcher(string1);
 
 		while (matcher.find()) {
-			AddToCount(allEmoji, matcher.group());
-			// if (allEmoji.containsKey(matcher.group())) {
-			// 	int times = allEmoji.get(matcher.group());
-			// 	allEmoji.put(matcher.group(), times + 1);
-			// } else {
-			// 	allEmoji.put(matcher.group(), 1);
-			// }
-			// matchList.add(matcher.group());
+			AddToCount(allEmoji, matcher.group(), decisionStr);
 		}
 
 	}
 
-	public static void AddToCount(Map<String, Integer> map, String key) {
+	public static void AddToCount(Map<String, Integer[]> map, String key, String decisionStr) {
+		Integer[] countArray = new Integer[3];
+		countArray[0] = 0;
+		countArray[1] = 0;
+		countArray[2] = 0;
+
 		if (map.containsKey(key)) {
-			int times = map.get(key);
-			map.put(key, times + 1);
+			countArray = map.get(key);
+			// System.out.println("have the key " + key + " " + countArray[0] + " " + countArray[1] + " " + countArray[2] + " " + decisionStr);
+
 		} else {
-			map.put(key, 1);
+
 		}
+
+		if (decisionStr.equals(negative)) {
+			countArray[0] += 1;
+		} else if (decisionStr.equals(neutral)) {
+			countArray[1] += 1;
+		} else if (decisionStr.equals(positive) ) {
+			countArray[2] += 1;
+		}
+
+
+		map.put(key, countArray);
 	}
 
+	public static double round(double value, int places) {
+		if (places < 0) throw new IllegalArgumentException();
 
+		long factor = (long) Math.pow(10, places);
+		value = value * factor;
+		long tmp = Math.round(value);
+		return (double) tmp / factor;
+	}
+	public static String[] negationWords = {
+		"without", "no", "nor", "not", "cannot", "few",
+		"neither", "never", "nobody", "non", "none", "nothing", "nowhere",
+		"can't", "cannot", "couldn't", "didn't", "doesn't", "don't", "hadn't",
+		"hasn't", "haven't", "isn't", "mustn't",
+		"shan't", "shouldn't", "wasn't", "weren't", "won't", "wouldn't",
+		"aren't"
+	};
 
+	public static String[] stopWords = {
+		"see", "unless", "due", "also", "must", "might", "like",
+		//"]","[", "}", "{", "<", ">", "?", "\"", "\\", "/", ")", "(",
+		"will", "may",
+		"can", "much", "every", "the", "in", "other", "this", "the", "many", "any",
+		"an", "or", "for", "in", "an", "an ", "is", "a", "about", "above", "after",
+		"again", "against", "all", "am", "an", "and", "any", "are", "aren't", "as",
+		"at", "be", "because", "been", "before", "being", "below", "between",
+		"both", "but", "by",  "could", "did",
+		"do", "does", "doing",  "down", "during", "each", "few",
+		"for", "from", "further", "had",  "has",  "have",
+		"having", "he", "he'd", "he'll", "he's", "her", "here", "here's", "hers",
+		"herself", "him", "himself", "his", "how", "how's", "i ", " i", "i'd", "i'll",
+		"i'm", "i've", "if", "in", "into", "is", "it", "it's", "its", "itself",
+		"let's", "me", "more", "most",  "my", "myself",
+		"of", "off", "on", "once", "only", "ought", "our", "ours", "ourselves",
+		"out", "over", "own", "same",  "she", "she'd", "she'll", "she's",
+		"should",  "so", "some", "such", "than", "that", "that's", "their",
+		"theirs", "them", "themselves", "then", "there", "there's", "these", "they",
+		"they'd", "they'll", "they're", "they've", "this", "those", "through", "to",
+		"too", "under", "until", "up", "very", "was",  "we", "we'd",
+		"we'll", "we're", "we've", "were",  "what", "what's", "when",
+		"when's", "where", "where's", "which", "while", "who", "who's", "whom",
+		"why", "why's", "with", "would", "you", "you'd", "you'll",
+		"you're", "you've", "your", "yours", "yourself", "yourselves"
+	};
 }

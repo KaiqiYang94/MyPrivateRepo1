@@ -20,7 +20,7 @@ class getAttributes {
 	public static void main(String args[]) {
 		try {
 
-			String mode = "dev";
+			String mode = "train";
 
 			Scanner decisionScan = new Scanner(new File(mode + "-labels.txt"));
 
@@ -90,12 +90,13 @@ class getAttributes {
 
 	public static void printOutPersentage(Map<String, Integer[]> map) {
 		Map<String, Double> percentage = new HashMap<String, Double>();
-		int thereshold = 3;
+		int thereshold = 20;
 		Iterator it = map.entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry<String, Integer[]> pair = (Map.Entry<String, Integer[]>)it.next();
 			if ((pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) > thereshold) {
-				double perc = pair.getValue()[0] * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]);
+				// double perc = (pair.getValue()[0] + pair.getValue()[2]) * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) + (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) * 0.0001;
+				double perc = pair.getValue()[2] * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) + (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) * 0.0001;
 				percentage.put(pair.getKey(), round(perc, 4) );
 
 			}
@@ -109,7 +110,7 @@ class getAttributes {
 		while (percentageIT.hasNext()) {
 			Map.Entry<String, Double> percPair = (Map.Entry<String, Double>)percentageIT.next();
 			Integer[] data = map.get(percPair.getKey()); 
-			System.out.println(percPair.getKey() + " = " + percPair.getValue() + " " + (!map.containsKey(percPair.getKey())? " " :(data[0]+ " " + data[1] + " " + data[2] + " ")));
+			System.out.println("allAttributes.put(\""+ percPair.getKey() + "\", \"NUMERIC\");" + "// = " + percPair.getValue() + " " + (!map.containsKey(percPair.getKey())? " " :(data[0]+ " " + data[1] + " " + data[2] + " ")));
 			percentageIT.remove(); // avoids a ConcurrentModificationException
 		}
 		 // System.out.println("\t" + percentage);
