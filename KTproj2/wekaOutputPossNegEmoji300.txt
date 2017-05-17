@@ -1,0 +1,49 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     twitter-posi-tops
+Instances:    4926
+Attributes:   300
+              [list of attributes omitted]
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 39.48 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 1.99 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        3537               71.8027 %
+Incorrectly Classified Instances      1389               28.1973 %
+Kappa statistic                          0.5103
+Mean absolute error                      0.2842
+Root mean squared error                  0.365 
+Relative absolute error                 67.9811 %
+Root relative squared error             79.8494 %
+Total Number of Instances             4926     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.561    0.035    0.874      0.561    0.684      0.611    0.856     0.786     positive
+                 0.422    0.012    0.907      0.422    0.576      0.563    0.835     0.674     negative
+                 0.943    0.485    0.649      0.943    0.769      0.504    0.800     0.752     neutral
+Weighted Avg.    0.718    0.249    0.771      0.718    0.703      0.549    0.824     0.746     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  835    8  645 |    a = positive
+   21  438  579 |    b = negative
+   99   37 2264 |    c = neutral
+
