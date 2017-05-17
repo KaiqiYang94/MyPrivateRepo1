@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
+
 class getAttributes {
 
 	static String negative = "negative";
@@ -26,6 +27,8 @@ class getAttributes {
 
 			Scanner scan = new Scanner(new File(mode + "-tweets.txt"));
 
+
+			Stemmer s = new Stemmer();
 
 			while (scan.hasNextLine()) {
 				String  decison = decisionScan.nextLine();
@@ -50,6 +53,13 @@ class getAttributes {
 				// for words
 				String[] words = array[1].split(" ");
 				for (String word : words ) {
+
+					// stemming
+					s.add(word.toCharArray(), word.length());
+					s.stem();
+					word = s.toString();
+
+
 					if (word.length() <= 0) {continue;}
 					// filter out mentions
 					if (word.charAt(0) == '@') {continue;}
@@ -109,12 +119,12 @@ class getAttributes {
 		Iterator percentageIT = percentage.entrySet().iterator();
 		while (percentageIT.hasNext()) {
 			Map.Entry<String, Double> percPair = (Map.Entry<String, Double>)percentageIT.next();
-			Integer[] data = map.get(percPair.getKey()); 
+			Integer[] data = map.get(percPair.getKey());
 
-			System.out.println("allAttributes.add(new SimpleEntry(\""+ percPair.getKey() + "\", \"NUMERIC\"));" + "// = " + percPair.getValue() + " " + (!map.containsKey(percPair.getKey())? " " :(data[0]+ " " + data[1] + " " + data[2] + " ")));
+			System.out.println("allAttributes.add(new SimpleEntry(\"" + percPair.getKey() + "\", \"NUMERIC\"));" + "// = " + percPair.getValue() + " " + (!map.containsKey(percPair.getKey()) ? " " : (data[0] + " " + data[1] + " " + data[2] + " ")));
 			percentageIT.remove(); // avoids a ConcurrentModificationException
 		}
-		 // System.out.println("\t" + percentage);
+		// System.out.println("\t" + percentage);
 	}
 
 	public static void printOutNumber(Map<String, Integer[]> map) {
@@ -213,14 +223,14 @@ class getAttributes {
 		map.put(key, countArray);
 	}
 
-public static double round(double value, int places) {
-    if (places < 0) throw new IllegalArgumentException();
+	public static double round(double value, int places) {
+		if (places < 0) throw new IllegalArgumentException();
 
-    long factor = (long) Math.pow(10, places);
-    value = value * factor;
-    long tmp = Math.round(value);
-    return (double) tmp / factor;
-}
+		long factor = (long) Math.pow(10, places);
+		value = value * factor;
+		long tmp = Math.round(value);
+		return (double) tmp / factor;
+	}
 	public static String[] negationWords = {
 		"without", "no", "nor", "not", "cannot", "few",
 		"neither", "never", "nobody", "non", "none", "nothing", "nowhere",
