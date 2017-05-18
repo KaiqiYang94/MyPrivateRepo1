@@ -100,7 +100,7 @@ class getAttributes {
 
 	public static void printOutPersentage(Map<String, Integer[]> map) {
 		Map<String, Double> percentage = new HashMap<String, Double>();
-		int thereshold = 5;
+		int thereshold = 20;
 		Iterator it = map.entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry<String, Integer[]> pair = (Map.Entry<String, Integer[]>)it.next();
