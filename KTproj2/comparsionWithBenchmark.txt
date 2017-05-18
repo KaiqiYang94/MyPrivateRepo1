@@ -346,3 +346,5 @@ allAttributes.add(new SimpleEntry("combo", "NUMERIC"));// = 0.8339 0 1 5
 allAttributes.add(new SimpleEntry("curs", "NUMERIC"));// = 0.8339 4 1 1 
 allAttributes.add(new SimpleEntry("nonsens", "NUMERIC"));// = 0.8339 5 1 0 
 allAttributes.add(new SimpleEntry("utterli", "NUMERIC"));// = 0.8339 2 1 3 
+
+
