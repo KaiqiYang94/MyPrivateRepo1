@@ -26,6 +26,107 @@ class GenerateFeatures {
 	static Stemmer s = new Stemmer();
 
 	public static void initialization() {
+
+//////////////// th 20 results 
+		// allAttributes.add(new SimpleEntry("i", "NUMERIC"));// = 1.0984 1044 2099 1957 
+		// allAttributes.add(new SimpleEntry("NEGATIONWORD", "NUMERIC"));// = 1.0381 1748 2252 940 
+		// allAttributes.add(new SimpleEntry("fantast", "NUMERIC"));// = 0.9767 1 1 35 
+		// allAttributes.add(new SimpleEntry("excit", "NUMERIC"));// = 0.9723 7 6 130 
+		// allAttributes.add(new SimpleEntry("disgust", "NUMERIC"));// = 0.9545 20 1 0 
+		// allAttributes.add(new SimpleEntry("amaz", "NUMERIC"));// = 0.9534 2 5 83 
+		// allAttributes.add(new SimpleEntry("idiot", "NUMERIC"));// = 0.948 33 2 1 
+		// allAttributes.add(new SimpleEntry("awesom", "NUMERIC"));// = 0.9464 2 5 74 
+		// allAttributes.add(new SimpleEntry("happi", "NUMERIC"));// = 0.9399 23 35 305 
+		// allAttributes.add(new SimpleEntry("incred", "NUMERIC"));// = 0.9386 3 2 26 
+		// allAttributes.add(new SimpleEntry("brilliant", "NUMERIC"));// = 0.9386 2 2 27 
+		// allAttributes.add(new SimpleEntry("&lt;3", "NUMERIC"));// = 0.9363 2 2 26 
+		// allAttributes.add(new SimpleEntry("worst", "NUMERIC"));// = 0.9328 50 4 1 
+		// allAttributes.add(new SimpleEntry("nazi", "NUMERIC"));// = 0.9089 89 10 0 
+		// allAttributes.add(new SimpleEntry("cream", "NUMERIC"));// = 0.9082 0 17 141 
+		// allAttributes.add(new SimpleEntry("love", "NUMERIC"));// = 0.9037 40 91 456 
+		// allAttributes.add(new SimpleEntry("stupid", "NUMERIC"));// = 0.9024 50 6 2 
+		// allAttributes.add(new SimpleEntry("bless", "NUMERIC"));// = 0.8938 3 10 74 
+		// allAttributes.add(new SimpleEntry("enjoi", "NUMERIC"));// = 0.8892 9 15 98 
+		// allAttributes.add(new SimpleEntry("dumb", "NUMERIC"));// = 0.8774 19 3 2 
+		// allAttributes.add(new SimpleEntry("suck", "NUMERIC"));// = 0.877 35 6 6 
+		// allAttributes.add(new SimpleEntry("cute", "NUMERIC"));// = 0.8757 3 5 31 
+		// allAttributes.add(new SimpleEntry("fun", "NUMERIC"));// = 0.8741 9 12 68 
+		// allAttributes.add(new SimpleEntry("fuck", "NUMERIC"));// = 0.8731 161 35 37 
+		// allAttributes.add(new SimpleEntry("proud", "NUMERIC"));// = 0.8722 4 5 29 
+		// allAttributes.add(new SimpleEntry("excel", "NUMERIC"));// = 0.8719 1 3 19 
+		// allAttributes.add(new SimpleEntry("crimin", "NUMERIC"));// = 0.8697 26 4 0 
+		// allAttributes.add(new SimpleEntry("perfect", "NUMERIC"));// = 0.8679 4 8 46 
+		// allAttributes.add(new SimpleEntry("omg", "NUMERIC"));// = 0.8678 10 7 34 
+		// allAttributes.add(new SimpleEntry("murder", "NUMERIC"));// = 0.8647 31 5 0 
+		// allAttributes.add(new SimpleEntry("racist", "NUMERIC"));// = 0.8551 55 10 1 
+		// allAttributes.add(new SimpleEntry("damn", "NUMERIC"));// = 0.8534 28 9 22 
+		// allAttributes.add(new SimpleEntry("li", "NUMERIC"));// = 0.8501 32 6 1 
+		// allAttributes.add(new SimpleEntry("supremacist", "NUMERIC"));// = 0.8497 68 13 1 
+		// allAttributes.add(new SimpleEntry("ignor", "NUMERIC"));// = 0.8453 36 7 1 
+		// allAttributes.add(new SimpleEntry("disappoint", "NUMERIC"));// = 0.8425 19 4 2 
+		// allAttributes.add(new SimpleEntry("great", "NUMERIC"));// = 0.842 33 68 251 
+		// allAttributes.add(new SimpleEntry("shit", "NUMERIC"));// = 0.841 120 35 41 
+		// allAttributes.add(new SimpleEntry("dog", "NUMERIC"));// = 0.8391 18 33 133 
+		// allAttributes.add(new SimpleEntry("trust", "NUMERIC"));// = 0.8357 14 4 6 
+		// allAttributes.add(new SimpleEntry("hilari", "NUMERIC"));// = 0.8357 7 4 13 
+		allAttributes.add(new SimpleEntry("congrat", "NUMERIC"));// = 0.8204 0 4 18 
+		allAttributes.add(new SimpleEntry("ridicul", "NUMERIC"));// = 0.8204 16 4 2 
+		allAttributes.add(new SimpleEntry("wors", "NUMERIC"));// = 0.8183 34 8 1 
+		allAttributes.add(new SimpleEntry("paid", "NUMERIC"));// = 0.8137 22 8 12 
+		allAttributes.add(new SimpleEntry("threaten", "NUMERIC"));// = 0.8116 17 4 0 
+		allAttributes.add(new SimpleEntry("ly", "NUMERIC"));// = 0.8103 20 5 1 
+		allAttributes.add(new SimpleEntry("piss", "NUMERIC"));// = 0.8096 23 6 2 
+		allAttributes.add(new SimpleEntry("nobodi", "NUMERIC"));// = 0.8096 16 6 9 
+		allAttributes.add(new SimpleEntry("forev", "NUMERIC"));// = 0.8092 7 7 22 
+		allAttributes.add(new SimpleEntry("sick", "NUMERIC"));// = 0.809 30 8 3 
+		allAttributes.add(new SimpleEntry("best", "NUMERIC"));// = 0.8046 28 95 280 
+		allAttributes.add(new SimpleEntry("corrupt", "NUMERIC"));// = 0.804 31 8 1 
+		allAttributes.add(new SimpleEntry("favorit", "NUMERIC"));// = 0.8033 2 13 49 
+		allAttributes.add(new SimpleEntry("fat", "NUMERIC"));// = 0.8025 18 5 2 
+		allAttributes.add(new SimpleEntry("emot", "NUMERIC"));// = 0.8025 8 5 12 
+		allAttributes.add(new SimpleEntry("threat", "NUMERIC"));// = 0.8025 19 5 1 
+		allAttributes.add(new SimpleEntry("welcom", "NUMERIC"));// = 0.8017 4 11 39 
+		allAttributes.add(new SimpleEntry("janet", "NUMERIC"));// = 0.7993 4 18 64 
+		allAttributes.add(new SimpleEntry("hell", "NUMERIC"));// = 0.799 51 20 24 
+		allAttributes.add(new SimpleEntry("bitch", "NUMERIC"));// = 0.7989 40 12 6 
+		allAttributes.add(new SimpleEntry("shame", "NUMERIC"));// = 0.7975 22 7 5 
+		allAttributes.add(new SimpleEntry("leftist", "NUMERIC"));// = 0.7955 61 17 2 
+		allAttributes.add(new SimpleEntry("good", "NUMERIC"));// = 0.7945 73 157 363 
+		allAttributes.add(new SimpleEntry("pretti", "NUMERIC"));// = 0.7942 18 20 55 
+		allAttributes.add(new SimpleEntry("bloodi", "NUMERIC"));// = 0.7919 31 10 6 
+		allAttributes.add(new SimpleEntry("wow", "NUMERIC"));// = 0.7899 12 17 49 
+		allAttributes.add(new SimpleEntry("treat", "NUMERIC"));// = 0.7899 12 9 21 
+		allAttributes.add(new SimpleEntry("absolut", "NUMERIC"));// = 0.785 15 11 24 
+		allAttributes.add(new SimpleEntry("crap", "NUMERIC"));// = 0.7849 15 5 3 
+		allAttributes.add(new SimpleEntry("thi", "NUMERIC"));// = 0.7844 535 843 641 
+		allAttributes.add(new SimpleEntry("ass", "NUMERIC"));// = 0.7824 55 23 23 
+		allAttributes.add(new SimpleEntry("beauti", "NUMERIC"));// = 0.7794 2 19 62 
+		allAttributes.add(new SimpleEntry("kill", "NUMERIC"));// = 0.779 159 58 20 
+		allAttributes.add(new SimpleEntry("dai", "NUMERIC"));// = 0.7779 148 505 743 
+		allAttributes.add(new SimpleEntry("hot", "NUMERIC"));// = 0.7769 14 51 144 
+		allAttributes.add(new SimpleEntry("liber", "NUMERIC"));// = 0.7765 98 31 2 
+		allAttributes.add(new SimpleEntry("ruin", "NUMERIC"));// = 0.7749 23 8 4 
+		allAttributes.add(new SimpleEntry("luck", "NUMERIC"));// = 0.7744 7 12 33 
+		allAttributes.add(new SimpleEntry("charact", "NUMERIC"));// = 0.7731 9 9 21 
+		allAttributes.add(new SimpleEntry("birthdai", "NUMERIC"));// = 0.7708 9 52 147 
+		allAttributes.add(new SimpleEntry("alt-rightist", "NUMERIC"));// = 0.7697 22 7 1 
+		allAttributes.add(new SimpleEntry("thank", "NUMERIC"));// = 0.769 26 78 195 
+		allAttributes.add(new SimpleEntry("fake", "NUMERIC"));// = 0.7677 53 17 1 
+		allAttributes.add(new SimpleEntry("nice", "NUMERIC"));// = 0.7676 6 25 72 
+		allAttributes.add(new SimpleEntry("terrorist", "NUMERIC"));// = 0.7673 60 20 3 
+		allAttributes.add(new SimpleEntry("glad", "NUMERIC"));// = 0.7661 7 10 25 
+		allAttributes.add(new SimpleEntry("fals", "NUMERIC"));// = 0.764 15 5 1 
+		allAttributes.add(new SimpleEntry("feed", "NUMERIC"));// = 0.7625 12 6 7 
+		allAttributes.add(new SimpleEntry("hate", "NUMERIC"));// = 0.7625 113 43 13 
+		allAttributes.add(new SimpleEntry("tomorrow", "NUMERIC"));// = 0.7621 216 863 901 
+		allAttributes.add(new SimpleEntry("nation", "NUMERIC"));// = 0.7619 39 99 223 
+		allAttributes.add(new SimpleEntry("respect", "NUMERIC"));// = 0.76 19 13 21 
+		allAttributes.add(new SimpleEntry("can't", "NUMERIC"));// = 0.7577 121 123 187 
+		allAttributes.add(new SimpleEntry("mai", "NUMERIC"));// = 0.7577 603 1224 664 
+		allAttributes.add(new SimpleEntry("ant-man", "NUMERIC"));// = 0.7564 13 53 135 
+		allAttributes.add(new SimpleEntry("holi", "NUMERIC"));// = 0.754 6 10 24 
+
+// th 5 results?
 		// allAttributes.add(new SimpleEntry("id", "NUMERIC"));
 		allAttributes.add(new SimpleEntry("i", "NUMERIC"));// = 1.0984 1044 2099 1957 
 allAttributes.add(new SimpleEntry("NEGATIONWORD", "NUMERIC"));// = 1.0381 1748 2252 940 
@@ -246,7 +347,7 @@ allAttributes.add(new SimpleEntry("utterli", "NUMERIC"));// = 0.8339 2 1 3
 
 
 
-			String mode = "train";
+			String mode = "dev";
 
 			Scanner decisionScan = new Scanner(new File(mode + "-labels.txt"));
 

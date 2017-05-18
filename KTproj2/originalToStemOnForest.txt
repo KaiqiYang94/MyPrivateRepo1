@@ -313,3 +313,52 @@ Weighted Avg.    0.550    0.412    0.628      0.550    0.464      0.237    0.622
    75   28 2297 |    c = neutral
 
 
+--------------- stemmed-emoji-NegAndPossi-top 200 forest on train data Add 50 more th20 ---------------
+
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     twitter-posi-tops
+Instances:    4926
+Attributes:   255
+              [list of attributes omitted]
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 23.46 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        2944               59.7645 %
+Incorrectly Classified Instances      1982               40.2355 %
+Kappa statistic                          0.2934
+Mean absolute error                      0.3442
+Root mean squared error                  0.4267
+Relative absolute error                 82.3327 %
+Root relative squared error             93.3321 %
+Total Number of Instances             4926     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.438    0.094    0.668      0.438    0.529      0.396    0.747     0.609     positive
+                 0.218    0.033    0.635      0.218    0.324      0.290    0.694     0.435     negative
+                 0.861    0.605    0.575      0.861    0.689      0.288    0.663     0.596     neutral
+Weighted Avg.    0.598    0.330    0.616      0.598    0.564      0.321    0.695     0.566     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  652   40  796 |    a = positive
+   80  226  732 |    b = negative
+  244   90 2066 |    c = neutral
+
+
