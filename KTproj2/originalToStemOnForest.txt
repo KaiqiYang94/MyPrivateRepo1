@@ -361,4 +361,56 @@ Weighted Avg.    0.598    0.330    0.616      0.598    0.564      0.321    0.695
    80  226  732 |    b = negative
   244   90 2066 |    c = neutral
 
+---------Correct comparisoin  stemmed-emoji-NegAndPossi-top 200 forest on train data Add 50 more th20 -
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     twitter-posi-tops
+Instances:    22987
+Attributes:   255
+              [list of attributes omitted]
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 360.97 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 2.14 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        3026               61.4292 %
+Incorrectly Classified Instances      1900               38.5708 %
+Kappa statistic                          0.326 
+Mean absolute error                      0.3362
+Root mean squared error                  0.421 
+Relative absolute error                 80.5968 %
+Root relative squared error             92.0468 %
+Total Number of Instances             4926     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.442    0.079    0.709      0.442    0.545      0.427    0.769     0.628     positive
+                 0.271    0.041    0.640      0.271    0.381      0.329    0.724     0.457     negative
+                 0.870    0.583    0.586      0.870    0.700      0.320    0.683     0.616     neutral
+Weighted Avg.    0.614    0.316    0.635      0.614    0.586      0.354    0.718     0.586     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  658   43  787 |    a = positive
+   72  281  685 |    b = negative
+  198  115 2087 |    c = neutral
+
 

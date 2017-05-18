@@ -48,7 +48,9 @@ yes @ATTRIBUTE supremacists NUMERIC
 no @ATTRIBUTE trump NUMERIC
 
 
-		allAttributes.add(new SimpleEntry("i", "NUMERIC"));// = 1.0984 1044 2099 1957 
+
+------------------------------ top 20 results
+ 		allAttributes.add(new SimpleEntry("i", "NUMERIC"));// = 1.0984 1044 2099 1957 
 		allAttributes.add(new SimpleEntry("NEGATIONWORD", "NUMERIC"));// = 1.0381 1748 2252 940 
 		allAttributes.add(new SimpleEntry("fantast", "NUMERIC"));// = 0.9767 1 1 35 
 		allAttributes.add(new SimpleEntry("excit", "NUMERIC"));// = 0.9723 7 6 130 
@@ -147,6 +149,7 @@ no @ATTRIBUTE trump NUMERIC
 		allAttributes.add(new SimpleEntry("holi", "NUMERIC"));// = 0.754 6 10 24 
 
 
+------------- top 5 results -----------------------
 allAttributes.add(new SimpleEntry("NEGATIONWORD", "NUMERIC"));// = 1.0381 1748 2252 940 
 allAttributes.add(new SimpleEntry("scam", "NUMERIC"));// = 1.0014 14 0 0 
 allAttributes.add(new SimpleEntry("zionist", "NUMERIC"));// = 1.0012 10 0 2 
