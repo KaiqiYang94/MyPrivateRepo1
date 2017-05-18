@@ -307,10 +307,11 @@ class GenerateFeatures {
 						int count = 0 ;
 						for (String negationword : negationWords) {
 							count += findAsWords(array[1], negationword);
-							if (count != 0) {
-								break;
-							}
+							// if (count != 0) {
+							// 	break;
+							// }
 						}
+						count = count % 2;
 
 						dataRow += count + ",";
 					} else {
