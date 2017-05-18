@@ -1,0 +1,225 @@
+-------------------- The stemmed-emoji-NegAndPossi-top 200 forest on dev data--------------------
+
+
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.InfoGainAttributeEval 
+Search:       weka.attributeSelection.Ranker -T -1.7976931348623157E308 -N -1
+Relation:     twitter-posi-tops
+Instances:    4926
+Attributes:   199
+              [list of attributes omitted]
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Attribute ranking.
+
+Attribute Evaluator (supervised, Class (nominal): 199 sentiment):
+	Information Gain Ranking Filter
+
+Ranked attributes:
+ 0.01874     64 love
+ 0.01524     48 happi
+ 0.00995    108 fuck
+ 0.00962    147 great
+ 0.0096      43 excit
+ 0.00855    197 POSIEMOJI
+ 0.00843      2 NEGATIONWORD
+ 0.00602      1 i
+ 0.00597    198 NEGEMOJI
+ 0.00564     63 cream
+ 0.00563    149 dog
+ 0.00521     72 bless
+ 0.00511    137 supremacist
+ 0.0051      53 worst
+ 0.00501     45 amaz
+ 0.00392     62 nazi
+ 0.00383     84 enjoi
+ 0.00377    148 shit
+ 0.00364     47 awesom
+ 0.00329    134 racist
+ 0.0032      87 suck
+ 0.00311     65 stupid
+ 0.00281    153 favourit
+ 0.00274     56 moron
+ 0.00261    116 murder
+ 0.00242    114 perfect
+ 0.00242     42 fantast
+ 0.00228    117 enemi
+ 0.00225     46 idiot
+ 0.00184    146 disappoint
+ 0.00183     19 disast
+ 0.00176    109 proud
+ 0.00173    107 fun
+ 0.00172    106 cute
+ 0.00137      5 disgrac
+ 0.00137    111 crimin
+ 0.00137     32 whine
+ 0.00137     86 dumb
+ 0.00137     67 divid
+ 0.00137    112 bullshit
+ 0.00137    145 ignor
+ 0.00136    136 li
+ 0.00105    131 fave
+ 0.00105    128 pleasur
+ 0.00105     51 brilliant
+ 0.00105    176 bloodborn
+ 0.00105     27 almighti
+ 0.00105     20 cutest
+ 0.00105     79 delight
+ 0           80 toler
+ 0           76 enforc
+ 0           75 dislik
+ 0           54 fascist
+ 0           77 loos
+ 0           78 unbreak
+ 0           55 attract
+ 0           74 terrifi
+ 0           81 ❤️
+ 0           52 &lt;3
+ 0           57 hip
+ 0           73 yai
+ 0          193 combo
+ 0           68 pussi
+ 0           66 addict
+ 0           61 msm
+ 0           69 garbag
+ 0           70 mood
+ 0           60 lib
+ 0           71 roast
+ 0           58 pathet
+ 0           59 corbyn
+ 0           82 dnc
+ 0          189 clue
+ 0           50 incred
+ 0           14 merri
+ 0           13 harass
+ 0           23 nite
+ 0           15 ▓
+ 0           16 fascin
+ 0           17 assang
+ 0           18 vet
+ 0           21 sock
+ 0           12 extremist
+ 0           11 neo
+ 0           10 ❤
+ 0            4 zionist
+ 0          196 utterli
+ 0            3 scam
+ 0            6 puppet
+ 0            9 delici
+ 0            7 scum
+ 0            8 nightmar
+ 0           22 vibe
+ 0           24 asham
+ 0           49 violent
+ 0           39 shoutout
+ 0           38 tyrant
+ 0           25 handsom
+ 0           40 deadli
+ 0           41 otra
+ 0          195 nonsens
+ 0           44 disgust
+ 0          194 curs
+ 0           37 unpopular
+ 0           36 niec
+ 0           35 stir
+ 0           29 sweetheart
+ 0           26 memor
+ 0           28 rage
+ 0           30 happier
+ 0           34 hottest
+ 0           31 rogu
+ 0           33 40
+ 0           83 ton
+ 0           95 tf
+ 0           85 trash
+ 0          160 hitler
+ 0          159 shitti
+ 0          167 sensibl
+ 0          161 dirti
+ 0          162 profit
+ 0          163 insur
+ 0          164 traitor
+ 0          165 jfk
+ 0          158 boruto
+ 0          157 mp
+ 0          156 corpor
+ 0          150 trust
+ 0          144 sexual
+ 0          190 arrog
+ 0          151 hilari
+ 0          155 easili
+ 0          152 horribl
+ 0          154 mubarak
+ 0          166 harry
+ 0          168 rot
+ 0          142 adult
+ 0          182 divorc
+ 0          181 ia
+ 0          169 melt
+ 0          183 rc
+ 0          184 supremaci
+ 0          185 margin
+ 0          186 hatr
+ 0          187 witch
+ 0          180 forgotten
+ 0          179 flavor
+ 0          178 wreck
+ 0          172 cruel
+ 0          170 disavow
+ 0          171 steak
+ 0          173 😒
+ 0          177 2dai
+ 0          174 people
+ 0          175 ^^
+ 0          143 healthi
+ 0          141 nope
+ 0           88 coolest
+ 0          100 non
+ 0          192 wld
+ 0          110 excel
+ 0          101 employe
+ 0          102 dust
+ 0          103 cult
+ 0          104 gorgeou
+ 0          105 amen
+ 0           98 communist
+ 0           97 celeb
+ 0           96 lee
+ 0           91 pit
+ 0           89 funniest
+ 0           90 denial
+ 0           92 belgium
+ 0          188 nbc
+ 0           93 asian
+ 0           94 stoke
+ 0          191 unfollow
+ 0          113 stole
+ 0          140 hop
+ 0          130 snake
+ 0          129 innov
+ 0          115 omg
+ 0          132 hunt
+ 0          133 swim
+ 0          135 damn
+ 0          138 scoop
+ 0          139 privileg
+ 0          127 wee
+ 0          126 object
+ 0          125 mayor
+ 0          120 isil
+ 0          118 ;
+ 0          119 rnc
+ 0          121 wherev
+ 0          124 thatd
+ 0          122 rude
+ 0          123 racial
+ 0           99 leftov
+
+Selected attributes: 64,48,108,147,43,197,2,1,198,63,149,72,137,53,45,62,84,148,47,134,87,65,153,56,116,114,42,117,46,146,19,109,107,106,5,111,32,86,67,112,145,136,131,128,51,176,27,20,79,80,76,75,54,77,78,55,74,81,52,57,73,193,68,66,61,69,70,60,71,58,59,82,189,50,14,13,23,15,16,17,18,21,12,11,10,4,196,3,6,9,7,8,22,24,49,39,38,25,40,41,195,44,194,37,36,35,29,26,28,30,34,31,33,83,95,85,160,159,167,161,162,163,164,165,158,157,156,150,144,190,151,155,152,154,166,168,142,182,181,169,183,184,185,186,187,180,179,178,172,170,171,173,177,174,175,143,141,88,100,192,110,101,102,103,104,105,98,97,96,91,89,90,92,188,93,94,191,113,140,130,129,115,132,133,135,138,139,127,126,125,120,118,119,121,124,122,123,99 : 198
+
