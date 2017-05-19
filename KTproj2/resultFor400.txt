@@ -2763,3 +2763,107 @@ Weighted Avg.    0.626    0.306    0.651      0.626    0.604      0.376    0.730
    60  331  647 |    b = negative
   198  135 2067 |    c = neutral
 
+
+
+
+
+
+
+
+  ------------------------------------- KNN 1 ------------------------------------------------
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 1 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     twitter-posi-tops
+Instances:    22987
+Attributes:   394
+              [list of attributes omitted]
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.04 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 214.69 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        3051               61.9367 %
+Incorrectly Classified Instances      1875               38.0633 %
+Kappa statistic                          0.3489
+Mean absolute error                      0.3258
+Root mean squared error                  0.4342
+Relative absolute error                 78.1035 %
+Root relative squared error             94.9238 %
+Total Number of Instances             4926     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.472    0.090    0.695      0.472    0.562      0.435    0.753     0.601     positive
+                 0.353    0.061    0.608      0.353    0.446      0.363    0.722     0.444     negative
+                 0.826    0.527    0.598      0.826    0.694      0.319    0.674     0.604     neutral
+Weighted Avg.    0.619    0.296    0.630      0.619    0.602      0.363    0.708     0.569     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  703   54  731 |    a = positive
+   73  366  599 |    b = negative
+  236  182 1982 |    c = neutral
+
+
+  ------------------------------------- KNN 3 ------------------------------------------------
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 3 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     twitter-posi-tops
+Instances:    22987
+Attributes:   394
+              [list of attributes omitted]
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 3 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.03 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 217.72 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        3079               62.5051 %
+Incorrectly Classified Instances      1847               37.4949 %
+Kappa statistic                          0.3568
+Mean absolute error                      0.3286
+Root mean squared error                  0.4194
+Relative absolute error                 78.7737 %
+Root relative squared error             91.699  %
+Total Number of Instances             4926     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.485    0.086    0.709      0.485    0.576      0.452    0.782     0.636     positive
+                 0.348    0.053    0.634      0.348    0.449      0.375    0.747     0.476     negative
+                 0.832    0.532    0.598      0.832    0.696      0.321    0.690     0.632     neutral
+Weighted Avg.    0.625    0.296    0.639      0.625    0.608      0.372    0.730     0.600     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  721   36  731 |    a = positive
+   65  361  612 |    b = negative
+  231  172 1997 |    c = neutral
+
