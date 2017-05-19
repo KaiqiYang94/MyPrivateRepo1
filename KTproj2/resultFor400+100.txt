@@ -1,0 +1,3341 @@
+bayes----------------------------------------------
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     twitter-posi-tops
+Instances:    22987
+Attributes:   489
+              [list of attributes omitted]
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                  Class
+Attribute      positive negative  neutral
+                 (0.28)   (0.22)    (0.5)
+==========================================
+delici
+  mean            0.0015        0        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+❤
+  mean            0.0014        0        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+merri
+  mean            0.0012        0        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+▓
+  mean            0.0012        0        0
+  std. dev.       1.3333   1.3333   1.3333
+  weight sum        6471     5062    11454
+  precision            8        8        8
+
+cutest
+  mean            0.0011        0        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+vibe
+  mean            0.0011        0        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+handsom
+  mean            0.0011        0        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+otra
+  mean            0.0009        0        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fantast
+  mean            0.0054   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+amaz
+  mean            0.0128   0.0004   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+excit
+  mean            0.0201   0.0014   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+awesom
+  mean            0.0114   0.0004   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cream
+  mean            0.0216        0   0.0015
+  std. dev.       0.1762   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+i
+  mean            0.3024   0.2062   0.1833
+  std. dev.       0.6099   0.5154   0.4845
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+unbreak
+  mean            0.0012        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+delight
+  mean            0.0012        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+❤️
+  mean            0.0012        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+happi
+  mean            0.0471   0.0045   0.0031
+  std. dev.       0.2233   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+coolest
+  mean            0.0011        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+funniest
+  mean            0.0011        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+stoke
+  mean            0.0011        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+gorgeou
+  mean            0.0011        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+brilliant
+  mean            0.0042   0.0004   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+&lt;3
+  mean            0.0045   0.0005   0.0002
+  std. dev.       0.2222   0.2222   0.2222
+  weight sum        6471     5062    11454
+  precision       1.3333   1.3333   1.3333
+
+bless
+  mean            0.0114   0.0006   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+almighti
+  mean            0.0009   0.0002        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+scoop
+  mean            0.0011        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+incred
+  mean             0.004   0.0006   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+love
+  mean            0.0705   0.0079   0.0079
+  std. dev.       0.2768   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+yai
+  mean            0.0023   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+mubarak
+  mean            0.0035        0   0.0003
+  std. dev.         0.25     0.25     0.25
+  weight sum        6471     5062    11454
+  precision          1.5      1.5      1.5
+
+boruto
+  mean            0.0008        0        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+sweetheart
+  mean            0.0008   0.0002        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+happier
+  mean            0.0008   0.0002        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hottest
+  mean            0.0008   0.0002        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+^^
+  mean            0.0008        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bloodborn
+  mean            0.0008        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+flavor
+  mean            0.0008        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rc
+  mean            0.0008        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+shoutout
+  mean            0.0008   0.0002        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+combo
+  mean            0.0008        0   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+excel
+  mean            0.0029   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+congrat
+  mean            0.0028        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hip
+  mean            0.0014   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+enjoi
+  mean            0.0151   0.0018   0.0013
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+<3
+  mean            0.0012        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+8pm
+  mean            0.0012        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+perfect
+  mean            0.0071   0.0008   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cute
+  mean            0.0048   0.0006   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+carol
+  mean            0.0017        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dan
+  mean            0.0011        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fun
+  mean            0.0105   0.0018    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+favorit
+  mean            0.0076   0.0004   0.0011
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+healthi
+  mean            0.0015   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+proud
+  mean            0.0045   0.0008   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+beauti
+  mean            0.0096   0.0004   0.0017
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+janet
+  mean            0.0099   0.0008   0.0016
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+pump
+  mean            0.0019        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+day
+  mean                 0        0        0
+  std. dev.       0.0017   0.0017   0.0017
+  weight sum        6471     5062    11454
+  precision         0.01     0.01     0.01
+
+pit
+  mean            0.0009   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ameen
+  mean            0.0009        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+leftov
+  mean            0.0009   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fascin
+  mean            0.0009   0.0004        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+max
+  mean            0.0009        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+amen
+  mean            0.0009   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+great
+  mean            0.0388   0.0065   0.0059
+  std. dev.       0.2002   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cinema
+  mean            0.0026        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dog
+  mean            0.0206   0.0036   0.0029
+  std. dev.        0.182   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+best
+  mean            0.0433   0.0055   0.0083
+  std. dev.       0.2102   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+goodnight
+  mean            0.0012        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+9pm
+  mean            0.0012        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+babe
+  mean            0.0012        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+glori
+  mean            0.0012   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ador
+  mean            0.0012   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+welcom
+  mean             0.006   0.0008    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+birthdai
+  mean            0.0227   0.0018   0.0045
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+outfit
+  mean            0.0014        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+sock
+  mean            0.0006        0        0
+  std. dev.       0.3333   0.3333   0.3333
+  weight sum        6471     5062    11454
+  precision            2        2        2
+
+stud
+  mean            0.0008        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+gr8
+  mean            0.0008        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+southpaw
+  mean            0.0008        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+thatd
+  mean            0.0008   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wee
+  mean            0.0008   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+pleasur
+  mean            0.0008   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+grate
+  mean            0.0008        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+innov
+  mean            0.0008   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+perry
+  mean            0.0008        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hot
+  mean            0.0223   0.0028   0.0045
+  std. dev.       0.1753   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+nice
+  mean            0.0111   0.0012   0.0022
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+relax
+  mean            0.0019        0   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+mood
+  mean            0.0011   0.0004   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+unbeliev
+  mean            0.0014   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hop
+  mean            0.0014   0.0004   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rapper
+  mean            0.0031   0.0002   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ant-man
+  mean            0.0207   0.0026   0.0045
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+NEGATIONWORD
+  mean            0.1256   0.2552    0.153
+  std. dev.       0.3314    0.436     0.36
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+harper
+  mean            0.0023   0.0002   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+thank
+  mean            0.0301   0.0051   0.0068
+  std. dev.       0.1745   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+omg
+  mean            0.0053    0.002   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dai
+  mean            0.1147   0.0292   0.0441
+  std. dev.       0.3605   0.1776   0.2209
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+good
+  mean            0.0561   0.0144   0.0136
+  std. dev.       0.2406   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+-)
+  mean                 0        0        0
+  std. dev.       0.0017   0.0017   0.0017
+  weight sum        6471     5062    11454
+  precision         0.01     0.01     0.01
+
+favourit
+  mean            0.0019   0.0006   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+mvp
+  mean            0.0015   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+epic
+  mean            0.0015   0.0004   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+solid
+  mean            0.0012        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+brave
+  mean            0.0009        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+gaston
+  mean            0.0009   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+upper
+  mean            0.0009        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fantasi
+  mean            0.0009        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dvd
+  mean            0.0009        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+sensibl
+  mean            0.0006   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+melt
+  mean            0.0006   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rogu
+  mean            0.0006   0.0004        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dive
+  mean            0.0006        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+sandwich
+  mean            0.0006        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+soo
+  mean            0.0006        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+steak
+  mean            0.0006   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ham
+  mean            0.0006        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+2dai
+  mean            0.0006   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+prosper
+  mean            0.0006        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+nbc
+  mean            0.0005   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wld
+  mean            0.0006   0.0002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+comeback
+  mean            0.0006        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+padraig
+  mean            0.0006        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+recip
+  mean            0.0006        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+nerd
+  mean            0.0005        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+6-0
+  mean            0.0006        0   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+jackson
+  mean            0.0097    0.001   0.0025
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+congratul
+  mean            0.0029   0.0004   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+nation
+  mean            0.0345   0.0077   0.0086
+  std. dev.       0.1939   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+tomorrow
+  mean            0.1386   0.0427   0.0745
+  std. dev.       0.3544   0.2041   0.2649
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ic
+  mean            0.0365   0.0045   0.0109
+  std. dev.       0.2137   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+)
+  mean            0.0017   0.0006   0.0014
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+finger
+  mean            0.0017   0.0004   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+23rd
+  mean            0.0049   0.0002   0.0015
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+stun
+  mean            0.0014   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+attract
+  mean            0.0014   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+;)
+  mean            0.0025   0.0004   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+luck
+  mean            0.0051   0.0014    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+smile
+  mean            0.0032   0.0004   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+grammi
+  mean            0.0022        0   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fanci
+  mean            0.0011   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+pub
+  mean            0.0011   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wow
+  mean            0.0076   0.0024   0.0015
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+forward
+  mean            0.0066   0.0012   0.0017
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+celebr
+  mean            0.0199   0.0043   0.0053
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+brown
+  mean            0.0119   0.0022   0.0032
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+champ
+  mean            0.0023   0.0004   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wash
+  mean            0.0008   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+thrill
+  mean            0.0008   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+watchman
+  mean            0.0008        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+lee
+  mean            0.0008   0.0004   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+blew
+  mean            0.0008   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+asap
+  mean            0.0008   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dbz
+  mean            0.0008        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+consist
+  mean            0.0008   0.0002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+spiritu
+  mean            0.0008        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+sweet
+  mean            0.0037   0.0008    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cheer
+  mean            0.0025   0.0002   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+honor
+  mean            0.0025        0   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+27th
+  mean            0.0012   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dope
+  mean            0.0012   0.0004   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hopefulli
+  mean            0.0051   0.0014   0.0012
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+greatest
+  mean            0.0065    0.001   0.0019
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+forev
+  mean            0.0034   0.0014   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+foo
+  mean            0.0182   0.0032   0.0059
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+holi
+  mean            0.0051   0.0018   0.0013
+  std. dev.         0.25     0.25     0.25
+  weight sum        6471     5062    11454
+  precision          1.5      1.5      1.5
+
+remix
+  mean            0.0014   0.0002   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bang
+  mean            0.0019   0.0006   0.0005
+  std. dev.         0.25     0.25     0.25
+  weight sum        6471     5062    11454
+  precision          1.5      1.5      1.5
+
+fever
+  mean            0.0014   0.0002   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+da
+  mean            0.0009   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hug
+  mean            0.0008   0.0004   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rewatch
+  mean            0.0009        0   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bing
+  mean            0.0009   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+pretti
+  mean            0.0085   0.0036   0.0017
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+glad
+  mean            0.0039   0.0014   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+gift
+  mean            0.0034   0.0006    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+weekend
+  mean            0.0114   0.0014    0.004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+monster
+  mean            0.0015   0.0008   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wine
+  mean            0.0021        0   0.0009
+  std. dev.         0.25     0.25     0.25
+  weight sum        6471     5062    11454
+  precision          1.5      1.5      1.5
+
+gig
+  mean            0.0026   0.0002    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+westworld
+  mean            0.0022   0.0006   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+domin
+  mean            0.0011        0   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+billboard
+  mean            0.0011   0.0002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+peep
+  mean            0.0011        0   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wait
+  mean            0.0286   0.0093   0.0091
+  std. dev.       0.1703   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+princ
+  mean            0.0148   0.0018   0.0057
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+root
+  mean            0.0017   0.0006   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+saw
+  mean            0.0119   0.0036   0.0036
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+band
+  mean             0.015   0.0028   0.0054
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cool
+  mean            0.0063   0.0022   0.0017
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+george
+  mean            0.0031   0.0002   0.0012
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+thanksgiv
+  mean            0.0097    0.003    0.003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+theater
+  mean            0.0019   0.0004   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+pack
+  mean            0.0019   0.0006   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+scam
+  mean                 0   0.0028        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+disgrac
+  mean                 0   0.0022        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+puppet
+  mean                 0   0.0022        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+scum
+  mean                 0   0.0022        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+neo
+  mean                 0   0.0018        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+extremist
+  mean                 0   0.0016        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+harass
+  mean                 0   0.0016        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+disast
+  mean                 0   0.0014        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+asham
+  mean                 0   0.0014        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+40
+  mean                 0    0.001        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+disgust
+  mean                 0    0.004   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fascist
+  mean                 0   0.0026   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+idiot
+  mean            0.0002   0.0065   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+worst
+  mean                 0   0.0099   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+msm
+  mean                 0    0.002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+nazi
+  mean                 0    0.017   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+nightmar
+  mean            0.0002   0.0018        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+divid
+  mean                 0   0.0018   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dnc
+  mean                 0   0.0016   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+denial
+  mean                 0   0.0014   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+assang
+  mean            0.0002   0.0014        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+vet
+  mean            0.0002   0.0014        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+crimin
+  mean                 0   0.0051   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+stupid
+  mean            0.0003   0.0097   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+murder
+  mean                 0   0.0061   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rnc
+  mean                 0   0.0012   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+isil
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rude
+  mean                 0   0.0012   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+racial
+  mean                 0   0.0012   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+racist
+  mean            0.0002   0.0109   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+supremacist
+  mean            0.0002   0.0134   0.0011
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+horribl
+  mean                 0    0.003   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+zionist
+  mean            0.0003    0.002        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+mp
+  mean                 0    0.002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+traitor
+  mean                 0    0.002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+moron
+  mean            0.0002    0.002   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+whine
+  mean            0.0002    0.001        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+disavow
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cruel
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+people
+  mean                 0        0        0
+  std. dev.       0.0017   0.0017   0.0017
+  weight sum        6471     5062    11454
+  precision         0.01     0.01     0.01
+
+tyrant
+  mean            0.0002    0.001        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+divorc
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+supremaci
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+margin
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+deadli
+  mean            0.0002    0.001        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+clue
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+unfollow
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+nonsens
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+nuke
+  mean                 0    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+deport
+  mean                 0   0.0028   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cheat
+  mean                 0   0.0028   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+li
+  mean            0.0002   0.0063   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ignor
+  mean            0.0002   0.0071   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+pathet
+  mean            0.0002   0.0018   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+genocid
+  mean                 0   0.0018   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+crook
+  mean                 0   0.0018   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+corbyn
+  mean            0.0002   0.0018   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+lib
+  mean            0.0002   0.0018   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+violat
+  mean                 0   0.0026   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+threaten
+  mean                 0   0.0034   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bullshit
+  mean            0.0002   0.0024   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+pussi
+  mean            0.0002   0.0016   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+failur
+  mean                 0   0.0016   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+biz
+  mean                 0   0.0016   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+garbag
+  mean            0.0002   0.0016   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+tortur
+  mean                 0   0.0016   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wors
+  mean            0.0002   0.0067   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dumb
+  mean            0.0003   0.0038   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+enemi
+  mean            0.0002   0.0022   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rich
+  mean                 0   0.0028   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+corrupt
+  mean            0.0002   0.0061   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+terrifi
+  mean            0.0002   0.0014   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dislik
+  mean            0.0002   0.0014   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+loos
+  mean            0.0002   0.0014   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+retard
+  mean                 0   0.0014   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+toler
+  mean            0.0002   0.0014   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ly
+  mean            0.0002    0.004   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hypocrit
+  mean                 0    0.002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+leftist
+  mean            0.0003   0.0121   0.0015
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+nationalist
+  mean                 0    0.002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+sexual
+  mean            0.0002    0.002   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+threat
+  mean            0.0002   0.0038   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+disappoint
+  mean            0.0003   0.0038   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+liber
+  mean            0.0003   0.0194   0.0027
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fake
+  mean            0.0002   0.0105   0.0015
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+complain
+  mean                 0    0.003   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+corpor
+  mean            0.0002   0.0018   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+depress
+  mean                 0   0.0018   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+shitti
+  mean            0.0002   0.0018   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+tf
+  mean            0.0002   0.0012   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+loser
+  mean                 0   0.0012   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+suck
+  mean            0.0009   0.0069   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+piss
+  mean            0.0003   0.0045   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+alt-right
+  mean                 0   0.0061   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+racism
+  mean            0.0002   0.0026   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+alt-rightist
+  mean            0.0002   0.0043   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+sick
+  mean            0.0007   0.0086    0.001
+  std. dev.         0.25     0.25     0.25
+  weight sum        6471     5062    11454
+  precision          1.5      1.5      1.5
+
+insult
+  mean                 0   0.0022   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ss
+  mean                 0   0.0022   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+manslaught
+  mean                 0   0.0053   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+terrorist
+  mean            0.0005   0.0117   0.0017
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ridicul
+  mean            0.0003   0.0032   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+prosecut
+  mean                 0   0.0016   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+liar
+  mean                 0   0.0016   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+asshol
+  mean            0.0002   0.0016   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fat
+  mean            0.0005    0.005   0.0007
+  std. dev.         0.25     0.25     0.25
+  weight sum        6471     5062    11454
+  precision          1.5      1.5      1.5
+
+drone
+  mean            0.0002   0.0103   0.0017
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dictat
+  mean                 0    0.003   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+iraq
+  mean                 0    0.003   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fals
+  mean            0.0002    0.003   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rape
+  mean            0.0002    0.002   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+vile
+  mean                 0    0.001   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ironi
+  mean                 0    0.001   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+snake
+  mean            0.0002    0.001   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+duck
+  mean                 0    0.001   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+creepi
+  mean                 0    0.001   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+socialist
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+th…
+  mean                 0    0.001   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+blame
+  mean            0.0003   0.0077   0.0012
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fuck
+  mean            0.0057   0.0318   0.0031
+  std. dev.       0.1667   0.1843   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+anti
+  mean                 0   0.0008        0
+  std. dev.       0.3333   0.3333   0.3333
+  weight sum        6471     5062    11454
+  precision            2        2        2
+
+kkk
+  mean                 0   0.0014   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+assault
+  mean                 0   0.0014   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+disrespect
+  mean                 0   0.0014   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+lefti
+  mean                 0   0.0014   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+borno
+  mean            0.0002   0.0012   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+massacr
+  mean                 0   0.0014   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+innoc
+  mean                 0   0.0053    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bitch
+  mean            0.0009   0.0079    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+kill
+  mean            0.0031   0.0314   0.0051
+  std. dev.       0.1667   0.1833   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bs
+  mean                 0   0.0018   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+violent
+  mean            0.0006   0.0022   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+annoi
+  mean            0.0002   0.0022   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+moral
+  mean                 0   0.0026   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fed
+  mean            0.0002   0.0026   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hate
+  mean             0.002   0.0219   0.0038
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+civilian
+  mean            0.0002    0.003   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+destroi
+  mean            0.0005   0.0083   0.0015
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+fraud
+  mean            0.0003   0.0036   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+terror
+  mean            0.0002   0.0051    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+satan
+  mean                 0   0.0018   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hitler
+  mean            0.0003   0.0016   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+profit
+  mean            0.0003   0.0016   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+unfortun
+  mean                 0   0.0016   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+overturn
+  mean                 0   0.0012   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bastard
+  mean                 0   0.0012   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+scandal
+  mean            0.0002   0.0012   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+demon
+  mean                 0   0.0012   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+boycott
+  mean            0.0002   0.0012   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+enforc
+  mean            0.0003   0.0012   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+disappear
+  mean            0.0002   0.0012   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+justifi
+  mean                 0   0.0012   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+frustrat
+  mean            0.0002   0.0012   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+michelle
+  mean                 0   0.0012   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+sect
+  mean                 0   0.0012   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+heil
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rot
+  mean            0.0002   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+spy
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+dismantl
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hater
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+stir
+  mean            0.0003   0.0008        0
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+merkel
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+notori
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ia
+  mean            0.0002   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hatr
+  mean            0.0002   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+witch
+  mean            0.0002   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+arrog
+  mean            0.0002   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+forest
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hypocrisi
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+breed
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+curs
+  mean            0.0002   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+(like
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+basi
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+pardon
+  mean            0.0002   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+behead
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+convent
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bankrupt
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+credibl
+  mean                 0   0.0008   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cheater
+  mean            0.0002   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+taxpay
+  mean            0.0002   0.0008   0.0001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+illeg
+  mean            0.0003   0.0069   0.0014
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bloodi
+  mean            0.0009   0.0061   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ruin
+  mean            0.0006   0.0045   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+crap
+  mean            0.0005    0.003   0.0004
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hrc
+  mean            0.0002    0.003   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+penc
+  mean            0.0003    0.003   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+deplor
+  mean            0.0005   0.0065   0.0013
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+excus
+  mean            0.0005   0.0036   0.0007
+  std. dev.         0.25     0.25     0.25
+  weight sum        6471     5062    11454
+  precision          1.5      1.5      1.5
+
+shame
+  mean            0.0008   0.0043   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+$
+  mean            0.0003   0.0022   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+trash
+  mean            0.0006   0.0022   0.0002
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+polic
+  mean                 0    0.004    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+zero
+  mean            0.0002   0.0018   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+steal
+  mean            0.0006   0.0045   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rig
+  mean                 0   0.0014   0.0003
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+thine
+  mean                 0        0   0.0013
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+reportedli
+  mean                 0        0    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+owen
+  mean                 0        0    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+committe
+  mean                 0        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+stephen
+  mean                 0        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+31
+  mean                 0        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+unmention
+  mean                 0        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+obi
+  mean                 0        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+prospect
+  mean                 0        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+exo
+  mean                 0        0   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+web
+  mean                 0        0   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+lawsuit
+  mean                 0        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+regul
+  mean                 0        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+entranc
+  mean                 0        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+juve
+  mean                 0        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+pace
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+scoreless
+  mean                 0        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+conduct
+  mean                 0        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+span
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rai
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+oriol
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+batter
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hunter
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wade
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+4-3
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+verifi
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+leon
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+monument
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+humanitarian
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+mario
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cannabi
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cough
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+victor
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bifurc
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hardcor
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+walkoff
+  mean                 0        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+tanzania
+  mean                 0   0.0002   0.0016
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+deadlin
+  mean            0.0002        0   0.0015
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+top20
+  mean            0.0002        0   0.0013
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+trends
+  mean                 0        0        0
+  std. dev.       0.0017   0.0017   0.0017
+  weight sum        6471     5062    11454
+  precision         0.01     0.01     0.01
+
+castro
+  mean                 0   0.0002   0.0011
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+context
+  mean            0.0002        0   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+stan
+  mean                 0   0.0002    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+file
+  mean            0.0003        0   0.0017
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wednesday
+  mean            0.0002        0   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+diego
+  mean                 0   0.0002   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+mumbai
+  mean                 0   0.0002   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+madrid
+  mean                 0   0.0002   0.0009
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+aleppo
+  mean                 0   0.0004   0.0022
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wisconsin
+  mean                 0   0.0004   0.0016
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+resolut
+  mean            0.0002        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+hokag
+  mean            0.0002        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+varieti
+  mean            0.0002        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+foam
+  mean            0.0002        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+tonight
+  mean            0.0002        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+luci
+  mean            0.0002        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+tenni
+  mean            0.0002        0   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+wyatt
+  mean                 0   0.0002   0.0008
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+msnbc
+  mean                 0   0.0002   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cait
+  mean            0.0002        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+foot
+  mean                 0   0.0002   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bale
+  mean            0.0002        0   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+uncl
+  mean            0.0002        0   0.0007
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+leadership
+  mean            0.0002   0.0002   0.0012
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+upton
+  mean            0.0002   0.0002   0.0012
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+mikheil
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+braun
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+suplex
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+3b
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+billi
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+neymar
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+friday
+  mean                 0        0        0
+  std. dev.       0.0017   0.0017   0.0017
+  weight sum        6471     5062    11454
+  precision         0.01     0.01     0.01
+
+philippin
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+meani
+  mean                 0   0.0002   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+witsel
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+workout
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+asia
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+roma
+  mean                 0        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+reflect
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+arsen
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+vital
+  mean            0.0002        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+farm
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+sacrific
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+co-lead
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+naruto
+  mean            0.0002        0   0.0006
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+gea
+  mean            0.0005   0.0006   0.0034
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+rbi
+  mean            0.0008        0   0.0028
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+six
+  mean            0.0002   0.0002   0.0011
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+bench
+  mean            0.0002   0.0002   0.0011
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+governor
+  mean            0.0002   0.0002   0.0011
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+exchang
+  mean                 0   0.0004    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+eastern
+  mean                 0   0.0004    0.001
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+cabl
+  mean            0.0002        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+quadrupl
+  mean            0.0002        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+ric
+  mean            0.0002        0   0.0005
+  std. dev.       0.1667   0.1667   0.1667
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+POSIEMOJI
+  mean            0.0688   0.0093   0.0191
+  std. dev.       0.4416   0.2121   0.2604
+  weight sum        6471     5062    11454
+  precision       1.2727   1.2727   1.2727
+
+NEGEMOJI
+  mean            0.3717   0.3672    0.483
+  std. dev.       0.5406   0.5448   0.6022
+  weight sum        6471     5062    11454
+  precision            1        1        1
+
+
+
+Time taken to build model: 1.42 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 4.39 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        2726               55.339  %
+Incorrectly Classified Instances      2200               44.661  %
+Kappa statistic                          0.2092
+Mean absolute error                      0.3631
+Root mean squared error                  0.4413
+Relative absolute error                 87.0386 %
+Root relative squared error             96.4736 %
+Total Number of Instances             4926     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.420    0.131    0.582      0.420    0.488      0.322    0.734     0.559     positive
+                 0.096    0.028    0.483      0.096    0.161      0.140    0.682     0.364     negative
+                 0.834    0.651    0.549      0.834    0.662      0.208    0.646     0.612     neutral
+Weighted Avg.    0.553    0.362    0.545      0.553    0.504      0.228    0.680     0.544     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  625   40  823 |    a = positive
+  117  100  821 |    b = negative
+  332   67 2001 |    c = neutral
+
+
+tree----------------------------------------------
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     twitter-posi-tops
+Instances:    22987
+Attributes:   489
+              [list of attributes omitted]
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+nazi <= 0
+|   worst <= 0
+|   |   idiot <= 0
+|   |   |   excit <= 0
+|   |   |   |   amaz <= 0
+|   |   |   |   |   cream <= 0
+|   |   |   |   |   |   awesom <= 0
+|   |   |   |   |   |   |   fantast <= 0
+|   |   |   |   |   |   |   |   murder <= 0
+|   |   |   |   |   |   |   |   |   happi <= 0
+|   |   |   |   |   |   |   |   |   |   stupid <= 0
+|   |   |   |   |   |   |   |   |   |   |   crimin <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   supremacist <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   brilliant <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   liber <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   love <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   leftist <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wors <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   li <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ignor <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   manslaught <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   fake <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   fuck <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   racist <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   bless <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   suck <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   drone <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   incred <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   corrupt <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   perfect <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   enjoi <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ruin <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   destroi <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   sick <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   fun <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   best <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   cute <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   hate <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   great <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   piss <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   proud <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   kill <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   terror <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   deplor <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   beauti <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   blame <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   terrorist <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   bitch <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   illeg <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   janet <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   nice <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dog <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   favorit <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   greatest <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   welcom <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   thank <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   good <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wow <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   brown <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   omg <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ant-man <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   POSIEMOJI <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   anti <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pretti <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   weekend <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wait <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   steal <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   birthdai <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   forward <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   celebr <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   cool <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   thanksgiv <= 0: neutral (16371.0/6511.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   thanksgiv > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   leftov <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   relax <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai <= 0: neutral (39.0/15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 0: negative (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 0: positive (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 1: neutral (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   relax > 0: positive (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   leftov > 0: positive (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   cool > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 1: positive (43.0/22.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 1: neutral (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   celebr > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 0: neutral (53.0/31.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 0: positive (54.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i <= 0: positive (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i > 0: neutral (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   forward > 0: positive (42.0/19.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   birthdai > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   celebr <= 0: positive (73.0/35.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   celebr > 0: neutral (11.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai > 0: neutral (11.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   steal > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow <= 0: negative (27.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow > 0: neutral (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wait > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow <= 0: neutral (94.0/34.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i <= 0: neutral (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i > 0: positive (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   band <= 0: positive (120.0/37.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   band > 0: negative (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   weekend > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai <= 0: neutral (54.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai > 0: positive (8.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0: positive (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow > 0: positive (10.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pretti > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0: positive (53.0/20.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0: negative (11.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   anti > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i <= 0: negative (29.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i > 0: neutral (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   POSIEMOJI > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i <= 1: positive (248.0/115.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 0: neutral (11.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 0: positive (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ant-man > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   cinema <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   horribl <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i <= 0: positive (39.0/17.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i > 0: neutral (14.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   horribl > 0: negative (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow > 0: positive (33.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wait <= 0: neutral (18.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wait > 0: positive (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   cinema > 0: positive (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   i > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0: positive (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0: negative (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai > 0: positive (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   omg > 0: positive (31.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   brown > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   band <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 0: negative (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 0: positive (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   band > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wait <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0: positive (73.0/23.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 0: neutral (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 0: positive (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wait > 0: positive (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wow > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0: positive (45.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0: neutral (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   good > 0: positive (434.0/183.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   thank > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0: positive (194.0/69.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow <= 0: neutral (17.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   tomorrow > 0: positive (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 0: positive (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   welcom > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0: positive (42.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 0: negative (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 0: neutral (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   greatest > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD <= 0: positive (50.0/15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGATIONWORD > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 0: positive (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 0: neutral (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   favorit > 0: positive (39.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dog > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai <= 0: negative (15.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dai > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   hot <= 0: neutral (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   hot > 0: positive (93.0/22.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   nice > 0: positive (76.0/24.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   janet > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   grammi <= 0: positive (66.0/19.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   grammi > 0: neutral (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   illeg > 0: negative (46.0/17.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   bitch > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ant-man <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   suplex <= 0: negative (36.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   suplex > 0: neutral (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ant-man > 0: positive (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   terrorist > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   aleppo <= 0: negative (56.0/19.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   aleppo > 0: neutral (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   blame > 0: negative (45.0/16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   beauti > 0: positive (60.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   deplor > 0: negative (42.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   terror > 0: negative (33.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   kill > 0: negative (184.0/68.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   proud > 0: positive (35.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   piss > 0: negative (27.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   great > 0: positive (270.0/85.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   hate > 0: negative (121.0/42.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   cute > 0: positive (29.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   best > 0: positive (352.0/108.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   fun > 0: positive (63.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   sick > 0: negative (33.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   destroi > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI <= 1: negative (52.0/15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NEGEMOJI > 1: neutral (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ruin > 0: negative (31.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   enjoi > 0: positive (97.0/22.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   perfect > 0: positive (52.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   corrupt > 0: negative (32.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   incred > 0: positive (25.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   drone > 0: negative (70.0/21.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   suck > 0: negative (40.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   bless > 0: positive (60.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   racist > 0: negative (43.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   fuck > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ic <= 0: negative (191.0/53.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ic > 0: neutral (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   fake > 0: negative (55.0/15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   manslaught > 0: negative (36.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ignor > 0: negative (37.0/8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   li > 0: negative (34.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wors > 0: negative (42.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   leftist > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   great <= 0: negative (64.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   great > 0: neutral (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   love > 0: positive (489.0/116.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   liber > 0: negative (115.0/28.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   brilliant > 0: positive (29.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   supremacist > 0: negative (69.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   crimin > 0: negative (29.0/4.0)
+|   |   |   |   |   |   |   |   |   |   stupid > 0: negative (49.0/6.0)
+|   |   |   |   |   |   |   |   |   happi > 0
+|   |   |   |   |   |   |   |   |   |   saw <= 0: positive (332.0/55.0)
+|   |   |   |   |   |   |   |   |   |   saw > 0: neutral (2.0)
+|   |   |   |   |   |   |   |   murder > 0: negative (36.0/5.0)
+|   |   |   |   |   |   |   fantast > 0: positive (35.0/2.0)
+|   |   |   |   |   |   awesom > 0: positive (80.0/7.0)
+|   |   |   |   |   cream > 0: positive (122.0/14.0)
+|   |   |   |   amaz > 0: positive (88.0/7.0)
+|   |   |   excit > 0: positive (141.0/12.0)
+|   |   idiot > 0
+|   |   |   POSIEMOJI <= 0: negative (33.0/1.0)
+|   |   |   POSIEMOJI > 0: positive (2.0/1.0)
+|   worst > 0: negative (53.0/4.0)
+nazi > 0: negative (90.0/9.0)
+
+Number of Leaves  : 	129
+
+Size of the tree : 	257
+
+
+Time taken to build model: 543.32 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.42 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        3059               62.0991 %
+Incorrectly Classified Instances      1867               37.9009 %
+Kappa statistic                          0.3368
+Mean absolute error                      0.3479
+Root mean squared error                  0.4204
+Relative absolute error                 83.3866 %
+Root relative squared error             91.9212 %
+Total Number of Instances             4926     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.472    0.076    0.727      0.472    0.572      0.457    0.725     0.555     positive
+                 0.258    0.034    0.672      0.258    0.373      0.336    0.679     0.390     negative
+                 0.870    0.583    0.586      0.870    0.701      0.321    0.652     0.582     neutral
+Weighted Avg.    0.621    0.314    0.647      0.621    0.593      0.365    0.680     0.533     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  702   27  759 |    a = positive
+   56  268  714 |    b = negative
+  207  104 2089 |    c = neutral
+
+
+random forest----------------------------------------------
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     twitter-posi-tops
+Instances:    22987
+Attributes:   489
+              [list of attributes omitted]
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 892.27 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 5.74 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        3089               62.7081 %
+Incorrectly Classified Instances      1837               37.2919 %
+Kappa statistic                          0.3538
+Mean absolute error                      0.3297
+Root mean squared error                  0.4176
+Relative absolute error                 79.0278 %
+Root relative squared error             91.3116 %
+Total Number of Instances             4926     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.471    0.078    0.724      0.471    0.571      0.455    0.781     0.636     positive
+                 0.321    0.042    0.670      0.321    0.434      0.377    0.753     0.488     negative
+                 0.856    0.557    0.594      0.856    0.701      0.328    0.691     0.631     neutral
+Weighted Avg.    0.627    0.304    0.649      0.627    0.606      0.376    0.731     0.602     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  701   23  764 |    a = positive
+   63  333  642 |    b = negative
+  204  141 2055 |    c = neutral
+
