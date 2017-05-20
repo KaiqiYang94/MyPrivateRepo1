@@ -105,6 +105,7 @@ class getAttributes {
 		while (it.hasNext()) {
 			Map.Entry<String, Integer[]> pair = (Map.Entry<String, Integer[]>)it.next();
 			if ((pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) > thereshold) {
+				double allApp = (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]);
 				// double perc = (pair.getValue()[0] + pair.getValue()[2]) * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) + (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) * 0.0001;
 				// the pos and neg
 				// double perc = (pair.getValue()[0] + pair.getValue()[2]) * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) + (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) * 0.0001;
@@ -117,6 +118,9 @@ class getAttributes {
 
 				// the nu
 				double perc = (pair.getValue()[1]) * 1.00 / (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) + (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) * 0.0001;
+
+				// the gini
+				// double perc = 1 - ((pair.getValue()[0] / allApp)*(pair.getValue()[0] / allApp) ) - ((pair.getValue()[1] / allApp)*(pair.getValue()[1] / allApp) ) - ((pair.getValue()[2] / allApp)*(pair.getValue()[2] / allApp) );
 
 				// the frequency
 				// double perc = (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) + (pair.getValue()[0] + pair.getValue()[1] + pair.getValue()[2]) * 0.0001;
