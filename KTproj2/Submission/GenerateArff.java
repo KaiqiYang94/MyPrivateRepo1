@@ -448,17 +448,26 @@ allAttributes.add(new SimpleEntry("rig", "NUMERIC"));// = 0.6375 7 4 0
 			System.out.println("@DATA");
 
 
+			// train, dev or test
+			String mode = "test";
 
-			String mode = "train";
-
-			Scanner decisionScan = new Scanner(new File(mode + "-labels.txt"));
+			Scanner decisionScan = mode.equals("test")? null : new Scanner(new File(mode + "-labels.txt"));
 
 			Scanner scan = new Scanner(new File(mode + "-tweets.txt"));
 
 
 			while (scan.hasNextLine()) {
-				String  decison = decisionScan.nextLine();
-				String decisionString = decison.split("\t")[1];
+				String decison;
+				String decisionString;
+				if(mode.equals("test"))
+				{
+					decisionString = "?";
+				}
+				else
+				{
+					decison = decisionScan.nextLine();
+					decisionString = decison.split("\t")[1];	
+				}
 
 				String line = scan.nextLine();
 				String[] array = line.split("\t");
